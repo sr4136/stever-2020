@@ -1,0 +1,95 @@
+/*!
+Theme Name: stever (New)
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: stever
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+body{
+	background: #eaedf2;
+}
+a, a:visited {
+	color: #C1552D;
+
+}
+.header-wrapper{
+	background-color: #ffffff 50%;
+	background-image: -moz-linear-gradient(#ffffff 50%, #eaedf2 50%);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff 50%), to(#eaedf2 50%));
+	background-image: -webkit-linear-gradient(#ffffff 50%, #eaedf2 50%);
+	background-image: -o-linear-gradient(#ffffff 50%, #eaedf2 50%);
+}
+
+
+.home .entry-header{
+	display: none;
+}
+
+.custom-logo-link {
+	max-width: 300px;
+}
+
+/* Blocks */
+.wp-block-media-text {
+	align-items: start;
+}
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding-left: 0;
+}
+
+
+/* Social Icons */
+#menu-social-container {
+  padding: 12px 0 32px 32px;
+  text-align: right;
+}
+#menu-social-container li {
+  margin-left: 20px;
+  display: inline-block;
+  float: none;
+}
+#menu-social-container li a {
+  text-indent: 9999px;
+  overflow: hidden;
+  display: block;
+  background-image: url("img/sprite.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+#menu-social-container li.social-twitter a {
+  background-position: -10px -10px;
+}
+#menu-social-container li.social-twitter a:hover {
+  color: #FFFFFF;
+  background-position: -60px -10px;
+}
+#menu-social-container li.social-github a {
+  background-position: -10px -110px;
+}
+#menu-social-container li.social-github a:hover {
+  color: #FFFFFF;
+  background-position: -60px -110px;
+}
+#menu-social-container li.social-linkedin a {
+  background-position: -10px -160px;
+}
+#menu-social-container li.social-linkedin a:hover {
+  color: #FFFFFF;
+  background-position: -60px -160px;
+}
+#menu-social-container li.social-facebook a {
+  background-position: -10px -60px;
+}
+#menu-social-container li.social-facebook a:hover {
+  color: #FFFFFF;
+  background-position: -60px -60px;
+}
