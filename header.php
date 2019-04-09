@@ -30,28 +30,32 @@
 					<?php the_custom_logo(); ?>
 				</div><!-- .site-branding -->
 
-				<nav id="social-navigation" class="social-navigation large-4 medium-4 cell">
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'social-icons',
-						'menu_id'        => 'social-icons',
-						'depth'			=> 1,
-						'menu_class'		=> 'menu align-right',
-					) );
-					?>
+				<div class="nav-container large-4 medium-4 cell">
+					<nav id="social-navigation" class="social-navigation">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'social-icons',
+							'menu_id'        => 'social-icons',
+							'depth'			=> 1,
+							'menu_class'		=> 'menu align-right',
+						) );
+						?>
+					</nav><!-- #social-navigation -->
+
+					<nav id="site-navigation" class="main-navigation large-4 medium-4 cell">
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'stever' ); ?></button>
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+							'depth'			=> 1,
+							'menu_class'		=> 'menu align-right',
+						) );
+						?>
 				</nav><!-- #site-navigation -->
 
-				<nav id="site-navigation" class="main-navigation large-4 medium-4 cell">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'stever' ); ?></button>
-					<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-						'depth'			=> 1,
-						'menu_class'		=> 'menu align-right',
-					) );
-					?>
-				</nav><!-- #site-navigation -->
+				</div>
+
 			</div>
 		</header><!-- #masthead -->
 	</div>

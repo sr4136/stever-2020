@@ -47,16 +47,19 @@ a, a:visited {
 
 
 /* Social Icons */
-#menu-social-container {
-  padding: 12px 0 32px 32px;
+.menu-social-container {
+  padding-top: 0.7em;
   text-align: right;
 }
-#menu-social-container li {
+.menu-social-container #social-icons {
+	margin: 0;
+}
+.menu-social-container li {
   margin-left: 20px;
   display: inline-block;
   float: none;
 }
-#menu-social-container li a {
+.menu-social-container li a {
   text-indent: 9999px;
   overflow: hidden;
   display: block;
@@ -65,31 +68,31 @@ a, a:visited {
   width: 30px;
   height: 30px;
 }
-#menu-social-container li.social-twitter a {
+.menu-social-container li.social-twitter a {
   background-position: -10px -10px;
 }
-#menu-social-container li.social-twitter a:hover {
+.menu-social-container li.social-twitter a:hover {
   color: #FFFFFF;
   background-position: -60px -10px;
 }
-#menu-social-container li.social-github a {
+.menu-social-container li.social-github a {
   background-position: -10px -110px;
 }
-#menu-social-container li.social-github a:hover {
+.menu-social-container li.social-github a:hover {
   color: #FFFFFF;
   background-position: -60px -110px;
 }
-#menu-social-container li.social-linkedin a {
+.menu-social-container li.social-linkedin a {
   background-position: -10px -160px;
 }
-#menu-social-container li.social-linkedin a:hover {
+.menu-social-container li.social-linkedin a:hover {
   color: #FFFFFF;
   background-position: -60px -160px;
 }
-#menu-social-container li.social-facebook a {
+.menu-social-container li.social-facebook a {
   background-position: -10px -60px;
 }
-#menu-social-container li.social-facebook a:hover {
+.menu-social-container li.social-facebook a:hover {
   color: #FFFFFF;
   background-position: -60px -60px;
 }
