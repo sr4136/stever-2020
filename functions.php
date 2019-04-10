@@ -122,6 +122,9 @@ add_action( 'widgets_init', 'stever_widgets_init' );
  */
 function stever_scripts() {
 
+	/* Font: Lato */
+	wp_enqueue_style( 'googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+
 	/* CSS: Underscores */
 	wp_enqueue_style( 'stever-underscores',
 		get_stylesheet_directory_uri() . '/css/underscores.css',
