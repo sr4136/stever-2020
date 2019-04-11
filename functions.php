@@ -122,8 +122,9 @@ add_action( 'widgets_init', 'stever_widgets_init' );
  */
 function stever_scripts() {
 
-	/* Font: Lato */
-	wp_enqueue_style( 'googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+	/* Fonts */
+	wp_enqueue_style( 'googleFonts-Lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+	wp_enqueue_style( 'googleFonts-Merriweather', '//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic' );
 
 	/* CSS: Underscores */
 	wp_enqueue_style( 'stever-underscores',
@@ -139,11 +140,18 @@ function stever_scripts() {
 		filemtime( get_stylesheet_directory() . '/css/foundation.css' )
 	);
 
-	/* CSS: SteveR Theme Style */
+	/* CSS: SteveR Theme Styles */
 	wp_enqueue_style( 'stever-style',
-		get_stylesheet_uri(),
+		get_stylesheet_directory_uri() . '/style.css',
 		array(),
 		filemtime( get_stylesheet_directory() . '/style.css' )
+	);
+
+	/* CSS: SteveR Blocks Styles */
+	wp_enqueue_style( 'stever-blocks',
+		get_stylesheet_directory_uri() . '/css/blocks.css',
+		array(),
+		filemtime( get_stylesheet_directory() . '/css/blocks.css' )
 	);
 
 	wp_enqueue_script( 'stever-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -155,6 +163,19 @@ function stever_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'stever_scripts' );
+
+
+function stever_admin_scripts() {
+    /* CSS: SteveR Blocks Styles */
+	wp_enqueue_style( 'stever-blocks',
+		get_stylesheet_directory_uri() . '/css/blocks.css',
+		array(),
+		filemtime( get_stylesheet_directory() . '/css/blocks.css' )
+	);
+}
+add_action( 'admin_enqueue_scripts', 'stever_admin_scripts' );
+
+
 
 /**
  * Implement the Custom Header feature.

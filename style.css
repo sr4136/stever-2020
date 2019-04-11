@@ -13,18 +13,35 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
-body{
-	background: #eaedf2;
-	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+body {
+	background: #EAEDF2;
+	font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #5C6B80;
 }
+.entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+	margin-top: 1em;
+}
 a, a:visited {
 	color: #C1552D;
-
 }
+
+article {
+	padding: 1em;
+}
+
+.entry-content li {
+	margin-bottom: 1em;
+}
+.entry-content li li {
+	margin-bottom: 0;
+}
+.entry-content ul ul li {
+	list-style-type: circle;
+}
+
 .post, .page {
 	margin-bottom: 0;
 }
@@ -55,51 +72,6 @@ a, a:visited {
 	max-width: 300px;
 }
 
-/* Blocks */
-.wp-block-image {
-	margin-bottom: 0;
-}
-.wp-block-media-text {
-	align-items: start;
-}
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
-	padding-left: 0;
-}
-.wp-block-columns.has-2-columns.small-left .wp-block-column:nth-child( 1 ) {
-	flex-basis: calc(15% - 16px);
-}
-.wp-block-columns.has-2-columns.small-left .wp-block-column:nth-child( 2 ) {
-	flex-basis: calc(85% - 16px);
-}
-.wp-block-columns.has-2-columns.small-right .wp-block-column:nth-child( 1 ) {
-	flex-basis: calc(85% - 16px);
-}
-.wp-block-columns.has-2-columns.small-right .wp-block-column:nth-child( 2 ) {
-	flex-basis: calc(15% - 16px);
-}
-.wp-block-columns:nth-child(2n) {
-    background: #F1F1F1;
-    margin: 0 -0.9em;
-    padding: 1em;
-}
-
-.wp-block-columns.spaced-out-divider {
-	margin-top: 1em;
-	padding-top: 1em;
-	border: 1x solid #ccc;
-}
-
-.wp-block-image figcaption {
-	font-size: 0.75em;
-	background: #f1f1f1;
-	padding: 0.5em;
-	margin-top: 1.5em;
-	display: none !important;
-	width: 100%;
-}
-.wp-block-image:hover figcaption {
-	display: table-caption !important;
-}
 
 /* Primary Menu */
 #primary-menu li {
@@ -179,4 +151,25 @@ a, a:visited {
 .blog article {
 	margin-bottom: 2em;
 }
+
+/* Tablet-ish */
+@media screen and (max-width: 37.5em) {
+	.home .home-about-me 	.wp-block-media-text__media {
+		padding: 0 25%;
+	}
+}
+
+/* Phone-ish */
+@media screen and (max-width: 27.5em) {
+	.home .home-about-me 	.wp-block-media-text__media {
+		padding: 0;
+	}
+}
+
+
+
+
+
+
+
 
