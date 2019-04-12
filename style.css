@@ -152,6 +152,20 @@ article {
 	margin-bottom: 2em;
 }
 
+/* Blocks */
+.wp-block-columns.chevron {
+    background-image: url( "img/chevron.png" );
+    background-repeat: no-repeat;
+    background-position: 38% center;
+}
+.wp-block-columns.chevron .wp-block-column:first-child {
+    padding-right: 6em;
+}
+.wp-block-columns.chevron .wp-block-column:last-child {
+    padding-left: 2em;
+}
+
+
 /* Tablet-ish */
 @media screen and (max-width: 37.5em) {
 	.home .home-about-me 	.wp-block-media-text__media {

@@ -12,7 +12,7 @@
 }
 .wp-block-image figcaption {
 	font-size: 0.75em;
-	background: #f1f1f1;
+	background-color: #f1f1f1;
 	padding: 0.5em;
 	margin-top: 1.5em;
 	display: none !important;
@@ -31,7 +31,7 @@
 	flex-basis: calc(90% - 16px);
 }
 .wp-block-columns:nth-child(odd) {
-    background: #F1F1F1;
+    background-color: #F1F1F1;
     margin: 0 -0.9em;
     padding: 1em;
 }
