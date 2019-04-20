@@ -105,38 +105,29 @@ function dashboard_widget_recently_updated() {
 	endif;
 }
 
+// This function does the actual outputting of the content of the widget
+function dashboard_widget_maps() {
+?>
+	<ul>
+		<li>
+			<a href="/about/places-ive-been/">Places I've Benn</a> |
+			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">edit</a>
+		</li>
+		<li>
+			<a href="/about/places-ive-been/places-id-like-to-go/">Places I'd Like to Go</a> |
+			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=2">edit</a>
+		</li>
+	</ul>
+<?php
+}
 
 // Function used in the action hook
 function add_dashboard_widgets() {
 	wp_add_dashboard_widget( 'dashboard_widget_unfinished_posts', 'Unfinished Posts', 'dashboard_widget_unpublished' );
 	wp_add_dashboard_widget( 'dashboard_widget_all_pages', 'All Pages', 'dashboard_widget_all_pages' );
 	wp_add_dashboard_widget( 'dashboard_widget_recently_updated', 'Recently Updated', 'dashboard_widget_recently_updated' );
+	wp_add_dashboard_widget( 'dashboard_widget_maps', 'Maps', 'dashboard_widget_maps' );
 }
 
 // Register the new dashboard widget with the 'wp_dashboard_setup' action
 add_action('wp_dashboard_setup', 'add_dashboard_widgets' );
-
-
-
-/* Adding Columns to Admin Post listing - Meta Info */
-
-function stever_add_post_columns($columns) {
-    return array_merge( $columns, array( 
-		'portfolio' => __( 'Portfolio' ),
-         )
-	);
-}
-add_filter('manage_posts_columns' , 'stever_add_post_columns');
-
-function stever_post_column_content( $column, $post_id ) {
-    switch ( $column ) {
-
-	case 'portfolio' :
-		if( get_post_meta( $post_id , '_is_portfolio' , true ) == true ){
-			echo( 'yes' );
-		}
-	    break;
-    }
-}
-
-add_action( 'manage_posts_custom_column' , 'stever_post_column_content', 10, 2 );
