@@ -4,10 +4,10 @@
  * @package SteveRudolfi
  */
  
-// This function does the actual outputting of the content of the widget
+/* All Unpublished Posts */
 function dashboard_widget_unpublished() {
 	$args = array(
-		'post_type'			=> 'post', /* for my purposes, I only want posts */
+		'post_type'			=> 'post',
 		'post_status'		=> array( 'pending', 'draft', 'future', 'private' ), /* all statuses, except 'published' and 'auto-draft' */
 		'posts_per_page'		=> -1,
 		'orderby'			=> 'date',
@@ -16,16 +16,13 @@ function dashboard_widget_unpublished() {
 
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-		echo( '<ul>' );
+		echo( '<ul class="stever-dashboard-widget">' );
 		while ( $the_query->have_posts() ) : $the_query->the_post();
-		// Outputs the Post title (linked to the edit page,
-		// the post status,
-		// and an html entity icon (&curren;) linking to view the page
 		?>
 			<li>
 				<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
-				<small>(<?php echo( get_post_status() ); ?>)</small>
-				<a class="linkview" href="<?php echo( get_permalink() ); ?>"> &curren;</a>
+				<small class="status">(<?php echo( get_post_status() ); ?>)</small>
+				<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
 			</li>
 		<?php
 		endwhile;
@@ -36,14 +33,8 @@ function dashboard_widget_unpublished() {
 	endif;
 }
 
-// This function does the actual outputting of the content of the widget
-$evenOdd = 'odd';
-function switchEvenOdd() {
-	global $evenOdd;
-	$evenOdd = ( $evenOdd == 'odd' ? 'even' : 'odd' );
-}
+/* All Pages */
 function check_for_children( $post_id=null ) {
-	global $evenOdd;
 	$retStr = '';
 	$args = array(
 		'post_type'			=> 'page',
@@ -55,12 +46,11 @@ function check_for_children( $post_id=null ) {
 
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-		$retStr .= '<ul>';
+		$retStr .= '<ul class="stever-dashboard-widget">';
 			while ( $the_query->have_posts() ) : $the_query->the_post();
-				$retStr .= '<li class="count-' . $evenOdd . '">';
+				$retStr .= '<li>';
 					$retStr .= '<a href="' . get_edit_post_link() . '">' . get_the_title() . '</a>';
-					$retStr .= '<a class="linkview" href="' . get_permalink() . '"> &curren;</a>';
-					switchEvenOdd();
+					$retStr .= '<a class="linkview" href="' . get_permalink() . '">view</a>';
 					$retStr .= check_for_children( get_the_id() );
 				$retStr .= '</li>';
 			endwhile;
@@ -73,8 +63,9 @@ function dashboard_widget_all_pages( $post, $callback_args ) {
 	echo( check_for_children( 0 ) );
 }
 
-// This function does the actual outputting of the content of the widget
+/* Recently Updated */
 function dashboard_widget_recently_updated() {
+	
 	// set the args
 	$args = array(
 		'post_type'			=> array( 'post', 'page' ),
@@ -86,7 +77,7 @@ function dashboard_widget_recently_updated() {
 	// Standard query and loop
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-		echo( '<ul>' );
+		echo( '<ul class="stever-dashboard-widget">' );
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 		// Outputs the Post title (linked to the edit page,
 		// the post status,
@@ -94,7 +85,7 @@ function dashboard_widget_recently_updated() {
 		?>
 			<li>
 				<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
-				<a class="linkview" href="<?php echo( get_permalink() ); ?>"> &curren;</a>
+				<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
 			</li>
 		<?php
 		endwhile;
@@ -108,14 +99,16 @@ function dashboard_widget_recently_updated() {
 // This function does the actual outputting of the content of the widget
 function dashboard_widget_maps() {
 ?>
-	<ul>
+	<ul class="stever-dashboard-widget">
 		<li>
-			<a href="/about/places-ive-been/">Places I've Benn</a> |
-			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">edit</a>
+			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">Places I've Benn</a>
+			<a class="linkview" href="/about/places-ive-been/">view</a>
+			
 		</li>
 		<li>
-			<a href="/about/places-ive-been/places-id-like-to-go/">Places I'd Like to Go</a> |
-			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=2">edit</a>
+		
+			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=2">Places I'd Like to Go</a>
+			<a class="linkview" href="/about/places-ive-been/places-id-like-to-go/">view</a>
 		</li>
 	</ul>
 <?php

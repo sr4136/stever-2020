@@ -1,0 +1,32 @@
+/* CSS for Admin */
+
+.stever-dashboard-widget li {
+	margin: 0 0 .25em 0;
+	padding: 0 .5em 0.15em .5em;
+}
+
+.stever-dashboard-widget li:nth-child( odd ) {
+	background-color: #F1F1F1;
+}
+
+#dashboard_widget_all_pages li li {
+    margin-left: 1.5em;
+    padding-right: 0;
+    border-top: 1px solid #DDD;
+    padding-top: .25em;
+    margin-top: 0.25em;
+    padding-left: 0;
+}
+
+.linkview {
+	float: right;
+	clear: both;
+	font-size: 0.8em;
+	padding-top: 2px;
+}
+
+small.status {
+    margin-left: 1em;
+    font-size: 0.65em;
+    opacity: 0.5;
+}
