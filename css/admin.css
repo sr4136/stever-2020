@@ -2,20 +2,18 @@
 
 .stever-dashboard-widget li {
 	margin: 0 0 .25em 0;
-	padding: 0 .5em 0.15em .5em;
+	padding: 0 0 0.15em 0;
+	border-top: 1px solid #EEE;
+}
+.stever-dashboard-widget li:first-child {
+	border: 0 none;
 }
 
-.stever-dashboard-widget li:nth-child( odd ) {
-	background-color: #F1F1F1;
-}
 
-#dashboard_widget_all_pages li li {
+.stever-dashboard-widget li li,
+.stever-dashboard-widget li li:first-child {
     margin-left: 1.5em;
-    padding-right: 0;
-    border-top: 1px solid #DDD;
-    padding-top: .25em;
-    margin-top: 0.25em;
-    padding-left: 0;
+	border-top: 1px solid #EEE;
 }
 
 .linkview {
@@ -29,4 +27,35 @@ small.status {
     margin-left: 1em;
     font-size: 0.65em;
     opacity: 0.5;
+}
+
+
+#dashboard_widget_maps h2::before {
+    content: "\f319";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
+
+#dashboard_widget_unfinished_posts h2::before {
+    content: "\f464";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
+#dashboard_widget_recently_updated h2::before {
+    content: "\f155";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
+#dashboard_widget_all_pages h2::before {
+    content: "\f163";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
 }
