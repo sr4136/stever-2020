@@ -100,6 +100,32 @@ function stever_content_width() {
 add_action( 'after_setup_theme', 'stever_content_width', 0 );
 
 /**
+ * Add categories for attachments.
+ *
+ * @link https://premium.wpmudev.org/blog/wordpress-media-categories-tags/
+ */
+// 
+function stever_add_categories_for_attachments() {
+	$labels = array(
+		'name'                       => __( 'Media Categories', 'Taxonomy General Name', 'stever' ),
+		'singular_name'              => __( 'Media Category', 'Taxonomy Singular Name', 'stever' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => false,
+		'show_tagcloud'              => false,
+	);
+	register_taxonomy( 'media_cat', array( 'attachment' ), $args );
+}
+add_action( 'init' , 'stever_add_categories_for_attachments' );
+
+
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar

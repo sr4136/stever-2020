@@ -47,3 +47,18 @@
 .wp-block-columns h1, .wp-block-columns h2, .wp-block-columns h3, .wp-block-columns h4, .wp-block-columns h5, .wp-block-columns h6 {
 	margin-top: 0;
 }
+
+/* Buttons */
+.wp-block-button__link {
+    background-color: transparent;
+    padding: .3em 1em;
+    font-size: 1em;
+    border: 3px solid #C1552D;
+    color: #C1552D;
+    font-weight: bold;
+}
+.wp-block-button__link:hover {
+    border: 3px solid #000;
+    color: #000;
+	text-decoration: none;
+}
