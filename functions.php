@@ -151,7 +151,13 @@ function stever_scripts() {
 	/* Fonts */
 	wp_enqueue_style( 'googleFonts-Lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
 	wp_enqueue_style( 'googleFonts-Merriweather', '//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic' );
-
+	
+	wp_enqueue_style( 'fontawesome',
+		get_stylesheet_directory_uri() . '/css/fontawesome-free-5.8.1-web/css/all.min.css',
+		array(),
+		filemtime( get_stylesheet_directory() . '/css/fontawesome-free-5.8.1-web/css/all.min.css' )
+	);
+	
 	/* CSS: Underscores */
 	wp_enqueue_style( 'stever-underscores',
 		get_stylesheet_directory_uri() . '/css/underscores.css',
