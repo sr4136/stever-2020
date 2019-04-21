@@ -162,7 +162,7 @@ function stever_dashboard_widget_maps() {
 	<ul class="stever-dashboard-widget">
 		<li>
 			<div class="post-info-wrap">
-				<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">Places I've Benn</a>
+				<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">Places I've Been</a>
 				<a class="linkview" href="/about/places-ive-been/">view</a>
 			</div>
 		</li>

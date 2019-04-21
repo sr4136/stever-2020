@@ -48,6 +48,9 @@
 }
 
 /* Dashboard Widgets */
+.stever-dashboard-widget {
+	margin-bottom: 0;
+}
 .stever-dashboard-widget ul {
     padding-left: 1.5em;
 }
@@ -93,7 +96,7 @@ small.status {
     color: #C1552D;
 }
 #dashboard_widget_recently_updated h2::before {
-    content: "\f155";
+    content: "\f469";
     font-family: Dashicons;
     padding-right: .5em;
     vertical-align: top;
