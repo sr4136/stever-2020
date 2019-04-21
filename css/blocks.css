@@ -4,6 +4,9 @@
 .wp-block-image {
 	margin-bottom: 0;
 }
+.wp-block-image img {
+	width: 100%;
+}
 .wp-block-media-text {
 	align-items: start;
 }
