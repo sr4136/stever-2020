@@ -22,7 +22,7 @@ function stever_body_class_add_meta_box() {
 		'stever_body_class-stever-body-class',
 		__( 'Body Class', 'stever_body_class' ),
 		'stever_body_class_html',
-		'page',
+		array( 'page', 'post', ),
 		'side',
 		'high'
 	);
