@@ -262,7 +262,8 @@ table {
 	margin-bottom: 0;
 }
 
-.sr-table .year-divider + table tr:first-child {
+.sr-table .year-divider + table tr:first-child,
+.sr-table thead {
     background-color: #E9EECA;
     font-weight: bold;
 	text-align: left;
@@ -289,4 +290,37 @@ table {
 /* Affiliation */
 .sr-table.sr-table-pro-dev tr td:nth-child( 4 ) {
 	width: 30%;
-}	
+}
+
+
+/* Table Page: Books I've Read */
+/* Title */
+.sr-table.sr-table-books tr td:nth-child( 1 ) {
+	width: 50%;
+}
+/* Author */
+.sr-table.sr-table-books tr td:nth-child( 2 ) {
+	width: 30%;
+}
+/* Date */
+.sr-table.sr-table-books tr td:nth-child( 3 ) {
+	width: 15%;
+}
+
+/* Table Page: Speaking/Teaching */
+/* Date */
+.sr-table.sr-table-speaking tr td:nth-child( 1 ) {
+	width: 10%;
+}
+/* Event */
+.sr-table.sr-table-speaking tr td:nth-child( 2 ) {
+	width: 40%;
+}
+/* Affiliation */
+.sr-table.sr-table-speaking tr td:nth-child( 3 ) {
+	width: 35%;
+}
+/* More Info */
+.sr-table.sr-table-speaking tr td:nth-child( 4 ) {
+	width: 15%;
+}
