@@ -3,6 +3,47 @@
  * Custom Dashboard Widgets
  * @package SteveRudolfi
  */
+
+/* Remove Unnecessary Admin Columns */
+ function stever_remove_admin_columns( $defaults ) {
+  unset( $defaults[ 'comments' ] );
+  unset( $defaults[ 'author' ] );
+  unset( $defaults[ 'categories' ] );
+  unset( $defaults[ 'tags' ] );
+  return $defaults;
+}
+add_filter('manage_pages_columns', 'stever_remove_admin_columns');
+add_filter('manage_posts_columns', 'stever_remove_admin_columns');
+
+ /* Admin Menu: Custom Order */
+ function stever_custom_menu_order( $menu_order ) {
+	if ( !$menu_order ) return true;
+	 
+	return array(
+		'index.php', // Dashboard
+		'separator1', // First separator
+		
+		'edit.php?post_type=page', // Pages
+		'edit.php', // Posts
+		'wp-google-maps-menu', // WP Google Maps (Plugin)
+		'upload.php', // Media
+		'separator2', // Second separator
+		
+		'tools.php', // Tools
+		'themes.php', // Appearance
+		'plugins.php', // Plugins
+		'options-general.php', // Settings
+		
+		'users.php', // Users
+		'link-manager.php', // Links
+		'edit-comments.php', // Comments
+		'separator-last', // Last separator
+	);
+}
+add_filter( 'custom_menu_order', 'stever_custom_menu_order' );
+add_filter( 'menu_order', 'stever_custom_menu_order' );
+ 
+ 
  
 /* All Unpublished Posts */
 function dashboard_widget_unpublished() {

@@ -1,4 +1,53 @@
 /* CSS for Admin */
+
+/* Menu Items: Hiding Unnecessary Ones */
+#menu-comments,
+#menu-users,
+#toplevel_page_gutenberg {
+	display: none;
+}
+
+/* Page/Post Listings */
+#the-list th, #the-list td {
+    vertical-align: middle;
+}
+#the-list .check-column {
+	padding: 0;
+}
+#the-list .title strong {
+	float: left;
+}
+.row-actions {
+    left: auto;
+    float: right;
+    right: 3em;
+    position: relative !important;
+}
+.iedit:hover .row-actions {
+    display: block;
+}
+/* Page/Post Listings: Post State Tags (Plugin) */
+.post-state {
+    opacity: .5;
+    margin-left: 2em;
+}
+#the-list .status-private th.check-column input {
+	margin-left: 8px;
+}
+#the-list .check-column {
+	border-left: 0 !important;
+}
+
+/* Menu Items: WP Google Maps Icon */
+#toplevel_page_wp-google-maps-menu .dashicons-before img {
+	display: none;
+}
+#toplevel_page_wp-google-maps-menu .dashicons-before::before {
+    content: "\f231";
+    font-family: Dashicons;
+}
+
+/* Dashboard Widgets */
 .stever-dashboard-widget ul {
     padding-left: 1.5em;
 }
