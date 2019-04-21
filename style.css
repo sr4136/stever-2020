@@ -67,7 +67,7 @@ article {
 	padding-top: .5em;
 }
 
-.home .entry-header{
+.home .entry-header {
 	display: none;
 }
 
@@ -77,16 +77,31 @@ article {
 
 
 /* Primary Menu */
+.cell.nav-container {
+	padding-right: 0;
+}
 #primary-menu li {
 	float: right;
-	padding: 1em 0 0 1em;
+	padding: 1em 0 0 0;
 	font-weight: bold;
 	font-size: 1.2em;
 }
+.main-navigation a {
+	display: inline;
+}
+.main-navigation li:before {
+    content: "|";
+    padding: 0 1.5em;
+}
+.main-navigation li:last-child:before {
+    content: "";
+    padding: 0;
+}
 
 /* Social Menu & Icons */
+
 .menu-social-container {
-  padding-top: 0.7em;
+  padding: .7em 0 .3em 0;
   text-align: right;
 }
 .menu-social-container #social-icons {
@@ -97,42 +112,36 @@ article {
   display: inline-block;
   float: none;
 }
-.menu-social-container li a {
-  text-indent: 9999px;
-  overflow: hidden;
-  display: block;
-  background-image: url("img/sprite.png");
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
+.menu-social-container a {
+    font-family: "Font Awesome 5 Brands";
+    text-indent: 9999px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 2em;
+    width: 1em;
+	height: 1em;
 }
-.menu-social-container li.social-twitter a {
-  background-position: -10px -10px;
+.menu-social-container a:before {
+	float: left;
+	line-height: 1em;
+	text-indent: 0;
 }
-.menu-social-container li.social-twitter a:hover {
-  color: #FFFFFF;
-  background-position: -60px -10px;
+.menu-social-container .social-twitter a:before {
+	content: "\f081";
+	color: #C1552D;
 }
-.menu-social-container li.social-github a {
-  background-position: -10px -110px;
+.menu-social-container .social-github a:before {
+	content: "\f092";
+	color: #726D4B;
 }
-.menu-social-container li.social-github a:hover {
-  color: #FFFFFF;
-  background-position: -60px -110px;
+.menu-social-container .social-linkedin a:before {
+	content: "\f08c";
+	color: #422714;
 }
-.menu-social-container li.social-linkedin a {
-  background-position: -10px -160px;
-}
-.menu-social-container li.social-linkedin a:hover {
-  color: #FFFFFF;
-  background-position: -60px -160px;
-}
-.menu-social-container li.social-facebook a {
-  background-position: -10px -60px;
-}
-.menu-social-container li.social-facebook a:hover {
-  color: #FFFFFF;
-  background-position: -60px -60px;
+.menu-social-container .social-facebook a:before {
+	content: "\f082";
+	color: #B5C751;
+
 }
 
 /* Content */
@@ -212,10 +221,10 @@ article {
   margin-left: 0;
 }
 
-.fa {
+.fas {
   cursor: default;
 }
-.fa:after {
+.fas:after {
   content: attr( title );
   color: #fff;
   background: #B6C951;
@@ -225,7 +234,7 @@ article {
   transform: translate(-50%, -100%);
   display: none;
 }
-.fa:hover:after {
+.fas:hover:after {
   opacity: 1;
   display: inline-block;
 }

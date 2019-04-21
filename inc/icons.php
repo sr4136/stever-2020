@@ -40,7 +40,7 @@ function stever_shortcode_icons( $atts ) {
 		);
 
 		if( $labels[ $type ] ){
-			return ( "<i title='{$labels[ $type ]['label']}' class='fa fa-{$labels[ $type ]['class']}'></i>" );
+			return ( "<i title='{$labels[ $type ]['label']}' class='fas fa-{$labels[ $type ]['class']}'></i>" );
 		}
 
 	}
