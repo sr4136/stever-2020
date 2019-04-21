@@ -1,26 +1,24 @@
 /* CSS for Admin */
+.stever-dashboard-widget ul {
+    padding-left: 1.5em;
+}
 
 .stever-dashboard-widget li {
-	margin: 0 0 .25em 0;
-	padding: 0 0 0.15em 0;
-	border-top: 1px solid #EEE;
+	margin: 0;
+	padding: 0;
 }
-.stever-dashboard-widget li:first-child {
+.stever-dashboard-widget .post-info-wrap {
+	border-bottom: 1px solid #EEE;
+	padding: .2em 0;
+}
+.stever-dashboard-widget > li:last-child .post-info-wrap {
 	border: 0 none;
-}
-
-
-.stever-dashboard-widget li li,
-.stever-dashboard-widget li li:first-child {
-    margin-left: 1.5em;
-	border-top: 1px solid #EEE;
 }
 
 .linkview {
 	float: right;
 	clear: both;
 	font-size: 0.8em;
-	padding-top: 2px;
 }
 
 small.status {

@@ -20,9 +20,11 @@ function dashboard_widget_unpublished() {
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 		?>
 			<li>
-				<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
-				<small class="status">(<?php echo( get_post_status() ); ?>)</small>
-				<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
+				<div class="post-info-wrap">
+					<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
+					<small class="status"><?php echo( get_post_status() ); ?></small>
+					<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
+				</div>
 			</li>
 		<?php
 		endwhile;
@@ -36,6 +38,12 @@ function dashboard_widget_unpublished() {
 /* All Pages */
 function check_for_children( $post_id=null ) {
 	$retStr = '';
+	$ulClass = '';
+	
+	if( $post_id == 0 ){
+		$ulClass = ' class="stever-dashboard-widget"';
+	}
+	
 	$args = array(
 		'post_type'			=> 'page',
 		'posts_per_page'		=> -1,
@@ -46,11 +54,13 @@ function check_for_children( $post_id=null ) {
 
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
-		$retStr .= '<ul class="stever-dashboard-widget">';
+		$retStr .= '<ul' . $ulClass . '>';
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 				$retStr .= '<li>';
-					$retStr .= '<a href="' . get_edit_post_link() . '">' . get_the_title() . '</a>';
-					$retStr .= '<a class="linkview" href="' . get_permalink() . '">view</a>';
+					$retStr .= '<div class="post-info-wrap">';
+						$retStr .= '<a href="' . get_edit_post_link() . '">' . get_the_title() . '</a>';
+						$retStr .= '<a class="linkview" href="' . get_permalink() . '">view</a>';
+					$retStr .= '</div>';
 					$retStr .= check_for_children( get_the_id() );
 				$retStr .= '</li>';
 			endwhile;
@@ -84,8 +94,10 @@ function dashboard_widget_recently_updated() {
 		// and an html entity icon (&curren;) linking to view the page
 		?>
 			<li>
-				<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
-				<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
+				<div class="post-info-wrap">
+					<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
+					<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
+				</div>
 			</li>
 		<?php
 		endwhile;
@@ -101,14 +113,16 @@ function dashboard_widget_maps() {
 ?>
 	<ul class="stever-dashboard-widget">
 		<li>
-			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">Places I've Benn</a>
-			<a class="linkview" href="/about/places-ive-been/">view</a>
-			
+			<div class="post-info-wrap">
+				<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">Places I've Benn</a>
+				<a class="linkview" href="/about/places-ive-been/">view</a>
+			</div>
 		</li>
 		<li>
-		
-			<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=2">Places I'd Like to Go</a>
-			<a class="linkview" href="/about/places-ive-been/places-id-like-to-go/">view</a>
+			<div class="post-info-wrap">
+				<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=2">Places I'd Like to Go</a>
+				<a class="linkview" href="/about/places-ive-been/places-id-like-to-go/">view</a>
+			</div>
 		</li>
 	</ul>
 <?php
