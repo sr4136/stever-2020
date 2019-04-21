@@ -4,7 +4,10 @@
  * @package SteveRudolfi
  */
 
-/* Remove Unnecessary Admin Columns */
+ 
+/**
+ * Admin Columns: Remove Unnecessary Columns
+ */
  function stever_remove_admin_columns( $defaults ) {
   unset( $defaults[ 'comments' ] );
   unset( $defaults[ 'author' ] );
@@ -15,7 +18,10 @@
 add_filter('manage_pages_columns', 'stever_remove_admin_columns');
 add_filter('manage_posts_columns', 'stever_remove_admin_columns');
 
- /* Admin Menu: Custom Order */
+
+/**
+ * Admin Menu: Custom Order
+ */
  function stever_custom_menu_order( $menu_order ) {
 	if ( !$menu_order ) return true;
 	 
@@ -44,13 +50,14 @@ add_filter( 'custom_menu_order', 'stever_custom_menu_order' );
 add_filter( 'menu_order', 'stever_custom_menu_order' );
  
  
- 
-/* All Unpublished Posts */
-function dashboard_widget_unpublished() {
+/**
+ * Dashboard Widget: All Unpublished Posts
+ */
+function stever_dashboard_widget_unpublished() {
 	$args = array(
 		'post_type'			=> 'post',
 		'post_status'		=> array( 'pending', 'draft', 'future', 'private' ), /* all statuses, except 'published' and 'auto-draft' */
-		'posts_per_page'		=> -1,
+		'posts_per_page'	=> -1,
 		'orderby'			=> 'date',
 		'order'				=> 'ASC'
 	);
@@ -76,8 +83,10 @@ function dashboard_widget_unpublished() {
 	endif;
 }
 
-/* All Pages */
-function check_for_children( $post_id=null ) {
+/**
+ * Dashboard Widget: All Pages (Hierarchical)
+ */
+function stever_check_for_children( $post_id=null ) {
 	$retStr = '';
 	$ulClass = '';
 	
@@ -102,7 +111,7 @@ function check_for_children( $post_id=null ) {
 						$retStr .= '<a href="' . get_edit_post_link() . '">' . get_the_title() . '</a>';
 						$retStr .= '<a class="linkview" href="' . get_permalink() . '">view</a>';
 					$retStr .= '</div>';
-					$retStr .= check_for_children( get_the_id() );
+					$retStr .= stever_check_for_children( get_the_id() );
 				$retStr .= '</li>';
 			endwhile;
 		$retStr .= '</ul>';
@@ -110,14 +119,14 @@ function check_for_children( $post_id=null ) {
 	endif;
 	return $retStr;
 }
-function dashboard_widget_all_pages( $post, $callback_args ) {
-	echo( check_for_children( 0 ) );
+function stever_dashboard_widget_all_pages( $post, $callback_args ) {
+	echo( stever_check_for_children( 0 ) );
 }
 
-/* Recently Updated */
-function dashboard_widget_recently_updated() {
-	
-	// set the args
+/**
+ * Dashboard Widget: Recently Updated
+ */
+function stever_dashboard_widget_recently_updated() {
 	$args = array(
 		'post_type'			=> array( 'post', 'page' ),
 		'posts_per_page'		=> 10,
@@ -125,14 +134,10 @@ function dashboard_widget_recently_updated() {
 		'order'				=> 'DESC'
 	);
 
-	// Standard query and loop
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) :
 		echo( '<ul class="stever-dashboard-widget">' );
 		while ( $the_query->have_posts() ) : $the_query->the_post();
-		// Outputs the Post title (linked to the edit page,
-		// the post status,
-		// and an html entity icon (&curren;) linking to view the page
 		?>
 			<li>
 				<div class="post-info-wrap">
@@ -149,8 +154,10 @@ function dashboard_widget_recently_updated() {
 	endif;
 }
 
-// This function does the actual outputting of the content of the widget
-function dashboard_widget_maps() {
+/**
+ * Dashboard Widget: Maps (Manual)
+ */
+function stever_dashboard_widget_maps() {
 ?>
 	<ul class="stever-dashboard-widget">
 		<li>
@@ -169,13 +176,13 @@ function dashboard_widget_maps() {
 <?php
 }
 
-// Function used in the action hook
-function add_dashboard_widgets() {
-	wp_add_dashboard_widget( 'dashboard_widget_unfinished_posts', 'Unfinished Posts', 'dashboard_widget_unpublished' );
-	wp_add_dashboard_widget( 'dashboard_widget_all_pages', 'All Pages', 'dashboard_widget_all_pages' );
-	wp_add_dashboard_widget( 'dashboard_widget_recently_updated', 'Recently Updated', 'dashboard_widget_recently_updated' );
-	wp_add_dashboard_widget( 'dashboard_widget_maps', 'Maps', 'dashboard_widget_maps' );
+/**
+ * Dashboard Widgets: Add Them!
+ */
+function stever_add_dashboard_widgets() {
+	wp_add_dashboard_widget( 'dashboard_widget_unfinished_posts', 'Unfinished Posts', 'stever_dashboard_widget_unpublished' );
+	wp_add_dashboard_widget( 'dashboard_widget_all_pages', 'All Pages', 'stever_dashboard_widget_all_pages' );
+	wp_add_dashboard_widget( 'dashboard_widget_recently_updated', 'Recently Updated', 'stever_dashboard_widget_recently_updated' );
+	wp_add_dashboard_widget( 'dashboard_widget_maps', 'Maps', 'stever_dashboard_widget_maps' );
 }
-
-// Register the new dashboard widget with the 'wp_dashboard_setup' action
-add_action('wp_dashboard_setup', 'add_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'stever_add_dashboard_widgets' );
