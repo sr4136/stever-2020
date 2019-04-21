@@ -1,5 +1,9 @@
 /* CSS for Blocks */
 
+.wp-admin .wp-block {
+    max-width: 1400px;
+}
+
 /* Images */
 .wp-block-image {
 	margin-bottom: 0;
@@ -33,7 +37,7 @@
 .wp-block-columns.has-2-columns.small-left .wp-block-column:nth-child( 2 ) {
 	flex-basis: calc(90% - 16px);
 }
-.wp-block-columns:nth-child(odd) {
+.columns-zebra .wp-block-columns:nth-child(odd) {
     background-color: #F1F1F1;
     margin: 0 -0.9em;
     padding: 1em;
@@ -52,16 +56,20 @@
 }
 
 /* Buttons */
-.wp-block-button__link {
+.wp-block-button__link,
+.wp-block-button__link:visited {
     background-color: transparent;
-    padding: .3em 1em;
-    font-size: 1em;
-    border: 3px solid #C1552D;
-    color: #C1552D;
-    font-weight: bold;
+	padding: .3em 1em;
+	font-size: 1em;
+	border: 1px solid #C1552D;
+	color: #C1552D;
+	font-weight: normal;
 }
-.wp-block-button__link:hover {
-    border: 3px solid #000;
-    color: #000;
+.wp-block-button__link:hover,
+.wp-block-button__link:focus,
+.wp-block-button__link:active {
+    border: 1px solid #FFF;
+    color: #FFF;
+	background-color: #C1552D;
 	text-decoration: none;
 }

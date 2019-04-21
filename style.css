@@ -163,7 +163,12 @@ article {
     width: 100%;
     height: 100%;
 }
-
+.home.logged-in .home-about-me figure:hover {
+	background: none;
+}
+.home.logged-in .home-about-me figure:hover img {
+	display: block;
+}
 
 
 /* Footer */
@@ -178,15 +183,28 @@ article {
 
 /* Blocks */
 .wp-block-columns.chevron {
-    background-image: url( "img/chevron.png" );
-    background-repeat: no-repeat;
-    background-position: 38% center;
+	background-color: #DDDFC9;
+	padding: 1em;
 }
+.wp-block-columns.chevron .wp-block-column {
+	background-color: #FFF;
+	margin-bottom: 0;
+	padding: 1em 1.5em;
+	flex-basis: calc(55% - 16px);
+}
+
+/* Paths with help from https://bennettfeely.com/clippy/ */
 .wp-block-columns.chevron .wp-block-column:first-child {
-    padding-right: 6em;
+    -webkit-clip-path: polygon(calc( 100% - 55px ) 0, 100% 50%, calc( 100% - 55px ) 100%, 0 100%, 0% 0% );
+	clip-path: polygon( calc( 100% - 55px ) 0, 100% 50%, calc( 100% - 55px ) 100%, 0 100%, 0% 0% );
+	padding-right: 6em;
 }
 .wp-block-columns.chevron .wp-block-column:last-child {
-    padding-left: 2em;
+    -webkit-clip-path: polygon( 100% 0, 100% 100%, 0 100%, 55px 50%, 0% 0% );
+	clip-path: polygon( 100% 0, 100% 100%, 0 100%, 55px 50%, 0% 0% );
+    margin-left: -2.25em;
+    padding-left: 6em;
+    flex-basis: calc( 50% + 4em );
 }
 .wp-block-columns.chevron h4 {
     color: #9fb046;
