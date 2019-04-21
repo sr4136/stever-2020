@@ -247,3 +247,12 @@ require get_template_directory() . '/inc/dashboard.php';
  */
 require get_template_directory() .'/inc/time-since.php';
 
+/**
+ * Shortcode: Icons
+ */
+require get_template_directory() .'/inc/icons.php';
+
+/**
+ * Metabox: Body Classes
+ */
+require get_template_directory() .'/inc/metabox-body-class.php';

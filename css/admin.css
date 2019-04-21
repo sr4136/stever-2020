@@ -7,14 +7,26 @@
 	display: none;
 }
 
+/* Metabox: Body Class */
+#stever_body_class-stever-body-class textarea {
+	width: 100%;
+}
+
+
 /* Page/Post Listings */
+#the-list tr:hover,
+#the-list tr.active:hover th,
+#the-list tr.active:hover td {
+	background-color: #00FF001A;
+}
 #the-list th, #the-list td {
     vertical-align: middle;
 }
 #the-list .check-column {
 	padding: 0;
 }
-#the-list .title strong {
+#the-list .title strong,
+#the-list .plugin-title strong {
 	float: left;
 }
 .row-actions {
@@ -45,6 +57,11 @@
 #toplevel_page_wp-google-maps-menu .dashicons-before::before {
     content: "\f231";
     font-family: Dashicons;
+}
+
+/* Plugins Screen */
+.wp-list-table.plugins thead .column-description {
+	width: 50%;
 }
 
 /* Dashboard Widgets */
@@ -108,4 +125,42 @@ small.status {
     padding-right: .5em;
     vertical-align: top;
     color: #C1552D;
+}
+
+/* WP Google Maps */
+#wpgmaps_options #wpgmza_add_address{
+    border: 3px solid lime;
+}
+#wpgmaps_options input[type="text"]{
+    width: 100%
+}
+#wpgmaps_tabs_markers table tbody > tr:nth-child(4),
+#wpgmaps_tabs_markers table tbody > tr:nth-child(5),
+#wpgmaps_tabs_markers table tbody > tr:nth-child(6),
+#wpgmaps_tabs_markers table tbody > tr:nth-child(8),
+#wpgmaps_tabs_markers table tbody > tr:nth-child(9),
+#wpgmaps_tabs_markers table tbody > tr:nth-child(10){
+    display: none;
+}
+#wpgmza_addmarker{
+    margin-top: 1em;
+    width: 100%;
+}
+#wpgmaps_options h2 {
+    margin-top: 2em !important;
+}
+#wpgmza_editmarker_loading,
+#wpgmza_addmarker_loading{
+    background: #ffff5f;
+    margin-top: 2em !important;
+    padding: .5em;
+    text-align: center;
+    display: block;
+    width: 90%;
+}
+#wpgmaps_save_reminder {
+    overflow: hidden;
+}
+#wpgmaps_options .update-nag{
+    width: 100%;
 }

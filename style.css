@@ -200,9 +200,84 @@ article {
 }
 
 
+/* Icon Font Hovers: Conferences, etc. */
+.sr-table .legend {
+  text-align: center;
+  margin: 2em 0;
+}
+.sr-table .legend i {
+  margin-left: 30px;
+}
+.sr-table .legend i:first-child {
+  margin-left: 0;
+}
 
+.fa {
+  cursor: default;
+}
+.fa:after {
+  content: attr( title );
+  color: #fff;
+  background: #B6C951;
+  padding: 5px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  display: none;
+}
+.fa:hover:after {
+  opacity: 1;
+  display: inline-block;
+}
 
+/* Tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.sr-table tbody tr:nth-child(2n+1) {
+    background-color: #F3F3F3;
+}
 
+.sr-table td {
+	padding: .5em;
+}
 
+.sr-table .year-divider {
+    background-color: #B6C951;
+    color: #fff;
+    text-align: center;
+    padding: .5em;
+    font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
 
+.sr-table .year-divider + table tr:first-child {
+    background-color: #E9EECA;
+    font-weight: bold;
+	text-align: left;
+}
+.sr-table th,
+.sr-table .year-divider + table tr:first-child td {
+	padding: .5em;
+}
 
+/* Table Page: Professional Development */
+/* Icon */
+.sr-table.sr-table-pro-dev tr td:nth-child( 1 ) {
+	width: 5%;
+	text-align: center;
+}
+/* Event Title */
+.sr-table.sr-table-pro-dev tr td:nth-child( 2 ) {
+	width: 55%;
+}
+/* Date */
+.sr-table.sr-table-pro-dev tr td:nth-child( 3 ) {
+	width: 10%;
+}
+/* Affiliation */
+.sr-table.sr-table-pro-dev tr td:nth-child( 4 ) {
+	width: 30%;
+}	
