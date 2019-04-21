@@ -199,7 +199,7 @@ add_action( 'wp_enqueue_scripts', 'stever_scripts' );
 
 function stever_admin_scripts() {
 	/* CSS: Admin General */
-	wp_enqueue_style( 'stever-blocks',
+	wp_enqueue_style( 'stever-admin',
 		get_stylesheet_directory_uri() . '/css/admin.css',
 		array(),
 		filemtime( get_stylesheet_directory() . '/css/admin.css' )
