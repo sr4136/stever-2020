@@ -71,37 +71,18 @@ article {
 .page-content, .entry-content, .entry-summary {
 	margin-top: 1em;
 }
-.custom-logo {
-	margin-top: 0.5em;
-}
-/* Page-width */
-@media screen and ( max-width: 87em ) {
-	#masthead{
-		margin: 0 3em;
-	}
-}
 
-.header-wrapper {
-	background-color: #ffffff 50%;
-	background-image: -moz-linear-gradient(#ffffff 50%, #eaedf2 50%);
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff 50%), to(#eaedf2 50%));
-	background-image: -webkit-linear-gradient(#ffffff 50%, #eaedf2 50%);
-	background-image: -o-linear-gradient(#ffffff 50%, #eaedf2 50%);
-}
 
-.entry-header {
-	border-bottom: 1px solid #CCCCCC;
-	padding-top: .5em;
+/* ----------- AUDIT ----------- */
+.site-branding {
+    position: relative;
+    padding: 0;
 }
-
-.home .entry-header {
-	display: none;
-}
-
-.custom-logo-link {
+.site-branding .custom-logo-link {
+	position: absolute;
+	top: .5em;
 	max-width: 300px;
 }
-
 
 /* Primary Menu */
 
@@ -110,7 +91,8 @@ article {
 }
 
 #primary-menu li {
-	float: right;
+	float: none;
+	display: inline-block;
 	padding: 1em 0;
 	font-weight: bold;
 	font-size: 1.2em;
@@ -126,22 +108,21 @@ article {
     padding: 0 1.5em;
 	color: #B5B5B5;
 }
-#primary-menu li:last-child:before {
+#primary-menu li:first-child:before {
     content: "";
     padding: 0;
 }
 
 /* Social Menu & Icons */
-#social-navigation {
+#masthead ul {
+	text-align: right;
 	padding: .5em 0;
 }
-.social-navigation ul {
-	display: none;
+#social-navigation {
+	background-color: #FFFFFF;
 }
-#social-icons {
-	text-align: right;
-	margin: 0;
-}
+
+
 #social-icons li {
 	list-style-type: none;
 	display: inline-block;
@@ -155,16 +136,35 @@ article {
 	color: #C1552D;
 }
 
-@media screen and ( min-width: 37.5em ) {
-	.menu-toggle {
-		display: none;
+/* Page-width */
+@media screen and ( max-width: 87em ) {
+	#masthead{
+		margin: 0 3em;
 	}
-	.main-navigation ul,
-	.social-navigation ul {
-		display: block;
+	#nav-container ul {
+		text-align: center;
+	}
+
+	#primary-menu li {
+		padding: .75em 0;
+	}
+	#social-icons li {
+    	padding: 1em .75em 0 .75em;
 	}
 }
 
+
+/* --------- END AUDIT --------- */
+
+
+.entry-header {
+	border-bottom: 1px solid #CCCCCC;
+	padding-top: .5em;
+}
+
+.home .entry-header {
+	display: none;
+}
 
 /* Content */
 #content {
@@ -199,6 +199,7 @@ article {
 .wp-block-columns.chevron {
 	background-color: #DDDFC9;
 	padding: 1em;
+	margin: 0 -2em;
 }
 .wp-block-columns.chevron .wp-block-column {
 	background-color: #FFF;

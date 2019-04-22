@@ -8,7 +8,6 @@
  *
  * @package stever
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -23,40 +22,33 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'stever' ); ?></a>
-	<div class="header-wrapper">
-		<header id="masthead" class="grid-container">
-			<div class="site-header grid-x grid-padding-x">
 
-				<div class="site-branding large-8 medium-8">
-					<?php the_custom_logo(); ?>
-				</div><!-- .site-branding -->
+	<header id="masthead">
+		<div class="site-branding grid-container">
+			<?php the_custom_logo(); ?>
+		</div>
 
-				<div id="nav-container" class="nav-container large-4 medium-4 small-12">
-					<nav id="social-navigation" class="social-navigation">
-						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social-icons',
-							'menu_id'        => 'social-icons',
-							'depth'			=> 1,
-							'menu_class'		=> 'menu align-right',
-						) );
-						?>
-					</nav><!-- #social-navigation -->
+		<nav id="social-navigation">
+			<?php
+			wp_nav_menu( array(
+				'theme_location'	=> 'social-icons',
+				'menu_id'			=> 'social-icons',
+				'depth'				=> 1,
+				'menu_class'		=> 'menu align-right grid-container',
+			) );
+			?>
+		</nav>
 
-					<nav id="site-navigation" class="main-navigation">
-						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-							'depth'			=> 1,
-							'menu_class'		=> 'menu align-right',
-						) );
-						?>
-					</nav><!-- #site-navigation -->
-
-				</div>
-			</div>
-		</header><!-- #masthead -->
-	</div>
+		<nav id="site-navigation">
+			<?php
+			wp_nav_menu( array(
+				'theme_location'	=> 'menu-1',
+				'menu_id'			=> 'primary-menu',
+				'depth'				=> 1,
+				'menu_class'		=> 'menu align-right grid-container',
+			) );
+			?>
+		</nav>
+	</header>
 
 	<div id="content" class="site-content grid-container">
