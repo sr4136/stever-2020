@@ -180,7 +180,7 @@ function stever_scripts() {
 	);
 
 	/* CSS: SteveR Blocks Styles */
-	wp_enqueue_style( 'stever-blocks',
+	wp_enqueue_style( 'stever-blocks-front',
 		get_stylesheet_directory_uri() . '/css/blocks.css',
 		array(),
 		filemtime( get_stylesheet_directory() . '/css/blocks.css' )

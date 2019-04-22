@@ -77,79 +77,56 @@ article {
 
 
 /* Primary Menu */
-.cell.nav-container {
-	padding-right: 0;
-}
+
 #primary-menu li {
 	float: right;
-	padding: 1em 0 0 0;
+	padding: 1em 0;
 	font-weight: bold;
 	font-size: 1.2em;
+	line-height: 1.2em;
 }
-.main-navigation a {
+
+#primary-menu a {
 	display: inline;
+	
 }
-.main-navigation li:before {
+#primary-menu li:before {
     content: "|";
     padding: 0 1.5em;
+	color: #B5B5B5;
 }
-.main-navigation li:last-child:before {
+#primary-menu li:last-child:before {
     content: "";
     padding: 0;
 }
 
 /* Social Menu & Icons */
-
-.menu-social-container {
-  padding: .7em 0 .3em 0;
-  text-align: right;
+#social-navigation {
+	padding: .5em 0;
 }
-.menu-social-container #social-icons {
+#social-icons {
+	text-align: right;
 	margin: 0;
 }
-.menu-social-container li {
-  margin-left: 20px;
-  display: inline-block;
-  float: none;
+#social-icons li {
+	list-style-type: none;
+	display: inline-block;
+	padding-left: 1.25em;
 }
-.menu-social-container a {
-    font-family: "Font Awesome 5 Brands";
-    text-indent: 9999px;
-    overflow: hidden;
-    display: inline-block;
-    font-size: 2em;
-    width: 1em;
-	height: 1em;
-}
-.menu-social-container a:before {
-	float: left;
-	line-height: 1em;
-	text-indent: 0;
-}
-.menu-social-container .social-twitter a:before {
-	content: "\f081";
-	color: #C1552D;
-}
-.menu-social-container .social-github a:before {
-	content: "\f092";
+#social-icons a {
+	font-size: 1.5em;
 	color: #726D4B;
 }
-.menu-social-container .social-linkedin a:before {
-	content: "\f08c";
-	color: #422714;
+#social-icons a:hover {
+	color: #C1552D;
 }
-.menu-social-container .social-facebook a:before {
-	content: "\f082";
-	color: #B5C751;
 
-}
 
 /* Content */
 #content {
 	background-color: #FFFFFF;
 	border-radius: 3px;
-	border: 1px solid #CCCCCC;
-	margin-top: 1em;
+	border: 1px solid #CCCCCC;	
 	padding-bottom: 3em;
 }
 

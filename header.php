@@ -26,11 +26,14 @@
 	<div class="header-wrapper">
 		<header id="masthead" class="grid-container">
 			<div class="site-header grid-x grid-padding-x">
-				<div class="site-branding large-8 medium-8 cell">
+			
+				<div class="site-branding large-8 medium-8">
 					<?php the_custom_logo(); ?>
 				</div><!-- .site-branding -->
 
-				<div class="nav-container large-4 medium-4 cell">
+				<div class="nav-container large-4 medium-4">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'stever' ); ?></button>
+					
 					<nav id="social-navigation" class="social-navigation">
 						<?php
 						wp_nav_menu( array(
@@ -41,9 +44,8 @@
 						) );
 						?>
 					</nav><!-- #social-navigation -->
-
-					<nav id="site-navigation" class="main-navigation large-4 medium-4 cell">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'stever' ); ?></button>
+					
+					<nav id="site-navigation" class="main-navigation">
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
@@ -52,10 +54,9 @@
 							'menu_class'		=> 'menu align-right',
 						) );
 						?>
-				</nav><!-- #site-navigation -->
-
+					</nav><!-- #site-navigation -->
+					
 				</div>
-
 			</div>
 		</header><!-- #masthead -->
 	</div>

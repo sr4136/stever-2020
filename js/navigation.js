@@ -7,7 +7,7 @@
 ( function() {
 	var container, button, menu, links, i, len;
 
-	container = document.getElementById( 'site-navigation' );
+	container = document.getElementById( 'nav-container' );
 	if ( ! container ) {
 		return;
 	}
@@ -17,7 +17,7 @@
 		return;
 	}
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+	menu = container.getElementsByTagName( 'nav' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
