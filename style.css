@@ -13,6 +13,26 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
+
+/* Debugging Breakpoints */
+@media screen and ( min-width: 64em ) {
+	.site-branding::after {
+	    content: "Large Up. min-width: 64em";
+	}
+}
+@media screen and ( max-width: 63.9375em ) {
+	.site-branding::after {
+	    content: "Medium Down. max-width: 63.9375em";
+	}
+}
+@media screen and ( max-width: 40em ) {
+	.site-branding::after {
+	    content: "Small only. max-width: 40em";
+	}
+}
+/* /Debugging Breakpoints */
+
+
 body {
 	background: #EAEDF2;
 	font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -88,7 +108,7 @@ article {
 
 #primary-menu a {
 	display: inline;
-	
+
 }
 #primary-menu li:before {
     content: "|";
@@ -126,27 +146,20 @@ article {
 #content {
 	background-color: #FFFFFF;
 	border-radius: 3px;
-	border: 1px solid #CCCCCC;	
+	border: 1px solid #CCCCCC;
 	padding-bottom: 3em;
 }
 
 
-/* Photo on Home. Can't stand looking at my face constantly */
-.home.logged-in .home-about-me img {
-	display: none;
-}
-.home.logged-in .home-about-me figure {
-    background-image: url( "http://placekitten.com/250/250" );
-    width: 100%;
-    height: 100%;
-}
-.home.logged-in .home-about-me figure:hover {
-	background: none;
-}
-.home.logged-in .home-about-me figure:hover img {
-	display: block;
-}
+/* Photo on Home */
 
+@media screen and ( max-width: 40em ) {
+	.home-about-me {
+		grid-template-areas: "media-text-content" "media-text-media" !important;
+		grid-template-columns: 100% !important;
+	}
+
+}
 
 /* Footer */
 .site-info {
@@ -167,38 +180,60 @@ article {
 	background-color: #FFF;
 	margin-bottom: 0;
 	padding: 1em 1.5em;
-	flex-basis: calc(55% - 16px);
+	flex-basis: 50%;
 }
 
 /* Paths with help from https://bennettfeely.com/clippy/ */
+/* Developer (points right) */
 .wp-block-columns.chevron .wp-block-column:first-child {
     -webkit-clip-path: polygon(calc( 100% - 55px ) 0, 100% 50%, calc( 100% - 55px ) 100%, 0 100%, 0% 0% );
 	clip-path: polygon( calc( 100% - 55px ) 0, 100% 50%, calc( 100% - 55px ) 100%, 0 100%, 0% 0% );
 	padding-right: 6em;
 }
+/* Manager */
 .wp-block-columns.chevron .wp-block-column:last-child {
     -webkit-clip-path: polygon( 100% 0, 100% 100%, 0 100%, 55px 50%, 0% 0% );
 	clip-path: polygon( 100% 0, 100% 100%, 0 100%, 55px 50%, 0% 0% );
     margin-left: -2.25em;
     padding-left: 6em;
-    flex-basis: calc( 50% + 4em );
-}
+    flex-basis: calc( 50% + 2.25em );
+ }
 .wp-block-columns.chevron h4 {
     color: #9fb046;
     font-weight: bold;
 }
 
+@media screen and ( max-width: 40em ) {
+	.wp-block-columns.chevron .wp-block-column {
+		flex-basis: 100% !important;
+	}
+	/* Developer (points down) */
+	.wp-block-columns.chevron .wp-block-column:first-child {
+		-webkit-clip-path: polygon(100% 0, 100% calc( 100% - 55px ), 50% 100%, 0 calc( 100% - 55px ), 0 0);
+		clip-path: polygon(100% 0, 100% calc( 100% - 55px ), 50% 100%, 0 calc( 100% - 55px ), 0 0);
+		padding: 1.5em 1.5em 6em 1.5em;
+	}
+	/* Manager */
+	.wp-block-columns.chevron .wp-block-column:last-child {
+		-webkit-clip-path: polygon(50% 55px, 100% 0, 100% 100%, 0 100%, 0 0);
+		clip-path: polygon(50% 55px, 100% 0, 100% 100%, 0 100%, 0 0);
+	    margin-left: 0;
+	    margin-top: -2.25em;
+	    padding: 6em 1.5em 1em 1.5em;
+	}
+}
+
 
 /* Tablet-ish */
-@media screen and (max-width: 37.5em) {
-	.home .home-about-me 	.wp-block-media-text__media {
+@media screen and ( max-width: 40em ) {
+	.home .home-about-me .wp-block-media-text__media {
 		padding: 0 25%;
 	}
 }
 
 /* Phone-ish */
-@media screen and (max-width: 27.5em) {
-	.home .home-about-me 	.wp-block-media-text__media {
+@media screen and ( max-width: 27.5em ) {
+	.home .home-about-me .wp-block-media-text__media {
 		padding: 0;
 	}
 }
