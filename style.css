@@ -14,7 +14,7 @@ stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
-/* Debugging Breakpoints */
+/* Debugging Breakpoints
 @media screen and ( min-width: 64em ) {
 	.site-branding::after {
 	    content: "Large Up. min-width: 64em";
@@ -30,7 +30,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	    content: "Small only. max-width: 40em";
 	}
 }
-/* /Debugging Breakpoints */
+Debugging Breakpoints */
 
 
 body {
@@ -74,6 +74,13 @@ article {
 .custom-logo {
 	margin-top: 0.5em;
 }
+/* Page-width */
+@media screen and ( max-width: 87em ) {
+	#masthead{
+		margin: 0 3em;
+	}
+}
+
 .header-wrapper {
 	background-color: #ffffff 50%;
 	background-image: -moz-linear-gradient(#ffffff 50%, #eaedf2 50%);
@@ -97,6 +104,10 @@ article {
 
 
 /* Primary Menu */
+
+#nav-container ul {
+	display: block;
+}
 
 #primary-menu li {
 	float: right;
@@ -124,6 +135,9 @@ article {
 #social-navigation {
 	padding: .5em 0;
 }
+.social-navigation ul {
+	display: none;
+}
 #social-icons {
 	text-align: right;
 	margin: 0;
@@ -139,6 +153,16 @@ article {
 }
 #social-icons a:hover {
 	color: #C1552D;
+}
+
+@media screen and ( min-width: 37.5em ) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul,
+	.social-navigation ul {
+		display: block;
+	}
 }
 
 

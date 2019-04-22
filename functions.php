@@ -104,7 +104,7 @@ add_action( 'after_setup_theme', 'stever_content_width', 0 );
  *
  * @link https://premium.wpmudev.org/blog/wordpress-media-categories-tags/
  */
-// 
+//
 function stever_add_categories_for_attachments() {
 	$labels = array(
 		'name'                       => __( 'Media Categories', 'Taxonomy General Name', 'stever' ),
@@ -151,13 +151,13 @@ function stever_scripts() {
 	/* Fonts */
 	wp_enqueue_style( 'googleFonts-Lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
 	wp_enqueue_style( 'googleFonts-Merriweather', '//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic' );
-	
+
 	wp_enqueue_style( 'fontawesome',
 		get_stylesheet_directory_uri() . '/css/fontawesome-free-5.8.1-web/css/all.min.css',
 		array(),
 		filemtime( get_stylesheet_directory() . '/css/fontawesome-free-5.8.1-web/css/all.min.css' )
 	);
-	
+
 	/* CSS: Underscores */
 	wp_enqueue_style( 'stever-underscores',
 		get_stylesheet_directory_uri() . '/css/underscores.css',
@@ -186,8 +186,6 @@ function stever_scripts() {
 		filemtime( get_stylesheet_directory() . '/css/blocks.css' )
 	);
 
-	wp_enqueue_script( 'stever-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'stever-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -204,7 +202,7 @@ function stever_admin_scripts() {
 		array(),
 		filemtime( get_stylesheet_directory() . '/css/admin.css' )
 	);
-	
+
     /* CSS: SteveR Blocks Styles */
 	wp_enqueue_style( 'stever-blocks',
 		get_stylesheet_directory_uri() . '/css/blocks.css',
