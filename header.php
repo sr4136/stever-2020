@@ -24,7 +24,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'stever' ); ?></a>
 
 	<header id="masthead">
-		<div class="site-branding grid-container">
+		<div id="site-branding" class="grid-container">
 			<?php the_custom_logo(); ?>
 		</div>
 

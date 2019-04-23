@@ -73,24 +73,22 @@ article {
 }
 
 
-/* ----------- AUDIT ----------- */
-.site-branding {
+/* Header */
+#site-branding {
     position: relative;
     padding: 0;
 }
-.site-branding .custom-logo-link {
+#site-branding .custom-logo-link {
 	position: absolute;
 	top: .5em;
 	max-width: 300px;
 }
 
-/* Primary Menu */
-
-#nav-container ul {
-	display: block;
+#masthead ul {
+	text-align: right;
+	padding: .5em 0;
 }
-
-#primary-menu li {
+#masthead li {
 	float: none;
 	display: inline-block;
 	padding: 1em 0;
@@ -98,63 +96,59 @@ article {
 	font-size: 1.2em;
 	line-height: 1.2em;
 }
-
-#primary-menu a {
+#masthead li a {
 	display: inline;
-
 }
-#primary-menu li:before {
+
+#site-navigation li:before {
     content: "|";
     padding: 0 1.5em;
 	color: #B5B5B5;
 }
-#primary-menu li:first-child:before {
+#site-navigation li:first-child:before {
     content: "";
     padding: 0;
 }
 
-/* Social Menu & Icons */
-#masthead ul {
-	text-align: right;
-	padding: .5em 0;
-}
 #social-navigation {
 	background-color: #FFFFFF;
 }
-
-
-#social-icons li {
-	list-style-type: none;
-	display: inline-block;
-	padding-left: 1.25em;
-}
-#social-icons a {
+#social-navigation a {
 	font-size: 1.5em;
 	color: #726D4B;
+	margin-left: 1em;
 }
-#social-icons a:hover {
+#social-navigation li:first-child a {
+	margin: 0;
+}
+#social-navigation a:hover {
 	color: #C1552D;
 }
 
-/* Page-width */
+/* Page-wide: when the width of the page == max-width of content */
 @media screen and ( max-width: 87em ) {
-	#masthead{
-		margin: 0 3em;
-	}
-	#nav-container ul {
-		text-align: center;
-	}
-
-	#primary-menu li {
-		padding: .75em 0;
-	}
-	#social-icons li {
-    	padding: 1em .75em 0 .75em;
+	#site-branding,
+	#social-navigation,
+	#site-navigation {
+		padding: 0 1.5em;
 	}
 }
-
-
-/* --------- END AUDIT --------- */
+/* Small Screens */
+@media screen and ( max-width: 40em ) {
+	#masthead ul {
+		text-align: center;
+	}
+	#site-branding .custom-logo-link {
+		position: relative;
+		max-width: 100%;
+		width: 100%;
+		margin-bottom: -1em
+	}
+	#social-navigation a {
+		margin-left: 2em;
+	}
+	
+}
 
 
 .entry-header {
