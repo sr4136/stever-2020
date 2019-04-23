@@ -142,12 +142,16 @@ article {
 		position: relative;
 		max-width: 100%;
 		width: 100%;
-		margin-bottom: -1em
+		margin-bottom: -1em;
+		top: .5em;
+	}
+	#social-navigation {
+		padding: 0;
 	}
 	#social-navigation a {
-		margin-left: 2em;
+		margin-left: 1.5em;
 	}
-	
+
 }
 
 
