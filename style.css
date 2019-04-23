@@ -165,7 +165,6 @@ article {
 	background-color: #FFFFFF;
 	border-radius: 3px;
 	border: 1px solid #CCCCCC;
-	padding-bottom: 3em;
 }
 
 
@@ -191,9 +190,17 @@ article {
 
 /* Blocks */
 .wp-block-columns.chevron {
-	background-color: #DDDFC9;
 	padding: 1em;
-	margin: 0 -2em;
+	margin: 1.5em -2em -1em -2em;
+	/* Gradient: https://www.cssmatic.com/gradient-generator#'\-moz\-radial\-gradient\%28center\%2C\%20ellipse\%20cover\%2C\%20rgba\%28181\%2C199\%2C81\%2C1\%29\%200\%25\%2C\%20rgba\%28221\%2C223\%2C201\%2C1\%29\%20100\%25\%29\%3B' */
+	background: rgba(181,199,81,1);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(181,199,81,1) 0%, rgba(221,223,201,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(181,199,81,1)), color-stop(100%, rgba(221,223,201,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(181,199,81,1) 0%, rgba(221,223,201,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(181,199,81,1) 0%, rgba(221,223,201,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(181,199,81,1) 0%, rgba(221,223,201,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(181,199,81,1) 0%, rgba(221,223,201,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c751', endColorstr='#dddfc9', GradientType=1 );
 }
 .wp-block-columns.chevron .wp-block-column {
 	background-color: #FFF;
