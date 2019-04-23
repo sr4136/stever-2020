@@ -251,6 +251,11 @@ require get_template_directory() .'/inc/time-since.php';
 require get_template_directory() .'/inc/icons.php';
 
 /**
+ * Shortcode: Posts with Image
+ */
+require get_template_directory() .'/inc/posts-with-image.php';
+
+/**
  * Metabox: Body Classes
  */
 require get_template_directory() .'/inc/metabox-body-class.php';
