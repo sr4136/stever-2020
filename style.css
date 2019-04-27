@@ -54,7 +54,9 @@ a:hover {
 article {
 	padding: 1em;
 }
-
+.button:visited {
+	color: #FFFFFF;
+}
 .entry-content li {
 	margin-bottom: 1em;
 }
@@ -407,4 +409,8 @@ table {
 	background: -ms-linear-gradient(-45deg, rgba(181,199,81,1) 0%, rgba(180,198,81,1) 1%, rgba(114,109,75,1) 60%, rgba(114,109,75,1) 100%);
 	background: linear-gradient(135deg, rgba(181,199,81,1) 0%, rgba(180,198,81,1) 1%, rgba(114,109,75,1) 60%, rgba(114,109,75,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c751', endColorstr='#726d4b', GradientType=1 );
+}
+
+.logged-in-content.button {
+	float: right;
 }

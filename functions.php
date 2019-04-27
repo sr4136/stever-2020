@@ -246,6 +246,11 @@ require get_template_directory() . '/inc/dashboard.php';
 require get_template_directory() .'/inc/time-since.php';
 
 /**
+ * Shortcode: Logged in Content
+ */
+require get_template_directory() .'/inc/logged-in-content.php';
+
+/**
  * Shortcode: Icons
  */
 require get_template_directory() .'/inc/icons.php';
