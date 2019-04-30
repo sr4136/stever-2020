@@ -50,12 +50,24 @@ add_action( 'save_post', 'stever_body_class_save' );
 
 
 /* Add Body Class from Metabox  */
-add_filter( 'body_class', function( $classes ) {
+function stever_body_class( $classes ) {
 	$add_classes = stever_body_class_get_meta( 'stever_body_class_text' );
-	if( !empty( $add_classes ) ){
+	if( !empty( $add_classes ) && $classes ){
 		/* Transform to lowercase, remove duplicates */
 		$add_classes_separate = explode( ' ', strtolower( $add_classes ) );
 		return array_merge( $classes, array_unique( $add_classes_separate ) );
 	}
 	return $classes;
-} );
+}
+add_filter( 'body_class', 'stever_body_class' );
+
+
+function stever_admin_body_class( $classes ) {
+	$add_classes = stever_body_class_get_meta( 'stever_body_class_text' );
+	if( !empty( $add_classes ) ){
+
+		$classes .= $add_classes;
+	}
+	return $classes;
+}
+add_filter( 'admin_body_class', 'stever_admin_body_class' );
