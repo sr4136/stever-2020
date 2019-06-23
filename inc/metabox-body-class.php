@@ -63,11 +63,15 @@ add_filter( 'body_class', 'stever_body_class' );
 
 
 function stever_admin_body_class( $classes ) {
-	$add_classes = stever_body_class_get_meta( 'stever_body_class_text' );
-	if( !empty( $add_classes ) ){
+	$screen = get_current_screen();
 
-		$classes .= $add_classes;
+	if( 'page' == $screen->post_type ){
+		$add_classes = stever_body_class_get_meta( 'stever_body_class_text' );
+		if( !empty( $add_classes ) ){
+
+			$classes .= $add_classes;
+		}
+		return $classes;
 	}
-	return $classes;
 }
 add_filter( 'admin_body_class', 'stever_admin_body_class' );
