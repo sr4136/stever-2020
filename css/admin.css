@@ -134,12 +134,13 @@ small.status {
 #wpgmaps_options input[type="text"]{
     width: 100%
 }
-#wpgmaps_tabs_markers table tbody > tr:nth-child(4),
-#wpgmaps_tabs_markers table tbody > tr:nth-child(5),
-#wpgmaps_tabs_markers table tbody > tr:nth-child(6),
-#wpgmaps_tabs_markers table tbody > tr:nth-child(8),
-#wpgmaps_tabs_markers table tbody > tr:nth-child(9),
-#wpgmaps_tabs_markers table tbody > tr:nth-child(10){
+/* Hide many of the inputs I don't use */
+#tabs-m-1 table tbody > tr:nth-child(4),
+#tabs-m-1 table tbody > tr:nth-child(5),
+#tabs-m-1 table tbody > tr:nth-child(6),
+#tabs-m-1 table tbody > tr:nth-child(8),
+#tabs-m-1 table tbody > tr:nth-child(9),
+#tabs-m-1 table tbody > tr:nth-child(10){
     display: none;
 }
 #wpgmza_addmarker{
