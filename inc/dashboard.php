@@ -31,6 +31,7 @@ add_filter('manage_posts_columns', 'stever_remove_admin_columns');
 		
 		'edit.php?post_type=page', // Pages
 		'edit.php', // Posts
+		'edit.php?post_type=stever_quotes', // Quotes
 		'wp-google-maps-menu', // WP Google Maps (Plugin)
 		'upload.php', // Media
 		'separator2', // Second separator
