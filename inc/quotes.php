@@ -55,7 +55,7 @@ add_filter( 'get_the_archive_title', 'stever_titles', 10, 2 );
 function stever_quotes_query_mods( $query ) {
     if( is_post_type_archive( 'stever_quotes' ) ){
 	    $query->set( 'posts_per_page', 500 );
-		
+
 		if( isset( $_GET[ 'orderby' ] ) ){
 			$order = $_GET[ 'orderby' ];
 			if( 'random' == $order ){
@@ -68,11 +68,8 @@ add_filter( 'pre_get_posts', 'stever_quotes_query_mods' );
 
 /* Add JavaScript */
 function stever_quote_slideshow_script() {
-	if( isset( $_GET[ 'layout' ] ) ){
-		$layout = $_GET[ 'layout' ];
-		if( 'slideshow' == $layout ){
-			wp_enqueue_script( 'stever-quotes-slideshow', get_template_directory_uri() . '/js/quotes-slideshow.js', array(), '', true );
-		}
+	if( is_post_type_archive( 'stever_quotes' ) ){
+		wp_enqueue_script( 'stever-quotes-slideshow', get_template_directory_uri() . '/js/quotes-slideshow.js', array(), '', true );
 	}
 }
 add_filter( 'wp_enqueue_scripts', 'stever_quote_slideshow_script' );

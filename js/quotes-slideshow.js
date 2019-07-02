@@ -75,11 +75,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 /* Execution */
 ( function( $ ) {
-	
+
 	var orderby = getUrlParameter( 'orderby' );
 	var layout = getUrlParameter( 'layout' );
 	var slide_time = 3000;
-	
+
 	$( window ).load( function () {
 		if( 'random' == orderby || 'slideshow' == layout ){
 			$( 'article' ).shuffle();
@@ -96,15 +96,15 @@ var getUrlParameter = function getUrlParameter(sParam) {
 			var this_color = colors_array[ article_index-1 ];
 			$( this ).find( 'blockquote' ).css( 'border-color', this_color );
 		} ) ;
-		
+
 		if( 'slideshow' == layout ){
 			$( 'html' ).addClass( 'quotes-slideshow' );
-			
+
 			$( '#main' ).append( '<div class="timeline"><span></span></div>' );
-			
+
 			initial_color = colors_array[ 0 ];
 			$( '.timeline span' ).css( 'background', initial_color );
-			
+
 			$( 'article' ).first().addClass( 'active' );
 
 			$( '.timeline span' ).stop().animate( {
@@ -138,7 +138,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 			setInterval( slide, slide_time );
 
-		
+
 		}
 	} ); // window.load
 } )( jQuery );
