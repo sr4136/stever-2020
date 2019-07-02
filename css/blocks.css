@@ -100,48 +100,57 @@ table {
 	margin-bottom: 0;
 }
 
-.sr-table .year-divider + table tr:first-child,
 .sr-table thead {
     background-color: #E9EECA;
     font-weight: bold;
 	text-align: left;
 }
-.sr-table th,
-.sr-table .year-divider + table tr:first-child td {
+.sr-table th {
 	padding: .5em;
 }
 
 /* Table Page: Professional Development */
 /* Icon */
-.sr-table.sr-table-pro-dev tr td:nth-child( 1 ) {
+.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child( 1 ) {
 	width: 5%;
 	text-align: center;
 }
 /* Event Title */
-.sr-table.sr-table-pro-dev tr td:nth-child( 2 ) {
+.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child( 2 ) {
 	width: 55%;
 }
 /* Date */
-.sr-table.sr-table-pro-dev tr td:nth-child( 3 ) {
+.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child( 3 ) {
 	width: 10%;
 }
 /* Affiliation */
-.sr-table.sr-table-pro-dev tr td:nth-child( 4 ) {
+.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child( 4 ) {
 	width: 30%;
 }
+.wp-admin.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child( 1 ) {
+	width: 15%;
+	text-align: center;
+}
+/* Event Title */
+.wp-admin.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child( 2 ) {
+	width: 45%;
+}
+
+
 
 /* Table Page: Books I've Read */
 /* Title */
-.sr-table.sr-table-books tr td:nth-child( 1 ) {
-	width: 50%;
+.block-editor-page.sr-table.sr-table-books .wp-block-table tr td:nth-child( 1 ) {
+	width: 50% !important;
+	text-align: left !important;
 }
 /* Author */
-.sr-table.sr-table-books tr td:nth-child( 2 ) {
-	width: 30%;
+.block-editor-page.sr-table.sr-table-books .wp-block-table tr td:nth-child( 2 ) {
+	width: 30% !important;
 }
 /* Date */
-.sr-table.sr-table-books tr td:nth-child( 3 ) {
-	width: 15%;
+.block-editor-page.sr-table.sr-table-books .wp-block-table tr td:nth-child( 3 ) {
+	width: 15% !important;
 }
 
 /* Table Page: Speaking/Teaching */
