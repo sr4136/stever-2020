@@ -10,7 +10,7 @@ function stever_body_class_get_meta( $value ) {
 	global $post;
 
 	$field = get_post_meta( $post->ID, $value, true );
-	if ( ! empty( $field ) ) {
+	if ( $field && ! empty( $field ) ) {
 		return is_array( $field ) ? stripslashes_deep( $field ) : stripslashes( wp_kses_decode_entities( $field ) );
 	} else {
 		return false;
@@ -65,10 +65,9 @@ add_filter( 'body_class', 'stever_body_class' );
 function stever_admin_body_class( $classes ) {
 	$screen = get_current_screen();
 
-	if( 'page' == $screen->post_type ){
+	if( 'page' == $screen->id ){
 		$add_classes = stever_body_class_get_meta( 'stever_body_class_text' );
 		if( !empty( $add_classes ) ){
-
 			$classes .= $add_classes;
 		}
 		return $classes;
