@@ -38,6 +38,40 @@
 .iedit:hover .row-actions {
     display: block;
 }
+/* Quotes Listings */
+.wp-admin.post-type-stever_quotes #the-list th,
+.wp-admin.post-type-stever_quotes #the-list td {
+	vertical-align: top;
+}
+column-title
+.wp-admin.post-type-stever_quotes .wp-list-table .column-title {
+	width: 30% !important;
+}
+.wp-admin.post-type-stever_quotes .wp-list-table .column-stever_quote_text {
+	width: 70% !important;
+}
+
+.wp-admin.post-type-stever_quotes tbody .check-column input {
+	margin-top: 1em;
+}
+.wp-admin.post-type-stever_quotes .row-actions {
+	float: none;
+	left: 0;
+	right: 0;
+}
+.wp-admin.post-type-stever_quotes #the-list .title strong,
+.wp-admin.post-type-stever_quotes #the-list .plugin-title strong {
+	float: none;
+}
+.wp-admin.post-type-stever_quotes #the-list blockquote {
+	margin: 0;
+}
+/* Post 1033 is the "Quotes to Add" post, so it gets a fancy style */
+.wp-admin.post-type-stever_quotes #the-list #post-1033 {
+    border-left: 3px solid #DD9933;
+}
+
+
 /* Page/Post Listings: Post State Tags (Plugin) */
 .post-state {
     opacity: .5;
