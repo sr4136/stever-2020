@@ -91,9 +91,11 @@ add_action( 'manage_stever_quotes_posts_custom_column' , 'stever_custom_quotes_c
 
 /* Remove `private` posts from query */
 function stever_quotes_query( $query ) {
-	$post_type = $query->query_vars[ 'post_type' ];
-    if ( !is_admin() && 'stever_quotes' == $post_type ) {
-        $query->set( 'post_status', 'publish' );
+    if ( !is_admin() && $query ){
+	    $post_type = $query->query_vars[ 'post_type' ];
+	    if( 'stever_quotes' == $post_type ) {
+			$query->set( 'post_status', 'publish' );
+		}
     }
 }
 add_action( 'pre_get_posts', 'stever_quotes_query' );
