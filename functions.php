@@ -212,8 +212,6 @@ function stever_admin_scripts() {
 }
 add_action( 'admin_enqueue_scripts', 'stever_admin_scripts' );
 
-
-
 /**
  * Implement the Custom Header feature.
  */
@@ -233,7 +231,6 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
 
 /**
  * Custom Dashboard Widgets
@@ -264,3 +261,8 @@ require get_template_directory() .'/inc/posts-with-image.php';
  * Metabox: Body Classes
  */
 require get_template_directory() .'/inc/metabox-body-class.php';
+
+/**
+ * Quotes Post Type & Functionaltiy
+ */
+require get_template_directory() .'/inc/quotes.php';
