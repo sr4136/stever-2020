@@ -92,9 +92,12 @@ add_action( 'manage_stever_quotes_posts_custom_column' , 'stever_custom_quotes_c
 /* Remove `private` posts from query */
 function stever_quotes_query( $query ) {
     if ( !is_admin() && $query ){
-	    $post_type = $query->query_vars[ 'post_type' ];
-	    if( 'stever_quotes' == $post_type ) {
-			$query->set( 'post_status', 'publish' );
+	    $query_vars = $query->query_vars;
+	    $post_type = null;
+		if( array_key_exists( 'post_type', $query_vars ) ){
+		    if( 'stever_quotes' == $query_vars[ 'post_type' ] ) {
+				$query->set( 'post_status', 'publish' );
+			}
 		}
     }
 }
