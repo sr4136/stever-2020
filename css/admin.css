@@ -1,5 +1,25 @@
 /* CSS for Admin */
 
+/* Admin Bar: Hiding Unnecessary Items & Adding Icons */
+#wpadminbar ul#wp-admin-bar-root-default > li {
+    margin-right: 2em;
+}
+#wp-admin-bar-wp-logo,
+#wp-admin-bar-comments,
+#wp-admin-bar-my-account,
+#wp-admin-bar-amf-close-admin-panel,
+#wp-admin-bar-site-name .ab-sub-wrapper {
+    display: none !important;
+}
+/* Endurance Cache */
+#wp-admin-bar-epc_purge_menu > .ab-item::before {
+    content: "\f160";
+}
+/* Query Monitor */
+#wp-admin-bar-query-monitor > .ab-item::before {
+    content: "\f321";
+}
+
 /* Menu Items: Hiding Unnecessary Ones */
 #menu-comments,
 #menu-users,
