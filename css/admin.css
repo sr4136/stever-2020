@@ -200,9 +200,6 @@ small.status {
     margin-top: 1em;
     width: 100%;
 }
-#wpgmaps_options h2 {
-    margin-top: 2em !important;
-}
 #wpgmza_editmarker_loading,
 #wpgmza_addmarker_loading{
     background: #ffff5f;
@@ -217,4 +214,34 @@ small.status {
 }
 #wpgmaps_options .update-nag{
     width: 100%;
+}
+#wpgmza_table_polyline {
+	margin-top: 2em;
+}
+
+#wpgmza_table_polyline thead {
+    border-bottom: 2px solid #0073AA;
+}
+
+#wpgmza_table_polyline thead th,
+#wpgmza_table_polyline tr td:nth-child(1),
+#wpgmza_table_polyline tr td:nth-child(3) {
+    text-align: center;
+}
+#wpgmza_table_polyline tr td:nth-child(1) {
+    width: 8%;
+	padding-left: 0.5em;
+}
+#wpgmza_table_polyline tr td:nth-child(2) {
+    width: 77%;
+}
+#wpgmza_table_polyline tr td:nth-child(3) {
+    width: 15%;
+}
+#wpgmza_table_polyline tr:nth-child( even ){
+	background: #F1F1F1;
+}
+#wpgmza_table_polyline h3, #wpgmza_table_polyline p {
+    margin: 0;
+    font-size: 1em;
 }
