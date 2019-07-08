@@ -4,7 +4,7 @@
 
 /**
  * HSL Color Calculations `calcColor`
- * JSFiddle: https://jsfiddle.net/sr4136/9k7dmhLe/4/
+ * JSFiddle: https://jsfiddle.net/sr4136/9k7dmhLe/
  * Based on: https://stackoverflow.com/a/36688245/2203220
  */
 function calcColor( min, max, val ){
@@ -78,7 +78,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 	var orderby = getUrlParameter( 'orderby' );
 	var layout = getUrlParameter( 'layout' );
-	var slide_time = 3000;
+	var slide_time = 30000;
 
 	$( window ).load( function () {
 		if( 'random' == orderby || 'slideshow' == layout ){
