@@ -342,6 +342,10 @@ article {
 /* Quotes Archive (in slidehow mode) */
 .quotes-slideshow {
 	margin-top: 0 !important;
+	overflow: hidden;
+}
+html.quotes-slideshow.fixate-admin-menu.folded {
+	margin: 0 !important;
 }
 .quotes-slideshow,
 .quotes-slideshow body,
