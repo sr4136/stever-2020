@@ -396,13 +396,21 @@ html.quotes-slideshow.fixate-admin-menu{
 	display: inline-block;
 	vertical-align: top;
 }
-.quotes-slideshow blockquote p,
-.quotes-slideshow blockquote cite {
-    font-size: 2.5em;
+.quotes-slideshow blockquote p {
+	font-size: 2.5em;
 }
 .quotes-slideshow blockquote cite {
+    font-size: 2em;
 	margin-top: 1em;
 }
+
+.quotes-slideshow article.clLarge blockquote p {
+	font-size: 2em;
+}
+.quotes-slideshow article.clLarge blockquote cite {
+	font-size: 1.5em;
+}
+
 
 /* Maps (WP Google Maps Plugin)  */
 .stever-map-tt {
