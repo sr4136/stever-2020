@@ -7,9 +7,16 @@
  * @package stever
  */
 
+$content = get_the_content();
+$content_length = strlen( get_the_content() );
+$content_size_string = null;
+if( $content_length >= 600 ){
+	$content_size = 'clLarge';
+}
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" data-contentLength="<?php echo $content_length; ?>"<?php echo $content_size_string; ?><?php post_class( $content_size ); ?>>
 	<header class="entry-header">
 		<?php
 
