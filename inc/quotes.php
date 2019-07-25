@@ -78,13 +78,15 @@ add_filter( 'wp_enqueue_scripts', 'stever_quote_slideshow_script' );
 function stever_custom_quotes_column( $columns ) {
     $columns[ 'stever_quote_text' ] = 'Quote Text';
     unset( $columns[ 'date' ] );
+    unset( $columns[ 'title' ] );
     return $columns;
 }
 add_action( 'manage_stever_quotes_posts_columns' , 'stever_custom_quotes_column', 10, 2 );
 
 function stever_custom_quotes_column_content( $column, $post_id ) {
     if ( $column == 'stever_quote_text' ){
-        echo get_the_content();
+	    $the_content = get_the_content();
+		echo( preg_replace( "/<a[^>]+\>[a-z]+/i", "", $the_content ) );
     }
 }
 add_action( 'manage_stever_quotes_posts_custom_column' , 'stever_custom_quotes_column_content', 10, 2 );

@@ -63,12 +63,6 @@
 .wp-admin.post-type-stever_quotes #the-list td {
 	vertical-align: top;
 }
-.wp-admin.post-type-stever_quotes .wp-list-table .column-title {
-	width: 30% !important;
-}
-.wp-admin.post-type-stever_quotes .wp-list-table .column-stever_quote_text {
-	width: 70% !important;
-}
 
 .wp-admin.post-type-stever_quotes tbody .check-column input {
 	margin-top: 1em;
@@ -215,14 +209,13 @@ small.status {
 #wpgmaps_options .update-nag{
     width: 100%;
 }
+/* PolyLine: Tab */
 #wpgmza_table_polyline {
 	margin-top: 2em;
 }
-
 #wpgmza_table_polyline thead {
     border-bottom: 2px solid #0073AA;
 }
-
 #wpgmza_table_polyline thead th,
 #wpgmza_table_polyline tr td:nth-child(1),
 #wpgmza_table_polyline tr td:nth-child(3) {
@@ -244,4 +237,18 @@ small.status {
 #wpgmza_table_polyline h3, #wpgmza_table_polyline p {
     margin: 0;
     font-size: 1em;
+}
+/* Polyline: Individual Edit */
+#wpgmaps_edit_poly_form .wpgmza-listing-comp tr td:nth-child(1) {
+	width: 120px;
+}
+#wpgmaps_edit_poly_form .wpgmza-listing-comp,
+#wpgmaps_edit_poly_form .wpgmza_map_seventy {
+	width: 100% !important;
+	float: none;
+	margin: 0;
+}
+#wpgmaps_edit_poly_form .wpgmza-listing-comp tr:nth-child(1) #poly_line,
+#wpgmaps_edit_poly_form #poly_line_list {
+	width: 100% !important;
 }
