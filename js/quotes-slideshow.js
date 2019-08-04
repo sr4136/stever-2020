@@ -78,7 +78,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 	var orderby = getUrlParameter( 'orderby' );
 	var layout = getUrlParameter( 'layout' );
-	var slide_time = 30000;
 
 	$( window ).load( function () {
 		if( 'random' == orderby || 'slideshow' == layout ){
@@ -106,26 +105,26 @@ var getUrlParameter = function getUrlParameter(sParam) {
 			$( '.timeline span' ).css( 'background', initial_color );
 
 			$( 'article' ).first().addClass( 'active' );
-
-			$( '.timeline span' ).stop().animate( {
-				width: '100%'
-			}, slide_time );
-
+			
+			var first_run = true;
+			
 			function slide(){
-
+			
 				$( '.timeline span' ).css( 'width', '0%' );
 
 				var current_quote = $( 'article.active' );
 				var current_index = $( current_quote ).index();
+				var slide_time = Math.round( $( current_quote ).data( 'slidetime' ) );
+				console.log( slide_time );
 
-				//console.log( quotes_count + ' -- ' + current_index );
+				if( !first_run ){
+					$( current_quote ).removeClass( 'active' );
 
-				$( current_quote ).removeClass( 'active' );
-
-				if( current_index !== quotes_count ){
-					$( current_quote ).next( 'article' ).addClass( 'active' );
-				}else {
-					$( 'article' ).first().addClass( 'active' );
+					if( current_index !== quotes_count ){
+						$( current_quote ).next( 'article' ).addClass( 'active' );
+					}else {
+						$( 'article' ).first().addClass( 'active' );
+					}
 				}
 
 				$( '.timeline span' ).stop().animate( {
@@ -134,10 +133,12 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 				var new_color = colors_array[ current_index ];
 				$( '.timeline span' ).css( 'background', new_color );
+				
+				setTimeout( slide, slide_time );
+				
+				first_run = false;
 			}
-
-			setInterval( slide, slide_time );
-
+			slide();
 
 		}
 	} ); // window.load
