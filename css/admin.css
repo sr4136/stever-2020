@@ -32,6 +32,11 @@
 	width: 100%;
 }
 
+/* Page Title: Extra Attention */
+.editor-post-title {
+	border-bottom: 4px double black;
+}
+
 
 /* Page/Post Listings */
 #the-list tr:hover,
@@ -59,6 +64,9 @@
     display: block;
 }
 /* Quotes Listings */
+.wp-admin.post-type-stever_quotes .editor-post-title__input {
+	font-size: 1em;
+}
 .wp-admin.post-type-stever_quotes #the-list th,
 .wp-admin.post-type-stever_quotes #the-list td {
 	vertical-align: top;
