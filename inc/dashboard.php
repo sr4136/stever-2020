@@ -4,7 +4,7 @@
  * @package SteveRudolfi
  */
 
- 
+
 /**
  * Admin Columns: Remove Unnecessary Columns
  */
@@ -24,23 +24,23 @@ add_filter('manage_posts_columns', 'stever_remove_admin_columns');
  */
  function stever_custom_menu_order( $menu_order ) {
 	if ( !$menu_order ) return true;
-	 
+
 	return array(
 		'index.php', // Dashboard
 		'separator1', // First separator
-		
+
 		'edit.php?post_type=page', // Pages
 		'edit.php', // Posts
 		'edit.php?post_type=stever_quotes', // Quotes
 		'wp-google-maps-menu', // WP Google Maps (Plugin)
 		'upload.php', // Media
 		'separator2', // Second separator
-		
+
 		'tools.php', // Tools
 		'themes.php', // Appearance
 		'plugins.php', // Plugins
 		'options-general.php', // Settings
-		
+
 		'users.php', // Users
 		'link-manager.php', // Links
 		'edit-comments.php', // Comments
@@ -49,8 +49,8 @@ add_filter('manage_posts_columns', 'stever_remove_admin_columns');
 }
 add_filter( 'custom_menu_order', 'stever_custom_menu_order' );
 add_filter( 'menu_order', 'stever_custom_menu_order' );
- 
- 
+
+
 /**
  * Dashboard Widget: All Unpublished Posts
  */
@@ -90,11 +90,11 @@ function stever_dashboard_widget_unpublished() {
 function stever_check_for_children( $post_id=null ) {
 	$retStr = '';
 	$ulClass = '';
-	
+
 	if( $post_id == 0 ){
 		$ulClass = ' class="stever-dashboard-widget"';
 	}
-	
+
 	$args = array(
 		'post_type'			=> 'page',
 		'posts_per_page'		=> -1,
@@ -187,3 +187,33 @@ function stever_add_dashboard_widgets() {
 	wp_add_dashboard_widget( 'dashboard_widget_maps', 'Maps', 'stever_dashboard_widget_maps' );
 }
 add_action( 'wp_dashboard_setup', 'stever_add_dashboard_widgets' );
+
+
+/* Add "View This" button to the WP Admin bar */
+function stever_view_current_in_adminbar() {
+	global $wp_admin_bar;
+
+	if( function_exists( 'get_current_screen' ) ){
+		$current_screen = get_current_screen()->id;
+		$status = get_post_status();
+
+		if( is_admin() ){
+			if( 'page' == $current_screen || 'post' == $current_screen ){
+				if( 'private' == $status || 'publish' == $status ){
+					$args = array(
+						'id'    => 'stever-view',
+						'title' => 'View This',
+						'href'  => get_the_permalink(),
+						'meta'  => array(
+							'class' => 'stever-view',
+							'title' => 'View This'
+						)
+					);
+					$wp_admin_bar->add_menu( $args );
+				}
+			}
+		}
+	}
+}
+add_action( 'wp_before_admin_bar_render', 'stever_view_current_in_adminbar', 999 );
+
