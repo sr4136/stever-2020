@@ -104,3 +104,53 @@ function stever_quotes_query( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'stever_quotes_query' );
+
+
+/* Add links to the WP Admin bar */
+function stever_quotes_in_adminbar() {
+	global $wp_admin_bar;
+	
+	// Backend.
+	if( function_exists( 'get_current_screen' ) ){
+		$current_screen = get_current_screen()->id;
+		
+		if( 'stever_quotes' == $current_screen || 'edit-stever_quotes' == $current_screen ){
+			$args = array(
+				'id'    => 'stever-quotes-editall',
+				'title' => 'View Quotes', 
+				'href'  => get_post_type_archive_link( 'stever_quotes' ),
+				'meta'  => array(
+					'class' => 'stever-quotes-editall', 
+					'title' => 'View Quotes'
+				)
+			);
+			$wp_admin_bar->add_menu( $args );
+		}
+	}
+	
+	// Frontend.
+	if( !is_admin() && is_post_type_archive( 'stever_quotes' ) ){
+		$args = array(
+			'id'    => 'stever-quotes-editall',
+			'title' => 'Edit All Quotes', 
+			'href'  => get_admin_url( null, 'edit.php?post_type=stever_quotes' ),
+			'meta'  => array(
+				'class' => 'stever-quotes-editall', 
+				'title' => 'Edit All Quotes'
+			)
+		);
+		$wp_admin_bar->add_node( $args );
+		
+		$args = array(
+			'id'    => 'stever-quotes-new',
+			'title' => 'Add New Quote', 
+			'href'  => get_admin_url( null, 'post-new.php?post_type=stever_quotes' ),
+			'meta'  => array(
+				'class' => 'stever-quotes-new', 
+				'title' => 'Add New Quote'
+			)
+		);
+		$wp_admin_bar->add_node( $args );
+	}
+}
+add_action( 'wp_before_admin_bar_render', 'stever_quotes_in_adminbar', 999 );
