@@ -5,6 +5,7 @@
  * 2. Bind the Add and Remove Events
  * 3. Loop through Polylines
  * 4. Listen for Zoom Level Change
+ * 5. Text Input to move the map to location
  */
 
 
@@ -38,6 +39,7 @@ function decodeHtml( html ) {
 			$( '.stever-map-tt' ).remove();
 		});
 	}
+	
 	/* 3. Loop through Polylines
 	 */
 	$( window ).on( 'load', function( event ) {
@@ -56,5 +58,30 @@ function decodeHtml( html ) {
 			zoom_level = map.getZoom();
 		} );
 	});
+	
+	/* 5. Text Input to move the map to location
+	*/
+	$( window ).on( 'load', function( event ) {
+		var theMap = window.MYMAP[1].map;
+		var theAddressInput = document.getElementById( 'stever-mapfilter' );
+
+		if( typeof( theAddressInput ) != 'undefined' && theAddressInput != null ){
+			theAddressInput.addEventListener( 'keydown', function( e ){
+				if( 13 ===  e.keyCode ){
+					var address = theAddressInput.value;
+					var geocoder = new google.maps.Geocoder();
+				
+					geocoder.geocode( { 'address' : address }, function( results, status ) {
+						if( status == google.maps.GeocoderStatus.OK ) {
+							theMap.setCenter( results[0].geometry.location );
+							theMap.setZoom( 12 );
+						} else {
+							alert( 'Geocode was not successful for the following reason: ' + status );
+						}
+					} );
+				}
+			} );
+		}
+	} );
 		
 })( jQuery );

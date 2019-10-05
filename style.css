@@ -427,3 +427,8 @@ html.quotes-slideshow.fixate-admin-menu{
     font-size: 0.75em;
     margin: 0;
 }
+#stever-mapfilter {
+	float: left;
+	width: 90%;
+	padding-left: .5em;
+}
