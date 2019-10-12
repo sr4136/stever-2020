@@ -2,7 +2,7 @@
  * To be entered into the "Advanced > JS" tab on https://steverudolfi.com/wp-admin/admin.php?page=wp-google-maps-menu-settings.
  *
  * 1. HTML Entity Decode
- * 2. Polylines: Bind the Add/Remove Hover Events
+ * 2. Polylines: Bind the Infowindow Event
  * 3. Listen for Zoom Level Change
  * 4. Text Input to move the map to location
  * 5. InfoWindows: add oembeds
@@ -26,19 +26,24 @@ function decodeHtml( html ) {
 		var theMap = allMaps[ Object.keys( allMaps )[ 0 ] ].map;
 		var zoom_level = null;
 	
-		/* 2. Polylines: Bind the Add/Remove Hover Events
+		/* 2. Polylines: Bind the Infowindow Event
 		 */
 		function bind_polyline_events( polyline, data ){
-			google.maps.event.addListener( polyline, 'mouseover', function( event ) {
-				if( zoom_level >= 10 ){
-					var mouseX = event.wa.pageX;
-					var mouseY = event.wa.pageY+10;
-					$( 'body' ).append( '<div class="stever-map-tt" style="top: ' + mouseY + 'px; left: ' + mouseX + 'px;">' + decodeHtml( data.polyname ) + "</div>" );
-				}
-			});
-			google.maps.event.addListener( polyline, 'mouseout', function( event ) {
-				$( '.stever-map-tt' ).remove();
-			});
+			google.maps.event.addListener( polyline, 'click', function( event ) {
+				/* TODO:
+				 * The infowindow object coming from WPGMZA is mysterious...
+				 * so I use my own infowindow object...
+				 * but that means closing mine vs theirs is tricky.
+				 */
+				jQuery('.gm-style-iw button').click();
+			
+				infoWindow = new google.maps.InfoWindow({
+					content: data.polyname,
+					position: event.latLng,
+					map: theMap.googleMap
+				});
+				infoWindow.open( theMap.googleMap, polyline );
+			} );
 		}
 		for( var polyline_id in WPGM_Path ){
 			var polyline = WPGM_Path[ polyline_id ];
@@ -77,7 +82,7 @@ function decodeHtml( html ) {
 		
 		/* 5. InfoWindows: add oembeds
 		*/
-		var markers_array = window.MYMAP[ 2 ].map.markers;
+		var markers_array = theMap.markers;
 		markers_array.forEach( function( marker_obj, index ) {	
 			jQuery.ajax({
 				url: ajaxurl,
