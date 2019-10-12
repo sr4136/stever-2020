@@ -5,6 +5,7 @@
  * 2. Polylines: Bind the Add/Remove Hover Events
  * 3. Listen for Zoom Level Change
  * 4. Text Input to move the map to location
+ * 5. InfoWindows: add oembeds
  */
 
 
@@ -73,6 +74,23 @@ function decodeHtml( html ) {
 				}
 			} );
 		}
-	} );
 		
+		/* 5. InfoWindows: add oembeds
+		*/
+		var markers_array = window.MYMAP[ 2 ].map.markers;
+		markers_array.forEach( function( marker_obj, index ) {	
+			jQuery.ajax({
+				url: ajaxurl,
+				type: 'POST',
+				data: ( { action: 'steveroembed', steveroembedcontent: marker_obj.desc } ),
+				success: function ( response ) {
+					if( '0' == response.slice( -1 ) ){
+						response = response.slice( 0, -1 );
+						marker_obj.desc += response;
+					}
+				}
+			} );
+		} );
+		
+	} ); // end windowOnLoad
 })( jQuery );
