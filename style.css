@@ -74,6 +74,9 @@ article {
 	margin-top: 1em;
 }
 
+.hidden {
+	display: none;
+}
 
 /* Header */
 #site-branding {
@@ -283,8 +286,26 @@ article {
   list-style: none;
 }
 .sr-table .legend li {
-	margin-bottom: .75em;
+	margin-bottom: .5em;
+	cursor: pointer;
+	padding: .25em .5em;
+	margin-left: 5px;
 }
+.sr-table .legend li:hover {
+	border-left: 5px solid #D1D8AE;
+	margin-left: 0;
+	color: black;
+}
+.sr-table .legend li.active{
+	border-left: 5px solid #B6C951;
+	margin-left: 0;
+	font-weight: bold;
+}
+.sr-table .legend .show-all {
+	border-left: 5px solid #666666;
+	margin-left: 0;
+}
+
 .sr-table .legend i {
 	width: 2em;
 	text-align: center;
@@ -309,8 +330,12 @@ article {
   display: inline-block;
 }
 
-
-
+.none-found {
+    margin-top: -1.5em;
+    background: #f1f1f1;
+    padding: .75em 1em;
+    font-style: italic;
+}
 
 
 .posts-with-image {
@@ -434,9 +459,4 @@ html.quotes-slideshow.fixate-admin-menu{
 .stever-map-tt p {
     font-size: 0.75em;
     margin: 0;
-}
-#stever-mapfilter {
-	float: left;
-	width: 90%;
-	padding-left: .5em;
 }

@@ -26,7 +26,7 @@ function stever_shortcode_icons( $atts ) {
 				'class' => 'headphones',
 			),
 			'remote' => array(
-				'label' => 'Remote Conference/Meetup',
+				'label' => 'Conference (Remote Participation)',
 				'class' => 'laptop',
 			),
 			'training' => array(

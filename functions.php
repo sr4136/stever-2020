@@ -188,6 +188,11 @@ function stever_scripts() {
 
 	wp_enqueue_script( 'stever-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	// Professional Development Page. TODO: Better way to enqueue this without using the ID.
+	if( 6 == get_the_id() ){
+		wp_enqueue_script( 'stever-table-filter', get_template_directory_uri() . '/js/table-filter.js', array(), filemtime( get_stylesheet_directory() . '/js/table-filter.js' ), true  );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -266,3 +271,46 @@ require get_template_directory() .'/inc/metabox-body-class.php';
  * Quotes Post Type & Functionaltiy
  */
 require get_template_directory() .'/inc/quotes.php';
+
+
+
+
+
+/**
+ * Parse string to find all URLs.
+ * @param string $string
+ * @return array
+ *
+ */
+function getUrls( $string ) {
+	$regex = '#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#';
+	preg_match_all( $regex, $string, $matches );
+
+	//return( array_reverse( $matches[ 0 ] ) );
+	return( $matches[ 0 ] );
+}
+
+/**
+ * AJAX handler for parsing URLs in a string and appending the oEmbed markup to the string.
+ * @uses $_POST
+ * @return string
+ *
+ */
+function stever_oembed_ajax() {
+	$returnString = '';
+	$infoWindowContent = $_POST[ 'steveroembedcontent' ];
+
+	if( $infoWindowContent ){
+		$allUrls = getUrls( $infoWindowContent );
+
+		foreach( $allUrls as $url ){
+			$embed_code = wp_oembed_get( $url );
+			if( $embed_code ){
+				$returnString .= $embed_code;
+			}
+		}
+	}
+	echo( $returnString );
+}
+add_action('wp_ajax_steveroembed', 'stever_oembed_ajax' ); // executed when logged in
+add_action('wp_ajax_nopriv_steveroembed', 'stever_oembed_ajax' ); // executed when logged out
