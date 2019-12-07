@@ -6,7 +6,6 @@
  *
  * @package stever
  */
-
 ?>
 
 <section class="no-results not-found">

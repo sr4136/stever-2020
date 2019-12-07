@@ -51,6 +51,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+p:last-of-type {
+	margin-bottom: 0;
+}
+
 article {
 	padding: 1em;
 }
@@ -165,7 +169,7 @@ article {
 	padding-top: .5em;
 }
 
-.home .entry-header {
+.home .page-header {
 	display: none;
 }
 
@@ -190,7 +194,7 @@ article {
 /* Footer */
 .site-info {
 	text-align: center;
-	margin-top: 1em;
+	margin: 1em 0;
 }
 
 .blog article {
@@ -461,7 +465,7 @@ html.quotes-slideshow.fixate-admin-menu{
     margin: 0;
 }
 
-/*  404 */
+/* 404 Page */
 .error404 .page-content {
 	padding-right: 1em;
 }
@@ -500,4 +504,18 @@ html.quotes-slideshow.fixate-admin-menu{
 }
 .error404 .search-form .search-field:focus::placeholder {
 	opacity: 0;
+}
+
+/* Search Results Page */
+.search-results article {
+	border-left: 3px solid #5C6B80;
+	margin: 1.5em 0 1.5em -1em;
+	padding: 0 1em;
+}
+.search-results article h2 {
+	line-height: 1;
+}
+.search-results article .post-thumbnail,
+.search-results article img {
+	display: none;
 }
