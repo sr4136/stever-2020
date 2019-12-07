@@ -160,7 +160,7 @@ article {
 }
 
 
-.entry-header {
+.page-header {
 	border-bottom: 1px solid #CCCCCC;
 	padding-top: .5em;
 }
@@ -459,4 +459,45 @@ html.quotes-slideshow.fixate-admin-menu{
 .stever-map-tt p {
     font-size: 0.75em;
     margin: 0;
+}
+
+/*  404 */
+.error404 .page-content {
+	padding-right: 1em;
+}
+.error404 aside {
+	padding: .5em 0 0 1em;
+	border-left: 1px solid #CCCCCC;
+}
+.error404 aside .all-pages ul{
+	list-style-type: none;
+	margin-left: 0;
+}
+.error404 aside .all-pages ul.children {
+	margin-left: 1em;
+}
+.error404 .search-form label {
+	padding-right: 2em;
+}
+.error404 .search-form .search-field {
+	padding-left: .75em;
+	margin: 0;
+}
+.error404 .search-form .search-field::placeholder {
+	color: #000000;
+}
+.error404 .search-form .search-submit {
+	height: 100%;
+	cursor: pointer;
+	font-size: .85em;
+	border: 3px solid #726D4B;
+	background: #FFFFFF;
+	color: #726D4B;
+}
+.error404 .search-form .search-submit:hover {
+	background: #726D4B;
+	color: #FFFFFF;
+}
+.error404 .search-form .search-field:focus::placeholder {
+	opacity: 0;
 }
