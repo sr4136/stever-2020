@@ -129,3 +129,43 @@ if ( ! function_exists( 'stever_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+
+/**
+ * Parse string to find all URLs.
+ * @param string $string
+ * @return array
+ *
+ */
+function getUrls( $string ) {
+	$regex = '#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#';
+	preg_match_all( $regex, $string, $matches );
+
+	//return( array_reverse( $matches[ 0 ] ) );
+	return( $matches[ 0 ] );
+}
+
+/**
+ * AJAX handler for parsing URLs in a string and appending the oEmbed markup to the string.
+ * @uses $_POST
+ * @return string
+ *
+ */
+function stever_oembed_ajax() {
+	$returnString = '';
+	$infoWindowContent = $_POST[ 'steveroembedcontent' ];
+
+	if( $infoWindowContent ){
+		$allUrls = getUrls( $infoWindowContent );
+
+		foreach( $allUrls as $url ){
+			$embed_code = wp_oembed_get( $url );
+			if( $embed_code ){
+				$returnString .= $embed_code;
+			}
+		}
+	}
+	echo( $returnString );
+}
+add_action('wp_ajax_steveroembed', 'stever_oembed_ajax' ); // executed when logged in
+add_action('wp_ajax_nopriv_steveroembed', 'stever_oembed_ajax' ); // executed when logged out

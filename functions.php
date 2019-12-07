@@ -15,17 +15,18 @@ if ( ! function_exists( 'stever_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function stever_setup() {
+	function stever_setup()
+	{
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on stever, use a find and replace
 		 * to change 'stever' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'stever', get_template_directory() . '/languages' );
+		load_theme_textdomain('stever', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+		add_theme_support('automatic-feed-links');
 
 		/*
 		 * Let WordPress manage the document title.
@@ -33,71 +34,38 @@ if ( ! function_exists( 'stever_setup' ) ) :
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'stever' ),
-			'social-icons' => __( 'Social Icons', 'bonestheme' ) // social icons in header
-		) );
+		add_theme_support('post-thumbnails');
 
 		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
+		 * Menus.
 		 */
-		add_theme_support( 'html5', array(
+		register_nav_menus(array(
+			'primary' => esc_html__('Primary', 'stever'),
+			'social-icons' => __('Social', 'bonestheme') // social icons in header
+		));
+
+		/*
+		 * Switch default elements' core markup to output valid HTML5.
+		 */
+		add_theme_support('html5', array(
 			'search-form',
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
-		) );
+		));
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'stever_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
-
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
 	}
+
 endif;
 add_action( 'after_setup_theme', 'stever_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function stever_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'stever_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'stever_content_width', 0 );
+
 
 /**
  * Add categories for attachments.
@@ -218,24 +186,14 @@ function stever_admin_scripts() {
 add_action( 'admin_enqueue_scripts', 'stever_admin_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * Quotes Post Type & Functionaltiy
  */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() .'/inc/quotes.php';
 
 /**
  * Custom Dashboard Widgets
@@ -243,74 +201,26 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/dashboard.php';
 
 /**
- * Shortcode: Time Since
- */
-require get_template_directory() .'/inc/time-since.php';
-
-/**
- * Shortcode: Logged in Content
- */
-require get_template_directory() .'/inc/logged-in-content.php';
-
-/**
- * Shortcode: Icons
- */
-require get_template_directory() .'/inc/icons.php';
-
-/**
- * Shortcode: Posts with Image
- */
-require get_template_directory() .'/inc/posts-with-image.php';
-
-/**
  * Metabox: Body Classes
  */
 require get_template_directory() .'/inc/metabox-body-class.php';
 
 /**
- * Quotes Post Type & Functionaltiy
+ * Shortcode: Time Since
  */
-require get_template_directory() .'/inc/quotes.php';
-
-
-
-
+require get_template_directory() .'/inc/shortcode-time-since.php';
 
 /**
- * Parse string to find all URLs.
- * @param string $string
- * @return array
- *
+ * Shortcode: Logged in Content
  */
-function getUrls( $string ) {
-	$regex = '#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#';
-	preg_match_all( $regex, $string, $matches );
-
-	//return( array_reverse( $matches[ 0 ] ) );
-	return( $matches[ 0 ] );
-}
+require get_template_directory() .'/inc/shortcode-logged-in-content.php';
 
 /**
- * AJAX handler for parsing URLs in a string and appending the oEmbed markup to the string.
- * @uses $_POST
- * @return string
- *
+ * Shortcode: Icons
  */
-function stever_oembed_ajax() {
-	$returnString = '';
-	$infoWindowContent = $_POST[ 'steveroembedcontent' ];
+require get_template_directory() .'/inc/shortcode-icons.php';
 
-	if( $infoWindowContent ){
-		$allUrls = getUrls( $infoWindowContent );
-
-		foreach( $allUrls as $url ){
-			$embed_code = wp_oembed_get( $url );
-			if( $embed_code ){
-				$returnString .= $embed_code;
-			}
-		}
-	}
-	echo( $returnString );
-}
-add_action('wp_ajax_steveroembed', 'stever_oembed_ajax' ); // executed when logged in
-add_action('wp_ajax_nopriv_steveroembed', 'stever_oembed_ajax' ); // executed when logged out
+/**
+ * Shortcode: Posts with Image
+ */
+require get_template_directory() .'/inc/shortcode-posts-with-image.php';

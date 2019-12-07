@@ -15,8 +15,8 @@
   unset( $defaults[ 'tags' ] );
   return $defaults;
 }
-add_filter('manage_pages_columns', 'stever_remove_admin_columns');
-add_filter('manage_posts_columns', 'stever_remove_admin_columns');
+add_filter( 'manage_pages_columns', 'stever_remove_admin_columns' );
+add_filter( 'manage_posts_columns', 'stever_remove_admin_columns' );
 
 
 /**
