@@ -20,12 +20,12 @@ function decodeHtml( html ) {
 
 (function( $ ) {
 	$( window ).on( 'load', function( event ) {
-		
+
 		// Assuming always only one map per page.
 		var allMaps = window.MYMAP;
 		var theMap = allMaps[ Object.keys( allMaps )[ 0 ] ].map;
 		var zoom_level = null;
-	
+
 		/* 2. Polylines: Bind the Infowindow Event
 		 */
 		function bind_polyline_events( polyline, data ){
@@ -36,7 +36,7 @@ function decodeHtml( html ) {
 				 * but that means closing mine vs theirs is tricky.
 				 */
 				jQuery('.gm-style-iw button').click();
-			
+
 				infoWindow = new google.maps.InfoWindow({
 					content: data.polyname,
 					position: event.latLng,
@@ -50,14 +50,14 @@ function decodeHtml( html ) {
 			var data = wpgmaps_localize_polyline_settings[ theMap.id ][ polyline_id ];
 			bind_polyline_events( polyline, data );
 		}
-	
+
 		/* 3. Listen for Zoom Level Change
 		*/
 		theMap.on( 'zoom_changed', function( event ){
 			zoom_level = theMap.getZoom();
 		} );
-			
-	
+
+
 		/* 4. Text Input to move the map to location
 		*/
 		var theAddressInput = document.getElementById( 'stever-mapfilter' );
@@ -67,11 +67,10 @@ function decodeHtml( html ) {
 				if( 13 ===  e.keyCode ){
 					var address = theAddressInput.value;
 					var geocoder = new google.maps.Geocoder();
-					
+
 					geocoder.geocode( { 'address' : address }, function( results, status ) {
-						if( status == google.maps.GeocoderStatus.OK ) {
-							theMap.setCenter( results[0].geometry.location );
-							theMap.setZoom( 12 );
+						if( status === google.maps.GeocoderStatus.OK ) {
+							theMap.googleMap.fitBounds( results[0].geometry.bounds );
 						} else {
 							alert( 'Geocode was not successful for the following reason: ' + status );
 						}
@@ -79,23 +78,23 @@ function decodeHtml( html ) {
 				}
 			} );
 		}
-		
+
 		/* 5. InfoWindows: add oembeds
 		*/
 		var markers_array = theMap.markers;
-		markers_array.forEach( function( marker_obj, index ) {	
+		markers_array.forEach( function( marker_obj, index ) {
 			jQuery.ajax({
 				url: ajaxurl,
 				type: 'POST',
 				data: ( { action: 'steveroembed', steveroembedcontent: marker_obj.desc } ),
 				success: function ( response ) {
-					if( '0' == response.slice( -1 ) ){
+					if( '0' === response.slice( -1 ) ){
 						response = response.slice( 0, -1 );
 						marker_obj.desc += response;
 					}
 				}
 			} );
 		} );
-		
+
 	} ); // end windowOnLoad
 })( jQuery );
