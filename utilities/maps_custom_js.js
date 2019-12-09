@@ -70,7 +70,17 @@ function decodeHtml( html ) {
 
 					geocoder.geocode( { 'address' : address }, function( results, status ) {
 						if( status === google.maps.GeocoderStatus.OK ) {
-							theMap.googleMap.fitBounds( results[0].geometry.bounds );
+
+							//console.log( results );
+
+							// With bounds means it's more of a city/state/country search.
+							if( results[0].geometry.bounds ){
+								theMap.googleMap.fitBounds( results[0].geometry.bounds );
+							// Without bounds means it's more of an exact address/POI.
+							}else {
+								theMap.setCenter( results[0].geometry.location );
+								theMap.setZoom( 12 );
+							}
 						} else {
 							alert( 'Geocode was not successful for the following reason: ' + status );
 						}
