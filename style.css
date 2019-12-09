@@ -366,8 +366,34 @@ article {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c751', endColorstr='#726d4b', GradientType=1 );
 }
 
-.logged-in-content.button {
-	float: right;
+/* Utility: Button: Ghost*/
+.button-ghost,
+.button-ghost:visited,
+.button-ghost:active,
+.button-ghost[type="submit"] {
+	font-size: .85em;
+	border: 3px solid #726D4B;
+	background: #FFFFFF;
+	color: #726D4B;
+	cursor: pointer;
+}
+.button-ghost:hover,
+.button-ghost:visited:hover,
+.button-ghost:active:hover,
+.button-ghost[type="submit"]:hover {
+	border: 3px solid #726D4B;
+	background: #726D4B;
+	color: #FFFFFF;
+}
+
+/* Map Pages */
+.stever-map-page article {
+	position: relative;
+}
+#stever-editmap {
+	position: absolute;
+	top: 2em;
+	right: 1em;
 }
 
 
@@ -490,21 +516,13 @@ html.quotes-slideshow.fixate-admin-menu{
 .error404 .search-form .search-field::placeholder {
 	color: #000000;
 }
-.error404 .search-form .search-submit {
-	height: 100%;
-	cursor: pointer;
-	font-size: .85em;
-	border: 3px solid #726D4B;
-	background: #FFFFFF;
-	color: #726D4B;
-}
-.error404 .search-form .search-submit:hover {
-	background: #726D4B;
-	color: #FFFFFF;
-}
 .error404 .search-form .search-field:focus::placeholder {
 	opacity: 0;
 }
+.error404 .search-form .search-submit {
+	height: 100%;
+}
+
 
 /* Search Results Page */
 .search-results article {

@@ -28,7 +28,7 @@ get_header();
 							<input type="search" class="search-field" placeholder="Type search here..." value="" name="s">
 						</label>
 						<div class="cell medium-2">
-							<input type="submit" class="search-submit cell medium-1" value="Search">
+							<input type="submit" class="search-submit button-ghost cell medium-1" value="Search">
 						</div>
 
 					</form>
