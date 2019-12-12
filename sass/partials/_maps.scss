@@ -1,0 +1,25 @@
+/* Map Pages */
+.stever-map-page article {
+	position: relative;
+}
+#stever-editmap {
+	position: absolute;
+	top: 2em;
+	right: 1em;
+}
+
+/* Maps (WP Google Maps Plugin)  */
+.stever-map-tt {
+    position: absolute;
+    background: white;
+    padding: .5em 1em;
+    border: 1px solid $gray-med;
+    max-width: 300px;
+}
+.stever-map-tt h3 {
+    font-size: 1em;
+}
+.stever-map-tt p {
+    font-size: 0.75em;
+    margin: 0;
+}

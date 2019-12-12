@@ -1,0 +1,25 @@
+/* Helper: hidden class */
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+/* Helper: Button: Ghost */
+.button-ghost,
+.button-ghost:visited,
+.button-ghost:active,
+.button-ghost[type="submit"] {
+	font-size: .85em;
+	border: 3px solid $green-dark;
+	background: $white;
+	color: $green-dark;
+	cursor: pointer;
+}
+.button-ghost:hover,
+.button-ghost:visited:hover,
+.button-ghost:active:hover,
+.button-ghost[type="submit"]:hover {
+	border: 3px solid $green-dark;
+	background: $green-dark;
+	color: $white;
+}

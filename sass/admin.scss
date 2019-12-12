@@ -1,245 +1,264 @@
 /* CSS for Admin */
-/* Custom Colors */
-/* "Standard" Colors */
-/* Fonts */
+
+@import 'partials/variables';
+
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
 #wpadminbar ul#wp-admin-bar-root-default > li {
-  margin-right: 2em; }
-
+    margin-right: 2em;
+}
 #wp-admin-bar-wp-logo,
 #wp-admin-bar-comments,
 #wp-admin-bar-my-account,
 #wp-admin-bar-amf-close-admin-panel,
 #wp-admin-bar-site-name .ab-sub-wrapper {
-  display: none !important; }
-
+    display: none !important;
+}
 /* Endurance Cache */
 #wp-admin-bar-epc_purge_menu > .ab-item::before {
-  content: "\f160"; }
-
+    content: "\f160";
+}
 /* Query Monitor */
 #wp-admin-bar-query-monitor > .ab-item::before {
-  content: "\f321"; }
+    content: "\f321";
+}
 
 /* Menu Items: Hiding Unnecessary Ones */
 #menu-comments,
 #menu-users,
 #toplevel_page_gutenberg {
-  display: none; }
+	display: none;
+}
 
 /* Metabox: Body Class */
 #stever_body_class-stever-body-class textarea {
-  width: 100%; }
+	width: 100%;
+}
 
 /* Page Title: Extra Attention */
 .editor-post-title {
-  border-bottom: 4px double black; }
+	border-bottom: 4px double black;
+}
+
 
 /* Page/Post Listings */
 #the-list tr:hover,
 #the-list tr.active:hover th,
 #the-list tr.active:hover td {
-  background-color: #00FF001A; }
-
+	background-color: #00FF001A;
+}
 #the-list th, #the-list td {
-  vertical-align: middle; }
-
+    vertical-align: middle;
+}
 #the-list .check-column {
-  padding: 0; }
-
+	padding: 0;
+}
 #the-list .title strong,
 #the-list .plugin-title strong {
-  float: left; }
-
+	float: left;
+}
 .row-actions {
-  left: auto;
-  float: right;
-  right: 3em;
-  position: relative !important; }
-
+    left: auto;
+    float: right;
+    right: 3em;
+    position: relative !important;
+}
 .iedit:hover .row-actions {
-  display: block; }
-
+    display: block;
+}
 /* Quotes Listings */
 .wp-admin.post-type-stever_quotes .editor-post-title__input {
-  font-size: 1em; }
-
+	font-size: 1em;
+}
 .wp-admin.post-type-stever_quotes #the-list th,
 .wp-admin.post-type-stever_quotes #the-list td {
-  vertical-align: top; }
+	vertical-align: top;
+}
 
 .wp-admin.post-type-stever_quotes tbody .check-column input {
-  margin-top: 1em; }
-
+	margin-top: 1em;
+}
 .wp-admin.post-type-stever_quotes .row-actions {
-  float: none;
-  left: 0;
-  right: 0; }
-
+	float: none;
+	left: 0;
+	right: 0;
+}
 .wp-admin.post-type-stever_quotes #the-list .title strong,
 .wp-admin.post-type-stever_quotes #the-list .plugin-title strong {
-  float: none; }
-
+	float: none;
+}
 .wp-admin.post-type-stever_quotes #the-list blockquote {
-  margin: 0; }
-
+	margin: 0;
+}
 /* Post 1033 is the "Quotes to Add" post, so it gets a fancy style */
 .wp-admin.post-type-stever_quotes #the-list #post-1033 {
-  border-left: 3px solid #DD9933; }
+    border-left: 3px solid #DD9933;
+}
+
 
 /* Page/Post Listings: Post State Tags (Plugin) */
 .post-state {
-  opacity: .5;
-  margin-left: 2em; }
-
+    opacity: .5;
+    margin-left: 2em;
+}
 #the-list .status-private th.check-column input {
-  margin-left: 8px; }
-
+	margin-left: 8px;
+}
 #the-list .check-column {
-  border-left: 0 !important; }
+	border-left: 0 !important;
+}
 
 /* Menu Items: WP Google Maps Icon */
 #toplevel_page_wp-google-maps-menu .dashicons-before img {
-  display: none; }
-
+	display: none;
+}
 #toplevel_page_wp-google-maps-menu .dashicons-before::before {
-  content: "\f231";
-  font-family: Dashicons; }
+    content: "\f231";
+    font-family: Dashicons;
+}
 
 /* Plugins Screen */
 .wp-list-table.plugins thead .column-description {
-  width: 50%; }
+	width: 50%;
+}
 
 /* Dashboard Widgets */
 .stever-dashboard-widget {
-  margin-bottom: 0; }
-
+	margin-bottom: 0;
+}
 .stever-dashboard-widget ul {
-  padding-left: 1.5em; }
+    padding-left: 1.5em;
+}
 
 .stever-dashboard-widget li {
-  margin: 0;
-  padding: 0; }
-
+	margin: 0;
+	padding: 0;
+}
 .stever-dashboard-widget .post-info-wrap {
-  border-bottom: 1px solid #EEE;
-  padding: .2em 0; }
-
+	border-bottom: 1px solid #EEE;
+	padding: .2em 0;
+}
 .stever-dashboard-widget > li:last-child .post-info-wrap {
-  border: 0 none; }
+	border: 0 none;
+}
 
 .linkview {
-  float: right;
-  clear: both;
-  font-size: 0.8em; }
+	float: right;
+	clear: both;
+	font-size: 0.8em;
+}
 
 small.status {
-  margin-left: 1em;
-  font-size: 0.65em;
-  opacity: 0.5; }
+    margin-left: 1em;
+    font-size: 0.65em;
+    opacity: 0.5;
+}
+
 
 #dashboard_widget_maps h2::before {
-  content: "\f319";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C1552D; }
+    content: "\f319";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
 
 #dashboard_widget_unfinished_posts h2::before {
-  content: "\f464";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C1552D; }
-
+    content: "\f464";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
 #dashboard_widget_recently_updated h2::before {
-  content: "\f469";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C1552D; }
-
+    content: "\f469";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
 #dashboard_widget_all_pages h2::before {
-  content: "\f163";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C1552D; }
+    content: "\f163";
+    font-family: Dashicons;
+    padding-right: .5em;
+    vertical-align: top;
+    color: #C1552D;
+}
 
 /* WP Google Maps */
-#wpgmaps_options #wpgmza_add_address {
-  border: 3px solid lime; }
-
-#wpgmaps_options input[type="text"] {
-  width: 100%; }
-
+#wpgmaps_options #wpgmza_add_address{
+    border: 3px solid lime;
+}
+#wpgmaps_options input[type="text"]{
+    width: 100%
+}
 /* Hide many of the inputs I don't use */
 #tabs-m-1 table tbody > tr:nth-child(4),
 #tabs-m-1 table tbody > tr:nth-child(5),
 #tabs-m-1 table tbody > tr:nth-child(6),
 #tabs-m-1 table tbody > tr:nth-child(8),
 #tabs-m-1 table tbody > tr:nth-child(9),
-#tabs-m-1 table tbody > tr:nth-child(10) {
-  display: none; }
-
-#wpgmza_addmarker {
-  margin-top: 1em;
-  width: 100%; }
-
+#tabs-m-1 table tbody > tr:nth-child(10){
+    display: none;
+}
+#wpgmza_addmarker{
+    margin-top: 1em;
+    width: 100%;
+}
 #wpgmza_editmarker_loading,
-#wpgmza_addmarker_loading {
-  background: #ffff5f;
-  margin-top: 2em !important;
-  padding: .5em;
-  text-align: center;
-  display: block;
-  width: 90%; }
-
+#wpgmza_addmarker_loading{
+    background: #ffff5f;
+    margin-top: 2em !important;
+    padding: .5em;
+    text-align: center;
+    display: block;
+    width: 90%;
+}
 #wpgmaps_save_reminder {
-  overflow: hidden; }
-
-#wpgmaps_options .update-nag {
-  width: 100%; }
-
+    overflow: hidden;
+}
+#wpgmaps_options .update-nag{
+    width: 100%;
+}
 /* PolyLine: Tab */
 #wpgmza_table_polyline {
-  margin-top: 2em; }
-
+	margin-top: 2em;
+}
 #wpgmza_table_polyline thead {
-  border-bottom: 2px solid #0073AA; }
-
+    border-bottom: 2px solid #0073AA;
+}
 #wpgmza_table_polyline thead th,
 #wpgmza_table_polyline tr td:nth-child(1),
 #wpgmza_table_polyline tr td:nth-child(3) {
-  text-align: center; }
-
+    text-align: center;
+}
 #wpgmza_table_polyline tr td:nth-child(1) {
-  width: 8%;
-  padding-left: 0.5em; }
-
+    width: 8%;
+	padding-left: 0.5em;
+}
 #wpgmza_table_polyline tr td:nth-child(2) {
-  width: 77%; }
-
+    width: 77%;
+}
 #wpgmza_table_polyline tr td:nth-child(3) {
-  width: 15%; }
-
-#wpgmza_table_polyline tr:nth-child(even) {
-  background: #F1F1F1; }
-
+    width: 15%;
+}
+#wpgmza_table_polyline tr:nth-child( even ){
+	background: #F1F1F1;
+}
 #wpgmza_table_polyline h3, #wpgmza_table_polyline p {
-  margin: 0;
-  font-size: 1em; }
-
+    margin: 0;
+    font-size: 1em;
+}
 /* Polyline: Individual Edit */
 #wpgmaps_edit_poly_form .wpgmza-listing-comp tr td:nth-child(1) {
-  width: 120px; }
-
+	width: 120px;
+}
 #wpgmaps_edit_poly_form .wpgmza-listing-comp,
 #wpgmaps_edit_poly_form .wpgmza_map_seventy {
-  width: 100% !important;
-  float: none;
-  margin: 0; }
-
+	width: 100% !important;
+	float: none;
+	margin: 0;
+}
 #wpgmaps_edit_poly_form .wpgmza-listing-comp tr:nth-child(1) #poly_line,
 #wpgmaps_edit_poly_form #poly_line_list {
-  width: 100% !important; }
+	width: 100% !important;
+}

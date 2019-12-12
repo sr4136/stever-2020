@@ -1,0 +1,33 @@
+/*
+Theme Name: stever (New)
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: stever
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+@import 'partials/variables';
+@import 'partials/helpers';
+@import 'partials/elements';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/tables';
+
+@import 'partials/home';
+@import 'partials/blog';
+@import 'partials/maps';
+@import 'partials/quotes';
+
+/*
+ * Debugging Breakpoints.
+ * Uncomment this to turn on helper text.
+ */
+// import 'partials/breakpoints_debugging';

@@ -1,0 +1,80 @@
+/* Header */
+#site-branding {
+    position: relative;
+    padding: 0;
+}
+#site-branding .custom-logo-link {
+	position: absolute;
+	top: 1em;
+	max-width: 300px;
+}
+#masthead ul {
+	text-align: right;
+	padding: .5em 0;
+}
+#masthead li {
+	float: none;
+	display: inline-block;
+	padding: 1em 0;
+	font-weight: bold;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+#masthead li a {
+	display: inline;
+}
+#site-navigation li+li:before {
+    content: "|";
+    padding: 0 1.5em;
+	color: $gray-med;
+}
+#social-navigation {
+	background-color: $white;
+}
+#social-navigation a {
+	font-size: 1.5em;
+	color: $green-dark;
+	margin-left: 1em;
+}
+#social-navigation li:first-child a {
+	margin: 0;
+}
+#social-navigation a:hover {
+	color: $red;
+}
+.page-header {
+	border-bottom: 1px solid $gray-med;
+	padding-top: .5em;
+}
+.home .page-header {
+	display: none;
+}
+
+
+/* Page-wide: when the width of the page == max-width of content */
+@media screen and ( max-width: 87em ) {
+	#site-branding,
+	#social-navigation,
+	#site-navigation {
+		padding: 0 1.5em;
+	}
+}
+/* Small Screens */
+@media screen and ( max-width: 40em ) {
+	#masthead ul {
+		text-align: center;
+	}
+	#site-branding .custom-logo-link {
+		position: relative;
+		max-width: 100%;
+		width: 100%;
+		margin-bottom: -1em;
+		top: .5em;
+	}
+	#social-navigation {
+		padding: 0;
+	}
+	#social-navigation a {
+		margin-left: 1.5em;
+	}
+}

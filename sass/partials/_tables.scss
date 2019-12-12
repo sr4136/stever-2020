@@ -1,0 +1,56 @@
+/* Icon Font Hovers: Conferences, etc. */
+.sr-table .legend {
+  margin: 2em 0;
+  list-style: none;
+}
+.sr-table .legend li {
+	margin-bottom: .5em;
+	cursor: pointer;
+	padding: .25em .5em;
+	margin-left: 5px;
+}
+.sr-table .legend li:hover {
+	border-left: 5px solid $green-light;
+	margin-left: 0;
+	color: black;
+}
+.sr-table .legend li.active{
+	border-left: 5px solid $green;
+	margin-left: 0;
+	font-weight: bold;
+}
+.sr-table .legend .show-all {
+	border-left: 5px solid $gray;
+	margin-left: 0;
+}
+
+.sr-table .legend i {
+	width: 2em;
+	text-align: center;
+	padding-right: 1em;
+}
+
+.fas {
+  cursor: default;
+}
+.fas:after {
+  content: attr( title );
+  color: $white;
+  background: $green;
+  padding: 5px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  display: none;
+}
+.fas:hover:after {
+  opacity: 1;
+  display: inline-block;
+}
+
+.none-found {
+    margin-top: -1.5em;
+    background: $gray-light;
+    padding: .75em 1em;
+    font-style: italic;
+}

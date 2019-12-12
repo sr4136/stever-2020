@@ -1,0 +1,19 @@
+/*
+ * Debugging Breakpoints. Adds helper text.
+ */
+
+@media screen and ( min-width: 64em ) {
+	.site-branding::after {
+	    content: "Large Up. min-width: 64em";
+	}
+}
+@media screen and ( max-width: 63.9375em ) {
+	.site-branding::after {
+	    content: "Medium Down. max-width: 63.9375em";
+	}
+}
+@media screen and ( max-width: 40em ) {
+	.site-branding::after {
+	    content: "Small only. max-width: 40em";
+	}
+}

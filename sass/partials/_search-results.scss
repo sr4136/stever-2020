@@ -1,0 +1,13 @@
+/* Search Results Page */
+.search-results article {
+	border-left: 3px solid $gray-med;
+	margin: 1.5em 0 1.5em -1em;
+	padding: 0 1em;
+}
+.search-results article h2 {
+	line-height: 1;
+}
+.search-results article .post-thumbnail,
+.search-results article img {
+	display: none;
+}

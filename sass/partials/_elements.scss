@@ -1,0 +1,54 @@
+body {
+	background: $gray-light;
+	font-family: $fonts-copy;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font-family: $fonts-headings;
+	color: $gray;
+}
+.entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+	margin-top: 1em;
+}
+a, a:visited {
+	color: $red;
+}
+a:hover {
+	text-decoration: underline;
+}
+p:last-of-type {
+	margin-bottom: 0;
+}
+article {
+	padding: 1em;
+}
+.button:visited {
+	color: $white;
+}
+.entry-content li {
+	margin-bottom: 1em;
+}
+.entry-content li li {
+	margin-bottom: 0;
+}
+.entry-content ul ul li {
+	list-style-type: circle;
+}
+.post,
+.page {
+	margin-bottom: 0;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+	margin-top: 1em;
+}
+
+#content {
+	background-color: $white;
+	border-radius: 3px;
+	border: 1px solid $gray-med;
+}
+
+.blog article {
+	margin-bottom: 2em;
+}
