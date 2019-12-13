@@ -1,0 +1,87 @@
+/* My Time at BU Table */
+.timeline-legend {
+    border: 1px solid #000;
+}
+.timeline-legend h4{
+    padding: 0 .25em;
+    text-align: center
+}
+.timeline-legend p {
+    padding: .25em .5em;
+    margin: 0;
+}
+
+.timeline {
+    overflow-x: scroll;
+}
+.timeline table {
+    table-layout: fixed;
+}
+
+.timeline td {
+    width: 100px;
+}
+
+.timeline .months {
+    background-color: #422714;
+    color: #FFF;
+    text-align: center;
+}
+.timeline .months td {
+    padding: 10px;
+}
+
+
+.timeline .years {
+    background: #726d4b;
+    color: #FFF;
+    text-align: center;
+}
+.timeline .years td {
+    padding: 10px;
+}
+.timeline .years td:nth-child(even){
+    background: #BAB384;
+}
+
+tbody td {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+tbody span {
+    position: sticky;
+    padding: 0 15px 0 10px;
+    left: 0;
+}
+
+.dev-me {
+    background: #b5c751;
+    color: #FFF;
+    font-weight: bold;
+    position: relative;
+}
+.dev-other {
+    background: #bdeeff;
+}
+.dev-direct{
+    background: #0bf;
+    color: #FFF;
+}
+.manager-direct {
+    background: #ff8c00;
+}
+.manager-other {
+    background: #F1F1F1;
+}
+.timeline i {
+    width: 10px;
+    height: 10px;
+    background: red;
+	display: inline-block;
+	border: 2px solid black;
+}
+.timeline span + i {
+    float: right;
+    margin-top: 0.5em;
+}
