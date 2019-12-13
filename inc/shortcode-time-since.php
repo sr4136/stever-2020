@@ -25,10 +25,10 @@ function stever_time_since_shortcode( $atts ) {
 
 		// https://gist.github.com/Victa/3523765
 		// Get the difference in the unit specified (years by default)
-		$output = $diff->{y} . ' years';
-		if( 0 !== $diff->{m} ){
-			$output .= ' and ' . $diff->{m} . ' month';
-			if( 1 !== $diff->{m} ) {
+		$output = $diff->y . ' years';
+		if( 0 !== $diff->m ){
+			$output .= ' and ' . $diff->m . ' month';
+			if( 1 !== $diff->m ) {
 				$output .= 's';
 			}
 		}

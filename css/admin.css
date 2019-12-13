@@ -39,7 +39,7 @@
 #the-list tr:hover,
 #the-list tr.active:hover th,
 #the-list tr.active:hover td {
-  background-color: #00FF001A; }
+  background-color: #E1E2C7; }
 
 #the-list th, #the-list td {
   vertical-align: middle; }
@@ -82,10 +82,6 @@
 
 .wp-admin.post-type-stever_quotes #the-list blockquote {
   margin: 0; }
-
-/* Post 1033 is the "Quotes to Add" post, so it gets a fancy style */
-.wp-admin.post-type-stever_quotes #the-list #post-1033 {
-  border-left: 3px solid #DD9933; }
 
 /* Page/Post Listings: Post State Tags (Plugin) */
 .post-state {
@@ -143,28 +139,28 @@ small.status {
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #C1552D; }
+  color: #88442F; }
 
 #dashboard_widget_unfinished_posts h2::before {
   content: "\f464";
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #C1552D; }
+  color: #88442F; }
 
 #dashboard_widget_recently_updated h2::before {
   content: "\f469";
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #C1552D; }
+  color: #88442F; }
 
 #dashboard_widget_all_pages h2::before {
   content: "\f163";
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #C1552D; }
+  color: #88442F; }
 
 /* WP Google Maps */
 #wpgmaps_options #wpgmza_add_address {
@@ -188,7 +184,7 @@ small.status {
 
 #wpgmza_editmarker_loading,
 #wpgmza_addmarker_loading {
-  background: #ffff5f;
+  background: #FFFF5F;
   margin-top: 2em !important;
   padding: .5em;
   text-align: center;

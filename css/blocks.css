@@ -23,7 +23,7 @@
 
 .wp-block-image figcaption {
   font-size: 0.75em;
-  background-color: #f1f1f1;
+  background-color: #F7F7F7;
   padding: 0.5em;
   margin-top: 1.5em;
   display: none !important;
@@ -40,7 +40,7 @@
   flex-basis: calc(90% - 16px); }
 
 .columns-zebra .wp-block-columns:nth-child(odd) {
-  background-color: #F1F1F1;
+  background-color: #F7F7F7;
   margin: 0 -0.9em;
   padding: 1em; }
 
@@ -48,7 +48,7 @@
   margin-top: 1em;
   padding-top: 1em;
   padding-bottom: 0;
-  border: 1x solid #ccc; }
+  border: 1x solid #CCCCCC; }
 
 .wp-block-columns.spaced-out-divider .wp-block-column {
   margin-bottom: 0; }
@@ -62,16 +62,16 @@
   background-color: transparent;
   padding: .3em 1em;
   font-size: 1em;
-  border: 1px solid #C1552D;
-  color: #C1552D;
+  border: 1px solid #88442F;
+  color: #88442F;
   font-weight: normal; }
 
 .wp-block-button__link:hover,
 .wp-block-button__link:focus,
 .wp-block-button__link:active {
-  border: 1px solid #FFF;
-  color: #FFF;
-  background-color: #C1552D;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  background-color: #88442F;
   text-decoration: none; }
 
 /* Tables */
@@ -80,14 +80,14 @@ table {
   border-spacing: 0; }
 
 .sr-table tbody tr:nth-child(2n+1) {
-  background-color: #F3F3F3; }
+  background-color: #F7F7F7; }
 
 .sr-table td {
   padding: .5em; }
 
 .sr-table .year-divider {
-  background-color: #B6C951;
-  color: #fff;
+  background-color: #717C34;
+  color: #FFFFFF;
   text-align: center;
   padding: .5em;
   font-weight: bold;
@@ -95,7 +95,7 @@ table {
   margin-bottom: 0; }
 
 .sr-table thead {
-  background-color: #E9EECA;
+  background-color: #E1E2C7;
   font-weight: bold;
   text-align: left; }
 

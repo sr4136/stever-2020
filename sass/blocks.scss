@@ -24,7 +24,7 @@
 }
 .wp-block-image figcaption {
 	font-size: 0.75em;
-	background-color: #f1f1f1;
+	background-color: $gray-light;
 	padding: 0.5em;
 	margin-top: 1.5em;
 	display: none !important;
@@ -43,7 +43,7 @@
 	flex-basis: calc(90% - 16px);
 }
 .columns-zebra .wp-block-columns:nth-child(odd) {
-    background-color: #F1F1F1;
+    background-color: $gray-light;
     margin: 0 -0.9em;
     padding: 1em;
 }
@@ -51,7 +51,7 @@
 	margin-top: 1em;
 	padding-top: 1em;
 	padding-bottom: 0;
-	border: 1x solid #ccc;
+	border: 1x solid $gray-med;
 }
 .wp-block-columns.spaced-out-divider .wp-block-column {
 	margin-bottom: 0;
@@ -66,16 +66,16 @@
     background-color: transparent;
 	padding: .3em 1em;
 	font-size: 1em;
-	border: 1px solid #C1552D;
-	color: #C1552D;
+	border: 1px solid $red;
+	color: $red;
 	font-weight: normal;
 }
 .wp-block-button__link:hover,
 .wp-block-button__link:focus,
 .wp-block-button__link:active {
-    border: 1px solid #FFF;
-    color: #FFF;
-	background-color: #C1552D;
+    border: 1px solid $white;
+    color: $white;
+	background-color: $red;
 	text-decoration: none;
 }
 
@@ -85,7 +85,7 @@ table {
     border-spacing: 0;
 }
 .sr-table tbody tr:nth-child(2n+1) {
-    background-color: #F3F3F3;
+    background-color: $gray-light;
 }
 
 .sr-table td {
@@ -93,8 +93,8 @@ table {
 }
 
 .sr-table .year-divider {
-    background-color: #B6C951;
-    color: #fff;
+    background-color: $green;
+    color: $white;
     text-align: center;
     padding: .5em;
     font-weight: bold;
@@ -103,7 +103,7 @@ table {
 }
 
 .sr-table thead {
-    background-color: #E9EECA;
+    background-color: $green-light;
     font-weight: bold;
 	text-align: left;
 }
