@@ -170,59 +170,6 @@ article {
   text-align: center;
   margin: 1em 0; }
 
-/* Icon Font Hovers: Conferences, etc. */
-.sr-table .legend {
-  margin: 2em 0;
-  list-style: none; }
-
-.sr-table .legend li {
-  margin-bottom: .5em;
-  cursor: pointer;
-  padding: .25em .5em;
-  margin-left: 5px; }
-
-.sr-table .legend li:hover {
-  border-left: 5px solid #E1E2C7;
-  margin-left: 0;
-  color: black; }
-
-.sr-table .legend li.active {
-  border-left: 5px solid #717C34;
-  margin-left: 0;
-  font-weight: bold; }
-
-.sr-table .legend .show-all {
-  border-left: 5px solid #5F6B7E;
-  margin-left: 0; }
-
-.sr-table .legend i {
-  width: 2em;
-  text-align: center;
-  padding-right: 1em; }
-
-.fas {
-  cursor: default; }
-
-.fas:after {
-  content: attr(title);
-  color: #FFFFFF;
-  background: #717C34;
-  padding: 5px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -100%);
-  display: none; }
-
-.fas:hover:after {
-  opacity: 1;
-  display: inline-block; }
-
-.none-found {
-  margin-top: -1.5em;
-  background: #F7F7F7;
-  padding: .75em 1em;
-  font-style: italic; }
-
 /* Photo on Home */
 @media screen and (max-width: 40em) {
   .home-about-me {
@@ -346,6 +293,59 @@ article {
 .stever-map-tt p {
   font-size: 0.75em;
   margin: 0; }
+
+/* Icon Font Hovers: Conferences, etc. */
+.sr-table .legend {
+  margin: 2em 0;
+  list-style: none; }
+
+.sr-table .legend li {
+  margin-bottom: .5em;
+  cursor: pointer;
+  padding: .25em .5em;
+  margin-left: 5px; }
+
+.sr-table .legend li:hover {
+  border-left: 5px solid #E1E2C7;
+  margin-left: 0;
+  color: black; }
+
+.sr-table .legend li.active {
+  border-left: 5px solid #717C34;
+  margin-left: 0;
+  font-weight: bold; }
+
+.sr-table .legend .show-all {
+  border-left: 5px solid #5F6B7E;
+  margin-left: 0; }
+
+.sr-table .legend i {
+  width: 2em;
+  text-align: center;
+  padding-right: 1em; }
+
+.fas {
+  cursor: default; }
+
+.fas:after {
+  content: attr(title);
+  color: #FFFFFF;
+  background: #717C34;
+  padding: 5px;
+  position: absolute;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  display: none; }
+
+.fas:hover:after {
+  opacity: 1;
+  display: inline-block; }
+
+.none-found {
+  margin-top: -1.5em;
+  background: #F7F7F7;
+  padding: .75em 1em;
+  font-style: italic; }
 
 /* Quotes Archive */
 .post-type-archive-stever_quotes .entry-header {

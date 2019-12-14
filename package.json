@@ -13,14 +13,9 @@
     "url": "https://github.com/sr4136/zoid/issues"
   },
   "homepage": "https://github.com/sr4136/zoid#readme",
-  "dependencies": {
-    "node-sass": "^4.9.0"
-  },
-  "scripts": {
-    "blocks": "node-sass -w sass/blocks.scss css/blocks.css",
-    "admin": "node-sass -w sass/admin.scss css/admin.css",
-    "main": "node-sass -w sass/main.scss style.css",
-    "sass-watch": "node-sass -w sass/partials/*.scss",
-    "all": "npm run sass-watch && npm run blocks & npm run admin & npm run main"
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
   }
 }
