@@ -25,7 +25,9 @@
 
 	<header id="masthead">
 		<div id="site-branding" class="grid-container">
-			<?php the_custom_logo(); ?>
+            <a href="<?php echo home_url(); ?>" class="custom-logo-link" rel="home">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" class="custom-logo" alt="Steve Rudolfi Logo">
+            </a>
 		</div>
 
 		<nav id="social-navigation">

@@ -14,6 +14,7 @@ stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 /* Custom Colors */
+/* AA w/Large Text: https://bit.ly/2EnXiPj */
 /* "Standard" Colors */
 /* Fonts */
 /* Helper: hidden class */
@@ -52,19 +53,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 1em; }
 
 a, a:visited {
-  color: #88442F; }
+  color: #C2552E; }
 
-a:hover {
-  text-decoration: underline; }
+a:hover,
+a:active {
+  text-decoration: underline;
+  color: #1468A0; }
 
 p:last-of-type {
   margin-bottom: 0; }
 
 article {
   padding: 1em; }
-
-.button:visited {
-  color: #FFFFFF; }
 
 .entry-content li {
   margin-bottom: 1em; }
@@ -127,14 +127,10 @@ article {
 
 #social-navigation a {
   font-size: 1.5em;
-  color: #5B573D;
   margin-left: 1em; }
 
 #social-navigation li:first-child a {
   margin: 0; }
-
-#social-navigation a:hover {
-  color: #88442F; }
 
 .page-header {
   border-bottom: 1px solid #CCCCCC;
@@ -212,7 +208,7 @@ article {
   flex-basis: calc( 50% + 2.25em); }
 
 .wp-block-columns.chevron h4 {
-  color: #717C34;
+  color: #6B7D05;
   font-weight: bold; }
 
 @media screen and (max-width: 40em) {
@@ -311,7 +307,7 @@ article {
   color: black; }
 
 .sr-table .legend li.active {
-  border-left: 5px solid #717C34;
+  border-left: 5px solid #8B9B31;
   margin-left: 0;
   font-weight: bold; }
 
@@ -330,7 +326,7 @@ article {
 .fas:after {
   content: attr(title);
   color: #FFFFFF;
-  background: #717C34;
+  background: #6B7D05;
   padding: 5px;
   position: absolute;
   opacity: 0;

@@ -1,5 +1,6 @@
 /* CSS for Admin */
 /* Custom Colors */
+/* AA w/Large Text: https://bit.ly/2EnXiPj */
 /* "Standard" Colors */
 /* Fonts */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
@@ -139,28 +140,28 @@ small.status {
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #88442F; }
+  color: #C2552E; }
 
 #dashboard_widget_unfinished_posts h2::before {
   content: "\f464";
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #88442F; }
+  color: #C2552E; }
 
 #dashboard_widget_recently_updated h2::before {
   content: "\f469";
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #88442F; }
+  color: #C2552E; }
 
 #dashboard_widget_all_pages h2::before {
   content: "\f163";
   font-family: Dashicons;
   padding-right: .5em;
   vertical-align: top;
-  color: #88442F; }
+  color: #C2552E; }
 
 /* WP Google Maps */
 #wpgmaps_options #wpgmza_add_address {

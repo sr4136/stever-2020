@@ -1,5 +1,6 @@
 /* CSS for Blocks */
 /* Custom Colors */
+/* AA w/Large Text: https://bit.ly/2EnXiPj */
 /* "Standard" Colors */
 /* Fonts */
 .wp-admin .wp-block {
@@ -62,8 +63,8 @@
   background-color: transparent;
   padding: .3em 1em;
   font-size: 1em;
-  border: 1px solid #88442F;
-  color: #88442F;
+  border: 1px solid #C2552E;
+  color: #C2552E;
   font-weight: normal; }
 
 .wp-block-button__link:hover,
@@ -71,7 +72,7 @@
 .wp-block-button__link:active {
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
-  background-color: #88442F;
+  background-color: #C2552E;
   text-decoration: none; }
 
 /* Tables */
@@ -86,7 +87,7 @@ table {
   padding: .5em; }
 
 .sr-table .year-divider {
-  background-color: #717C34;
+  background-color: #6B7D05;
   color: #FFFFFF;
   text-align: center;
   padding: .5em;
