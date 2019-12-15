@@ -321,23 +321,6 @@ article {
   text-align: center;
   padding-right: 1em; }
 
-.fas {
-  cursor: default; }
-
-.fas:after {
-  content: attr(title);
-  color: #FFFFFF;
-  background: #6B7D05;
-  padding: 5px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -100%);
-  display: none; }
-
-.fas:hover:after {
-  opacity: 1;
-  display: inline-block; }
-
 .none-found {
   margin-top: -1.5em;
   background: #F7F7F7;

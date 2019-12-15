@@ -30,24 +30,6 @@
 	padding-right: 1em;
 }
 
-.fas {
-  cursor: default;
-}
-.fas:after {
-  content: attr( title );
-  color: $white;
-  background: $green;
-  padding: 5px;
-  position: absolute;
-  opacity: 0;
-  transform: translate(-50%, -100%);
-  display: none;
-}
-.fas:hover:after {
-  opacity: 1;
-  display: inline-block;
-}
-
 .none-found {
     margin-top: -1.5em;
     background: $gray-light;

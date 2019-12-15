@@ -154,11 +154,42 @@ function stever_scripts() {
 		filemtime( get_stylesheet_directory() . '/css/blocks.css' )
 	);
 
-	wp_enqueue_script( 'stever-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'stever-skip-link-focus-fix',
+        get_template_directory_uri() . '/js/skip-link-focus-fix.js',
+        array(),
+        filemtime( get_stylesheet_directory() . '/js/skip-link-focus-fix.js' ),
+        true
+    );
+
+
+    /* CSS: SteveR Tipped Styles */
+    wp_enqueue_style( 'stever-tipped',
+        get_stylesheet_directory_uri() . '/js/tipped/tipped.css',
+        array(),
+        filemtime( get_stylesheet_directory() . '/js/tipped/tipped.css' )
+    );
+    wp_enqueue_script( 'stever-tipped',
+        get_template_directory_uri() . '/js/tipped/tipped.min.js',
+        array(),
+        filemtime( get_stylesheet_directory() . '/js/tipped/tipped.min.js' ),
+        true
+    );
+    wp_enqueue_script( 'stever-tipped-kickoff',
+        get_template_directory_uri() . '/js/tipped/tipped-kickoff.js',
+        array(),
+        filemtime( get_stylesheet_directory() . '/js/tipped/tipped-kickoff.js' ),
+        true
+    );
+
 
 	// Professional Development Page. TODO: Better way to enqueue this without using the ID.
 	if( 6 == get_the_id() ){
-		wp_enqueue_script( 'stever-table-filter', get_template_directory_uri() . '/js/table-filter.js', array(), filemtime( get_stylesheet_directory() . '/js/table-filter.js' ), true  );
+		wp_enqueue_script( 'stever-table-filter',
+            get_template_directory_uri() . '/js/table-filter.js',
+            array(),
+            filemtime( get_stylesheet_directory() . '/js/table-filter.js' ),
+            true
+        );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
