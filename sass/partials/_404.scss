@@ -12,6 +12,25 @@
 			width: 60%;
 			margin: 4em auto 2em auto;
 		}
+		
+		.search-form {
+			label {
+				padding-right: 2em;
+			}
+			.search-field {
+				padding-left: .75em;
+				margin: 0;
+			}
+			.search-field::placeholder {
+				color: $black;
+			}
+			.search-field:focus::placeholder {
+				opacity: 0;
+			}
+			.search-submit {
+				height: 100%;
+			}
+		}
 	}
 	aside {
 		padding: .5em 0 0 1em;
@@ -26,25 +45,6 @@
 		}
 		.all-pages ul.children {
 			margin-left: 1em;
-		}
-	}
-
-	.search-form {
-		label {
-			padding-right: 2em;
-		}
-		.search-field {
-			padding-left: .75em;
-			margin: 0;
-		}
-		.search-field::placeholder {
-			color: $black;
-		}
-		.search-field:focus::placeholder {
-			opacity: 0;
-		}
-		.search-submit {
-			height: 100%;
 		}
 	}
 }
