@@ -1,31 +1,51 @@
 /* 404 Page */
-.error404 .page-content {
-	padding-right: 1em;
+.error404 {
+	.page-content {
+		padding-right: 1em;
+
+		p {
+			margin: 1em 0 2em 0;
+		}
+
+		img {
+			display: block;
+			width: 60%;
+			margin: 4em auto 2em auto;
+		}
+	}
+	aside {
+		padding: .5em 0 0 1em;
+		border-left: 1px solid $gray-med;
+
+		.all-pages {
+			margin-top: 1em;
+		}
+		.all-pages ul{
+			list-style-type: none;
+			margin-left: 0;
+		}
+		.all-pages ul.children {
+			margin-left: 1em;
+		}
+	}
+
+	.search-form {
+		label {
+			padding-right: 2em;
+		}
+		.search-field {
+			padding-left: .75em;
+			margin: 0;
+		}
+		.search-field::placeholder {
+			color: $black;
+		}
+		.search-field:focus::placeholder {
+			opacity: 0;
+		}
+		.search-submit {
+			height: 100%;
+		}
+	}
 }
-.error404 aside {
-	padding: .5em 0 0 1em;
-	border-left: 1px solid $gray-med;
-}
-.error404 aside .all-pages ul{
-	list-style-type: none;
-	margin-left: 0;
-}
-.error404 aside .all-pages ul.children {
-	margin-left: 1em;
-}
-.error404 .search-form label {
-	padding-right: 2em;
-}
-.error404 .search-form .search-field {
-	padding-left: .75em;
-	margin: 0;
-}
-.error404 .search-form .search-field::placeholder {
-	color: $black;
-}
-.error404 .search-form .search-field:focus::placeholder {
-	opacity: 0;
-}
-.error404 .search-form .search-submit {
-	height: 100%;
-}
+

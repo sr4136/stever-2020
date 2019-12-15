@@ -16,11 +16,12 @@ get_header();
 			<section class="grid-x">
 
 				<header class="page-header cell">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'stever' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Not found!', 'stever' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content cell medium-8">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'stever' ); ?></p>
+
+					<p><?php esc_html_e( "It looks like nothing exists at this URL. Maybe try a search?", 'stever' ); ?></p>
 
 					<form role="search" method="get" class="search-form grid-x row" action="https://steverudolfi.com/">
 						<label class="cell medium-10">
@@ -30,8 +31,9 @@ get_header();
 						<div class="cell medium-2">
 							<input type="submit" class="search-submit button-ghost cell medium-1" value="Search">
 						</div>
-
 					</form>
+
+                    <img alt="Snarky 404 Image" src="<?php echo get_stylesheet_directory_uri(); ?>/img/404.jpg" />
 
 				</div><!-- .page-content -->
 
