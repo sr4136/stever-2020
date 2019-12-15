@@ -1,87 +1,163 @@
-/* My Time at BU Table */
-.timeline-legend {
-    border: 1px solid #000;
-}
-.timeline-legend h4{
-    padding: 0 .25em;
+/*
+ * My Time at BU Table
+ */
+
+/* Legend */
+.timeline-legend h4 {
+    margin: 0;
+    padding: 0.4em 0;
+    border: 1px solid $gray-med;
     text-align: center;
 }
 .timeline-legend p {
-    padding: .25em .5em;
-    margin: 0;
+    margin: .25em 0 0 0;
+    padding: .25em 1em;
 }
 
+/* Timeline: General */
 .timeline {
     overflow-x: scroll;
-}
-.timeline table {
-    table-layout: fixed;
-}
 
-.timeline td {
-    width: 100px;
-}
+    table {
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0 1px;
+        margin-bottom: 1em;
+    }
 
-.timeline .months {
-    background-color: #422714;
-    color: #FFF;
-    text-align: center;
-}
-.timeline .months td {
-    padding: 10px;
-}
+    td {
+        position: relative;
+        width: 100px;
+        padding: 5px;
+    }
+
+    tbody td {
+        border-radius: 5px;
+    }
+
+    /* Zero-Width Non-Joiner https://bit.ly/35ojLaW */
+    tbody:before {
+        content: "\200C";
+        display: block;
+        line-height: 0.5em;
+    }
+
+    span {
+        position: sticky;
+        padding: 0 2em;
+        left: 0;
+    }
+
+    /* Timeline: Months & Years */
+    .months {
+        background-color: $teal;
+        color: $white;
+        text-align: center;
+    }
+
+    .months td {
+        padding: 10px;
+    }
+
+    .months td + td {
+        border-left: 1px solid $teal-light;
+    }
+
+    .years {
+        background: $teal-light;
+        color: $black;
+    }
+
+    .years td {
+        padding-left: 1.5em;
+    }
+
+    .years td + td {
+        border-left: 1px solid $teal;
+    }
+
+    /* Timeline: Text Indicators */
+    i {
+        position: absolute;
+        z-index: 2;
+        top: 0.55em;
+        left: 0.55em;
+        width: 15px;
+        height: 15px;
+        background: $white;
+        border: 5px solid $black;
+        border-radius: 50%;
+        cursor: pointer;
+
+    }
+
+    i:before,
+    i:after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        border: 1px solid $black;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+
+    i:before {
+        -webkit-animation: ripple 3s linear infinite;
+    }
+
+    i:after {
+        -webkit-animation: ripple 3s linear infinite 0.75s;
+    }
+
+    @-webkit-keyframes ripple {
+        from {
+            -webkit-transform: scale(0);
+            opacity: 1;
+        }
+        to {
+            -webkit-transform: scale(3);
+            opacity: 0;
+        }
+    }
 
 
-.timeline .years {
-    background: #726d4b;
-    color: #FFF;
-    text-align: center;
+    span + i {
+        left: auto;
+        right: 0.25em;
+    }
 }
-.timeline .years td {
-    padding: 10px;
-}
-.timeline .years td:nth-child(even){
-    background: #BAB384;
-}
-
-tbody td {
-    border-radius: 5px;
-    padding: 5px;
-}
-
-tbody span {
-    position: sticky;
-    padding: 0 15px 0 10px;
-    left: 0;
-}
-
+/* Timeline: People Rows */
 .dev-me {
-    background: #b5c751;
-    color: #FFF;
+    background: $timeline-me;
+    border: 2px solid $green-dark;
+    color: $white;
     font-weight: bold;
-    position: relative;
-}
-.dev-other {
-    background: #bdeeff;
 }
 .dev-direct{
-    background: #0bf;
-    color: #FFF;
+    background: $timeline-dev;
+    color: $white;
+    font-weight: bold;
 }
 .manager-direct {
-    background: #ff8c00;
+    background: $timeline-manager;
+    color: $white;
+    font-weight: bold;
+}
+.dev-other,
+.manager-other {
+    font-size: 0.75em;
+    font-weight: bold;
+    background: $gray-light;
+}
+.dev-other {
+    border: 2px dotted $timeline-dev;
 }
 .manager-other {
-    background: #F1F1F1;
+    border: 2px dotted $timeline-manager;
 }
-.timeline i {
-    width: 10px;
-    height: 10px;
-    background: red;
-	display: inline-block;
-	border: 2px solid black;
-}
-.timeline span + i {
-    float: right;
-    margin-top: 0.5em;
+.dev-other span,
+.manager-other span {
+    padding: 0 2.5em;
 }

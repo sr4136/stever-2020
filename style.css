@@ -15,6 +15,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 /* Custom Colors */
 /* AA w/Large Text: https://bit.ly/2EnXiPj */
+/* For Timeline Only */
 /* "Standard" Colors */
 /* Fonts */
 /* Helper: hidden class */
@@ -415,84 +416,129 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 html.quotes-slideshow.fixate-admin-menu {
   margin-left: 0 !important; }
 
-/* My Time at BU Table */
-.timeline-legend {
-  border: 1px solid #000; }
-
+/*
+ * My Time at BU Table
+ */
+/* Legend */
 .timeline-legend h4 {
-  padding: 0 .25em;
+  margin: 0;
+  padding: 0.4em 0;
+  border: 1px solid #CCCCCC;
   text-align: center; }
 
 .timeline-legend p {
-  padding: .25em .5em;
-  margin: 0; }
+  margin: .25em 0 0 0;
+  padding: .25em 1em; }
 
+/* Timeline: General */
 .timeline {
-  overflow-x: scroll; }
+  overflow-x: scroll;
+  /* Zero-Width Non-Joiner https://bit.ly/35ojLaW */
+  /* Timeline: Months & Years */
+  /* Timeline: Text Indicators */ }
+  .timeline table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    margin-bottom: 1em; }
+  .timeline td {
+    position: relative;
+    width: 100px;
+    padding: 5px; }
+  .timeline tbody td {
+    border-radius: 5px; }
+  .timeline tbody:before {
+    content: "\200C";
+    display: block;
+    line-height: 0.5em; }
+  .timeline span {
+    position: sticky;
+    padding: 0 2em;
+    left: 0; }
+  .timeline .months {
+    background-color: #618985;
+    color: #FFFFFF;
+    text-align: center; }
+  .timeline .months td {
+    padding: 10px; }
+  .timeline .months td + td {
+    border-left: 1px solid #B1DDDA; }
+  .timeline .years {
+    background: #B1DDDA;
+    color: #000000; }
+  .timeline .years td {
+    padding-left: 1.5em; }
+  .timeline .years td + td {
+    border-left: 1px solid #618985; }
+  .timeline i {
+    position: absolute;
+    z-index: 2;
+    top: 0.55em;
+    left: 0.55em;
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border: 5px solid #000000;
+    border-radius: 50%;
+    cursor: pointer; }
+  .timeline i:before,
+  .timeline i:after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border: 1px solid #000000;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; }
+  .timeline i:before {
+    -webkit-animation: ripple 3s linear infinite; }
+  .timeline i:after {
+    -webkit-animation: ripple 3s linear infinite 0.75s; }
 
-.timeline table {
-  table-layout: fixed; }
+@-webkit-keyframes ripple {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(3);
+    opacity: 0; } }
+  .timeline span + i {
+    left: auto;
+    right: 0.25em; }
 
-.timeline td {
-  width: 100px; }
-
-.timeline .months {
-  background-color: #422714;
-  color: #FFF;
-  text-align: center; }
-
-.timeline .months td {
-  padding: 10px; }
-
-.timeline .years {
-  background: #726d4b;
-  color: #FFF;
-  text-align: center; }
-
-.timeline .years td {
-  padding: 10px; }
-
-.timeline .years td:nth-child(even) {
-  background: #BAB384; }
-
-tbody td {
-  border-radius: 5px;
-  padding: 5px; }
-
-tbody span {
-  position: sticky;
-  padding: 0 15px 0 10px;
-  left: 0; }
-
+/* Timeline: People Rows */
 .dev-me {
-  background: #b5c751;
-  color: #FFF;
-  font-weight: bold;
-  position: relative; }
-
-.dev-other {
-  background: #bdeeff; }
+  background: #8B9B31;
+  border: 2px solid #5B573D;
+  color: #FFFFFF;
+  font-weight: bold; }
 
 .dev-direct {
-  background: #0bf;
-  color: #FFF; }
+  background: #048BA8;
+  color: #FFFFFF;
+  font-weight: bold; }
 
 .manager-direct {
-  background: #ff8c00; }
+  background: #004777;
+  color: #FFFFFF;
+  font-weight: bold; }
+
+.dev-other,
+.manager-other {
+  font-size: 0.75em;
+  font-weight: bold;
+  background: #F7F7F7; }
+
+.dev-other {
+  border: 2px dotted #048BA8; }
 
 .manager-other {
-  background: #F1F1F1; }
+  border: 2px dotted #004777; }
 
-.timeline i {
-  width: 10px;
-  height: 10px;
-  background: red;
-  display: inline-block;
-  border: 2px solid black; }
-
-.timeline span + i {
-  float: right;
-  margin-top: 0.5em; }
+.dev-other span,
+.manager-other span {
+  padding: 0 2.5em; }
 
 /*
  * Debugging Breakpoints.

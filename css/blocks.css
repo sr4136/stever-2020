@@ -1,6 +1,7 @@
 /* CSS for Blocks */
 /* Custom Colors */
 /* AA w/Large Text: https://bit.ly/2EnXiPj */
+/* For Timeline Only */
 /* "Standard" Colors */
 /* Fonts */
 .wp-admin .wp-block {
@@ -55,7 +56,7 @@
   margin-bottom: 0; }
 
 .wp-block-columns h1, .wp-block-columns h2, .wp-block-columns h3, .wp-block-columns h4, .wp-block-columns h5, .wp-block-columns h6 {
-  margin-top: 0; }
+  /* margin-top: 0; */ }
 
 /* Buttons */
 .wp-block-button__link,
@@ -87,7 +88,7 @@ table {
   padding: .5em; }
 
 .sr-table .year-divider {
-  background-color: #6B7D05;
+  background-color: #8B9B31;
   color: #FFFFFF;
   text-align: center;
   padding: .5em;
