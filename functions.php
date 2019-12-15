@@ -161,29 +161,35 @@ function stever_scripts() {
         true
     );
 
+	/* Use the "Body Class" metabox as a vehicle to enqueue scripts/styles */
+	$stever_body_class_text = get_post_meta( get_the_id(), 'stever_body_class_text', true );
 
-    /* CSS: SteveR Tipped Styles */
-    wp_enqueue_style( 'stever-tipped',
-        get_stylesheet_directory_uri() . '/js/tipped/tipped.css',
-        array(),
-        filemtime( get_stylesheet_directory() . '/js/tipped/tipped.css' )
-    );
-    wp_enqueue_script( 'stever-tipped',
-        get_template_directory_uri() . '/js/tipped/tipped.min.js',
-        array(),
-        filemtime( get_stylesheet_directory() . '/js/tipped/tipped.min.js' ),
-        true
-    );
-    wp_enqueue_script( 'stever-tipped-kickoff',
-        get_template_directory_uri() . '/js/tipped/tipped-kickoff.js',
-        array(),
-        filemtime( get_stylesheet_directory() . '/js/tipped/tipped-kickoff.js' ),
-        true
-    );
+    /* CSS & JS: Tipped */
+    if (
+        strpos( $stever_body_class_text, 'sr-table-pro-dev' ) !== false ||
+        strpos( $stever_body_class_text, 'sr-bu-timeline' ) !== false
+    ) {
+        wp_enqueue_style( 'stever-tipped',
+            get_stylesheet_directory_uri() . '/js/tipped/tipped.css',
+            array(),
+            filemtime( get_stylesheet_directory() . '/js/tipped/tipped.css' )
+        );
+        wp_enqueue_script( 'stever-tipped',
+            get_template_directory_uri() . '/js/tipped/tipped.min.js',
+            array(),
+            filemtime( get_stylesheet_directory() . '/js/tipped/tipped.min.js' ),
+            true
+        );
+        wp_enqueue_script( 'stever-tipped-kickoff',
+            get_template_directory_uri() . '/js/tipped/tipped-kickoff.js',
+            array(),
+            filemtime( get_stylesheet_directory() . '/js/tipped/tipped-kickoff.js' ),
+            true
+        );
+    }
 
-
-	// Professional Development Page. TODO: Better way to enqueue this without using the ID.
-	if( 6 == get_the_id() ){
+	// Professional Development Page.
+    if ( strpos( $stever_body_class_text, 'sr-table-pro-dev' ) ){
 		wp_enqueue_script( 'stever-table-filter',
             get_template_directory_uri() . '/js/table-filter.js',
             array(),
@@ -192,9 +198,6 @@ function stever_scripts() {
         );
 	}
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'stever_scripts' );
 
