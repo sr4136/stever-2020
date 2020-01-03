@@ -99,10 +99,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		if( 'slideshow' == layout ){
 			$( 'html' ).addClass( 'quotes-slideshow' );
 
-			$( '#main' ).append( '<div class="timeline"><span></span></div>' );
+			$( '#main' ).append( '<div class="quotes-progress-indicator"><span></span></div>' );
 
 			initial_color = colors_array[ 0 ];
-			$( '.timeline span' ).css( 'background', initial_color );
+			$( '.quotes-progress-indicator span' ).css( 'background', initial_color );
 
 			$( 'article' ).first().addClass( 'active' );
 			
@@ -110,7 +110,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 			
 			function slide(){
 			
-				$( '.timeline span' ).css( 'width', '0%' );
+				$( '.quotes-progress-indicator span' ).css( 'width', '0%' );
 
 				var current_quote = $( 'article.active' );
 				var current_index = $( current_quote ).index();
@@ -127,12 +127,12 @@ var getUrlParameter = function getUrlParameter(sParam) {
 					}
 				}
 
-				$( '.timeline span' ).stop().animate( {
+				$( '.quotes-progress-indicator span' ).stop().animate( {
 					width: '100%'
 				}, slide_time );
 
 				var new_color = colors_array[ current_index ];
-				$( '.timeline span' ).css( 'background', new_color );
+				$( '.quotes-progress-indicator span' ).css( 'background', new_color );
 				
 				setTimeout( slide, slide_time );
 				

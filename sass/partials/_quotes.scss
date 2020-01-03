@@ -38,7 +38,7 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 .quotes-slideshow article.active {
 	display: block;
 }
-.quotes-slideshow .timeline {
+.quotes-slideshow .quotes-progress-indicator {
 	height: 5px;
 	background: $gray-med;
     position: absolute;
@@ -46,7 +46,7 @@ html.quotes-slideshow.fixate-admin-menu.folded {
     width: 100%;
     left: 0;
 }
-.quotes-slideshow .timeline span{
+.quotes-slideshow .quotes-progress-indicator span{
 	width: 0%;
 	background: red;
 	height: 5px;
