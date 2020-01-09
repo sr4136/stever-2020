@@ -115,6 +115,12 @@ function stever_check_for_children( $post_id=null ) {
 					$retStr .= stever_check_for_children( get_the_id() );
 				$retStr .= '</li>';
 			endwhile;
+
+			/* Add the Quotes page (archive) */
+			if( $post_id == 0 ){
+				$retStr .= '<li><div class="post-info-wrap"><a href="https://steverudolfi.com/wp-admin/edit.php?post_type=stever_quotes">Quotes</a><a class="linkview" href="https://steverudolfi.com/quotes/">view</a></div></li>';
+			}
+
 		$retStr .= '</ul>';
 		wp_reset_postdata();
 	endif;
