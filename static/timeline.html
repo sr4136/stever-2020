@@ -1,3 +1,16 @@
+<style>
+i {
+	width: 10px;
+	height: 10px;
+	background: red;
+	display: inline-block;
+	float: left;
+}
+span + i {
+	float: right;
+}
+</style>
+
 <div class="timeline">
 	<table cellspacing="0" cellpadding="1">
 		<thead>
@@ -100,7 +113,7 @@
 				<td>Oct</td>
 				<td>Nov</td>
 				<td>Dec</td>
-				<td>Jan</td>
+				<td colspan="3">Jan - Today</td>
 			</tr>
 			<tr class="years">
 				<td colspan="2"><span>2011</span></td>
@@ -112,33 +125,33 @@
 				<td colspan="12"><span>2017</span></td>
 				<td colspan="12"><span>2018</span></td>
 				<td colspan="12"><span>2019</span></td>
-				<td colspan="12"><span>2020</span></td>
+				<td colspan="15"><span>2020</span></td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td class="manager-other" colspan="59"><span>VP, MarCom</span></td>
 				<td class="manager-direct" colspan="3"><span>VP, MarCom</span></td>
-				<td class="manager-other" colspan="37"><span>VP, MarCom</span></td>
+				<td class="manager-other" colspan="40"><span>VP, MarCom</span></td>
 			</tr>
 			<tr>
 				<td class="manager-direct" colspan="17">
 					<span>Creative Director</span>
-					<i data-title="The Creative Director got promoted to Executive Creative Director, so we reported to them."></i>
+					<i data-title="The Creative Director got promoted to Executive Creative Director, so all devs reported to them."></i>
 				</td>
 				<td class="manager-direct" colspan="15"><span>Executive Creative Director</span></td>
 				<td class="manager-other" colspan="13"><span>Executive Creative Director</span></td>
 				<td class="manager-direct" colspan="14">
 					<span>Executive Creative Director</span>
-					<i data-title="The Executive Creative Director quit, so I reported directly to the VP of Marketing & Communications while a replacement was found."></i>
+					<i data-title="The Executive Creative Director quit, so I reported directly to the VP while a replacement was found."></i>
 				</td>
-				<td class="manager-other" colspan="3"><span>Exec. Creative Dir.</span></td>
+				<td class="manager-empty" colspan="3"></td>
 				<td class="manager-direct" colspan="16">
 					<i data-title="A new Executive Creative Director was hired, so I reported directly to them."></i>
 					<span>Executive Creative Director</span>
-					<i data-title="The Executive Creative Director quit, and the position was eliminated."></i>
+					<i data-title="The Executive Creative Director position was eliminated."></i>
 				</td>
-				<td class="manager-direct" colspan="21">
+				<td class="manager-direct" colspan="24">
 					<i data-title="The department underwent a small restructuring, and I reported to the Creative Director."></i>
 					<span>Creative Director</span>
 				</td>
@@ -146,38 +159,38 @@
 			<tr>
 				<td colspan="32"></td>
 				<td class="manager-direct" colspan="13">
-					<i data-title="The department hired a developer from IS&T to be a 50/50 split between the two departments, and also to manage all of our developers."></i>
+					<i data-title="The department hired a developer from IS&T to act as a 50/50 split between the two departments, and also to manage all of our developers."></i>
 					<span>Lead Developer</span>
 					<i data-title="The Lead Developer quit."></i>
 				</td>
 				<td colspan="33"></td>
-				<td class="dev-me" colspan="21"><span>Director of Development</span></td>
+				<td class="dev-me" colspan="24"><span>Director of Development</span></td>
 			</tr>
 
 			<tr>
 				<td colspan="54"></td>
 				<td class="dev-me promote" colspan="24">
 					<span>Senior Developer</span>
-					<i data-title="The department expansion was in full force. In order to ensure a stable reporting and support structure, I was promoted to the Director of Web Development-- after having written the job description."></i>
+					<i data-title="The department expansion was in full force. In order to ensure a stable reporting and support structure, I was promoted to the Director of Web Development-- after having written the job description myself."></i>
 				</td>
-				<td colspan="20"></td>
+				<td colspan="23"></td>
 			</tr>
 			<tr>
 				<td class="dev-other" colspan="22">
-					<span>Dev 2: Aaron</span>
+					<span>Dev 2: Alvin</span>
 					<i data-title="The Dev 2 quit."></i>
 				</td>
 				<td colspan="22"></td>
 				<td class="dev-me promote" colspan="10">
-					<i data-title="As our Lead Developereloper quit, I took up the reins immediately, handling interdepartmental coordination and managing the other developer. After the Dev 2 quit, I rewrote the job descriptions for all of our developer positions and hired a replacement Dev 2."></i>
+					<i data-title="As the Lead Developer quit. I took up the reins immediately, handling interdepartmental coordination and managing the other developer. After the Dev 2 quit, I rewrote the job descriptions for all of our developer positions and hired a replacement Dev 2."></i>
 					<span>Dev 3</span>
-					<i data-title="After covering the responsibilities of the missing Lead Developer position for almost a year, and preempting an upcoming expansion that would double the size of our department, I pushed to rewrite the Lead Developer position as a Senior Developer, who would only have responsibilities within ID. I was promoted to that Senior Developer position in May 2016."></i>
+					<i data-title="After fulfilling the responsibilities of the empty Lead Developer position for almost a year, and preempting an upcoming expansion that would double the size of our department, I pushed to rewrite the Lead Developer position as a Senior Developer, who would only have responsibilities within ID. I was promoted to that Senior Developer position in May 2016. From this point on, all of the other Devs report to me."></i>
 				</td>
 				<td class="dev-direct" colspan="25">
-					<i data-title="I hired a new Dev 3 to round out the department."></i>
-					<span>Dev 3: Jon</span>
+					<i data-title="I interviewed and hired a new Dev 3 to round out the department."></i>
+					<span>Dev 3: Brendan</span>
 				</td>
-				<td colspan="19"></td>
+				<td colspan="22"></td>
 			</tr>
 			<tr>
 				<td colspan="18"></td>
@@ -187,14 +200,14 @@
 				</td>
 				<td colspan="2"></td>
 				<td class="dev-other" colspan="8">
-					<i data-title="I hired a new Dev 2. I unofficially managed them until I was promoted to the Senior Developer."></i>
-					<span>Dev 2: Jes</span>
+					<i data-title="I interviewed and hired a new Dev 2. I unofficially managed them until I was promoted to the Senior Developer position."></i>
+					<span>Dev 2: Jane</span>
 				</td>
 				<td class="dev-direct" colspan="17">
-					<span>Dev 2: Jes</span>
+					<span>Dev 2: Jane</span>
 					<i data-title="The Dev 2 quit."></i>
 				</td>
-				<td colspan="27"></td>
+				<td colspan="30"></td>
 			</tr>
 			<tr>
 				<td class="dev-me promote" colspan="18">
@@ -205,45 +218,45 @@
 				<td colspan="3"></td>
 				<td class="dev-other" colspan="22">
 					<i data-title="The department promoted a Web Producer to a Dev 1."></i>
-					<span>Dev 1: Eveleen</span>
+					<span>Dev 1: Patricia</span>
 					<i data-title="The Dev 1 got promoted to a Dev 2."></i>
 				</td>
 				<td class="dev-other" colspan="3">
-					<span>Dev 2: Eveleen</span>
+					<span>Dev 2: Patricia</span>
 					<i data-title="The Dev 2 quit."></i>
 				</td>
 				<td colspan="20"></td>
 				<td class="dev-direct" colspan="29">
-					<i data-title="I hired a new Dev 2."></i>
-					<span>Dev 2: Alana</span>
+					<i data-title="I interviewed and hired a new Dev 2."></i>
+					<span>Dev 2: Louisa</span>
 					<i data-title="I promoted the Dev 2 to a Dev 3."></i>
 				</td>
-				<td class="dev-direct" colspan="4"><span>Dev 3: Alana</span></td>
+				<td class="dev-direct" colspan="7"><span>Dev 3: Louisa</span></td>
 			</tr>
 			<tr>
-				<td colspan="48"></td>
+				<td colspan="47"></td>
 				<td class="dev-other" colspan="7">
-					<i data-title="I interviewed for and hired a Dev 1. I unofficially managed them until I was promoted to the Senior Developer."></i>
-					<span>Dev 1: Brianne</span>
+					<i data-title="I interviewed and hired a Dev 1. I unofficially managed them until I was promoted to the Senior Developer position."></i>
+					<span>Dev 1: Libby</span>
 				</td>
 				<td class="dev-direct" colspan="24">
-					<span>Dev 1: Brianne</span>
+					<span>Dev 1: Libby</span>
 					<i data-title="I promoted the Dev 1 to a Dev 2."></i>
 				</td>
-				<td class="dev-direct" colspan="21"><span>Dev 2: Brianne</span></td>
+				<td class="dev-direct" colspan="24"><span>Dev 2: Libby</span></td>
 			</tr>
 			<tr>
 				<td colspan="80"></td>
-				<td class="dev-direct" colspan="19">
-					<i data-title="I hired a replacement for the recently vacated Dev 3 position."></i>
-					<span>Dev 3: Jim</span>
+				<td class="dev-direct" colspan="22">
+					<i data-title="I interviewed and hired a replacement for the Dev 3 position."></i>
+					<span>Dev 3: Jeremy</span>
 				</td>
 			</tr>
 			<tr>
 				<td colspan="80"></td>
 				<td class="dev-direct" colspan="18">
-					<i data-title="In order to round out the department to complete the expansion, I hired a final Dev 3."></i>
-					<span>Dev 3: Todd</span>
+					<i data-title="In order to round out the department to complete the expansion, I interviewed and hired a final Dev 3."></i>
+					<span>Dev 3: Fabien</span>
 					<i data-title="The Dev 3 quit."></i>
 				</td>
 			</tr>
