@@ -136,33 +136,28 @@ small.status {
   font-size: 0.65em;
   opacity: 0.5; }
 
-#dashboard_widget_maps h2::before {
-  content: "\f319";
-  font-family: Dashicons;
+#dashboard_widget_maps h2::before,
+#dashboard_widget_unfinished_posts h2::before,
+#dashboard_widget_recently_updated h2::before,
+#dashboard_widget_all_pages h2::before {
+  font-family: "Dashicons";
   padding-right: .5em;
-  vertical-align: top;
-  color: #C2552E; }
+  vertical-align: middle;
+  color: #C2552E;
+  font-weight: normal;
+  font-size: 1.5em; }
+
+#dashboard_widget_maps h2::before {
+  content: "\f319"; }
 
 #dashboard_widget_unfinished_posts h2::before {
-  content: "\f464";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C2552E; }
+  content: "\f464"; }
 
 #dashboard_widget_recently_updated h2::before {
-  content: "\f469";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C2552E; }
+  content: "\f469"; }
 
 #dashboard_widget_all_pages h2::before {
-  content: "\f163";
-  font-family: Dashicons;
-  padding-right: .5em;
-  vertical-align: top;
-  color: #C2552E; }
+  content: "\f163"; }
 
 /* WP Google Maps */
 #wpgmaps_options #wpgmza_add_address {
