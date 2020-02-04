@@ -44,7 +44,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 body {
   background: #F7F7F7;
-  font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -63,6 +63,10 @@ a:active {
 
 article {
   padding: 1em; }
+
+code {
+  border: 1px solid #CCCCCC;
+  background-color: #F7F7F7; }
 
 .entry-content li {
   margin-bottom: 1em; }
@@ -195,6 +199,10 @@ article {
     margin-left: 0; }
   .error404 aside .all-pages ul.children {
     margin-left: 1em; }
+
+/* General */
+.home .entry-content li {
+  margin-bottom: 0; }
 
 /* Photo on Home */
 @media screen and (max-width: 40em) {
@@ -445,6 +453,7 @@ html.quotes-slideshow.fixate-admin-menu {
 /* Timeline: General */
 .timeline {
   overflow-x: scroll;
+  border: 1px solid #CCCCCC;
   /* Zero-Width Non-Joiner https://bit.ly/35ojLaW */
   /* Timeline: Months & Years */
   /* Timeline: Text Indicators */ }
@@ -467,6 +476,9 @@ html.quotes-slideshow.fixate-admin-menu {
     position: sticky;
     padding: 0 2em;
     left: 0; }
+  .timeline .months,
+  .timeline .years {
+    font-size: .75em; }
   .timeline .months {
     background-color: #618985;
     color: #FFFFFF;

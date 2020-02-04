@@ -1,10 +1,14 @@
+/* General */
+.home .entry-content li {
+    margin-bottom: 0;
+}
+
 /* Photo on Home */
 @media screen and ( max-width: 40em ) {
 	.home-about-me {
 		grid-template-areas: "media-text-content" "media-text-media" !important;
 		grid-template-columns: 100% !important;
 	}
-
 }
 
 /* Blocks */

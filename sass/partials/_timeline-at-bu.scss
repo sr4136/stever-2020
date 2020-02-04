@@ -17,6 +17,7 @@
 /* Timeline: General */
 .timeline {
     overflow-x: scroll;
+	border: 1px solid $gray-med;
 
     table {
         table-layout: fixed;
@@ -49,6 +50,10 @@
     }
 
     /* Timeline: Months & Years */
+   .months,
+   .years {
+	    font-size: .75em;
+	}
     .months {
         background-color: $teal;
         color: $white;

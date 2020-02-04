@@ -20,6 +20,10 @@ a:active {
 article {
 	padding: 1em;
 }
+code {
+    border: 1px solid $gray-med;
+    background-color: $gray-light;
+}
 .entry-content li {
 	margin-bottom: 1em;
 }
