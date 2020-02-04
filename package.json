@@ -15,7 +15,6 @@
   "homepage": "https://github.com/sr4136/zoid#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
+    "gulp-sass": "^4.0.2"
   }
 }
