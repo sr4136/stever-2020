@@ -6,21 +6,10 @@
     max-width: 1400px;
 }
 
+
 /* Images */
-.wp-block-media-text .wp-block-media-text__content {
-	padding: 0 1em 0 0;
-}
-.wp-block-image {
-	margin-bottom: 0;
-}
-.wp-block-image img {
-	width: 100%;
-}
-.wp-block-media-text {
-	align-items: start;
-}
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
-	padding-left: 0;
+figcaption br {
+    margin: 0 0 10px 0;
 }
 .wp-block-image figcaption {
 	font-size: 0.75em;
@@ -28,9 +17,8 @@
 	padding: 0.5em;
 	margin-top: 1.5em;
 	display: none !important;
-	width: 100%;
 }
-.wp-block-image:hover figcaption {
+.wp-block-image:hover figcaption{
 	display: table-caption !important;
 }
 
