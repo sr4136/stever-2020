@@ -136,7 +136,12 @@ code {
 
 .page-header {
   border-bottom: 1px solid #CCCCCC;
-  padding-top: .5em; }
+  padding-top: .5em;
+  position: relative; }
+  .page-header .button {
+    position: absolute;
+    right: 0;
+    top: 1.5em; }
 
 .home .page-header {
   display: none; }

@@ -45,6 +45,12 @@
 .page-header {
 	border-bottom: 1px solid $gray-med;
 	padding-top: .5em;
+	position: relative;
+	.button {
+		position: absolute;
+		right: 0;
+		top: 1.5em;
+	}
 }
 .home .page-header {
 	display: none;

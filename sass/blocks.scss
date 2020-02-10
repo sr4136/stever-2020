@@ -6,6 +6,13 @@
     max-width: 1400px;
 }
 
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-large footer,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.is-style-large footer {
+	text-align: left;
+}
+
 
 /* Images */
 figcaption br {
