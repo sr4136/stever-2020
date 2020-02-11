@@ -11,7 +11,6 @@
  function stever_remove_admin_columns( $defaults ) {
   unset( $defaults[ 'comments' ] );
   unset( $defaults[ 'author' ] );
-  unset( $defaults[ 'categories' ] );
   unset( $defaults[ 'tags' ] );
   return $defaults;
 }
@@ -120,7 +119,6 @@ function stever_check_for_children( $post_id=null ) {
 			if( $post_id == 0 ){
 				$retStr .= '<li><div class="post-info-wrap"><a href="https://steverudolfi.com/wp-admin/edit.php?post_type=stever_quotes">Quotes</a><a class="linkview" href="https://steverudolfi.com/quotes/">view</a></div></li>';
 			}
-
 		$retStr .= '</ul>';
 		wp_reset_postdata();
 	endif;
