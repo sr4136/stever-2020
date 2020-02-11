@@ -69,7 +69,8 @@ code {
   background-color: #F7F7F7; }
 
 .entry-content li {
-  margin-bottom: 1em; }
+  margin-bottom: 0.1em;
+  margin-left: 1em; }
 
 .entry-content li li {
   margin-bottom: 0; }
