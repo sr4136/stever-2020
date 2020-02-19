@@ -188,6 +188,28 @@ function stever_scripts() {
         );
     }
 
+    /* CSS & JS: Fancybox (for Galleries) */
+    $has_gallery = has_block( 'gallery', get_the_id() );
+	if ( $has_gallery ) {
+		wp_enqueue_style( 'stever-fancybox',
+            get_stylesheet_directory_uri() . '/js/fancybox/jquery.fancybox.min.css',
+            array(),
+            filemtime( get_stylesheet_directory() . '/js/fancybox/jquery.fancybox.min.css' )
+        );
+        wp_enqueue_script( 'stever-fancybox',
+            get_template_directory_uri() . '/js/fancybox/jquery.fancybox.min.js',
+            array( 'jquery' ),
+            filemtime( get_stylesheet_directory() . '/js/fancybox/jquery.fancybox.min.js' ),
+            true
+        );
+        wp_enqueue_script( 'stever-fancybox-init',
+            get_template_directory_uri() . '/js/fancybox.js',
+            array( 'jquery', 'stever-fancybox' ),
+            filemtime( get_stylesheet_directory() . '/js/fancybox.js' ),
+            true
+        );
+	}
+
 	// Professional Development Page.
     if ( strpos( $stever_body_class_text, 'sr-table-pro-dev' ) ){
 		wp_enqueue_script( 'stever-table-filter',
