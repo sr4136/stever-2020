@@ -54,7 +54,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 1em; }
 
 a, a:visited {
-  color: #C2552E; }
+  color: #C2552E;
+  transition: all .5s; }
 
 a:hover,
 a:active {
@@ -104,6 +105,12 @@ code {
   position: absolute;
   top: 1em;
   max-width: 300px; }
+
+#site-branding img {
+  transition: all .2s; }
+
+#site-branding img:hover {
+  filter: drop-shadow(3px 3px 3px #999); }
 
 #masthead ul {
   text-align: right;
@@ -236,7 +243,8 @@ code {
   background-color: #FFFFFF;
   margin-bottom: 0;
   padding: 1em 1.5em;
-  flex-basis: 50%; }
+  flex-basis: 50%;
+  transition: all .5s; }
 
 /* Paths with help from https://bennettfeely.com/clippy/ */
 /* Developer (points right) */
@@ -255,7 +263,18 @@ code {
 
 .wp-block-columns.chevron h4 {
   color: #6B7D05;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 0;
+  transition: all .5s; }
+
+.wp-block-columns.chevron .wp-block-separator {
+  margin: 1em auto; }
+
+.wp-block-columns.chevron .wp-block-column:hover {
+  box-shadow: inset 0 0 10px 5px #DDDFC9; }
+
+.wp-block-columns.chevron .wp-block-column:hover h4 {
+  color: #C2552E; }
 
 @media screen and (max-width: 40em) {
   .wp-block-columns.chevron .wp-block-column {

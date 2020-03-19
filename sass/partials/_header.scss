@@ -8,6 +8,14 @@
 	top: 1em;
 	max-width: 300px;
 }
+#site-branding img {
+	transition: all .2s;
+}
+#site-branding img:hover {
+    filter: drop-shadow(3px 3px 3px
+    #999);
+}
+
 #masthead ul {
 	text-align: right;
 	padding: .5em 0;
@@ -39,9 +47,7 @@
 #social-navigation li:first-child a {
 	margin: 0;
 }
-#social-navigation a:hover {
-	//color: $red;
-}
+
 .page-header {
 	border-bottom: 1px solid $gray-med;
 	padding-top: .5em;
