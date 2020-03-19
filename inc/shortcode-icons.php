@@ -22,7 +22,7 @@ function stever_shortcode_icons( $atts ) {
 				'class' => 'lightbulb',
 			),
 			'podcast' => array(
-				'label' => 'Podcast',
+				'label' => 'Video/Podcast',
 				'class' => 'headphones',
 			),
 			'remote' => array(
