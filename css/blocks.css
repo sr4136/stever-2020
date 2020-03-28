@@ -87,7 +87,8 @@ table {
   background-color: #F7F7F7; }
 
 .sr-table td {
-  padding: .5em; }
+  padding: .5em;
+  vertical-align: top; }
 
 .sr-table .year-divider {
   background-color: #8B9B31;
