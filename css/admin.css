@@ -4,26 +4,49 @@
 /* For Timeline Only */
 /* "Standard" Colors */
 /* Fonts */
+/* Custom Colors */
+/* AA w/Large Text: https://bit.ly/2EnXiPj */
+/* For Timeline Only */
+/* "Standard" Colors */
+/* Fonts */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
-#wpadminbar ul#wp-admin-bar-root-default > li {
-  margin-right: 2em; }
+#wpadminbar .quicklinks .ab-empty-item {
+  padding: 0 1.5em; }
+
+#wpadminbar ul#wp-admin-bar-root-default > li a {
+  padding: 0 1.5em; }
+
+#wpadminbar ul#wp-admin-bar-root-default li + li {
+  border-left: 1px dotted #666666; }
 
 #wp-admin-bar-wp-logo,
 #wp-admin-bar-comments,
 #wp-admin-bar-my-account,
 #wp-admin-bar-amf-close-admin-panel,
-#wp-admin-bar-site-name .ab-sub-wrapper {
+#wp-admin-bar-site-name .ab-sub-wrapper,
+#wp-admin-bar-customize {
   display: none !important; }
 
-/* Endurance Cache */
+/* "View Page" button icon */
+#wp-admin-bar-view > .ab-item::before,
+#wp-admin-bar-stever-view > .ab-item::before,
+#wp-admin-bar-archive > .ab-item::before,
+#wp-admin-bar-stever-quotes-editall > .ab-item::before {
+  content: "\f177";
+  font-size: 1.3em;
+  padding-top: .5em; }
+
+/* "Endurance Cache" button icon */
 #wp-admin-bar-epc_purge_menu > .ab-item::before {
-  content: "\f160"; }
+  content: "\f160";
+  padding-top: 0.3em; }
 
-/* Query Monitor */
+/* "Query Monitor" button icon */
 #wp-admin-bar-query-monitor > .ab-item::before {
-  content: "\f321"; }
+  content: "\f321";
+  padding-top: 0.3em; }
 
-/* Menu Items: Hiding Unnecessary Ones */
+/* Admin Menu Items: Hiding Unnecessary Ones */
 #menu-comments,
 #menu-users,
 #toplevel_page_gutenberg {
