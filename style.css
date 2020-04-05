@@ -20,7 +20,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Fonts */
 /* Helper: hidden class */
 .hidden {
-  display: none;
+  display: none !important;
   visibility: hidden; }
 
 /* Helper: Button: Ghost */
