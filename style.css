@@ -238,9 +238,15 @@ code {
 #wp-admin-bar-customize {
   display: none !important; }
 
+/* Make the non-official buttons gray */
+#wp-admin-bar-cxssh-main-menu,
+#wp-admin-bar-epc_purge_menu,
+#wp-admin-bar-query-monitor {
+  background: #666666 !important;
+  border-left-color: #000000 !important; }
+
 /* "View Page" button icon */
 #wp-admin-bar-view > .ab-item::before,
-#wp-admin-bar-stever-view > .ab-item::before,
 #wp-admin-bar-archive > .ab-item::before,
 #wp-admin-bar-stever-quotes-editall > .ab-item::before {
   content: "\f177";

@@ -191,33 +191,3 @@ function stever_add_dashboard_widgets() {
 	wp_add_dashboard_widget( 'dashboard_widget_maps', 'Maps', 'stever_dashboard_widget_maps' );
 }
 add_action( 'wp_dashboard_setup', 'stever_add_dashboard_widgets' );
-
-
-/* Add "View This" button to the WP Admin bar */
-function stever_view_current_in_adminbar() {
-	global $wp_admin_bar;
-
-	if( function_exists( 'get_current_screen' ) ){
-		$current_screen = get_current_screen()->id;
-		$status = get_post_status();
-
-		if( is_admin() ){
-			if( 'page' == $current_screen || 'post' == $current_screen ){
-				if( 'private' == $status || 'publish' == $status ){
-					$args = array(
-						'id'    => 'stever-view',
-						'title' => 'View This',
-						'href'  => get_the_permalink(),
-						'meta'  => array(
-							'class' => 'stever-view',
-							'title' => 'View This'
-						)
-					);
-					$wp_admin_bar->add_menu( $args );
-				}
-			}
-		}
-	}
-}
-add_action( 'wp_before_admin_bar_render', 'stever_view_current_in_adminbar', 999 );
-
