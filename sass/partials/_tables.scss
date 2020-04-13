@@ -55,24 +55,4 @@
 	.wp-block-table.is-style-stripes td+td {
 		border-left: 1px solid #CCCCCC;
 	}
-	.js-accordion-item button {
-		border: 1px dashed #CCC;
-		padding: .5em .75em;
-	}
-	.js-accordion-item.is-open button {
-		border: 1px solid #CCC;
-	}
-	.js-accordion-item button::after {
-		display: none !important;
-	}
-	.js-accordion-item button::before {
-	    content: "\F0FE";
-	    font-family: "Font Awesome 5 Free";
-	    font-weight: 900;
-	    font-style: normal;
-	    padding-right: .5em;
-	}
-	.js-accordion-item.is-open button::before {
-	    content: "\F146";
-	}
 }

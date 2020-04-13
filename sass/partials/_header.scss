@@ -12,8 +12,7 @@
 	transition: all .2s;
 }
 #site-branding img:hover {
-    filter: drop-shadow(3px 3px 3px
-    #999);
+    filter: drop-shadow( 3px 3px 3px #999 );
 }
 
 #masthead ul {
@@ -30,6 +29,7 @@
 }
 #masthead li a {
 	display: inline;
+	font-size: .85em;
 }
 #site-navigation li+li:before {
     content: "|";
@@ -39,13 +39,11 @@
 #social-navigation {
 	background-color: $white;
 }
-#social-navigation a {
-	font-size: 1.5em;
-	//color: $green-dark;
+#social-navigation li+li a {
 	margin-left: 1em;
 }
-#social-navigation li:first-child a {
-	margin: 0;
+#social-navigation a i:before {
+	font-size: 1.75em;
 }
 
 .page-header {

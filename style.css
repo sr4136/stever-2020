@@ -44,14 +44,41 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 body {
   background: #F7F7F7;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px; }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #5F6B7E; }
+  color: #5F6B7E;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em; }
 
-.entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-  margin-top: 1em; }
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.75em; }
+
+h3 {
+  font-size: 1.5em; }
+
+h4 {
+  font-size: 1.25em; }
+
+.entry-title {
+  padding: .25em 0 .5em 0;
+  border-bottom: 1px solid #CCCCCC; }
+
+.entry-content {
+  margin-bottom: 4em; }
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4 {
+  margin-top: 2em; }
 
 a, a:visited {
   color: #C2552E;
@@ -68,6 +95,14 @@ article {
 code {
   border: 1px solid #CCCCCC;
   background-color: #F7F7F7; }
+
+blockquote, blockquote p {
+  color: #666666; }
+
+blockquote {
+  margin: 0 0 1rem;
+  padding: 0.25em 0 .25em .5em;
+  border-left: 3px solid #8B9B31; }
 
 .entry-content li {
   margin-bottom: 0.1em;
@@ -87,6 +122,9 @@ code {
 .entry-content,
 .entry-summary {
   margin-top: 1em; }
+
+p:last-child {
+  margin-bottom: 0; }
 
 #content {
   background-color: #FFFFFF;
@@ -125,7 +163,8 @@ code {
   line-height: 1.2em; }
 
 #masthead li a {
-  display: inline; }
+  display: inline;
+  font-size: .85em; }
 
 #site-navigation li + li:before {
   content: "|";
@@ -135,12 +174,11 @@ code {
 #social-navigation {
   background-color: #FFFFFF; }
 
-#social-navigation a {
-  font-size: 1.5em;
+#social-navigation li + li a {
   margin-left: 1em; }
 
-#social-navigation li:first-child a {
-  margin: 0; }
+#social-navigation a i:before {
+  font-size: 1.75em; }
 
 .page-header {
   border-bottom: 1px solid #CCCCCC;
@@ -330,6 +368,10 @@ code {
 .wp-block-columns.chevron .wp-block-column:hover h4 {
   color: #C2552E; }
 
+@media (min-width: 600px) and (max-width: 781px) {
+  .wp-block-columns.chevron .wp-block-column {
+    flex-basis: calc( 50% + 1em) !important; } }
+
 @media screen and (max-width: 40em) {
   .wp-block-columns.chevron .wp-block-column {
     flex-basis: 100% !important; }
@@ -460,26 +502,6 @@ code {
 .table-keeping-lists .wp-block-table.is-style-stripes th + th,
 .table-keeping-lists .wp-block-table.is-style-stripes td + td {
   border-left: 1px solid #CCCCCC; }
-
-.table-keeping-lists .js-accordion-item button {
-  border: 1px dashed #CCC;
-  padding: .5em .75em; }
-
-.table-keeping-lists .js-accordion-item.is-open button {
-  border: 1px solid #CCC; }
-
-.table-keeping-lists .js-accordion-item button::after {
-  display: none !important; }
-
-.table-keeping-lists .js-accordion-item button::before {
-  content: "\F0FE";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-style: normal;
-  padding-right: .5em; }
-
-.table-keeping-lists .js-accordion-item.is-open button::before {
-  content: "\F146"; }
 
 /* Quotes Archive */
 .post-type-archive-stever_quotes .entry-header {

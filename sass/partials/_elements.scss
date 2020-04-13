@@ -1,14 +1,42 @@
 body {
 	background: $gray-light;
 	font-family: $fonts-copy;
+	font-size: 16px;
 }
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: $fonts-headings;
 	color: $gray;
+	line-height: 1em;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1em;
 }
-.entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-	margin-top: 1em;
+h1 {
+    font-size: 2em;
 }
+h2 {
+    font-size: 1.75em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.25em;
+}
+.entry-title {
+	padding: .25em 0 .5em 0;
+	border-bottom: 1px solid $gray-med;
+}
+.entry-content  {
+	margin-bottom: 4em;
+}
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4 {
+	margin-top: 2em;
+}
+
 a, a:visited {
 	color: $red;
 	transition: all .5s;
@@ -24,6 +52,14 @@ article {
 code {
     border: 1px solid $gray-med;
     background-color: $gray-light;
+}
+blockquote, blockquote p {
+    color: $gray-dark;
+}
+blockquote {
+    margin: 0 0 1rem;
+    padding: 0.25em 0 .25em .5em;
+    border-left: 3px solid $green-bright;
 }
 .entry-content li {
 	margin-bottom: 0.1em;
@@ -43,6 +79,10 @@ code {
 .entry-content,
 .entry-summary {
 	margin-top: 1em;
+}
+
+p:last-child {
+    margin-bottom: 0;
 }
 
 #content {

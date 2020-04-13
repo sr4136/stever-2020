@@ -107,6 +107,34 @@ table {
 .sr-table th {
   padding: .5em; }
 
+/* General Accordions */
+.c-accordion__item {
+  background: #F7F7F7;
+  margin-bottom: 1em; }
+  .c-accordion__item .c-accordion__title {
+    margin: 0 !important;
+    padding: .5em !important; }
+  .c-accordion__item .c-accordion__title::after {
+    right: .5em; }
+  .c-accordion__item .c-accordion__content {
+    padding: 1em; }
+  .c-accordion__item button {
+    border: 1px dashed #CCC;
+    padding: .5em .75em; }
+  .c-accordion__item button::after {
+    display: none !important; }
+  .c-accordion__item button::before {
+    content: "\F0FE";
+    font-family: "Font Awesome 5 Free";
+    font-weight: normal;
+    font-style: normal;
+    padding: 0 1em 0 .5em;
+    color: #666666; }
+  .c-accordion__item.is-open button {
+    border: 1px solid #CCC; }
+  .c-accordion__item.is-open button::before {
+    content: "\F146"; }
+
 /* Table Page: Professional Development */
 /* Accordion: Upcoming Events */
 .sr-table.sr-table-pro-dev .accordion-upcoming h4 {

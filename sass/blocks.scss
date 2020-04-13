@@ -24,7 +24,6 @@
 	text-align: left;
 }
 
-
 /* Images */
 figcaption br {
     margin: 0 0 10px 0;
@@ -39,7 +38,6 @@ figcaption br {
 .wp-block-image:hover figcaption{
 	display: table-caption !important;
 }
-
 
 /* Columns */
 .wp-block-columns.has-2-columns.small-left .wp-block-column:nth-child( 1 ) {
@@ -116,6 +114,49 @@ table {
 }
 .sr-table th {
 	padding: .5em;
+}
+
+/* General Accordions */
+.c-accordion__item {
+	background: $gray-light;
+	margin-bottom: 1em;
+
+	.c-accordion__title {
+	    margin: 0 !important;
+	    padding: .5em !important;
+	}
+
+	.c-accordion__title::after {
+	    right: .5em;
+	}
+
+	.c-accordion__content {
+		padding: 1em;
+	}
+
+	button {
+		border: 1px dashed #CCC;
+		padding: .5em .75em;
+	}
+	button::after {
+		display: none !important;
+	}
+	button::before {
+		content: "\F0FE";
+		font-family: "Font Awesome 5 Free";
+		font-weight: normal;
+		font-style: normal;
+		padding: 0 1em 0 .5em;
+		color: $gray-dark;
+	}
+	&.is-open {
+		button {
+			border: 1px solid #CCC;
+		}
+		button::before {
+		    content: "\F146";
+		}
+	}
 }
 
 /* Table Page: Professional Development */
@@ -197,8 +238,6 @@ table {
     }
 
 }
-
-
 
 /* Table Page: Books I've Read */
 /* Title */

@@ -64,6 +64,11 @@
 	color: $red;
 }
 
+@media (min-width:600px) and (max-width:781px) {
+	.wp-block-columns.chevron .wp-block-column {
+		flex-basis: calc( 50% + 1em ) !important;
+	}
+}
 @media screen and ( max-width: 40em ) {
 	.wp-block-columns.chevron .wp-block-column {
 		flex-basis: 100% !important;
