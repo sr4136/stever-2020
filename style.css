@@ -29,18 +29,19 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 .button-ghost:active,
 .button-ghost[type="submit"] {
   font-size: .85em;
-  border: 3px solid #5B573D;
+  border: 3px solid #1468A0;
   background: #FFFFFF;
-  color: #5B573D;
-  cursor: pointer; }
+  color: #000000;
+  cursor: pointer;
+  transition: all .5s; }
 
 .button-ghost:hover,
 .button-ghost:visited:hover,
 .button-ghost:active:hover,
 .button-ghost[type="submit"]:hover {
-  border: 3px solid #5B573D;
-  background: #5B573D;
-  color: #FFFFFF; }
+  border-color: #C2552E;
+  background: #FFFFFF;
+  color: #000000; }
 
 body {
   background: #F7F7F7;
@@ -89,7 +90,7 @@ a:active {
   text-decoration: underline;
   color: #1468A0; }
 
-article {
+#main {
   padding: 1em; }
 
 code {
@@ -187,7 +188,7 @@ p:last-child {
   .page-header .button {
     position: absolute;
     right: 0;
-    top: 1.5em; }
+    top: 0.5em; }
 
 .home .page-header {
   display: none; }
@@ -507,6 +508,13 @@ p:last-child {
 .post-type-archive-stever_quotes .entry-header {
   border: 0 none; }
 
+.post-type-archive-stever_quotes .entry-content {
+  margin: 2.5em 0; }
+
+.post-type-archive-stever_quotes blockquote {
+  border-width: 1px;
+  padding-left: 1.25em; }
+
 /* Quotes Archive (in slidehow mode) */
 .quotes-slideshow {
   margin-top: 0 !important;
@@ -514,6 +522,13 @@ p:last-child {
 
 html.quotes-slideshow.fixate-admin-menu.folded {
   margin: 0 !important; }
+
+.quotes-slideshow #wpadminbar,
+.quotes-slideshow #masthead,
+.quotes-slideshow .page-header,
+.quotes-slideshow .site-footer,
+.quotes-slideshow article {
+  display: none; }
 
 .quotes-slideshow,
 .quotes-slideshow body,
@@ -529,13 +544,6 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 .quotes-slideshow .site-content {
   display: table-cell;
   vertical-align: middle; }
-
-.quotes-slideshow #wpadminbar,
-.quotes-slideshow #masthead,
-.quotes-slideshow .page-header,
-.quotes-slideshow .site-footer,
-.quotes-slideshow article {
-  display: none; }
 
 .quotes-slideshow article.active {
   display: block; }
@@ -555,6 +563,10 @@ html.quotes-slideshow.fixate-admin-menu.folded {
   display: inline-block;
   vertical-align: top; }
 
+.quotes-slideshow blockquote {
+  padding: 1em 1.5em 1em 2em;
+  border-width: 1px; }
+
 .quotes-slideshow blockquote p {
   font-size: 2.5em; }
 
@@ -567,13 +579,6 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 
 .quotes-slideshow article.clLarge blockquote cite {
   font-size: 1.5em; }
-
-/* Admin Menu in Frontend Plugin */
-.quotes-slideshow #adminmenumain {
-  display: none !important; }
-
-html.quotes-slideshow.fixate-admin-menu {
-  margin-left: 0 !important; }
 
 /*
  * My Time at BU Table

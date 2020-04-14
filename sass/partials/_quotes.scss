@@ -2,6 +2,13 @@
 .post-type-archive-stever_quotes .entry-header {
 	border: 0 none;
 }
+.post-type-archive-stever_quotes .entry-content {
+    margin: 2.5em 0;
+}
+.post-type-archive-stever_quotes blockquote {
+	border-width: 1px;
+    padding-left: 1.25em;
+}
 
 /* Quotes Archive (in slidehow mode) */
 .quotes-slideshow {
@@ -10,6 +17,13 @@
 }
 html.quotes-slideshow.fixate-admin-menu.folded {
 	margin: 0 !important;
+}
+.quotes-slideshow #wpadminbar,
+.quotes-slideshow #masthead,
+.quotes-slideshow .page-header,
+.quotes-slideshow .site-footer,
+.quotes-slideshow article{
+	display: none;
 }
 .quotes-slideshow,
 .quotes-slideshow body,
@@ -25,14 +39,6 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 .quotes-slideshow .site-content {
 	display: table-cell;
 	vertical-align: middle;
-}
-
-.quotes-slideshow #wpadminbar,
-.quotes-slideshow #masthead,
-.quotes-slideshow .page-header,
-.quotes-slideshow .site-footer,
-.quotes-slideshow article{
-	display: none;
 }
 
 .quotes-slideshow article.active {
@@ -53,6 +59,10 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 	display: inline-block;
 	vertical-align: top;
 }
+.quotes-slideshow blockquote {
+	padding: 1em 1.5em 1em 2em;
+    border-width: 1px;
+}
 .quotes-slideshow blockquote p {
 	font-size: 2.5em;
 }
@@ -60,18 +70,9 @@ html.quotes-slideshow.fixate-admin-menu.folded {
     font-size: 2em;
 	margin-top: 1em;
 }
-
 .quotes-slideshow article.clLarge blockquote p {
 	font-size: 2em;
 }
 .quotes-slideshow article.clLarge blockquote cite {
 	font-size: 1.5em;
-}
-
-/* Admin Menu in Frontend Plugin */
-.quotes-slideshow #adminmenumain{
-	display: none !important;
-}
-html.quotes-slideshow.fixate-admin-menu{
-	margin-left: 0 !important;
 }
