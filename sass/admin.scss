@@ -14,55 +14,66 @@
 	margin-bottom: 2em;
 }
 
-
 /* Page/Post Listings */
-#the-list tr:hover,
-#the-list tr.active:hover th,
-#the-list tr.active:hover td {
-	background-color: $green-light;
-}
-#the-list th, #the-list td {
-    vertical-align: middle;
-}
 #the-list .check-column {
 	padding: 0;
 }
-#the-list .title strong,
-#the-list .plugin-title strong {
-	float: left;
+#the-list .check-column input {
+	margin-top: 1em;
 }
 .row-actions {
     left: auto;
-    float: right;
-    right: 3em;
-    position: relative !important;
+    opacity: 0.5;
 }
-.iedit:hover .row-actions {
-    display: block;
-}
+
 /* Quotes Listings */
 .wp-admin.post-type-stever_quotes .editor-post-title__input {
 	font-size: 1em;
 }
-.wp-admin.post-type-stever_quotes #the-list th,
-.wp-admin.post-type-stever_quotes #the-list td {
-	vertical-align: top;
-}
-
-.wp-admin.post-type-stever_quotes tbody .check-column input {
-	margin-top: 1em;
-}
-.wp-admin.post-type-stever_quotes .row-actions {
-	float: none;
-	left: 0;
-	right: 0;
-}
-.wp-admin.post-type-stever_quotes #the-list .title strong,
-.wp-admin.post-type-stever_quotes #the-list .plugin-title strong {
-	float: none;
-}
 .wp-admin.post-type-stever_quotes #the-list blockquote {
 	margin: 0;
+}
+.wp-admin.post-type-stever_quotes #the-list blockquote p {
+	color: $black;
+	font-size: 1.2em;
+}
+
+/* Page/Post Listings: Term Colors */
+a[href="edit.php?category_name=development"],
+a[href="edit.php?category_name=management"] {
+    border: 2px solid #c5a2f2;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-color: #FFF;
+}
+a[href="edit.php?category_name=development"] {
+    border-color: #a2a9f2;
+}
+tbody .column-taxonomy-stever_workflow {
+    color: transparent !important;
+}
+#the-list .status-draft th, #the-list .status-draft td,
+#the-list .status-private th, #the-list .status-private td {
+    background-color: inherit;
+}
+.column-taxonomy-stever_workflow a {
+    background: #ffc0cb1f;
+    border: 1px solid #b2555536;
+    padding: 3px 5px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 8px;
+    color: black;
+}
+.column-taxonomy-stever_workflow a[href="edit.php?post_type=page&stever_workflow=ready"],
+.column-taxonomy-stever_workflow a[href="edit.php?stever_workflow=ready"] {
+    background: transparent;
+    border: 1px solid #77B255;
+}
+.column-taxonomy-stever_workflow a[href="edit.php?post_type=page&stever_workflow=never-publish"],
+.column-taxonomy-stever_workflow a[href="edit.php?stever_workflow=never-publish"] {
+    background: transparent;
+    border: 1px solid #77B255;
 }
 
 /* Page/Post Listings: Post State Tags (Plugin) */
