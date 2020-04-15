@@ -6,7 +6,7 @@
 function stever_workflow() {
 
 	$labels = array(
-		'name'				=> _x( 'Workflow Statuses', 'Taxonomy General Name', 'stever' ),
+		'name'				=> _x( 'Workflow Status', 'Taxonomy General Name', 'stever' ),
 		'singular_name'		=> _x( 'Workflow Status', 'Taxonomy Singular Name', 'stever' ),
 		'menu_name'			=> __( 'Workflow Status', 'stever' ),
 	);

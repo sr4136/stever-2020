@@ -74,9 +74,13 @@
 #the-list .check-column input {
   margin-top: 1em; }
 
-.row-actions {
+#the-list .row-actions {
   left: auto;
-  opacity: 0.5; }
+  opacity: 0.5;
+  transition: all .5s; }
+
+#the-list tr:hover .row-actions {
+  opacity: 1; }
 
 /* Quotes Listings */
 .wp-admin.post-type-stever_quotes .editor-post-title__input {
