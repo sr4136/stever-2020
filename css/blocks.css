@@ -2,6 +2,7 @@
 /* Custom Colors */
 /* AA w/Large Text: https://bit.ly/2EnXiPj */
 /* For Timeline Only */
+/* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
 .wp-admin .wp-block {
@@ -234,3 +235,73 @@ table {
 /* More Info */
 .sr-table.sr-table-speaking tr td:nth-child(4) {
   width: 15%; }
+
+/* Columns: Features */
+.stever-columns-features .wp-block-column {
+  padding: 0 2.5em;
+  margin: 2em 0 0 0; }
+
+.stever-columns-features .wp-block-column h4 {
+  margin-top: 0; }
+
+.stever-columns-features ul {
+  margin: 0; }
+
+.stever-columns-features .wp-block-column + .wp-block-column {
+  border-left: 1px solid #F1f1f1; }
+
+/* Columns: statistics */
+.stever-columns-statistics .wp-block-column {
+  background: #f1f1f1;
+  padding: 2em;
+  margin-bottom: 1em;
+  color: white;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transition: all .5s; }
+
+.stever-columns-statistics .wp-block-column h4 {
+  margin: 0 0 .5em 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: White; }
+
+.stever-columns-statistics .wp-block-column:hover {
+  box-shadow: inset 0 0 10px 5px #CCC; }
+
+.stever-columns-statistics .wp-block-column h4:before {
+  font-family: "Font Awesome 5 Free";
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: .75em; }
+
+.stever-columns-statistics .stever-columns-statistics-pointer {
+  background: #516322; }
+
+.stever-columns-statistics .stever-columns-statistics-pointer h4:before {
+  content: "\f245"; }
+
+.stever-columns-statistics .stever-columns-statistics-themes {
+  background: #416E82; }
+
+.stever-columns-statistics .stever-columns-statistics-themes h4:before {
+  content: "\f0e8"; }
+
+.stever-columns-statistics .stever-columns-statistics-team {
+  background: #814519; }
+
+.stever-columns-statistics .stever-columns-statistics-team h4:before {
+  content: "\f0c0"; }
+
+.stever-columns-statistics .stever-columns-statistics-commits {
+  background: #3f506c; }
+
+.stever-columns-statistics .stever-columns-statistics-commits h4:before {
+  content: "\f126"; }
+
+.blocks-gallery-grid, .wp-block-gallery {
+  width: 100%; }
+
+/* Gallery: Fancybox Outline */
+.wp-block-gallery.fancybox img {
+  border: 1px solid #666666; }

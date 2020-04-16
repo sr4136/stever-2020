@@ -5,11 +5,12 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: $fonts-headings;
-	color: $gray;
+	color: $gray-darkest;
 	line-height: 1em;
     margin: 0;
     padding: 0;
     margin-bottom: 1em;
+    font-weight: 900;
 }
 h1 {
     font-size: 2em;

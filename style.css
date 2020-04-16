@@ -16,12 +16,17 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Custom Colors */
 /* AA w/Large Text: https://bit.ly/2EnXiPj */
 /* For Timeline Only */
+/* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
 /* Helper: hidden class */
 .hidden {
   display: none !important;
   visibility: hidden; }
+
+/* Add: negative top margin*/
+.margin-negative-top {
+  margin-top: -1em; }
 
 /* Helper: Button: Ghost */
 .button-ghost,
@@ -50,11 +55,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #5F6B7E;
+  color: #484848;
   line-height: 1em;
   margin: 0;
   padding: 0;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  font-weight: 900; }
 
 h1 {
   font-size: 2em; }
@@ -257,6 +263,7 @@ p:last-child {
 /* Custom Colors */
 /* AA w/Large Text: https://bit.ly/2EnXiPj */
 /* For Timeline Only */
+/* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
