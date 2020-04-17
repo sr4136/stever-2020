@@ -299,9 +299,18 @@ table {
 .stever-columns-statistics .stever-columns-statistics-commits h4:before {
   content: "\f126"; }
 
+/* Gallery */
 .blocks-gallery-grid, .wp-block-gallery {
   width: 100%; }
 
 /* Gallery: Fancybox Outline */
-.wp-block-gallery.fancybox img {
+.wp-block-gallery.fancybox a {
   border: 1px solid #666666; }
+
+.wp-block-gallery.fancybox img {
+  transition: all .5s;
+  opacity: 0.7;
+  filter: blur(1px); }
+  .wp-block-gallery.fancybox img:hover {
+    opacity: 1;
+    filter: blur(0); }
