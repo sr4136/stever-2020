@@ -281,7 +281,6 @@ require get_template_directory() .'/inc/shortcode-icons.php';
  */
 require get_template_directory() .'/inc/shortcode-posts-with-image.php';
 
-
 /**
  * Shortcode: Static Content Include
  */
@@ -291,3 +290,8 @@ require get_template_directory() .'/inc/shortcode-static-include.php';
  * Taxonomy: Workflow Statuses
  */
 require get_template_directory() .'/inc/taxonomy-workflow.php';
+
+/**
+ * Blocks: Custom Styles
+ */
+require get_template_directory() .'/inc/block-styles.php';

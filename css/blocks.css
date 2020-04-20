@@ -58,9 +58,6 @@ figcaption br {
 .wp-block-columns.spaced-out-divider .wp-block-column {
   margin-bottom: 0; }
 
-.wp-block-columns h1, .wp-block-columns h2, .wp-block-columns h3, .wp-block-columns h4, .wp-block-columns h5, .wp-block-columns h6 {
-  /* margin-top: 0; */ }
-
 /* Buttons */
 .wp-block-button__link,
 .wp-block-button__link:visited {
@@ -79,19 +76,9 @@ figcaption br {
   background-color: #C2552E;
   text-decoration: none; }
 
-/* Tables */
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-.sr-table tbody tr:nth-child(2n+1) {
-  background-color: #F7F7F7; }
-
-.sr-table td {
-  padding: .5em;
-  vertical-align: top; }
-
-.sr-table .year-divider {
+/* Heading: Year Divider */
+.is-style-year-divider,
+.editor-styles-wrapper .is-style-year-divider {
   background-color: #8B9B31;
   color: #FFFFFF;
   text-align: center;
@@ -99,14 +86,6 @@ table {
   font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 0; }
-
-.sr-table thead {
-  background-color: #E1E2C7;
-  font-weight: bold;
-  text-align: left; }
-
-.sr-table th {
-  padding: .5em; }
 
 /* General Accordions */
 .c-accordion__item {
@@ -136,122 +115,143 @@ table {
   .c-accordion__item.is-open button::before {
     content: "\F146"; }
 
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.sr-page-table thead {
+  background-color: #E1E2C7;
+  font-weight: bold;
+  text-align: left; }
+
+.sr-page-table tbody tr:nth-child(2n+1) {
+  background-color: #F7F7F7; }
+
+.sr-page-table th {
+  padding: .5em; }
+
+.sr-page-table td {
+  padding: .5em;
+  vertical-align: top; }
+
 /* Table Page: Professional Development */
 /* Accordion: Upcoming Events */
-.sr-table.sr-table-pro-dev .accordion-upcoming h4 {
+.accordion-upcoming h4 {
   background: #C2552E;
   color: #FFFFFF;
   text-align: center;
   padding: 0.2em 0 0.25em 0; }
 
-.sr-table.sr-table-pro-dev .accordion-upcoming h4:after {
+.accordion-upcoming h4:after {
   color: white;
   right: 0.65em; }
 
-.sr-table.sr-table-pro-dev .accordion-upcoming iframe {
+.accordion-upcoming iframe {
   width: 100%; }
 
-/* Icon */
-.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(1) {
-  width: 5%;
-  text-align: center; }
+/* Table: Professional Development */
+.is-style-stever-table-pro-dev tr {
+  /* Icon */
+  /* Title */
+  /* Date */
+  /* Affiliation */ }
+  .is-style-stever-table-pro-dev tr td:nth-child(1) {
+    width: 5%;
+    text-align: center; }
+  .is-style-stever-table-pro-dev tr td:nth-child(2) {
+    width: 55%; }
+  .is-style-stever-table-pro-dev tr td:nth-child(3) {
+    width: 10%; }
+  .is-style-stever-table-pro-dev tr td:nth-child(4) {
+    width: 30%; }
 
-/* Event Title */
-.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(2) {
-  width: 55%; }
-
-/* Date */
-.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(3) {
-  width: 10%; }
-
-/* Affiliation */
-.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(4) {
-  width: 30%; }
-
-.wp-admin.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(1) {
-  width: 15%;
-  text-align: center; }
-
-/* Event Title */
-.wp-admin.sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(2) {
-  width: 45%; }
+/* Admin - Table: Professional Development */
+.wp-admin .is-style-stever-table-pro-dev tr {
+  /* Icon */
+  /* Title */ }
+  .wp-admin .is-style-stever-table-pro-dev tr td:nth-child(1) {
+    width: 15%;
+    text-align: center; }
+  .wp-admin .is-style-stever-table-pro-dev tr td:nth-child(2) {
+    width: 45%; }
 
 /* Responsive */
 @media all and (max-width: 782px) {
-  .sr-table.sr-table-pro-dev table {
+  /* Table: Professional Development */
+  .is-style-stever-table-pro-dev {
     display: block;
     width: 100%; }
-  .sr-table.sr-table-pro-dev table thead {
-    display: none; }
-  .sr-table.sr-table-pro-dev table tr {
-    display: block;
-    width: 100%; }
-  .sr-table.sr-table-pro-dev table td {
-    display: inline-block; }
-  /* Professional Development Table */
-  .sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(1) {
-    width: 10% !important; }
-  .sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(2) {
-    width: 90% !important;
-    font-weight: bold; }
-  .sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(3) {
-    margin-left: 10%;
-    width: 25% !important;
-    font-style: italic; }
-  .sr-table.sr-table-pro-dev .wp-block-table tr td:nth-child(4) {
-    width: 65% !important;
-    padding-left: 2em;
-    text-align: right;
-    padding-right: 1em;
-    font-style: italic; } }
+    .is-style-stever-table-pro-dev thead {
+      display: none; }
+    .is-style-stever-table-pro-dev td {
+      display: inline-block; }
+    .is-style-stever-table-pro-dev tr {
+      display: block;
+      width: 100% td;
+      /* Title */
+      /* Date */
+      /* Affiliation */ }
+      .is-style-stever-table-pro-dev tr :nth-child(1) {
+        width: 10% !important; }
+      .is-style-stever-table-pro-dev tr td:nth-child(2) {
+        width: 90% !important;
+        font-weight: bold; }
+      .is-style-stever-table-pro-dev tr td:nth-child(3) {
+        margin-left: 10%;
+        width: 25% !important;
+        font-style: italic; }
+      .is-style-stever-table-pro-dev tr td:nth-child(4) {
+        width: 65% !important;
+        padding-left: 2em;
+        text-align: right;
+        padding-right: 1em;
+        font-style: italic; } }
 
 /* Table Page: Books I've Read */
-/* Title */
-.block-editor-page.sr-table.sr-table-books .wp-block-table tr td:nth-child(1) {
-  width: 50% !important;
-  text-align: left !important; }
-
-/* Author */
-.block-editor-page.sr-table.sr-table-books .wp-block-table tr td:nth-child(2) {
-  width: 30% !important; }
-
-/* Date */
-.block-editor-page.sr-table.sr-table-books .wp-block-table tr td:nth-child(3) {
-  width: 15% !important; }
+.is-style-stever-table-books {
+  /* Title */
+  /* Author */
+  /* Date */ }
+  .is-style-stever-table-books td:nth-child(1) {
+    width: 50% !important;
+    text-align: left !important; }
+  .is-style-stever-table-books td:nth-child(2) {
+    width: 30% !important; }
+  .is-style-stever-table-books td:nth-child(3) {
+    width: 15% !important; }
 
 /* Table Page: Speaking/Teaching */
-/* Date */
-.sr-table.sr-table-speaking tr td:nth-child(1) {
-  width: 10%; }
-
-/* Event */
-.sr-table.sr-table-speaking tr td:nth-child(2) {
-  width: 40%; }
-
-/* Affiliation */
-.sr-table.sr-table-speaking tr td:nth-child(3) {
-  width: 35%; }
-
-/* More Info */
-.sr-table.sr-table-speaking tr td:nth-child(4) {
-  width: 15%; }
+.is-style-stever-table-speaking {
+  /* Date */
+  /* Event */
+  /* Affiliation */
+  /* More Info */ }
+  .is-style-stever-table-speaking td:nth-child(1) {
+    width: 10%; }
+  .is-style-stever-table-speaking td:nth-child(2) {
+    width: 40%; }
+  .is-style-stever-table-speaking td:nth-child(3) {
+    width: 35%; }
+  .is-style-stever-table-speaking td:nth-child(4) {
+    width: 15%; }
 
 /* Columns: Features */
-.stever-columns-features .wp-block-column {
+.is-style-stever-columns-features .wp-block-column {
   padding: 0 2.5em;
   margin: 2em 0 0 0; }
 
-.stever-columns-features .wp-block-column h4 {
+.is-style-stever-columns-features .wp-block-column h4 {
   margin-top: 0; }
 
-.stever-columns-features ul {
+.is-style-stever-columns-features ul {
   margin: 0; }
 
-.stever-columns-features .wp-block-column + .wp-block-column {
+.is-style-stever-columns-features .wp-block-column + .wp-block-column {
   border-left: 1px solid #F1f1f1; }
 
 /* Columns: statistics */
-.stever-columns-statistics .wp-block-column {
+.is-style-stever-columns-statistics .wp-block-column {
   background: #f1f1f1;
   padding: 2em;
   margin-bottom: 1em;
@@ -260,43 +260,43 @@ table {
   border-bottom-right-radius: 30px;
   transition: all .5s; }
 
-.stever-columns-statistics .wp-block-column h4 {
+.is-style-stever-columns-statistics .wp-block-column h4 {
   margin: 0 0 .5em 0;
   font-size: 2.5em;
   font-weight: bold;
   color: White; }
 
-.stever-columns-statistics .wp-block-column:hover {
+.is-style-stever-columns-statistics .wp-block-column:hover {
   box-shadow: inset 0 0 10px 5px #CCC; }
 
-.stever-columns-statistics .wp-block-column h4:before {
+.is-style-stever-columns-statistics .wp-block-column h4:before {
   font-family: "Font Awesome 5 Free";
   display: block;
   margin-bottom: 0.5em;
   font-size: .75em; }
 
-.stever-columns-statistics .stever-columns-statistics-pointer {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-pointer {
   background: #516322; }
 
-.stever-columns-statistics .stever-columns-statistics-pointer h4:before {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-pointer h4:before {
   content: "\f245"; }
 
-.stever-columns-statistics .stever-columns-statistics-themes {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-themes {
   background: #416E82; }
 
-.stever-columns-statistics .stever-columns-statistics-themes h4:before {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-themes h4:before {
   content: "\f0e8"; }
 
-.stever-columns-statistics .stever-columns-statistics-team {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-team {
   background: #814519; }
 
-.stever-columns-statistics .stever-columns-statistics-team h4:before {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-team h4:before {
   content: "\f0c0"; }
 
-.stever-columns-statistics .stever-columns-statistics-commits {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-commits {
   background: #3f506c; }
 
-.stever-columns-statistics .stever-columns-statistics-commits h4:before {
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-commits h4:before {
   content: "\f126"; }
 
 /* Gallery */
@@ -304,13 +304,13 @@ table {
   width: 100%; }
 
 /* Gallery: Fancybox Outline */
-.wp-block-gallery.fancybox a {
+.is-style-fancybox a {
   border: 1px solid #666666; }
 
-.wp-block-gallery.fancybox img {
+.is-style-fancybox img {
   transition: all .5s;
   opacity: 0.7;
   filter: blur(1px); }
-  .wp-block-gallery.fancybox img:hover {
+  .is-style-fancybox img:hover {
     opacity: 1;
     filter: blur(0); }
