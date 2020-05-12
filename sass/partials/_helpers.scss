@@ -1,12 +1,17 @@
-/* Helper: hidden class */
+/* Helper: Universal 'hidden' Class */
 .hidden {
 	display: none !important;
 	visibility: hidden;
 }
 
-/* Add: negative top margin*/
+/* Helper: negative top margin*/
 .margin-negative-top {
     margin-top: -1em;
+}
+
+/* Helper: Hidden Page Header */
+.heading-hide .page-header {
+    display: none;
 }
 
 /* Helper: Button: Ghost */
@@ -29,3 +34,4 @@
 	background: $white;
 	color: $black;
 }
+

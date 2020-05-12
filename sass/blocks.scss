@@ -11,6 +11,17 @@
     padding-left: 0;
 }
 
+/* Cover Image */
+.wp-block-cover {
+    margin-bottom: 2em;
+}
+.wp-block-cover__inner-container h1 {
+    margin: 0;
+}
+.wp-block-cover__inner-container h4 {
+    margin-top: -4em;
+}
+
 /* Block Quote */
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
@@ -303,10 +314,20 @@ table {
 .is-style-stever-columns-features ul {
     margin: 0;
 }
-
 .is-style-stever-columns-features .wp-block-column+.wp-block-column {
     border-left: 1px solid #F1f1f1;
 }
+
+.home .is-style-stever-columns-features .wp-block-column {
+    padding: 0;
+    padding-right: 2.5em;
+}
+.home .is-style-stever-columns-features .wp-block-column + .wp-block-column {
+    padding-right: 0;
+    padding-left: 2.5em;
+}
+
+
 
 /* Columns: statistics */
 .is-style-stever-columns-statistics .wp-block-column {
@@ -324,15 +345,18 @@ table {
     font-weight: bold;
     color: White;
 }
+.wp-admin .is-style-stever-columns-statistics .wp-block-column h4 {
+	font-size: 2em;
+}
 .is-style-stever-columns-statistics .wp-block-column:hover {
     box-shadow: inset 0 0 10px 5px #CCC;
 }
-
 .is-style-stever-columns-statistics .wp-block-column h4:before {
     font-family: "Font Awesome 5 Free";
     display: block;
     margin-bottom: 0.5em;
-    font-size: .75em
+    font-size: .75em;
+    text-align: center;
 }
 .is-style-stever-columns-statistics .is-style-stever-columns-statistics-pointer{
     background: $accent-green;
@@ -358,6 +382,31 @@ table {
 .is-style-stever-columns-statistics .is-style-stever-columns-statistics-commits h4:before {
     content: "\f126";
 }
+
+/* Columns: statistics:: On Home */
+.home .is-style-stever-columns-statistics {
+    margin-top: 3em;
+
+    a {
+	    text-decoration: underline;
+	    color: white;
+	}
+    h4 {
+	    font-size: 2.2em;
+	    text-align: center;
+	    margin: 0;
+	    padding: 0 0 .15em 0;
+
+		&:before {
+		    display: none;
+		}
+	}
+	.wp-block-button {
+	    text-decoration: none;
+	    margin-left: 1em;
+	}
+}
+
 
 /* Gallery */
 .blocks-gallery-grid, .wp-block-gallery {
