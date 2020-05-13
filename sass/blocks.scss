@@ -389,21 +389,40 @@ table {
 
     a {
 	    text-decoration: underline;
-	    color: white;
+	    color: $white;
+
+	    &:hover {
+		    text-decoration: none;
+	    }
 	}
     h4 {
 	    font-size: 2.2em;
-	    text-align: center;
 	    margin: 0;
 	    padding: 0 0 .15em 0;
 
 		&:before {
 		    display: none;
 		}
+		a {
+			text-decoration: none;
+		}
 	}
 	.wp-block-button {
 	    text-decoration: none;
 	    margin-left: 1em;
+
+	    .wp-block-button__link,
+	    .wp-block-button__link:visited {
+		    background: $white;
+			color: $black;
+			border: 2px solid transparent;
+			text-decoration: none;
+			opacity: .75;
+			cursor: pointer;
+	    }
+	    .wp-block-button__link:hover {
+		    border: 2px solid $gray-dark;
+		}
 	}
 }
 
