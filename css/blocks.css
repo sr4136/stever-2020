@@ -322,33 +322,33 @@ table {
   content: "\f126"; }
 
 /* Columns: statistics:: On Home */
-.home .is-style-stever-columns-statistics {
+.home-blocks.is-style-stever-columns-statistics {
   margin-top: 3em; }
-  .home .is-style-stever-columns-statistics a {
+  .home-blocks.is-style-stever-columns-statistics a {
     text-decoration: underline;
     color: #FFFFFF; }
-    .home .is-style-stever-columns-statistics a:hover {
+    .home-blocks.is-style-stever-columns-statistics a:hover {
       text-decoration: none; }
-  .home .is-style-stever-columns-statistics h4 {
+  .home-blocks.is-style-stever-columns-statistics h4 {
     font-size: 2.2em;
     margin: 0;
     padding: 0 0 .15em 0; }
-    .home .is-style-stever-columns-statistics h4:before {
+    .home-blocks.is-style-stever-columns-statistics h4:before {
       display: none; }
-    .home .is-style-stever-columns-statistics h4 a {
+    .home-blocks.is-style-stever-columns-statistics h4 a {
       text-decoration: none; }
-  .home .is-style-stever-columns-statistics .wp-block-button {
+  .home-blocks.is-style-stever-columns-statistics .wp-block-button {
     text-decoration: none;
     margin-left: 1em; }
-    .home .is-style-stever-columns-statistics .wp-block-button .wp-block-button__link,
-    .home .is-style-stever-columns-statistics .wp-block-button .wp-block-button__link:visited {
+    .home-blocks.is-style-stever-columns-statistics .wp-block-button .wp-block-button__link,
+    .home-blocks.is-style-stever-columns-statistics .wp-block-button .wp-block-button__link:visited {
       background: #FFFFFF;
       color: #000000;
       border: 2px solid transparent;
       text-decoration: none;
       opacity: .75;
       cursor: pointer; }
-    .home .is-style-stever-columns-statistics .wp-block-button .wp-block-button__link:hover {
+    .home-blocks.is-style-stever-columns-statistics .wp-block-button .wp-block-button__link:hover {
       border: 2px solid #666666; }
 
 /* Gallery */

@@ -34,7 +34,8 @@
 #wp-admin-bar-epc_purge_menu,
 #wp-admin-bar-query-monitor {
   background: #666666 !important;
-  border-left-color: #000000 !important; }
+  border-left-color: #000000 !important;
+  float: right !important; }
 
 /* "View Page" button icon */
 #wp-admin-bar-view > .ab-item::before,
