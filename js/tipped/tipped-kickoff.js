@@ -3,7 +3,7 @@
  */
 ( function( $ ) {
 	Tipped.delegate(
-		'.content-area i',
+		'.content-area table i',
 		function( element ) {
 			if( $( element ).data( 'title' ) ) {
 				return {
