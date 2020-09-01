@@ -1,23 +1,20 @@
 /*
- * Debugging Breakpoints. Adds helper text.
+ * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.
  */
-@media screen and ( min-width: 64em ) {
-	#site-branding::after {
-	    content: "Large Up. min-width: 64em";
+ .logged-in.sr-breakpoints #site-branding::after {
+	@include breakpoint( l ) {
+		content: "Large & Up. min-width: 64em (1024px)";
 	}
-}
-@media screen and ( max-width: 63.9375em ) {
-	#site-branding::after {
-	    content: "Medium Down. max-width: 63.9375em";
+	@include breakpoint( m ) {
+		content: "Medium Down. max-width: 63.9375em (1023px)";
 	}
-}
-@media screen and ( max-width: 40em ) {
-	#site-branding::after {
-	    content: "Small Down. max-width: 40em";
+	@include breakpoint( ms ) {
+		content: "Medium-Small Down. max-width: 40em (780px)";
 	}
-}
-@media screen and ( max-width: 27.5em ) {
-	#site-branding::after {
-	    content: "X-Small only. max-width: 27.5em";
+	@include breakpoint( s ) {
+		content: "Small Down. max-width: 40em (640px)";
+	}
+	@include breakpoint( xs ) {
+		content: "X-Small only. max-width: 27.5em (440px)";
 	}
 }

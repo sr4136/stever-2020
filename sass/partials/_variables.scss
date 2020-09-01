@@ -34,3 +34,34 @@ $black:			#000000;
 /* Fonts */
 $fonts-copy:		"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fonts-headings:	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+/* Breakpoints */
+/* HT: https://bit.ly/3beCmdq */
+@mixin breakpoint( $size ) {
+	@if $size == "l" {
+		@media( min-width: 64em ) {
+			@content;
+		}
+	}
+	@else if $size == "m" {
+		@media ( max-width: 63.9375em ) {
+			@content;
+		}
+	}
+	@else if $size == "ms" {
+		@media ( max-width: 48.75em ) {
+			@content;
+		}
+	}
+	@else if $size == "s" {
+		@media ( max-width: 40em ) {
+			@content;
+		}
+	}
+	@else if $size == "xs" {
+		@media ( max-width: 27.5em ) {
+			@content;
+		}
+	}
+}

@@ -19,6 +19,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
+/* Breakpoints */
+/* HT: https://bit.ly/3beCmdq */
 /* Helper: Universal 'hidden' Class */
 .hidden {
   display: none !important;
@@ -225,8 +227,23 @@ p:last-child {
     top: .5em; }
   #social-navigation {
     padding: 0; }
-  #social-navigation a {
-    margin-left: 1.5em; } }
+  #social-navigation li + li a {
+    margin-left: 4.5em; }
+  #social-navigation a i::before {
+    font-size: 2.25em; }
+  #site-navigation {
+    padding: 0; } }
+
+/* X-Small Screens */
+@media screen and (max-width: 27.5em) {
+  #masthead #primary-menu {
+    padding-top: 0; }
+  #site-navigation li {
+    display: block;
+    border-top: 1px solid #CCCCCC; }
+  #site-navigation li + li::before {
+    padding: 0;
+    content: ''; } }
 
 /* Footer */
 .site-info {
@@ -273,6 +290,8 @@ p:last-child {
 /* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
+/* Breakpoints */
+/* HT: https://bit.ly/3beCmdq */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
 #wpadminbar .quicklinks .ab-empty-item {
   padding: 0 1.5em; }
@@ -328,97 +347,8 @@ p:last-child {
   margin-bottom: 0; }
 
 /* Photo on Home */
-@media screen and (max-width: 40em) {
-  .home-about-me {
-    grid-template-areas: "media-text-content" "media-text-media" !important;
-    grid-template-columns: 100% !important; } }
-
-/* Blocks */
-.wp-block-columns.chevron {
-  padding: 1em;
-  margin: 1.5em -2em -1em -2em;
-  /* Gradient: https://www.cssmatic.com/gradient-generator#'\-moz\-radial\-gradient\%28center\%2C\%20ellipse\%20cover\%2C\%20rgba\%28181\%2C199\%2C81\%2C1\%29\%200\%25\%2C\%20rgba\%28221\%2C223\%2C201\%2C1\%29\%20100\%25\%29\%3B' */
-  background: #b5c751;
-  background: -moz-radial-gradient(center, ellipse cover, #b5c751 0%, #dddfc9 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #b5c751), color-stop(100%, #dddfc9));
-  background: -webkit-radial-gradient(center, ellipse cover, #b5c751 0%, #dddfc9 100%);
-  background: -o-radial-gradient(center, ellipse cover, #b5c751 0%, #dddfc9 100%);
-  background: -ms-radial-gradient(center, ellipse cover, #b5c751 0%, #dddfc9 100%);
-  background: radial-gradient(ellipse at center, #b5c751 0%, #dddfc9 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c751', endColorstr='#dddfc9', GradientType=1 ); }
-
-.wp-block-columns.chevron .wp-block-column {
-  background-color: #FFFFFF;
-  margin-bottom: 0;
-  padding: 1em 1.5em;
-  flex-basis: 50%;
-  transition: all .5s; }
-
-/* Paths with help from https://bennettfeely.com/clippy/ */
-/* Developer (points right) */
-.wp-block-columns.chevron .wp-block-column:first-child {
-  -webkit-clip-path: polygon(calc( 100% - 55px) 0, 100% 50%, calc( 100% - 55px) 100%, 0 100%, 0% 0%);
-  clip-path: polygon(calc( 100% - 55px) 0, 100% 50%, calc( 100% - 55px) 100%, 0 100%, 0% 0%);
-  padding-right: 6em; }
-
-/* Manager */
-.wp-block-columns.chevron .wp-block-column:last-child {
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 55px 50%, 0% 0%);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%, 55px 50%, 0% 0%);
-  margin-left: -2.25em;
-  padding-left: 6em;
-  flex-basis: calc( 50% + 2.25em); }
-
-.wp-block-columns.chevron h4 {
-  color: #6B7D05;
-  font-weight: bold;
-  margin-top: 0;
-  transition: all .5s; }
-
-.wp-block-columns.chevron .wp-block-separator {
-  margin: 1em auto; }
-
-.wp-block-columns.chevron .wp-block-column:hover {
-  box-shadow: inset 0 0 10px 5px #DDDFC9; }
-
-.wp-block-columns.chevron .wp-block-column:hover h4 {
-  color: #C2552E; }
-
-@media (min-width: 600px) and (max-width: 781px) {
-  .wp-block-columns.chevron .wp-block-column {
-    flex-basis: calc( 50% + 1em) !important; } }
-
-@media screen and (max-width: 40em) {
-  .wp-block-columns.chevron .wp-block-column {
-    flex-basis: 100% !important; }
-  /* Developer (points down) */
-  .wp-block-columns.chevron .wp-block-column:first-child {
-    -webkit-clip-path: polygon(100% 0, 100% calc( 100% - 55px), 50% 100%, 0 calc( 100% - 55px), 0 0);
-    clip-path: polygon(100% 0, 100% calc( 100% - 55px), 50% 100%, 0 calc( 100% - 55px), 0 0);
-    padding: 1.5em 1.5em 6em 1.5em; }
-  /* Manager */
-  .wp-block-columns.chevron .wp-block-column:last-child {
-    -webkit-clip-path: polygon(50% 55px, 100% 0, 100% 100%, 0 100%, 0 0);
-    clip-path: polygon(50% 55px, 100% 0, 100% 100%, 0 100%, 0 0);
-    margin-left: 0;
-    margin-top: -2.25em;
-    padding: 6em 1.5em 1em 1.5em; } }
-
-/* Tablet-ish */
-@media screen and (max-width: 40em) {
-  .home .home-about-me .wp-block-media-text__media {
-    padding: 0 25%; } }
-
-/* Phone-ish */
-@media screen and (max-width: 27.5em) {
-  .home .home-about-me .wp-block-media-text__media {
-    padding: 0; } }
-
-.wp-block-columns.split-40-60 .wp-block-column:first-child {
-  flex-basis: calc(40% - 16px); }
-
-.wp-block-columns.split-40-60 .wp-block-column:last-child {
-  flex-basis: calc(60% - 16px); }
+.home-about-me figure {
+  margin-top: 3.5em; }
 
 .posts-with-image {
   list-style-type: none;
@@ -502,6 +432,11 @@ p:last-child {
   background: #F7F7F7;
   padding: .75em 1em;
   font-style: italic; }
+
+/* Page-specific: The Power of Keeping Lists */
+.sr-table-pro-dev .wp-block-columns.split-40-60 .wp-block-column {
+  flex-basis: 100% !important;
+  margin-left: 0; }
 
 /* Post-specific: The Power of Keeping Lists */
 .table-keeping-lists table {
@@ -727,4 +662,25 @@ html.quotes-slideshow.fixate-admin-menu.folded {
  * Debugging Breakpoints.
  * Uncomment this to turn on helper text.
  */
-/* import 'partials/breakpoints_debugging'; */
+/*
+ * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.
+ */
+@media (min-width: 64em) {
+  .logged-in.sr-breakpoints #site-branding::after {
+    content: "Large & Up. min-width: 64em (1024px)"; } }
+
+@media (max-width: 63.9375em) {
+  .logged-in.sr-breakpoints #site-branding::after {
+    content: "Medium Down. max-width: 63.9375em (1023px)"; } }
+
+@media (max-width: 48.75em) {
+  .logged-in.sr-breakpoints #site-branding::after {
+    content: "Medium-Small Down. max-width: 40em (780px)"; } }
+
+@media (max-width: 40em) {
+  .logged-in.sr-breakpoints #site-branding::after {
+    content: "Small Down. max-width: 40em (640px)"; } }
+
+@media (max-width: 27.5em) {
+  .logged-in.sr-breakpoints #site-branding::after {
+    content: "X-Small only. max-width: 27.5em (440px)"; } }
