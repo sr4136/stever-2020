@@ -14,7 +14,6 @@
 #site-branding img:hover {
     filter: drop-shadow( 3px 3px 3px #999 );
 }
-
 #masthead ul {
 	text-align: right;
 	padding: .5em 0;
@@ -84,7 +83,28 @@
 	#social-navigation {
 		padding: 0;
 	}
-	#social-navigation a {
-		margin-left: 1.5em;
+	#social-navigation li+li a {
+		margin-left: 4.5em;
+	}
+	#social-navigation a i::before {
+	    font-size: 2.25em;
+	}
+	#site-navigation {
+		padding: 0;
+	}
+}
+
+/* X-Small Screens */
+@media screen and ( max-width: 27.5em ) {
+	#masthead #primary-menu {
+		padding-top: 0;
+	}
+	#site-navigation li {
+		display: block;
+		border-top: 1px solid $gray-med;
+	}
+	#site-navigation li + li::before {
+		padding: 0;
+		content: '';
 	}
 }

@@ -37,6 +37,11 @@
     font-style: italic;
 }
 
+/* Page-specific: The Power of Keeping Lists */
+.sr-table-pro-dev .wp-block-columns.split-40-60 .wp-block-column {
+	flex-basis: 100% !important;
+	margin-left: 0;
+}
 /* Post-specific: The Power of Keeping Lists */
 .table-keeping-lists {
 	table {
