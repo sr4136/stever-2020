@@ -13,6 +13,11 @@
 }
 @media screen and ( max-width: 40em ) {
 	#site-branding::after {
-	    content: "Small only. max-width: 40em";
+	    content: "Small Down. max-width: 40em";
+	}
+}
+@media screen and ( max-width: 27.5em ) {
+	#site-branding::after {
+	    content: "X-Small only. max-width: 27.5em";
 	}
 }
