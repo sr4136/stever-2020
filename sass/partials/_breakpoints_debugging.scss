@@ -2,6 +2,16 @@
  * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.
  */
  .logged-in.sr-breakpoints #site-branding::after {
+	position: fixed;
+	z-index: 100;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #000000;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 0.5em 0;
+
 	@include breakpoint( l ) {
 		content: "Large & Up. min-width: 64em (1024px)";
 	}
