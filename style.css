@@ -468,36 +468,36 @@ p:last-child {
   margin: 0; }
 
 /* Icon Font Hovers: Conferences, etc. */
-.sr-table .legend {
+.sr-page-table .legend {
   margin: 2em 0;
   list-style: none; }
 
-.sr-table .legend li {
+.sr-page-table .legend li {
   margin-bottom: .5em;
   cursor: pointer;
   padding: .25em .5em;
   margin-left: 5px; }
 
-.sr-table .legend li:hover {
+.sr-page-table .legend li:hover {
   border-left: 5px solid #E1E2C7;
   margin-left: 0;
   color: black; }
 
-.sr-table .legend li.active {
+.sr-page-table .legend li.active {
   border-left: 5px solid #8B9B31;
   margin-left: 0;
   font-weight: bold; }
 
-.sr-table .legend .show-all {
+.sr-page-table .legend .show-all {
   border-left: 5px solid #5F6B7E;
   margin-left: 0; }
 
-.sr-table .legend i {
+.sr-page-table .legend i {
   width: 2em;
   text-align: center;
   padding-right: 1em; }
 
-.none-found {
+.sr-page-table .none-found {
   margin-top: -1.5em;
   background: #F7F7F7;
   padding: .75em 1em;
