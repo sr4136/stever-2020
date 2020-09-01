@@ -65,3 +65,8 @@ $fonts-headings:	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		}
 	}
 }
+/* Columns Override to full-width */
+@mixin columns-full-override() {
+	flex-basis: 100% !important;
+	margin-left: 0;
+}

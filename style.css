@@ -21,6 +21,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Fonts */
 /* Breakpoints */
 /* HT: https://bit.ly/3beCmdq */
+/* Columns Override to full-width */
 /* Helper: Universal 'hidden' Class */
 .hidden {
   display: none !important;
@@ -292,6 +293,7 @@ p:last-child {
 /* Fonts */
 /* Breakpoints */
 /* HT: https://bit.ly/3beCmdq */
+/* Columns Override to full-width */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
 #wpadminbar .quicklinks .ab-empty-item {
   padding: 0 1.5em; }
@@ -347,31 +349,24 @@ p:last-child {
   margin-bottom: 0; }
 
 /* Photo on Home */
+@media (max-width: 40em) {
+  .home-about-me .wp-block-column {
+    flex-basis: 100% !important;
+    margin-left: 0; }
+    .home-about-me .wp-block-column figure {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .home-about-me .wp-block-column figure img {
+        max-width: 250px; } }
+
 .home-about-me figure {
   margin-top: 3.5em; }
 
-.posts-with-image {
-  list-style-type: none;
-  margin: 0; }
-
-.posts-with-image figure {
-  width: 75px;
-  height: 75px;
-  overflow: hidden;
-  margin-right: 1em;
-  display: inline-block;
-  vertical-align: middle; }
-
-.posts-with-image .no-image figure {
-  /* Gradient from: https://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28\-45deg\%2C\%20rgba\%28181\%2C199\%2C81\%2C1\%29\%200\%25\%2C\%20rgba\%28180\%2C198\%2C81\%2C1\%29\%201\%25\%2C\%20rgba\%28114\%2C109\%2C75\%2C1\%29\%2060\%25\%2C\%20rgba\%28114\%2C109\%2C75\%2C1\%29\%20100\%25\%29\%3B' */
-  background: #b5c751;
-  background: -moz-linear-gradient(-45deg, #b5c751 0%, #b4c651 1%, #726d4b 60%, #726d4b 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, #b5c751), color-stop(1%, #b4c651), color-stop(60%, #726d4b), color-stop(100%, #726d4b));
-  background: -webkit-linear-gradient(-45deg, #b5c751 0%, #b4c651 1%, #726d4b 60%, #726d4b 100%);
-  background: -o-linear-gradient(-45deg, #b5c751 0%, #b4c651 1%, #726d4b 60%, #726d4b 100%);
-  background: -ms-linear-gradient(-45deg, #b5c751 0%, #b4c651 1%, #726d4b 60%, #726d4b 100%);
-  background: linear-gradient(135deg, #b5c751 0%, #b4c651 1%, #726d4b 60%, #726d4b 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5c751', endColorstr='$green-dark', GradientType=1 ); }
+@media (max-width: 48.75em) {
+  .home .is-style-stever-columns-statistics .wp-block-column {
+    flex-basis: 100% !important;
+    margin-left: 0; } }
 
 /* Map Pages */
 .stever-map-page article {
@@ -659,28 +654,30 @@ html.quotes-slideshow.fixate-admin-menu.folded {
   padding: 0 2.5em; }
 
 /*
- * Debugging Breakpoints.
- * Uncomment this to turn on helper text.
- */
-/*
  * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.
  */
-@media (min-width: 64em) {
-  .logged-in.sr-breakpoints #site-branding::after {
-    content: "Large & Up. min-width: 64em (1024px)"; } }
-
-@media (max-width: 63.9375em) {
-  .logged-in.sr-breakpoints #site-branding::after {
-    content: "Medium Down. max-width: 63.9375em (1023px)"; } }
-
-@media (max-width: 48.75em) {
-  .logged-in.sr-breakpoints #site-branding::after {
-    content: "Medium-Small Down. max-width: 40em (780px)"; } }
-
-@media (max-width: 40em) {
-  .logged-in.sr-breakpoints #site-branding::after {
-    content: "Small Down. max-width: 40em (640px)"; } }
-
-@media (max-width: 27.5em) {
-  .logged-in.sr-breakpoints #site-branding::after {
-    content: "X-Small only. max-width: 27.5em (440px)"; } }
+.logged-in.sr-breakpoints #site-branding::after {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0.5em 0; }
+  @media (min-width: 64em) {
+    .logged-in.sr-breakpoints #site-branding::after {
+      content: "Large & Up. min-width: 64em (1024px)"; } }
+  @media (max-width: 63.9375em) {
+    .logged-in.sr-breakpoints #site-branding::after {
+      content: "Medium Down. max-width: 63.9375em (1023px)"; } }
+  @media (max-width: 48.75em) {
+    .logged-in.sr-breakpoints #site-branding::after {
+      content: "Medium-Small Down. max-width: 40em (780px)"; } }
+  @media (max-width: 40em) {
+    .logged-in.sr-breakpoints #site-branding::after {
+      content: "Small Down. max-width: 40em (640px)"; } }
+  @media (max-width: 27.5em) {
+    .logged-in.sr-breakpoints #site-branding::after {
+      content: "X-Small only. max-width: 27.5em (440px)"; } }
