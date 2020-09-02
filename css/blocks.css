@@ -11,10 +11,6 @@
 .wp-admin .wp-block {
   max-width: 1400px; }
 
-/* Media & Text */
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
-  padding-left: 0; }
-
 /* Cover Image */
 .wp-block-cover {
   margin-bottom: 2em; }
@@ -148,7 +144,7 @@ table {
   padding: .5em;
   vertical-align: top; }
 
-/* Table Page: Professional Development */
+/* Table: Professional Development */
 /* Accordion: Upcoming Events */
 .accordion-upcoming h4 {
   background: #C2552E;
@@ -189,9 +185,8 @@ table {
   .wp-admin .is-style-stever-table-pro-dev tr td:nth-child(2) {
     width: 45%; }
 
-/* Responsive */
+/* Responsive - Table: Professional Development*/
 @media (max-width: 48.75em) {
-  /* Table: Professional Development */
   .is-style-stever-table-pro-dev {
     display: block;
     width: 100%; }
@@ -211,17 +206,17 @@ table {
         width: 90% !important;
         font-weight: bold; }
       .is-style-stever-table-pro-dev tr td:nth-child(3) {
-        margin-left: 10%;
-        width: 25% !important;
+        padding-left: 10%;
+        width: 30% !important;
         font-style: italic; }
       .is-style-stever-table-pro-dev tr td:nth-child(4) {
-        width: 65% !important;
+        width: 70% !important;
         padding-left: 2em;
         text-align: right;
         padding-right: 1em;
         font-style: italic; } }
 
-/* Table Page: Books I've Read */
+/* Table: Books I've Read */
 .is-style-stever-table-books {
   /* Title */
   /* Author */
@@ -234,20 +229,67 @@ table {
   .is-style-stever-table-books td:nth-child(3) {
     width: 15% !important; }
 
-/* Table Page: Speaking/Teaching */
+/* Responsive - Table: Books I've Read */
+@media (max-width: 48.75em) {
+  .is-style-stever-table-books {
+    display: block;
+    width: 100%; }
+    .is-style-stever-table-books thead {
+      display: none; }
+    .is-style-stever-table-books td {
+      display: inline-block; }
+    .is-style-stever-table-books tr {
+      display: block;
+      width: 100% td;
+      /* Author */
+      /* Date */ }
+      .is-style-stever-table-books tr :nth-child(1) {
+        width: 100% !important;
+        font-weight: bold; }
+      .is-style-stever-table-books tr td:nth-child(2) {
+        width: 75% !important; }
+      .is-style-stever-table-books tr td:nth-child(3) {
+        padding-left: 10%;
+        width: 25% !important;
+        font-style: italic; } }
+
+/* Table: Speaking/Teaching */
 .is-style-stever-table-speaking {
   /* Date */
   /* Event */
-  /* Affiliation */
-  /* More Info */ }
+  /* Affiliation */ }
   .is-style-stever-table-speaking td:nth-child(1) {
-    width: 10%; }
+    width: 45%; }
   .is-style-stever-table-speaking td:nth-child(2) {
-    width: 40%; }
+    width: 20%; }
   .is-style-stever-table-speaking td:nth-child(3) {
     width: 35%; }
-  .is-style-stever-table-speaking td:nth-child(4) {
-    width: 15%; }
+
+/* Responsive - Table: Speaking/Teaching */
+@media (max-width: 48.75em) {
+  .is-style-stever-table-speaking {
+    display: block;
+    width: 100%; }
+    .is-style-stever-table-speaking thead {
+      display: none; }
+    .is-style-stever-table-speaking td {
+      display: inline-block; }
+    .is-style-stever-table-speaking tr {
+      display: block;
+      width: 100% td;
+      /* Date */
+      /* Affiliation */ }
+      .is-style-stever-table-speaking tr :nth-child(1) {
+        width: 100% !important;
+        font-weight: bold; }
+      .is-style-stever-table-speaking tr td:nth-child(2) {
+        width: 25% !important; }
+      .is-style-stever-table-speaking tr td:nth-child(3) {
+        width: 75% !important;
+        padding-left: 2em;
+        text-align: right;
+        padding-right: 1em;
+        font-style: italic; } }
 
 /* Columns: Features */
 .is-style-stever-columns-features .wp-block-column {

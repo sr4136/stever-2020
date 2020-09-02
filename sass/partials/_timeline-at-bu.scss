@@ -2,7 +2,10 @@
  * My Time at BU Table
  */
 
-/* Legend */
+/* Heading & Legend */
+.is-style-stever-timeline-heading h3 {
+	margin-top: 0;
+}
 .timeline-legend h4 {
     margin: 0;
     padding: 0.4em 0;
@@ -12,6 +15,30 @@
 .timeline-legend p {
     margin: .25em 0 0 0;
     padding: .25em 1em;
+}
+@include breakpoint( ms ){
+	.is-style-stever-timeline-heading {
+		.wp-block-column:first-child {
+			flex-basis: 65% !important;
+		}
+		.wp-block-column:last-child {
+			flex-basis: 35% !important;
+			padding-left: 2em;
+			margin-left: 0;
+		}
+	}
+}
+@include breakpoint( xs ){
+	.is-style-stever-timeline-heading {
+		.wp-block-column:first-child,
+		.wp-block-column:last-child {
+			flex-basis: 100% !important;
+			padding: 0;
+		}
+		.wp-block-column:last-child {
+			margin: 2em 0;
+		}
+	}
 }
 
 /* Timeline: General */
