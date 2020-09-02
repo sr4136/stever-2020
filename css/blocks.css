@@ -251,11 +251,12 @@ table {
 
 /* Columns: Features */
 .is-style-stever-columns-features .wp-block-column {
-  padding: 0 1em 0 0;
+  padding-right: 4em;
   margin: 2em 0 0 0; }
 
 .is-style-stever-columns-features .wp-block-column:last-child {
-  padding-left: 2em; }
+  padding-left: 4em;
+  padding-right: 0; }
 
 .is-style-stever-columns-features .wp-block-column h4 {
   margin-top: 0; }
@@ -265,6 +266,19 @@ table {
 
 .is-style-stever-columns-features .wp-block-column + .wp-block-column {
   border-left: 1px solid #F1f1f1; }
+
+@media (max-width: 63.9375em) {
+  .is-style-stever-columns-features .wp-block-column {
+    padding-right: 2em; }
+  .is-style-stever-columns-features .wp-block-column:last-child {
+    padding-left: 2em; } }
+
+@media (max-width: 48.75em) {
+  .is-style-stever-columns-features .wp-block-column,
+  .is-style-stever-columns-features .wp-block-column:last-child {
+    padding: 0;
+    flex-basis: 100% !important;
+    border: 0 none; } }
 
 /* Columns: statistics */
 .is-style-stever-columns-statistics .wp-block-column {
