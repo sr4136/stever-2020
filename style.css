@@ -55,6 +55,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   background: #FFFFFF;
   color: #000000; }
 
+html {
+  min-width: 320px; }
+
 body {
   background: #F7F7F7;
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -209,15 +212,15 @@ p:last-child {
 .home .page-header {
   display: none; }
 
-/* Page-wide: when the width of the page == max-width of content */
-@media screen and (max-width: 87em) {
+/* Breakpoint: page-wide */
+@media (max-width: 87em) {
   #site-branding,
   #social-navigation,
   #site-navigation {
     padding: 0 1.5em; } }
 
-/* Small Screens */
-@media screen and (max-width: 40em) {
+/* Breakpoint: small */
+@media (max-width: 40em) {
   #masthead ul {
     text-align: center; }
   #site-branding .custom-logo-link {
@@ -235,8 +238,8 @@ p:last-child {
   #site-navigation {
     padding: 0; } }
 
-/* X-Small Screens */
-@media screen and (max-width: 27.5em) {
+/* Breakpoint: X-small */
+@media (max-width: 27.5em) {
   #masthead #primary-menu {
     padding-top: 0; }
   #site-navigation li {
@@ -344,11 +347,11 @@ p:last-child {
 #toplevel_page_gutenberg {
   display: none; }
 
-/* General */
+/* Home: General */
 .home .entry-content li {
   margin-bottom: 0; }
 
-/* Photo on Home */
+/* Home: Bio Photo*/
 @media (max-width: 40em) {
   .home-about-me .wp-block-column {
     flex-basis: 100% !important;
@@ -429,9 +432,13 @@ p:last-child {
   font-style: italic; }
 
 /* Page-specific: The Power of Keeping Lists */
-.sr-table-pro-dev .wp-block-columns.split-40-60 .wp-block-column {
-  flex-basis: 100% !important;
-  margin-left: 0; }
+@media (max-width: 63.9375em) {
+  .sr-table-pro-dev .wp-block-columns.split-40-60 {
+    flex-wrap: wrap;
+    flex-direction: column-reverse; }
+  .sr-table-pro-dev .wp-block-columns.split-40-60 .wp-block-column {
+    flex-basis: 100% !important;
+    margin-left: 0; } }
 
 /* Post-specific: The Power of Keeping Lists */
 .table-keeping-lists table {
@@ -668,16 +675,19 @@ html.quotes-slideshow.fixate-admin-menu.folded {
   padding: 0.5em 0; }
   @media (min-width: 64em) {
     .logged-in.sr-breakpoints #site-branding::after {
-      content: "Large & Up. min-width: 64em (1024px)"; } }
+      content: "Large & up. min-width: 64em (1024px)"; } }
+  @media (max-width: 87em) {
+    .logged-in.sr-breakpoints #site-branding::after {
+      content: "Page-width & down. max-width: 87em (1392px)"; } }
   @media (max-width: 63.9375em) {
     .logged-in.sr-breakpoints #site-branding::after {
-      content: "Medium Down. max-width: 63.9375em (1023px)"; } }
+      content: "Medium & down. max-width: 63.9375em (1023px)"; } }
   @media (max-width: 48.75em) {
     .logged-in.sr-breakpoints #site-branding::after {
-      content: "Medium-Small Down. max-width: 40em (780px)"; } }
+      content: "Medium-Small & down. max-width: 40em (780px)"; } }
   @media (max-width: 40em) {
     .logged-in.sr-breakpoints #site-branding::after {
-      content: "Small Down. max-width: 40em (640px)"; } }
+      content: "Small & down. max-width: 40em (640px)"; } }
   @media (max-width: 27.5em) {
     .logged-in.sr-breakpoints #site-branding::after {
       content: "X-Small only. max-width: 27.5em (440px)"; } }

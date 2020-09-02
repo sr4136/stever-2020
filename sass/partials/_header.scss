@@ -60,16 +60,17 @@
 }
 
 
-/* Page-wide: when the width of the page == max-width of content */
-@media screen and ( max-width: 87em ) {
+/* Breakpoint: page-wide */
+@include breakpoint( p ) {
 	#site-branding,
 	#social-navigation,
 	#site-navigation {
 		padding: 0 1.5em;
 	}
 }
-/* Small Screens */
-@media screen and ( max-width: 40em ) {
+
+/* Breakpoint: small */
+@include breakpoint( s ) {
 	#masthead ul {
 		text-align: center;
 	}
@@ -94,8 +95,8 @@
 	}
 }
 
-/* X-Small Screens */
-@media screen and ( max-width: 27.5em ) {
+/* Breakpoint: X-small */
+@include breakpoint( xs ) {
 	#masthead #primary-menu {
 		padding-top: 0;
 	}

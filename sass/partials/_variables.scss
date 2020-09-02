@@ -44,6 +44,11 @@ $fonts-headings:	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 			@content;
 		}
 	}
+	@else if $size == "p" {
+		@media ( max-width: 87em ) {
+			@content;
+		}
+	}
 	@else if $size == "m" {
 		@media ( max-width: 63.9375em ) {
 			@content;

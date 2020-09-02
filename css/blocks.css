@@ -190,7 +190,7 @@ table {
     width: 45%; }
 
 /* Responsive */
-@media all and (max-width: 782px) {
+@media (max-width: 48.75em) {
   /* Table: Professional Development */
   .is-style-stever-table-pro-dev {
     display: block;
@@ -251,8 +251,11 @@ table {
 
 /* Columns: Features */
 .is-style-stever-columns-features .wp-block-column {
-  padding: 0 2.5em;
+  padding: 0 1em 0 0;
   margin: 2em 0 0 0; }
+
+.is-style-stever-columns-features .wp-block-column:last-child {
+  padding-left: 2em; }
 
 .is-style-stever-columns-features .wp-block-column h4 {
   margin-top: 0; }
@@ -262,14 +265,6 @@ table {
 
 .is-style-stever-columns-features .wp-block-column + .wp-block-column {
   border-left: 1px solid #F1f1f1; }
-
-.home .is-style-stever-columns-features .wp-block-column {
-  padding: 0;
-  padding-right: 2.5em; }
-
-.home .is-style-stever-columns-features .wp-block-column + .wp-block-column {
-  padding-right: 0;
-  padding-left: 2.5em; }
 
 /* Columns: statistics */
 .is-style-stever-columns-statistics .wp-block-column {

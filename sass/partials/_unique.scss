@@ -1,9 +1,9 @@
-/* General */
+/* Home: General */
 .home .entry-content li {
     margin-bottom: 0;
 }
 
-/* Photo on Home */
+/* Home: Bio Photo*/
 .home-about-me .wp-block-column {
 	@include breakpoint( s ) {
 		@include columns-full-override;
@@ -18,11 +18,9 @@
 		}
 	}
 }
-
 .home-about-me figure {
     margin-top: 3.5em;
 }
-
 .home .is-style-stever-columns-statistics .wp-block-column{
 	@include breakpoint( ms ) {
 		@include columns-full-override;
