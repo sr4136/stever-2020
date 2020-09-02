@@ -186,6 +186,12 @@ function stever_scripts() {
             filemtime( get_stylesheet_directory() . '/js/tipped/tipped-kickoff.js' ),
             true
         );
+        wp_enqueue_script( 'stever-dragscroll',
+            get_template_directory_uri() . '/js/dragscroll/dragscroll.js',
+            array(),
+            filemtime( get_stylesheet_directory() . '/js/dragscroll/dragscroll.js' ),
+            true
+        );
     }
 
     /* CSS & JS: Fancybox (for Galleries) */
