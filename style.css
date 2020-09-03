@@ -352,16 +352,22 @@ p:last-child {
   margin-bottom: 0; }
 
 /* Home: Bio Photo*/
+@media (max-width: 63.9375em) {
+  .home-about-me .wp-block-column:first-child {
+    flex-basis: calc(70% - 1em) !important; }
+  .home-about-me .wp-block-column:last-child {
+    flex-basis: calc(30% - 1em) !important; } }
+
 @media (max-width: 40em) {
-  .home-about-me .wp-block-column {
-    flex-basis: 100% !important;
-    margin-left: 0; }
-    .home-about-me .wp-block-column figure {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
-      .home-about-me .wp-block-column figure img {
-        max-width: 250px; } }
+  .home-about-me .wp-block-column:first-child,
+  .home-about-me .wp-block-column:last-child {
+    flex-basis: 100% !important; }
+  .home-about-me .wp-block-column figure {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .home-about-me .wp-block-column figure img {
+      max-width: 250px; } }
 
 .home-about-me figure {
   margin-top: 3.5em; }

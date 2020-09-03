@@ -4,9 +4,20 @@
 }
 
 /* Home: Bio Photo*/
-.home-about-me .wp-block-column {
-	@include breakpoint( s ) {
-		@include columns-full-override;
+@include breakpoint( m ) {
+	.home-about-me .wp-block-column:first-child {
+		flex-basis: calc(70% - 1em) !important;
+	}
+	.home-about-me .wp-block-column:last-child {
+		flex-basis: calc(30% - 1em) !important;
+	}
+}
+@include breakpoint( s ) {
+	.home-about-me .wp-block-column:first-child,
+	.home-about-me .wp-block-column:last-child {
+		flex-basis: 100% !important;
+	}
+	.home-about-me .wp-block-column {
 		& figure {
 			display: flex;
 			justify-content: center;
@@ -17,6 +28,7 @@
 			}
 		}
 	}
+
 }
 .home-about-me figure {
     margin-top: 3.5em;
