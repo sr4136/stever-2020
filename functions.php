@@ -283,11 +283,6 @@ require get_template_directory() .'/inc/shortcode-logged-in-content.php';
 require get_template_directory() .'/inc/shortcode-icons.php';
 
 /**
- * Shortcode: Posts with Image
- */
-require get_template_directory() .'/inc/shortcode-posts-with-image.php';
-
-/**
  * Shortcode: Static Content Include
  */
 require get_template_directory() .'/inc/shortcode-static-include.php';
