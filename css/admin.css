@@ -163,9 +163,6 @@ tbody .column-taxonomy-stever_workflow {
   width: 50%; }
 
 /* Dashboard Widgets */
-.stever-dashboard-widget {
-  margin-bottom: 0; }
-
 .stever-dashboard-widget ul {
   padding-left: 1.5em; }
 
@@ -180,15 +177,21 @@ tbody .column-taxonomy-stever_workflow {
 .stever-dashboard-widget > li:last-child .post-info-wrap {
   border: 0 none; }
 
-.linkview {
+.stever-dashboard-widget .linkview {
   float: right;
   clear: both;
   font-size: 0.8em; }
 
-small.status {
+.stever-dashboard-widget small.status {
   margin-left: 1em;
   font-size: 0.65em;
   opacity: 0.5; }
+
+#dashboard_widget_maps h2,
+#dashboard_widget_unfinished_posts h2,
+#dashboard_widget_recently_updated h2,
+#dashboard_widget_all_pages h2 {
+  flex-grow: 0; }
 
 #dashboard_widget_maps h2::before,
 #dashboard_widget_unfinished_posts h2::before,
