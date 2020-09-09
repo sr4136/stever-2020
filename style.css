@@ -370,7 +370,8 @@ p:last-child {
       max-width: 250px; } }
 
 .home-about-me figure {
-  margin-top: 3.5em; }
+  margin-top: 3.5em;
+  flex-direction: column; }
 
 @media (max-width: 48.75em) {
   .home .is-style-stever-columns-statistics .wp-block-column {
@@ -400,6 +401,9 @@ p:last-child {
 .stever-map-tt p {
   font-size: 0.75em;
   margin: 0; }
+
+#stever-mapfilter {
+  padding: .25em .5em; }
 
 /* Icon Font Hovers: Conferences, etc. */
 .sr-page-table .legend {
