@@ -6,6 +6,10 @@
     max-width: 1400px;
 }
 
+.wp-admin .components-resizable-box__container{
+	border: 1px dashed #ABABAB;
+}
+
 /* Cover Image */
 .wp-block-cover {
     margin-bottom: 2em;

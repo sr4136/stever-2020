@@ -71,6 +71,10 @@
 #stever_body_class-stever-body-class textarea {
   width: 100%; }
 
+/* Edit Post Header: Extra Attention */
+.edit-post-header {
+  background-color: #DEFAFA; }
+
 /* Page Title: Extra Attention */
 .editor-post-title {
   border-bottom: 4px double black;
