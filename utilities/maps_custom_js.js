@@ -1,5 +1,5 @@
 /* Customizations to the "WP Google Maps" Plugin.
- * To be entered into the "Advanced > JS" tab on https://steverudolfi.com/wp-admin/admin.php?page=wp-google-maps-menu-settings.
+ * To be entered into the "Advanced > JS" tab on plugin settings page.
  *
  * 1. HTML Entity Decode
  * 2. Polylines: Bind the Infowindow Event
