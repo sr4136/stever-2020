@@ -2,7 +2,8 @@ html {
 	min-width: 320px;
 }
 body {
-	background: $gray-light;
+	background: rgb(247,247,247);
+    background: linear-gradient(90deg, rgba(247,247,247,1) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(247,247,247,1) 80%);
 	font-family: $fonts-copy;
 	font-size: 16px;
 }
