@@ -32,7 +32,8 @@
 #wp-admin-bar-my-account,
 #wp-admin-bar-amf-close-admin-panel,
 #wp-admin-bar-site-name .ab-sub-wrapper,
-#wp-admin-bar-customize {
+#wp-admin-bar-customize,
+#wp-admin-bar-widgets {
   display: none !important; }
 
 /* Make the non-official buttons gray */

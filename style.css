@@ -1,8 +1,5 @@
 /*
-Theme Name: stever (New)
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme Name: SteveR
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -345,7 +342,8 @@ p:last-child {
 #wp-admin-bar-my-account,
 #wp-admin-bar-amf-close-admin-panel,
 #wp-admin-bar-site-name .ab-sub-wrapper,
-#wp-admin-bar-customize {
+#wp-admin-bar-customize,
+#wp-admin-bar-widgets {
   display: none !important; }
 
 /* Make the non-official buttons gray */
