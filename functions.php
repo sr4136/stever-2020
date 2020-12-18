@@ -229,7 +229,9 @@ function stever_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'stever_scripts' );
 
-
+/**
+ * Enqueue admin scripts and styles.
+ */
 function stever_admin_scripts() {
 	/* CSS: Admin General */
 	wp_enqueue_style( 'stever-admin',
@@ -246,6 +248,17 @@ function stever_admin_scripts() {
 	);
 }
 add_action( 'admin_enqueue_scripts', 'stever_admin_scripts' );
+
+/**
+ * Custom Favicon for Admin & Login.
+ */
+function stever_admin_favicon() {
+  	$favicon_url = get_stylesheet_directory_uri() . '/img/favicon-admin.ico';
+	echo( '<link rel="shortcut icon" href="' . $favicon_url . '" />' );
+}
+add_action( 'login_head', 'stever_admin_favicon' );
+add_action( 'admin_head', 'stever_admin_favicon' );
+
 
 /**
  * Custom template tags for this theme.
