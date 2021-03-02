@@ -1,6 +1,0 @@
-After Generating Static Pages (WP2Static Plugin), Find/Replace the following:
-
-`â&#128;&#148;` => `—`
-`â&#128;&#153;` => `'`
-`â&#128;&#156;` => ''`
-`â&#128;&#157;` => ''`
