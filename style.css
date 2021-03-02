@@ -1,8 +1,5 @@
 /*
-Theme Name: stever (New)
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme Name: SteveR
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -55,11 +52,44 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   background: #FFFFFF;
   color: #000000; }
 
+/* Helper: Island Class */
+.island {
+  margin: 0em -2em 2em -2em;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 3em;
+  background: url("img/bg_gray.png");
+  position: relative; }
+
+.island::before,
+.island::after {
+  width: 100%;
+  height: 2em;
+  background: white;
+  background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0) 100%);
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.island::after {
+  top: auto;
+  bottom: 0;
+  background: white;
+  background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0) 100%); }
+
+.island iframe {
+  display: block;
+  border: 1px solid #CCC;
+  width: 100%; }
+
 html {
   min-width: 320px; }
 
 body {
-  background: #F7F7F7;
+  background: #f7f7f7;
+  background: linear-gradient(90deg, #f7f7f7 20%, white 30%, white 70%, #f7f7f7 80%);
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px; }
 
@@ -312,7 +342,8 @@ p:last-child {
 #wp-admin-bar-my-account,
 #wp-admin-bar-amf-close-admin-panel,
 #wp-admin-bar-site-name .ab-sub-wrapper,
-#wp-admin-bar-customize {
+#wp-admin-bar-customize,
+#wp-admin-bar-widgets {
   display: none !important; }
 
 /* Make the non-official buttons gray */
