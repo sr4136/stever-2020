@@ -350,21 +350,18 @@ table {
 
 /* Columns: Features */
 .is-style-stever-columns-features .wp-block-column {
-    padding-right: 4em;
     margin: 2em 0 0 0;
 }
-.is-style-stever-columns-features .wp-block-column:last-child {
-	padding-left: 4em;
-	padding-right: 0;
-}
+
 .is-style-stever-columns-features .wp-block-column h4 {
     margin-top: 0;
 }
 .is-style-stever-columns-features ul {
     margin: 0;
 }
-.is-style-stever-columns-features .wp-block-column+.wp-block-column {
+.is-style-stever-columns-features .wp-block-column + .wp-block-column {
     border-left: 1px solid #F1f1f1;
+	padding-left: 4em;
 }
 @include breakpoint( m ) {
 	.is-style-stever-columns-features .wp-block-column {
