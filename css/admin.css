@@ -1,24 +1,5 @@
 /* CSS for Admin */
-/* Custom Colors */
-/* AA w/Large Text: https://bit.ly/2EnXiPj */
-/* For Timeline Only */
-/* Accent Colors */
-/* "Standard" Colors */
-/* Fonts */
 @import url("https://fonts.bunny.net/css?family=b612-mono:400");
-/* Breakpoints */
-/* HT: https://bit.ly/3beCmdq */
-/* Columns Override to full-width */
-/* Custom Colors */
-/* AA w/Large Text: https://bit.ly/2EnXiPj */
-/* For Timeline Only */
-/* Accent Colors */
-/* "Standard" Colors */
-/* Fonts */
-@import url("https://fonts.bunny.net/css?family=b612-mono:400");
-/* Breakpoints */
-/* HT: https://bit.ly/3beCmdq */
-/* Columns Override to full-width */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
 #wpadminbar .quicklinks .ab-empty-item {
   padding: 0 1.5em; }

@@ -10,18 +10,8 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
-/* Custom Colors */
-/* AA w/Large Text: https://bit.ly/2EnXiPj */
-/* For Timeline Only */
-/* Accent Colors */
-/* "Standard" Colors */
-/* Fonts */
 @import url("https://fonts.bunny.net/css?family=b612-mono:400");
-/* Breakpoints */
-/* HT: https://bit.ly/3beCmdq */
-/* Columns Override to full-width */
 /* Helper: Universal 'hidden' Class */
-@import url("https://fonts.bunny.net/css?family=b612-mono:400");
 .hidden {
   display: none !important;
   visibility: hidden; }
@@ -320,15 +310,6 @@ p:last-child {
   .error404 aside .all-pages ul.children {
     margin-left: 1em; }
 
-/* Custom Colors */
-/* AA w/Large Text: https://bit.ly/2EnXiPj */
-/* For Timeline Only */
-/* Accent Colors */
-/* "Standard" Colors */
-/* Fonts */
-/* Breakpoints */
-/* HT: https://bit.ly/3beCmdq */
-/* Columns Override to full-width */
 /* Admin Bar: Hiding Unnecessary Items & Adding Icons */
 #wpadminbar .quicklinks .ab-empty-item {
   padding: 0 1.5em; }

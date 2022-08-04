@@ -1,8 +1,8 @@
-/* Custom Colors */
+// Custom Colors
 $green:			#6B7D05;
 $green-dark:	#5B573D;
 $green-light:	#E1E2C7;
-$green-bright:  #8B9B31; /* AA w/Large Text: https://bit.ly/2EnXiPj */
+$green-bright:  #8B9B31; // AA w/Large Text: https://bit.ly/2EnXiPj
 $brown:			#332012;
 $brown-light:	#96BCC5;
 $red:			#C2552E;
@@ -13,31 +13,30 @@ $gray-dark:		#666666;
 $gray-darkest:	#484848;
 $blue:          #1468A0;
 
-/* For Timeline Only */
+// For Timeline Only
 $teal:				#618985;
 $teal-light:		#B1DDDA;
 $timeline-me:		$green-bright;
 $timeline-dev:		#048BA8;
 $timeline-manager:	#004777;
 
-/* Accent Colors */
+// Accent Colors
 $accent-green:			#516322;
 $accent-teal:			#416E82;
 $accent-red:			#814519;
 $accent-blue:			#3f506c;
 
-/* "Standard" Colors */
+// "Standard" Colors
 $white:			#FFFFFF;
 $black:			#000000;
 
-/* Fonts */
-@import url( "https://fonts.bunny.net/css?family=b612-mono:400" );
+// Fonts
 $fonts-copy:		"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fonts-headings:	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fonts-mono:		"B612 Mono", monospace;
 
-/* Breakpoints */
-/* HT: https://bit.ly/3beCmdq */
+// Breakpoints
+// HT: https://bit.ly/3beCmdq
 @mixin breakpoint( $size ) {
 	@if $size == "l" {
 		@media( min-width: 64em ) {
@@ -71,7 +70,7 @@ $fonts-mono:		"B612 Mono", monospace;
 	}
 }
 
-/* Columns Override to full-width */
+// Columns Override to full-width
 @mixin columns-full-override() {
 	flex-basis: 100% !important;
 	margin-left: 0;
