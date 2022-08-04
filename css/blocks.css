@@ -5,6 +5,7 @@
 /* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
+@import url("https://fonts.bunny.net/css?family=b612-mono:400");
 /* Breakpoints */
 /* HT: https://bit.ly/3beCmdq */
 /* Columns Override to full-width */
@@ -212,12 +213,15 @@ table {
   /* Author */
   /* Date */ }
   .is-style-stever-table-books td:nth-child(1) {
-    width: 50% !important;
+    width: 55% !important;
     text-align: left !important; }
   .is-style-stever-table-books td:nth-child(2) {
     width: 30% !important; }
   .is-style-stever-table-books td:nth-child(3) {
-    width: 15% !important; }
+    width: 10% !important;
+    text-align: right;
+    font-family: "B612 Mono", monospace;
+    padding-right: 2em; }
 
 /* Responsive - Table: Books I've Read */
 @media (max-width: 48.75em) {

@@ -26,15 +26,15 @@ $accent-teal:			#416E82;
 $accent-red:			#814519;
 $accent-blue:			#3f506c;
 
-
 /* "Standard" Colors */
 $white:			#FFFFFF;
 $black:			#000000;
 
 /* Fonts */
+@import url( "https://fonts.bunny.net/css?family=b612-mono:400" );
 $fonts-copy:		"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $fonts-headings:	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+$fonts-mono:		"B612 Mono", monospace;
 
 /* Breakpoints */
 /* HT: https://bit.ly/3beCmdq */

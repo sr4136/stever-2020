@@ -249,7 +249,7 @@ table {
 .is-style-stever-table-books {
 	/* Title */
 	td:nth-child( 1 ) {
-		width: 50% !important;
+		width: 55% !important;
 		text-align: left !important;
 	}
 	/* Author */
@@ -258,7 +258,10 @@ table {
 	}
 	/* Date */
 	td:nth-child( 3 ) {
-		width: 15% !important;
+		width: 10% !important;
+		text-align: right;
+		font-family: $fonts-mono;
+		padding-right: 2em;
 	}
 }
 /* Responsive - Table: Books I've Read */

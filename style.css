@@ -16,10 +16,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Accent Colors */
 /* "Standard" Colors */
 /* Fonts */
+@import url("https://fonts.bunny.net/css?family=b612-mono:400");
 /* Breakpoints */
 /* HT: https://bit.ly/3beCmdq */
 /* Columns Override to full-width */
 /* Helper: Universal 'hidden' Class */
+@import url("https://fonts.bunny.net/css?family=b612-mono:400");
 .hidden {
   display: none !important;
   visibility: hidden; }
