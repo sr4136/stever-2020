@@ -50,20 +50,26 @@
 #toplevel_page_gutenberg {
   display: none; }
 
-/* Metabox: Body Class */
 #stever_body_class-stever-body-class textarea {
   width: 100%; }
 
-/* Edit Post Header: Extra Attention */
 .edit-post-header {
   background-color: #DEFAFA; }
 
-/* Page Title: Extra Attention */
 .editor-post-title {
   border-bottom: 4px double black;
   margin-bottom: 2em; }
 
-/* Page/Post Listings */
+.wp-admin.post-type-stever_quotes .editor-post-title__input {
+  font-size: 1em; }
+
+.wp-admin.post-type-stever_quotes #the-list blockquote {
+  margin: 0; }
+
+.wp-admin.post-type-stever_quotes #the-list blockquote p {
+  color: #000000;
+  font-size: 1.2em; }
+
 #the-list .check-column {
   padding: 0; }
 
@@ -78,18 +84,6 @@
 #the-list tr:hover .row-actions {
   opacity: 1; }
 
-/* Quotes Listings */
-.wp-admin.post-type-stever_quotes .editor-post-title__input {
-  font-size: 1em; }
-
-.wp-admin.post-type-stever_quotes #the-list blockquote {
-  margin: 0; }
-
-.wp-admin.post-type-stever_quotes #the-list blockquote p {
-  color: #000000;
-  font-size: 1.2em; }
-
-/* Page/Post Listings: Term Colors */
 a[href="edit.php?category_name=development"],
 a[href="edit.php?category_name=management"] {
   border: 2px solid #c5a2f2;
@@ -126,7 +120,6 @@ tbody .column-taxonomy-stever_workflow {
   background: transparent;
   border: 1px solid #77B255; }
 
-/* Page/Post Listings: Post State Tags (Plugin) */
 .post-state {
   opacity: .5;
   margin-left: 2em; }
@@ -137,19 +130,6 @@ tbody .column-taxonomy-stever_workflow {
 #the-list .check-column {
   border-left: 0 !important; }
 
-/* Menu Items: WP Google Maps Icon */
-#toplevel_page_wp-google-maps-menu .dashicons-before img {
-  display: none; }
-
-#toplevel_page_wp-google-maps-menu .dashicons-before::before {
-  content: "\f231";
-  font-family: Dashicons; }
-
-/* Plugins Screen */
-.wp-list-table.plugins thead .column-description {
-  width: 50%; }
-
-/* Dashboard Widgets */
 .stever-dashboard-widget ul {
   padding-left: 1.5em; }
 
@@ -202,81 +182,3 @@ tbody .column-taxonomy-stever_workflow {
 
 #dashboard_widget_all_pages h2::before {
   content: "\f163"; }
-
-/* WP Google Maps */
-#wpgmaps_options #wpgmza_add_address {
-  border: 3px solid lime; }
-
-#wpgmaps_options input[type="text"] {
-  width: 100%; }
-
-/* Hide many of the inputs I don't use */
-#tabs-m-1 table tbody > tr:nth-child(4),
-#tabs-m-1 table tbody > tr:nth-child(5),
-#tabs-m-1 table tbody > tr:nth-child(6),
-#tabs-m-1 table tbody > tr:nth-child(8),
-#tabs-m-1 table tbody > tr:nth-child(9),
-#tabs-m-1 table tbody > tr:nth-child(10) {
-  display: none; }
-
-#wpgmza_addmarker {
-  margin-top: 1em;
-  width: 100%; }
-
-#wpgmza_editmarker_loading,
-#wpgmza_addmarker_loading {
-  background: #FFFF5F;
-  margin-top: 2em !important;
-  padding: .5em;
-  text-align: center;
-  display: block;
-  width: 90%; }
-
-#wpgmaps_save_reminder {
-  overflow: hidden; }
-
-#wpgmaps_options .update-nag {
-  width: 100%; }
-
-/* PolyLine: Tab */
-#wpgmza_table_polyline {
-  margin-top: 2em; }
-
-#wpgmza_table_polyline thead {
-  border-bottom: 2px solid #0073AA; }
-
-#wpgmza_table_polyline thead th,
-#wpgmza_table_polyline tr td:nth-child(1),
-#wpgmza_table_polyline tr td:nth-child(3) {
-  text-align: center; }
-
-#wpgmza_table_polyline tr td:nth-child(1) {
-  width: 8%;
-  padding-left: 0.5em; }
-
-#wpgmza_table_polyline tr td:nth-child(2) {
-  width: 77%; }
-
-#wpgmza_table_polyline tr td:nth-child(3) {
-  width: 15%; }
-
-#wpgmza_table_polyline tr:nth-child(even) {
-  background: #F1F1F1; }
-
-#wpgmza_table_polyline h3, #wpgmza_table_polyline p {
-  margin: 0;
-  font-size: 1em; }
-
-/* Polyline: Individual Edit */
-#wpgmaps_edit_poly_form .wpgmza-listing-comp tr td:nth-child(1) {
-  width: 120px; }
-
-#wpgmaps_edit_poly_form .wpgmza-listing-comp,
-#wpgmaps_edit_poly_form .wpgmza_map_seventy {
-  width: 100% !important;
-  float: none;
-  margin: 0; }
-
-#wpgmaps_edit_poly_form .wpgmza-listing-comp tr:nth-child(1) #poly_line,
-#wpgmaps_edit_poly_form #poly_line_list {
-  width: 100% !important; }

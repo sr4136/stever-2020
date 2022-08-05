@@ -2,13 +2,6 @@
 
 @import 'partials/variables';
 
-.wp-admin .wp-block {
-    max-width: 1400px;
-}
-
-.wp-admin .components-resizable-box__container{
-	border: 1px dashed #ABABAB;
-}
 
 // Cover Image 
 .wp-block-cover {
@@ -80,7 +73,7 @@
     background-color: $green-bright;
     color: $white;
     text-align: center;
-    padding: .5em;
+    padding: .5em 0;
     font-weight: bold;
 	font-size: 1.2em;
 	margin-bottom: 0;
