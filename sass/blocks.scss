@@ -1,4 +1,4 @@
-/* CSS for Blocks */
+// CSS for Blocks 
 
 @import 'partials/variables';
 
@@ -10,7 +10,7 @@
 	border: 1px dashed #ABABAB;
 }
 
-/* Cover Image */
+// Cover Image 
 .wp-block-cover {
     margin-bottom: 2em;
 }
@@ -21,7 +21,7 @@
     margin-top: -4em;
 }
 
-/* Block Quote */
+// Block Quote 
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	margin: 3em 0;
@@ -33,7 +33,7 @@
 	text-align: left;
 }
 
-/* Columns */
+// Columns 
 .wp-block-columns.has-2-columns.small-left .wp-block-column:nth-child( 1 ) {
 	flex-basis: calc(10% - 16px);
 }
@@ -55,7 +55,7 @@
 	margin-bottom: 0;
 }
 
-/* Buttons */
+// Buttons 
 .wp-block-button__link,
 .wp-block-button__link:visited {
     background-color: transparent;
@@ -74,7 +74,7 @@
 	text-decoration: none;
 }
 
-/* Heading: Year Divider */
+// Heading: Year Divider 
 .is-style-year-divider,
 .editor-styles-wrapper .is-style-year-divider {
     background-color: $green-bright;
@@ -86,7 +86,7 @@
 	margin-bottom: 0;
 }
 
-/* General Accordions */
+// General Accordions 
 .c-accordion__item {
 	background: $gray-light;
 	margin-bottom: 1em;
@@ -129,7 +129,7 @@
 	}
 }
 
-/* Tables */
+// Tables 
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -153,8 +153,8 @@ table {
 	}
 }
 
-/* Table: Professional Development */
-/* Accordion: Upcoming Events */
+// Table: Professional Development 
+// Accordion: Upcoming Events 
 .accordion-upcoming h4 {
 	background: #C2552E;
 	color: $white;
@@ -170,39 +170,39 @@ table {
 	max-height: 350px;
 }
 
-/* Table: Professional Development */
+// Table: Professional Development 
 .is-style-stever-table-pro-dev tr {
-	/* Icon */
+	// Icon 
 	td:nth-child( 1 ) {
 		width: 5%;
 		text-align: center;
 	}
-	/* Title */
+	// Title 
 	td:nth-child( 2 ) {
 		width: 55%;
 	}
-	/* Date */
+	// Date 
 	td:nth-child( 3 ) {
 		width: 10%;
 	}
-	/* Affiliation */
+	// Affiliation 
 	td:nth-child( 4 ) {
 		width: 30%;
 	}
 }
-/* Admin - Table: Professional Development */
+// Table: Professional Development (Admin)
 .wp-admin .is-style-stever-table-pro-dev tr {
-	/* Icon */
+	// Icon 
 	td:nth-child( 1 ) {
 		width: 15%;
 		text-align: center;
 	}
-	/* Title */
+	// Title 
 	td:nth-child( 2 ) {
 		width: 45%;
 	}
 }
-/* Responsive - Table: Professional Development*/
+// Responsive - Table: Professional Development
 @include breakpoint( ms ) {
     .is-style-stever-table-pro-dev {
         display: block;
@@ -218,22 +218,22 @@ table {
 	        display: block;
 	        width: 100%
 
-	        /* Icon */
+	        // Icon 
 			td:nth-child(1) {
 			    width: 10% !important;
 			}
-			/* Title */
+			// Title 
 			td:nth-child(2) {
 			    width: 90% !important;
 			    font-weight: bold;
 			}
-			/* Date */
+			// Date 
 			td:nth-child(3) {
 			    padding-left: 10%;
 			    width: 30% !important;
 			    font-style: italic;
 			}
-			/* Affiliation */
+			// Affiliation 
 			td:nth-child(4) {
 			    width: 70% !important;
 			    padding-left: 2em;
@@ -245,26 +245,37 @@ table {
     }
 }
 
-/* Table: Books I've Read */
+// Table: Books I've Read 
 .is-style-stever-table-books {
-	/* Title */
+	// Title 
+	th:nth-child( 1 ),
 	td:nth-child( 1 ) {
 		width: 55% !important;
-		text-align: left !important;
+		text-align: left;
+		padding-left: 1.5em;
 	}
-	/* Author */
+	// Author 
+	th:nth-child( 2 ),
 	td:nth-child( 2 ) {
 		width: 30% !important;
 	}
-	/* Date */
+	// Date
+	th:nth-child( 3 ),
 	td:nth-child( 3 ) {
 		width: 10% !important;
 		text-align: right;
 		font-family: $fonts-mono;
-		padding-right: 2em;
+		font-size: 0.9em;
+		padding-right: 1.5em;
 	}
 }
-/* Responsive - Table: Books I've Read */
+// Table: Professional Development (Admin)
+.wp-admin .is-style-stever-table-books {
+	th, td {
+		padding: 0.5em;
+	}
+}
+// Table: Books I've Read (Responsive)
 @include breakpoint( ms ) {
     .is-style-stever-table-books {
         display: block;
@@ -279,42 +290,49 @@ table {
 	    tr {
 	        display: block;
 	        width: 100%
-
-	        /* Title */
-			td:nth-child(1) {
-			    width: 100% !important;
-			    font-weight: bold;
-			}
-			/* Author */
-			td:nth-child(2) {
-			    width: 75% !important;
-			}
-			/* Date */
-			td:nth-child(3) {
-			    padding-left: 10%;
-			    width: 25% !important;
-			    font-style: italic;
-			}
 	    }
+		// Title 
+		th:nth-child(1),
+		td:nth-child(1) {
+			width: 100% !important;
+			font-weight: bold;
+			padding-left: 1em;
+			padding-bottom: 0.25em;
+		}
+		// Author 
+		th:nth-child(2),
+		td:nth-child(2) {
+			width: 75% !important;
+			padding-left: 1em;
+			padding-top: 0.25em;
+		}
+		// Date 
+		th:nth-child(3),
+		td:nth-child(3) {
+			width: 25% !important;
+			padding-right: 1em;
+			padding-top: 0.25em;
+		}
     }
 }
 
-/* Table: Speaking/Teaching */
+
+// Table: Speaking/Teaching 
 .is-style-stever-table-speaking {
-	/* Date */
+	// Date 
 	td:nth-child( 1 ) {
 		width: 45%;
 	}
-	/* Event */
+	// Event 
 	td:nth-child( 2 ) {
 		width: 20%;
 	}
-	/* Affiliation */
+	// Affiliation 
 	td:nth-child( 3 ) {
 		width: 35%;
 	}
 }
-/* Responsive - Table: Speaking/Teaching */
+// Table: Speaking/Teaching (Responsive)
 @include breakpoint( ms ) {
     .is-style-stever-table-speaking {
 	    display: block;
@@ -330,16 +348,16 @@ table {
 	        display: block;
 	        width: 100%
 
-	        /* Title */
+	        // Title 
 			td:nth-child(1) {
 			    width: 100% !important;
 			    font-weight: bold;
 			}
-			/* Date */
+			// Date 
 			td:nth-child(2) {
 			    width: 25% !important;
 			}
-			/* Affiliation */
+			// Affiliation 
 			td:nth-child(3) {
 			    width: 75% !important;
 			    padding-left: 2em;
@@ -351,7 +369,7 @@ table {
     }
 }
 
-/* Columns: Features */
+// Columns: Features 
 .is-style-stever-columns-features .wp-block-column {
     margin: 2em 0 0 0;
 }
@@ -384,7 +402,7 @@ table {
 }
 
 
-/* Columns: statistics */
+// Columns: Statistics 
 .is-style-stever-columns-statistics .wp-block-column {
     background: #f1f1f1;
     padding: 2em;
@@ -413,13 +431,13 @@ table {
     font-size: .75em;
     text-align: center;
 }
-.is-style-stever-columns-statistics .is-style-stever-columns-statistics-pointer{
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-pointer {
     background: $accent-green;
 }
 .is-style-stever-columns-statistics .is-style-stever-columns-statistics-pointer h4:before {
     content: "\f245";
 }
-.is-style-stever-columns-statistics .is-style-stever-columns-statistics-themes{
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-themes {
     background: $accent-teal;
 }
 .is-style-stever-columns-statistics .is-style-stever-columns-statistics-themes h4:before {
@@ -431,14 +449,14 @@ table {
 .is-style-stever-columns-statistics .is-style-stever-columns-statistics-team h4:before {
     content: "\f0c0";
 }
-.is-style-stever-columns-statistics .is-style-stever-columns-statistics-commits{
+.is-style-stever-columns-statistics .is-style-stever-columns-statistics-commits {
     background: $accent-blue;
 }
 .is-style-stever-columns-statistics .is-style-stever-columns-statistics-commits h4:before {
     content: "\f126";
 }
 
-/* Columns: statistics:: On Home */
+// Columns: Statistics:: On Home 
 .home-blocks.is-style-stever-columns-statistics {
     margin-top: 3em;
 
@@ -481,13 +499,12 @@ table {
 	}
 }
 
-
-/* Gallery */
+// Gallery 
 .blocks-gallery-grid, .wp-block-gallery {
 	width: 100%;
 }
 
-/* Gallery: Fancybox Outline */
+// Gallery: Fancybox Outline 
 .is-style-fancybox {
 	a {
 		border: 1px solid $gray-dark;
