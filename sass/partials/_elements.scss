@@ -29,7 +29,7 @@ h4 {
     font-size: 1.25em;
 }
 p {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 .entry-title {
 	padding: .25em 0 .5em 0;
@@ -88,4 +88,7 @@ p:last-child {
 }
 .blog article {
 	margin-bottom: 2em;
+}
+figcaption {
+	font-size: 0.8em;
 }

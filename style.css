@@ -102,7 +102,7 @@ h4 {
   font-size: 1.25em; }
 
 p {
-  margin-bottom: 2em; }
+  margin-bottom: 1em; }
 
 .entry-title {
   padding: .25em 0 .5em 0;
@@ -161,6 +161,9 @@ p:last-child {
 
 .blog article {
   margin-bottom: 2em; }
+
+figcaption {
+  font-size: 0.8em; }
 
 /* Header */
 #site-branding {
@@ -398,10 +401,9 @@ p:last-child {
   font-style: italic; }
 
 .sr-table-pro-dev .legend {
-  margin: 2em 0;
+  margin: 1em 2em 2em 1em;
   list-style: none; }
   .sr-table-pro-dev .legend li {
-    margin-bottom: .5em;
     cursor: pointer;
     padding: .25em .5em;
     margin-left: 5px; }
@@ -411,40 +413,17 @@ p:last-child {
       color: black; }
     .sr-table-pro-dev .legend li.active {
       border-left: 5px solid #8B9B31;
+      background: #f3f3e9;
       margin-left: 0;
       font-weight: bold; }
   .sr-table-pro-dev .legend .show-all {
     border-left: 5px solid #5F6B7E;
-    margin-left: 0; }
+    margin-left: 0;
+    background: #F7F7F7; }
   .sr-table-pro-dev .legend i {
-    width: 2em;
+    width: 40px;
     text-align: center;
     padding-right: 1em; }
-
-/* Page-specific: The Power of Keeping Lists */
-@media (max-width: 63.9375em) {
-  .sr-table-pro-dev .wp-block-columns.split-40-60 {
-    flex-wrap: wrap;
-    flex-direction: column-reverse; }
-  .sr-table-pro-dev .wp-block-columns.split-40-60 .wp-block-column {
-    flex-basis: 100% !important;
-    margin-left: 0; } }
-
-/* Post-specific: The Power of Keeping Lists */
-.table-keeping-lists table {
-  border: 1px solid #CCCCCC; }
-
-.table-keeping-lists table thead {
-  border-bottom: 1px solid #CCCCCC; }
-
-.table-keeping-lists .wp-block-table td {
-  padding: 6px;
-  vertical-align: top; }
-
-.table-keeping-lists table td + td,
-.table-keeping-lists .wp-block-table.is-style-stripes th + th,
-.table-keeping-lists .wp-block-table.is-style-stripes td + td {
-  border-left: 1px solid #CCCCCC; }
 
 /* Quotes Archive */
 .post-type-archive-stever_quotes .entry-header {
@@ -668,6 +647,31 @@ html.quotes-slideshow.fixate-admin-menu.folded {
 .dev-other span,
 .manager-other span {
   padding: 0 2.5em; }
+
+/* Post-specific: The Power of Keeping Lists */
+.post--keeping-lists table {
+  border: 1px solid #CCCCCC;
+  margin-bottom: 0; }
+
+.post--keeping-lists thead {
+  border-bottom: 1px solid #CCCCCC; }
+
+.post--keeping-lists td {
+  padding: 6px;
+  vertical-align: top; }
+
+.post--keeping-lists table td + td,
+.post--keeping-lists .wp-block-table.is-style-stripes th + th,
+.post--keeping-lists .wp-block-table.is-style-stripes td + td {
+  border-left: 1px solid #CCCCCC; }
+
+.post--keeping-lists .wp-block-pb-accordion-item {
+  margin-bottom: 2.5em; }
+
+@media (max-width: 63.9375em) {
+  .post--keeping-lists figure.alignright {
+    float: none;
+    margin: 0 auto; } }
 
 /*
  * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.

@@ -1,0 +1,29 @@
+/* Post-specific: The Power of Keeping Lists */
+.post--keeping-lists {
+	table {
+		border: 1px solid $gray-med;
+		margin-bottom: 0;
+	}
+	thead {
+		border-bottom: 1px solid $gray-med;
+	}
+	td {
+		padding: 6px;
+		vertical-align: top;
+	}
+	table td+td,
+	.wp-block-table.is-style-stripes th+th,
+	.wp-block-table.is-style-stripes td+td {
+		border-left: 1px solid $gray-med;
+	}
+	.wp-block-pb-accordion-item {
+		margin-bottom: 2.5em;
+	}
+	
+	@include breakpoint( m ) {
+		figure.alignright {
+			float: none;
+			margin: 0 auto;
+		}
+	}
+}

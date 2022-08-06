@@ -2,6 +2,7 @@
 $green:					#6B7D05;
 $green-dark:			#5B573D;
 $green-light:			#E1E2C7;
+$green-lightest:		lighten( $green-light, 10% ); 
 $green-bright:  		#8B9B31; // AA w/Large Text: https://bit.ly/2EnXiPj
 $brown:					#332012;
 $brown-light:			#96BCC5;
