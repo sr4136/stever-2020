@@ -310,6 +310,8 @@ table {
 /* Blocks: Unique Classes - Home */
 .stever-home-section {
   margin-bottom: 4em; }
+  .stever-home-section:last-of-type {
+    margin-bottom: 2em; }
 
 .stever-home-section-intro figure {
   flex-direction: column; }

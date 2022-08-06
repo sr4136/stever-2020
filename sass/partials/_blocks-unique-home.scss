@@ -3,6 +3,10 @@
 // Home: Section Blocks
 .stever-home-section {
 	margin-bottom: 4em;
+	
+	&:last-of-type {
+		margin-bottom: 2em;
+	}
 }
 
 
@@ -95,29 +99,29 @@
 	}
 	.is-style-stever-columns-statistics-themes {
 		hr {
-			border-color: $accent-teal-lighter;
+			border-color: $accent-teal-light;
 		}
 		.wp-block-button__link,
 	    .wp-block-button__link:visited {
-			background: $accent-teal-darker;
-			border-color: $accent-teal-lighter;
+			background: $accent-teal-dark;
+			border-color: $accent-teal-light;
 			&:hover{
-				background: $accent-teal-lighter;
-				border-color: $accent-teal-darker;
+				background: $accent-teal-light;
+				border-color: $accent-teal-dark;
 			}
 		}
 	}
 	.is-style-stever-columns-statistics-team {
 		hr {
-			border-color: $accent-red-lighter;
+			border-color: $accent-red-light;
 		}
 		.wp-block-button__link,
 	    .wp-block-button__link:visited {
-			background: $accent-red-darker;
-			border-color: $accent-red-lighter;
+			background: $accent-red-dark;
+			border-color: $accent-red-light;
 			&:hover{
-				background: $accent-red-lighter;
-				border-color: $accent-red-darker;
+				background: $accent-red-light;
+				border-color: $accent-red-dark;
 			}
 		}
 	}

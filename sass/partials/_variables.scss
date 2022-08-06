@@ -25,12 +25,12 @@ $accent-green:			#516322;
 $accent-teal:			#416E82;
 $accent-red:			#814519;
 $accent-blue:			#3F506C;
-$accent-teal-lighter:	lighten( $accent-teal, 10% ); 
-$accent-red-lighter:	lighten( $accent-red, 10% ); 
-$accent-blue-lighter:	lighten( $accent-blue, 10% );
-$accent-teal-darker:	darken( $accent-teal, 10% ); 
-$accent-red-darker:		darken( $accent-red, 10% ); 
-$accent-blue-darker:	darken( $accent-blue, 10% ); 
+$accent-teal-light:		lighten( $accent-teal, 10% ); 
+$accent-red-light:		lighten( $accent-red, 10% ); 
+$accent-blue-light:		lighten( $accent-blue, 10% );
+$accent-teal-dark:		darken( $accent-teal, 10% ); 
+$accent-red-dark:		darken( $accent-red, 10% ); 
+$accent-blue-dark:		darken( $accent-blue, 10% ); 
 
 // "Standard" Colors
 $white:					#FFFFFF;
