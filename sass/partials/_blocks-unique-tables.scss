@@ -12,32 +12,19 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-// Table: Professional Development 
 // Accordion: Upcoming Events 
 .accordion-upcoming h4 {
-	background: #C2552E;
+	background: $red;
 	color: $white;
 	text-align: center;
 	padding: 0.2em 0 0.25em 0;
+	
+	&:after {
+		color: $white;
+		right: 0.65em;
+	}
 }
-.accordion-upcoming h4:after {
-	color: white;
-	right: 0.65em;
-}
-.accordion-upcoming iframe {
-	width: 100%;
-	max-height: 350px;
-}
+
 
 // Table: Professional Development 
 .is-style-stever-table-pro-dev tr {
@@ -71,7 +58,7 @@
 		width: 45%;
 	}
 }
-// Responsive - Table: Professional Development
+// Table: Professional Development - Responsive
 @include breakpoint( ms ) {
     .is-style-stever-table-pro-dev {
         display: block;
@@ -113,6 +100,8 @@
 	    }
     }
 }
+
+
 
 // Table: Books I've Read 
 .is-style-stever-table-books {
