@@ -467,9 +467,11 @@ figcaption {
 @-webkit-keyframes ripple {
   from {
     -webkit-transform: scale(0);
+    transform: scale(0);
     opacity: 1; }
   to {
-    -webkit-transform: scale(3);
+    -webkit-transform: scale(3.5);
+    transform: scale(3.5);
     opacity: 0; } }
 
 .is-style-stever-timeline-heading h3 {
@@ -519,7 +521,6 @@ figcaption {
 
 .dev-other,
 .manager-other {
-  font-size: 0.75em;
   font-weight: bold;
   background: #F7F7F7; }
 
@@ -573,20 +574,24 @@ figcaption {
     padding: 0 2em;
     left: 0; }
   .timeline tbody i {
-    position: absolute;
-    z-index: 2;
-    top: 0.55em;
-    left: 0.55em;
+    position: relative;
+    float: left;
+    margin: 4.5px 0 0 0.25em;
     width: 15px;
     height: 15px;
     background: #FFFFFF;
     border: 5px solid #000000;
     border-radius: 50%;
     cursor: pointer; }
+  .timeline tbody span + i {
+    float: right;
+    left: auto;
+    margin: 4.5px 0.25em 0 0; }
   .timeline tbody i:before,
   .timeline tbody i:after {
     content: "";
     position: absolute;
+    z-index: 2;
     top: -5px;
     left: -5px;
     border: 1px solid #000000;
@@ -597,9 +602,6 @@ figcaption {
     -webkit-animation: ripple 3s linear infinite; }
   .timeline tbody i:after {
     -webkit-animation: ripple 3s linear infinite 0.75s; }
-  .timeline tbody span + i {
-    left: auto;
-    right: 0.25em; }
 
 /* Post-specific: The Power of Keeping Lists */
 .post--keeping-lists table {
