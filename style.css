@@ -125,7 +125,7 @@ code {
   background-color: #F7F7F7; }
 
 blockquote, blockquote p {
-  color: #666666; }
+  color: #484848; }
 
 blockquote {
   margin: 0 0 1rem;
@@ -409,8 +409,11 @@ figcaption {
   margin: 2.5em 0; }
 
 .post-type-archive-stever_quotes blockquote {
-  border-width: 1px;
-  padding-left: 1.25em; }
+  border-width: 5px;
+  padding-left: 1.25em;
+  background: white;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, #F8F8F8 50%, rgba(255, 255, 255, 0) 90%);
+  margin-bottom: 0; }
 
 .quotes-slideshow {
   margin-top: 0 !important;
@@ -452,7 +455,8 @@ figcaption {
       vertical-align: top; }
   .quotes-slideshow blockquote {
     padding: 1em 1.5em 1em 2em;
-    border-width: 1px; }
+    border-width: 1px;
+    background: transparent; }
     .quotes-slideshow blockquote p {
       font-size: 2.5em; }
     .quotes-slideshow blockquote cite {

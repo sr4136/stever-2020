@@ -7,8 +7,14 @@
 		margin: 2.5em 0;
 	}
 	blockquote {
-		border-width: 1px;
+		border-width: 5px;
 		padding-left: 1.25em;
+		background: rgb(255,255,255);
+		background: linear-gradient( 90deg, 
+			rgba( 255, 255, 255, 0 ) 10%, 
+			#F8F8F8 50%, 
+			rgba( 255, 255, 255, 0 ) 90% );
+		margin-bottom: 0;
 	}
 }
 
@@ -70,6 +76,7 @@
 	blockquote {
 		padding: 1em 1.5em 1em 2em;
 		border-width: 1px;
+		background: transparent;
 		
 		p {
 			font-size: 2.5em;
