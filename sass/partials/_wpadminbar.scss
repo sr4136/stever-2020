@@ -1,6 +1,6 @@
-@import 'variables';
+/* WP Admin Bar*/
 
-/* Admin Bar: Hiding Unnecessary Items & Adding Icons */
+// Hide Unnecessary Items & Adding Icons
 #wpadminbar .quicklinks .ab-empty-item {
 	padding: 0 1.5em;
 }
@@ -10,7 +10,6 @@
 #wpadminbar ul#wp-admin-bar-root-default li+li {
 	border-left: 1px dotted $gray-dark;
 }
-
 #wp-admin-bar-wp-logo,
 #wp-admin-bar-comments,
 #wp-admin-bar-my-account,
@@ -21,7 +20,7 @@
     display: none !important;
 }
 
-/* Make the non-official buttons gray */
+// Make the non-official buttons gray
 #wp-admin-bar-cxssh-main-menu,
 #wp-admin-bar-epc_purge_menu,
 #wp-admin-bar-query-monitor {
@@ -30,7 +29,7 @@
 	float: right !important;
 }
 
-/* "View Page" button icon */
+// "View Page" button icon
 #wp-admin-bar-view > .ab-item::before,
 #wp-admin-bar-archive > .ab-item::before,
 #wp-admin-bar-stever-quotes-editall > .ab-item::before {
@@ -38,18 +37,19 @@
     font-size: 1.3em;
 	padding-top: .5em;
 }
-/* "Endurance Cache" button icon */
+// "Endurance Cache" button icon
 #wp-admin-bar-epc_purge_menu > .ab-item::before {
     content: "\f160";
     padding-top: 0.3em;
 }
-/* "Query Monitor" button icon */
+// "Query Monitor" button icon
 #wp-admin-bar-query-monitor > .ab-item::before {
     content: "\f321";
     padding-top: 0.3em;
 }
 
-/* Admin Menu Items: Hiding Unnecessary Ones */
+/* WP Admin Menu */
+// Admin Menu Items: Hiding Unnecessary Ones
 #menu-comments,
 #menu-users,
 #toplevel_page_gutenberg {

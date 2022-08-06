@@ -1,7 +1,7 @@
 /*
- * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.
+ * Debugging Breakpoints. Adds helper text at the bottom of the page when a page has 'sr-breakpoints' as a class.
  */
- .logged-in.sr-breakpoints #site-branding::after {
+.sr-breakpoints #page::before {
 	position: fixed;
 	z-index: 100;
 	bottom: 0;

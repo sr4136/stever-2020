@@ -13,7 +13,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 @import url( "https://fonts.bunny.net/css?family=b612-mono:400" );
 
-@import 'partials/variables';
+@import 'partials/_variables';
 @import 'partials/helpers';
 @import 'partials/elements';
 @import 'partials/header';
@@ -28,4 +28,4 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 @import 'partials/post-specifics';
 
-@import 'partials/breakpoints_debugging';
+@import 'partials/_breakpoints-debugging';

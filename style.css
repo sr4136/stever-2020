@@ -42,8 +42,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 .island {
   margin: 0em -2em 2em -2em;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
   padding: 3em;
   background: url("img/bg_gray.png");
   position: relative; }
@@ -68,7 +68,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 .island iframe {
   display: block;
-  border: 1px solid #CCC;
+  border: 1px solid #CCCCCC;
   width: 100%; }
 
 html {
@@ -223,14 +223,12 @@ figcaption {
 .home .page-header {
   display: none; }
 
-/* Breakpoint: page-wide */
 @media (max-width: 87em) {
   #site-branding,
   #social-navigation,
   #site-navigation {
     padding: 0 1.5em; } }
 
-/* Breakpoint: small */
 @media (max-width: 40em) {
   #masthead ul {
     text-align: center; }
@@ -249,7 +247,6 @@ figcaption {
   #site-navigation {
     padding: 0; } }
 
-/* Breakpoint: X-small */
 @media (max-width: 27.5em) {
   #masthead #primary-menu {
     padding-top: 0; }
@@ -297,7 +294,7 @@ figcaption {
   .error404 aside .all-pages ul.children {
     margin-left: 1em; }
 
-/* Admin Bar: Hiding Unnecessary Items & Adding Icons */
+/* WP Admin Bar*/
 #wpadminbar .quicklinks .ab-empty-item {
   padding: 0 1.5em; }
 
@@ -316,7 +313,6 @@ figcaption {
 #wp-admin-bar-widgets {
   display: none !important; }
 
-/* Make the non-official buttons gray */
 #wp-admin-bar-cxssh-main-menu,
 #wp-admin-bar-epc_purge_menu,
 #wp-admin-bar-query-monitor {
@@ -324,7 +320,6 @@ figcaption {
   border-left-color: #000000 !important;
   float: right !important; }
 
-/* "View Page" button icon */
 #wp-admin-bar-view > .ab-item::before,
 #wp-admin-bar-archive > .ab-item::before,
 #wp-admin-bar-stever-quotes-editall > .ab-item::before {
@@ -332,23 +327,20 @@ figcaption {
   font-size: 1.3em;
   padding-top: .5em; }
 
-/* "Endurance Cache" button icon */
 #wp-admin-bar-epc_purge_menu > .ab-item::before {
   content: "\f160";
   padding-top: 0.3em; }
 
-/* "Query Monitor" button icon */
 #wp-admin-bar-query-monitor > .ab-item::before {
   content: "\f321";
   padding-top: 0.3em; }
 
-/* Admin Menu Items: Hiding Unnecessary Ones */
+/* WP Admin Menu */
 #menu-comments,
 #menu-users,
 #toplevel_page_gutenberg {
   display: none; }
 
-/* Map Pages */
 .stever-map-page article {
   position: relative; }
 
@@ -358,21 +350,6 @@ figcaption {
   right: 0;
   margin: 0;
   background-color: #F7F7F7; }
-
-/* Maps (WP Google Maps Plugin)  */
-.stever-map-tt {
-  position: absolute;
-  background: white;
-  padding: .5em 1em;
-  border: 1px solid #CCCCCC;
-  max-width: 300px; }
-
-.stever-map-tt h3 {
-  font-size: 1em; }
-
-.stever-map-tt p {
-  font-size: 0.75em;
-  margin: 0; }
 
 #stever-mapfilter {
   padding: .25em .5em; }
@@ -425,7 +402,6 @@ figcaption {
     text-align: center;
     padding-right: 1em; }
 
-/* Quotes Archive */
 .post-type-archive-stever_quotes .entry-header {
   border: 0 none; }
 
@@ -436,70 +412,52 @@ figcaption {
   border-width: 1px;
   padding-left: 1.25em; }
 
-/* Quotes Archive (in slidehow mode) */
 .quotes-slideshow {
   margin-top: 0 !important;
-  overflow: hidden; }
-
-html.quotes-slideshow.fixate-admin-menu.folded {
-  margin: 0 !important; }
-
-.quotes-slideshow #wpadminbar,
-.quotes-slideshow #masthead,
-.quotes-slideshow .page-header,
-.quotes-slideshow .site-footer,
-.quotes-slideshow article {
-  display: none; }
-
-.quotes-slideshow,
-.quotes-slideshow body,
-.quotes-slideshow .site {
-  height: 100%;
-  margin: 0;
-  padding: 0; }
-
-.quotes-slideshow .site {
-  display: table;
-  width: 100%; }
-
-.quotes-slideshow .site-content {
-  display: table-cell;
-  vertical-align: middle; }
-
-.quotes-slideshow article.active {
-  display: block; }
-
-.quotes-slideshow .quotes-progress-indicator {
-  height: 5px;
-  background: #CCCCCC;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  left: 0; }
-
-.quotes-slideshow .quotes-progress-indicator span {
-  width: 0%;
-  background: red;
-  height: 5px;
-  display: inline-block;
-  vertical-align: top; }
-
-.quotes-slideshow blockquote {
-  padding: 1em 1.5em 1em 2em;
-  border-width: 1px; }
-
-.quotes-slideshow blockquote p {
-  font-size: 2.5em; }
-
-.quotes-slideshow blockquote cite {
-  font-size: 2em;
-  margin-top: 1em; }
-
-.quotes-slideshow article.clLarge blockquote p {
-  font-size: 2em; }
-
-.quotes-slideshow article.clLarge blockquote cite {
-  font-size: 1.5em; }
+  overflow: hidden;
+  height: 100%; }
+  .quotes-slideshow.fixate-admin-menu.folded {
+    margin: 0 !important; }
+  .quotes-slideshow body,
+  .quotes-slideshow .site {
+    height: 100%;
+    margin: 0;
+    padding: 0; }
+  .quotes-slideshow #wpadminbar,
+  .quotes-slideshow #masthead,
+  .quotes-slideshow .page-header,
+  .quotes-slideshow .site-footer,
+  .quotes-slideshow article {
+    display: none; }
+  .quotes-slideshow .site {
+    display: table;
+    width: 100%; }
+  .quotes-slideshow .site-content {
+    display: table-cell;
+    vertical-align: middle; }
+  .quotes-slideshow article.active {
+    display: block; }
+  .quotes-slideshow .quotes-progress-indicator {
+    height: 5px;
+    background: #CCCCCC;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0; }
+    .quotes-slideshow .quotes-progress-indicator span {
+      width: 0%;
+      background: red;
+      height: 5px;
+      display: inline-block;
+      vertical-align: top; }
+  .quotes-slideshow blockquote {
+    padding: 1em 1.5em 1em 2em;
+    border-width: 1px; }
+    .quotes-slideshow blockquote p {
+      font-size: 2.5em; }
+    .quotes-slideshow blockquote cite {
+      font-size: 2em;
+      margin-top: 1em; }
 
 /*
  * My Time at BU Table
@@ -674,9 +632,9 @@ html.quotes-slideshow.fixate-admin-menu.folded {
     margin: 0 auto; } }
 
 /*
- * Debugging Breakpoints. Adds helper text when a page has 'sr-breakpoints' as a class.
+ * Debugging Breakpoints. Adds helper text at the bottom of the page when a page has 'sr-breakpoints' as a class.
  */
-.logged-in.sr-breakpoints #site-branding::after {
+.sr-breakpoints #page::before {
   position: fixed;
   z-index: 100;
   bottom: 0;
@@ -687,20 +645,20 @@ html.quotes-slideshow.fixate-admin-menu.folded {
   text-align: center;
   padding: 0.5em 0; }
   @media (min-width: 64em) {
-    .logged-in.sr-breakpoints #site-branding::after {
+    .sr-breakpoints #page::before {
       content: "Large & up. min-width: 64em (1024px)"; } }
   @media (max-width: 87em) {
-    .logged-in.sr-breakpoints #site-branding::after {
+    .sr-breakpoints #page::before {
       content: "Page-width & down. max-width: 87em (1392px)"; } }
   @media (max-width: 63.9375em) {
-    .logged-in.sr-breakpoints #site-branding::after {
+    .sr-breakpoints #page::before {
       content: "Medium & down. max-width: 63.9375em (1023px)"; } }
   @media (max-width: 48.75em) {
-    .logged-in.sr-breakpoints #site-branding::after {
+    .sr-breakpoints #page::before {
       content: "Medium-Small & down. max-width: 40em (780px)"; } }
   @media (max-width: 40em) {
-    .logged-in.sr-breakpoints #site-branding::after {
+    .sr-breakpoints #page::before {
       content: "Small & down. max-width: 40em (640px)"; } }
   @media (max-width: 27.5em) {
-    .logged-in.sr-breakpoints #site-branding::after {
+    .sr-breakpoints #page::before {
       content: "X-Small only. max-width: 27.5em (440px)"; } }

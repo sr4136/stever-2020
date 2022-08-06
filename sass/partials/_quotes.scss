@@ -1,78 +1,82 @@
-/* Quotes Archive */
-.post-type-archive-stever_quotes .entry-header {
-	border: 0 none;
-}
-.post-type-archive-stever_quotes .entry-content {
-    margin: 2.5em 0;
-}
-.post-type-archive-stever_quotes blockquote {
-	border-width: 1px;
-    padding-left: 1.25em;
+// Quotes Archive
+.post-type-archive-stever_quotes {
+	.entry-header {
+		border: 0 none;
+	}
+	.entry-content {
+		margin: 2.5em 0;
+	}
+	blockquote {
+		border-width: 1px;
+		padding-left: 1.25em;
+	}
 }
 
-/* Quotes Archive (in slidehow mode) */
+// Quotes Archive (in slidehow mode)
 .quotes-slideshow {
 	margin-top: 0 !important;
 	overflow: hidden;
-}
-html.quotes-slideshow.fixate-admin-menu.folded {
-	margin: 0 !important;
-}
-.quotes-slideshow #wpadminbar,
-.quotes-slideshow #masthead,
-.quotes-slideshow .page-header,
-.quotes-slideshow .site-footer,
-.quotes-slideshow article{
-	display: none;
-}
-.quotes-slideshow,
-.quotes-slideshow body,
-.quotes-slideshow .site {
 	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-.quotes-slideshow .site {
-	display: table;
-	width: 100%;
-}
-.quotes-slideshow .site-content {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-.quotes-slideshow article.active {
-	display: block;
-}
-.quotes-slideshow .quotes-progress-indicator {
-	height: 5px;
-	background: $gray-med;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-}
-.quotes-slideshow .quotes-progress-indicator span{
-	width: 0%;
-	background: red;
-	height: 5px;
-	display: inline-block;
-	vertical-align: top;
-}
-.quotes-slideshow blockquote {
-	padding: 1em 1.5em 1em 2em;
-    border-width: 1px;
-}
-.quotes-slideshow blockquote p {
-	font-size: 2.5em;
-}
-.quotes-slideshow blockquote cite {
-    font-size: 2em;
-	margin-top: 1em;
-}
-.quotes-slideshow article.clLarge blockquote p {
-	font-size: 2em;
-}
-.quotes-slideshow article.clLarge blockquote cite {
-	font-size: 1.5em;
+	
+	&.fixate-admin-menu.folded {
+		margin: 0 !important;
+	}
+	
+	body,
+	.site {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	
+	// Hide page elements.
+	#wpadminbar,
+	#masthead,
+	.page-header,
+	.site-footer,
+	article{
+		display: none;
+	}
+	.site {
+		display: table;
+		width: 100%;
+	}
+	.site-content {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+	article.active {
+		display: block;
+	}
+	
+	.quotes-progress-indicator {
+		height: 5px;
+		background: $gray-med;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+		
+		span{
+			width: 0%;
+			background: red;
+			height: 5px;
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+	
+	blockquote {
+		padding: 1em 1.5em 1em 2em;
+		border-width: 1px;
+		
+		p {
+			font-size: 2.5em;
+		}
+		cite {
+			font-size: 2em;
+			margin-top: 1em;
+		}
+	}
 }

@@ -1,5 +1,5 @@
 @import url("https://fonts.bunny.net/css?family=b612-mono:400");
-/* Admin Bar: Hiding Unnecessary Items & Adding Icons */
+/* WP Admin Bar*/
 #wpadminbar .quicklinks .ab-empty-item {
   padding: 0 1.5em; }
 
@@ -18,7 +18,6 @@
 #wp-admin-bar-widgets {
   display: none !important; }
 
-/* Make the non-official buttons gray */
 #wp-admin-bar-cxssh-main-menu,
 #wp-admin-bar-epc_purge_menu,
 #wp-admin-bar-query-monitor {
@@ -26,7 +25,6 @@
   border-left-color: #000000 !important;
   float: right !important; }
 
-/* "View Page" button icon */
 #wp-admin-bar-view > .ab-item::before,
 #wp-admin-bar-archive > .ab-item::before,
 #wp-admin-bar-stever-quotes-editall > .ab-item::before {
@@ -34,17 +32,15 @@
   font-size: 1.3em;
   padding-top: .5em; }
 
-/* "Endurance Cache" button icon */
 #wp-admin-bar-epc_purge_menu > .ab-item::before {
   content: "\f160";
   padding-top: 0.3em; }
 
-/* "Query Monitor" button icon */
 #wp-admin-bar-query-monitor > .ab-item::before {
   content: "\f321";
   padding-top: 0.3em; }
 
-/* Admin Menu Items: Hiding Unnecessary Ones */
+/* WP Admin Menu */
 #menu-comments,
 #menu-users,
 #toplevel_page_gutenberg {

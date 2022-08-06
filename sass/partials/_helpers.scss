@@ -42,8 +42,8 @@
 // Helper: Island Class 
 .island {
     margin: 0em -2em 2em -2em;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid $gray-med;
+    border-right: 1px solid $gray-med;
     padding: 3em;
     background: url("img/bg_gray.png");
     position: relative;
@@ -68,6 +68,6 @@
 }
 .island iframe {
     display: block;
-    border: 1px solid #CCC;
+    border: 1px solid $gray-med;
     width: 100%;
 }
