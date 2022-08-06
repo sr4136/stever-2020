@@ -1,9 +1,16 @@
-/* Home: General */
+// Home: General
 .home .entry-content li {
     margin-bottom: 0;
 }
 
-/* Home: Bio Photo*/
+
+// Home: Bio
+.home-about-me h3 {
+	margin-top: 0;
+}
+.home-about-me figure {
+	flex-direction: column;
+}
 @include breakpoint( m ) {
 	.home-about-me .wp-block-column:first-child {
 		flex-basis: calc(70% - 1em) !important;
@@ -28,12 +35,10 @@
 			}
 		}
 	}
+}
 
-}
-.home-about-me figure {
-    margin-top: 3.5em;
-	flex-direction: column;
-}
+
+// Home: Statistics
 .home .is-style-stever-columns-statistics .wp-block-column{
 	@include breakpoint( ms ) {
 		@include columns-full-override;

@@ -11,20 +11,16 @@ stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 @import url("https://fonts.bunny.net/css?family=b612-mono:400");
-/* Helper: Universal 'hidden' Class */
 .hidden {
   display: none !important;
   visibility: hidden; }
 
-/* Helper: negative top margin*/
 .margin-negative-top {
   margin-top: -1em; }
 
-/* Helper: Hidden Page Header */
 .heading-hide .page-header {
   display: none; }
 
-/* Helper: Button: Ghost */
 .button-ghost,
 .button-ghost:visited,
 .button-ghost:active,
@@ -44,7 +40,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   background: #FFFFFF;
   color: #000000; }
 
-/* Helper: Island Class */
 .island {
   margin: 0em -2em 2em -2em;
   border-left: 1px solid #ccc;
@@ -113,9 +108,6 @@ p {
   padding: .25em 0 .5em 0;
   border-bottom: 1px solid #CCCCCC; }
 
-.entry-content {
-  margin-bottom: 4em; }
-
 .entry-content h1,
 .entry-content h2,
 .entry-content h3,
@@ -171,7 +163,8 @@ p:last-child {
 #content {
   background-color: #FFFFFF;
   border-radius: 3px;
-  border: 1px solid #CCCCCC; }
+  border: 1px solid #CCCCCC;
+  margin-bottom: 4em; }
 
 .blog article {
   margin-bottom: 2em; }
@@ -271,10 +264,8 @@ p:last-child {
     padding: 0;
     content: ''; } }
 
-/* Footer */
 .site-info {
   text-align: center;
-  margin-top: 6em;
   background: #FFFFFF;
   padding: 1em 0; }
 
@@ -361,11 +352,15 @@ p:last-child {
 #toplevel_page_gutenberg {
   display: none; }
 
-/* Home: General */
 .home .entry-content li {
   margin-bottom: 0; }
 
-/* Home: Bio Photo*/
+.home-about-me h3 {
+  margin-top: 0; }
+
+.home-about-me figure {
+  flex-direction: column; }
+
 @media (max-width: 63.9375em) {
   .home-about-me .wp-block-column:first-child {
     flex-basis: calc(70% - 1em) !important; }
@@ -382,10 +377,6 @@ p:last-child {
     align-items: center; }
     .home-about-me .wp-block-column figure img {
       max-width: 250px; } }
-
-.home-about-me figure {
-  margin-top: 3.5em;
-  flex-direction: column; }
 
 @media (max-width: 48.75em) {
   .home .is-style-stever-columns-statistics .wp-block-column {

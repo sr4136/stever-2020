@@ -35,16 +35,12 @@ p {
 	padding: .25em 0 .5em 0;
 	border-bottom: 1px solid $gray-med;
 }
-.entry-content  {
-	margin-bottom: 4em;
-}
 .entry-content h1,
 .entry-content h2,
 .entry-content h3,
 .entry-content h4 {
 	margin-top: 2em;
 }
-
 a, a:visited {
 	color: $red;
 	transition: all .5s;
@@ -88,17 +84,15 @@ blockquote {
 .entry-summary {
 	margin-top: 1em;
 }
-
 p:last-child {
     margin-bottom: 0;
 }
-
 #content {
 	background-color: $white;
 	border-radius: 3px;
 	border: 1px solid $gray-med;
+	margin-bottom: 4em;
 }
-
 .blog article {
 	margin-bottom: 2em;
 }

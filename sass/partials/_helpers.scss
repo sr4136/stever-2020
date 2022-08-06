@@ -1,20 +1,23 @@
-/* Helper: Universal 'hidden' Class */
+// Helper: Universal 'hidden' Class 
 .hidden {
 	display: none !important;
 	visibility: hidden;
 }
 
-/* Helper: negative top margin*/
+
+// Helper: negative top margin
 .margin-negative-top {
     margin-top: -1em;
 }
 
-/* Helper: Hidden Page Header */
+
+// Helper: Hidden Page Header 
 .heading-hide .page-header {
     display: none;
 }
 
-/* Helper: Button: Ghost */
+
+// Helper: Button: Ghost 
 .button-ghost,
 .button-ghost:visited,
 .button-ghost:active,
@@ -35,7 +38,8 @@
 	color: $black;
 }
 
-/* Helper: Island Class */
+
+// Helper: Island Class 
 .island {
     margin: 0em -2em 2em -2em;
     border-left: 1px solid #ccc;
