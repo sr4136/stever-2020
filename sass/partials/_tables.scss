@@ -1,3 +1,21 @@
+.sr-page-table {
+	thead {
+	    background-color: $green-light;
+	    font-weight: bold;
+		text-align: left;
+	}
+	tbody tr:nth-child(2n+1) {
+	    background-color: $gray-light;
+	}
+	th {
+		padding: .5em;
+	}
+	td {
+		padding: .5em;
+		vertical-align: top;
+	}
+}
+
 /* Page-specific: Events & Conferences, etc. - Icon Hovers*/
 .sr-page-table .legend {
   margin: 2em 0;
