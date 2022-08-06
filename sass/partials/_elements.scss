@@ -35,12 +35,12 @@ p {
 	padding: .25em 0 .5em 0;
 	border-bottom: 1px solid $gray-med;
 }
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4 {
-	margin-top: 2em;
-}
+//.entry-content h1,
+//.entry-content h2,
+//.entry-content h3,
+//.entry-content h4 {
+//	margin-top: 2em;
+//}
 a, a:visited {
 	color: $red;
 	transition: all .5s;
@@ -66,7 +66,6 @@ blockquote {
     border-left: 3px solid $green-bright;
 }
 .entry-content li {
-	margin-bottom: 0.1em;
 	margin-left: 1em;
 }
 .entry-content li li {

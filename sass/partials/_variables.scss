@@ -1,39 +1,46 @@
 // Custom Colors
-$green:				#6B7D05;
-$green-dark:		#5B573D;
-$green-light:		#E1E2C7;
-$green-bright:  	#8B9B31; // AA w/Large Text: https://bit.ly/2EnXiPj
-$brown:				#332012;
-$brown-light:		#96BCC5;
-$red:				#C2552E;
-$gray:				#5F6B7E;
-$gray-light:		#F7F7F7;
-$gray-med:			#CCCCCC;
-$gray-dark:			#666666;
-$gray-darkest:		#484848;
-$blue:          	#1468A0;
+$green:					#6B7D05;
+$green-dark:			#5B573D;
+$green-light:			#E1E2C7;
+$green-bright:  		#8B9B31; // AA w/Large Text: https://bit.ly/2EnXiPj
+$brown:					#332012;
+$brown-light:			#96BCC5;
+$red:					#C2552E;
+$gray:					#5F6B7E;
+$gray-light:			#F7F7F7;
+$gray-med:				#CCCCCC;
+$gray-dark:				#666666;
+$gray-darkest:			#484848;
+$blue:          		#1468A0;
 
 // For Timeline Only
-$teal:				#618985;
-$teal-light:		#B1DDDA;
-$timeline-me:		$green-bright;
-$timeline-dev:		#048BA8;
-$timeline-manager:	#004777;
+$teal:					#618985;
+$teal-light:			#B1DDDA;
+$timeline-me:			$green-bright;
+$timeline-dev:			#048BA8;
+$timeline-manager:		#004777;
 
 // Accent Colors
-$accent-green:		#516322;
-$accent-teal:		#416E82;
-$accent-red:		#814519;
-$accent-blue:		#3f506c;
+$accent-green:			#516322;
+$accent-teal:			#416E82;
+$accent-red:			#814519;
+$accent-blue:			#3F506C;
+$accent-teal-lighter:	lighten( $accent-teal, 10% ); 
+$accent-red-lighter:	lighten( $accent-red, 10% ); 
+$accent-blue-lighter:	lighten( $accent-blue, 10% );
+$accent-teal-darker:	darken( $accent-teal, 10% ); 
+$accent-red-darker:		darken( $accent-red, 10% ); 
+$accent-blue-darker:	darken( $accent-blue, 10% ); 
 
 // "Standard" Colors
-$white:				#FFFFFF;
-$black:				#000000;
+$white:					#FFFFFF;
+$black:					#000000;
 
 // Fonts
-$fonts-copy:		"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fonts-headings:	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fonts-mono:		"B612 Mono", monospace;
+$fonts-copy:			"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fonts-headings:		"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fonts-mono:			"B612 Mono", monospace;
+$fonts-icon: 			"Font Awesome 5 Free";
 
 // Breakpoints
 // HT: https://bit.ly/3beCmdq

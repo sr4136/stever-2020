@@ -1,0 +1,239 @@
+/* Blocks: Unique Classes - Tables */
+
+// Heading: Year Divider 
+.is-style-year-divider {
+    background-color: $green-bright;
+    color: $white;
+    text-align: center;
+    padding: .5em 0;
+    font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Table: Professional Development 
+// Accordion: Upcoming Events 
+.accordion-upcoming h4 {
+	background: #C2552E;
+	color: $white;
+	text-align: center;
+	padding: 0.2em 0 0.25em 0;
+}
+.accordion-upcoming h4:after {
+	color: white;
+	right: 0.65em;
+}
+.accordion-upcoming iframe {
+	width: 100%;
+	max-height: 350px;
+}
+
+// Table: Professional Development 
+.is-style-stever-table-pro-dev tr {
+	// Icon 
+	td:nth-child( 1 ) {
+		width: 5%;
+		text-align: center;
+	}
+	// Title 
+	td:nth-child( 2 ) {
+		width: 55%;
+	}
+	// Date 
+	td:nth-child( 3 ) {
+		width: 10%;
+	}
+	// Affiliation 
+	td:nth-child( 4 ) {
+		width: 30%;
+	}
+}
+// Table: Professional Development (Admin)
+.wp-admin .is-style-stever-table-pro-dev tr {
+	// Icon 
+	td:nth-child( 1 ) {
+		width: 15%;
+		text-align: center;
+	}
+	// Title 
+	td:nth-child( 2 ) {
+		width: 45%;
+	}
+}
+// Responsive - Table: Professional Development
+@include breakpoint( ms ) {
+    .is-style-stever-table-pro-dev {
+        display: block;
+        width: 100%;
+
+        thead {
+	        display: none;
+	    }
+	    td {
+	        display: inline-block;
+	    }
+	    tr {
+	        display: block;
+	        width: 100%
+
+	        // Icon 
+			td:nth-child(1) {
+			    width: 10% !important;
+			}
+			// Title 
+			td:nth-child(2) {
+			    width: 90% !important;
+			    font-weight: bold;
+			}
+			// Date 
+			td:nth-child(3) {
+			    padding-left: 10%;
+			    width: 30% !important;
+			    font-style: italic;
+			}
+			// Affiliation 
+			td:nth-child(4) {
+			    width: 70% !important;
+			    padding-left: 2em;
+			    text-align: right;
+			    padding-right: 1em;
+			    font-style: italic;
+			}
+	    }
+    }
+}
+
+// Table: Books I've Read 
+.is-style-stever-table-books {
+	// Title 
+	th:nth-child( 1 ),
+	td:nth-child( 1 ) {
+		width: 55% !important;
+		text-align: left;
+		padding-left: 1.5em;
+	}
+	// Author 
+	th:nth-child( 2 ),
+	td:nth-child( 2 ) {
+		width: 30% !important;
+	}
+	// Date
+	th:nth-child( 3 ),
+	td:nth-child( 3 ) {
+		width: 10% !important;
+		text-align: right;
+		font-family: $fonts-mono;
+		font-size: 0.9em;
+		padding-right: 1.5em;
+	}
+}
+// Table: Professional Development (Admin)
+.wp-admin .is-style-stever-table-books {
+	th, td {
+		padding: 0.5em;
+	}
+}
+// Table: Books I've Read (Responsive)
+@include breakpoint( ms ) {
+    .is-style-stever-table-books {
+        display: block;
+        width: 100%;
+
+        thead {
+	        display: none;
+	    }
+	    td {
+	        display: inline-block;
+	    }
+	    tr {
+	        display: block;
+	        width: 100%
+	    }
+		// Title 
+		th:nth-child(1),
+		td:nth-child(1) {
+			width: 100% !important;
+			font-weight: bold;
+			padding-left: 1em;
+			padding-bottom: 0.25em;
+		}
+		// Author 
+		th:nth-child(2),
+		td:nth-child(2) {
+			width: 75% !important;
+			padding-left: 1em;
+			padding-top: 0.25em;
+		}
+		// Date 
+		th:nth-child(3),
+		td:nth-child(3) {
+			width: 25% !important;
+			padding-right: 1em;
+			padding-top: 0.25em;
+		}
+    }
+}
+
+
+// Table: Speaking/Teaching 
+.is-style-stever-table-speaking {
+	// Date 
+	td:nth-child( 1 ) {
+		width: 45%;
+	}
+	// Event 
+	td:nth-child( 2 ) {
+		width: 20%;
+	}
+	// Affiliation 
+	td:nth-child( 3 ) {
+		width: 35%;
+	}
+}
+// Table: Speaking/Teaching (Responsive)
+@include breakpoint( ms ) {
+    .is-style-stever-table-speaking {
+	    display: block;
+        width: 100%;
+
+        thead {
+	        display: none;
+	    }
+	    td {
+	        display: inline-block;
+	    }
+	    tr {
+	        display: block;
+	        width: 100%
+
+	        // Title 
+			td:nth-child(1) {
+			    width: 100% !important;
+			    font-weight: bold;
+			}
+			// Date 
+			td:nth-child(2) {
+			    width: 25% !important;
+			}
+			// Affiliation 
+			td:nth-child(3) {
+			    width: 75% !important;
+			    padding-left: 2em;
+			    text-align: right;
+			    padding-right: 1em;
+			    font-style: italic;
+			}
+		}
+    }
+}

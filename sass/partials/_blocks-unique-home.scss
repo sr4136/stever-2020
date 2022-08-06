@@ -1,0 +1,124 @@
+/* Blocks: Unique Classes - Home */
+
+// Home: Section Blocks
+.stever-home-section {
+	margin-bottom: 4em;
+}
+
+
+// Bio
+.stever-home-section-intro {
+	figure {
+		flex-direction: column;
+	}
+}
+@include breakpoint( m ) {
+	.stever-home-section-intro {
+		.wp-block-column:first-child {
+			flex-basis: calc(70% - 1em) !important;
+		}
+		.wp-block-column:last-child {
+			flex-basis: calc(30% - 1em) !important;
+		}
+	}
+}
+@include breakpoint( s ) {
+	.stever-home-section-intro {
+		.wp-block-column:first-child,
+		.wp-block-column:last-child {
+			flex-basis: 100% !important;
+		}
+		.wp-block-column {
+			& figure {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				& img {
+					max-width: 250px;
+				}
+			}
+		}
+	}
+}
+
+
+// Statistics
+.stever-home-section-more .wp-block-column {
+	@include breakpoint( ms ) {
+		@include columns-full-override;
+	}
+}
+
+
+// Columns: Statistics
+.home .is-style-stever-columns-statistics {
+    p {
+		margin-bottom: 0.5em;
+	}
+	a {
+	    text-decoration: underline;
+	    color: $white;
+
+	    &:hover {
+		    text-decoration: none;
+	    }
+	}
+    h4 {
+	    font-size: 1.5em;
+	    margin: 0;
+	    padding: 0 0 .15em 0;
+
+		&:before {
+		    display: none;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+	.wp-block-button {
+	    text-decoration: none;
+	    margin-left: 1em;
+
+	    .wp-block-button__link,
+	    .wp-block-button__link:visited {
+			color: $white;
+			border: 2px solid $white;
+			text-decoration: none;
+			opacity: .75;
+			cursor: pointer;
+	    }
+	    .wp-block-button__link:hover {
+		    border: 2px solid $black;
+			opacity: 1;
+		}
+	}
+	.is-style-stever-columns-statistics-themes {
+		hr {
+			border-color: $accent-teal-lighter;
+		}
+		.wp-block-button__link,
+	    .wp-block-button__link:visited {
+			background: $accent-teal-darker;
+			border-color: $accent-teal-lighter;
+			&:hover{
+				background: $accent-teal-lighter;
+				border-color: $accent-teal-darker;
+			}
+		}
+	}
+	.is-style-stever-columns-statistics-team {
+		hr {
+			border-color: $accent-red-lighter;
+		}
+		.wp-block-button__link,
+	    .wp-block-button__link:visited {
+			background: $accent-red-darker;
+			border-color: $accent-red-lighter;
+			&:hover{
+				background: $accent-red-lighter;
+				border-color: $accent-red-darker;
+			}
+		}
+	}
+}

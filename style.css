@@ -108,12 +108,6 @@ p {
   padding: .25em 0 .5em 0;
   border-bottom: 1px solid #CCCCCC; }
 
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4 {
-  margin-top: 2em; }
-
 a, a:visited {
   color: #C2552E;
   transition: all .5s; }
@@ -139,7 +133,6 @@ blockquote {
   border-left: 3px solid #8B9B31; }
 
 .entry-content li {
-  margin-bottom: 0.1em;
   margin-left: 1em; }
 
 .entry-content li li {
@@ -351,37 +344,6 @@ p:last-child {
 #menu-users,
 #toplevel_page_gutenberg {
   display: none; }
-
-.home .entry-content li {
-  margin-bottom: 0; }
-
-.home-about-me h3 {
-  margin-top: 0; }
-
-.home-about-me figure {
-  flex-direction: column; }
-
-@media (max-width: 63.9375em) {
-  .home-about-me .wp-block-column:first-child {
-    flex-basis: calc(70% - 1em) !important; }
-  .home-about-me .wp-block-column:last-child {
-    flex-basis: calc(30% - 1em) !important; } }
-
-@media (max-width: 40em) {
-  .home-about-me .wp-block-column:first-child,
-  .home-about-me .wp-block-column:last-child {
-    flex-basis: 100% !important; }
-  .home-about-me .wp-block-column figure {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .home-about-me .wp-block-column figure img {
-      max-width: 250px; } }
-
-@media (max-width: 48.75em) {
-  .home .is-style-stever-columns-statistics .wp-block-column {
-    flex-basis: 100% !important;
-    margin-left: 0; } }
 
 /* Map Pages */
 .stever-map-page article {
