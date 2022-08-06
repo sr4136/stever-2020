@@ -108,6 +108,12 @@
 			padding: 5px;
 		}
     }
+	
+	span {
+		position: sticky;
+		padding: 0 2em;
+		left: 0;
+	}
 
 	thead {
 		.months {
@@ -138,6 +144,10 @@
 				& + td {
 					border-left: 1px solid $teal;
 				}
+				span {
+					font-weight: bold;
+					left: 0.5em;
+				}
 			}
 		}
 	}
@@ -152,12 +162,6 @@
 		
 		td {
 			border-radius: 5px;
-		}
-		
-		span {
-			position: sticky;
-			padding: 0 2em;
-			left: 0;
 		}
 		
 		// Tooltip Indicators
@@ -198,5 +202,9 @@
 		i:after {
 			-webkit-animation: ripple 3s linear infinite 0.75s;
 		}
+	}
+	// Add this to the "XYZ Month - Now" to give it extra width.
+	.extended-width {
+		min-width: 300px;
 	}
 }

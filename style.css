@@ -546,6 +546,10 @@ figcaption {
       position: relative;
       width: 100px;
       padding: 5px; }
+  .timeline span {
+    position: sticky;
+    padding: 0 2em;
+    left: 0; }
   .timeline thead .months {
     font-size: .75em;
     background-color: #618985;
@@ -563,16 +567,15 @@ figcaption {
       padding-left: 1.5em; }
       .timeline thead .years td + td {
         border-left: 1px solid #618985; }
+      .timeline thead .years td span {
+        font-weight: bold;
+        left: 0.5em; }
   .timeline tbody:before {
     content: "\200C";
     display: block;
     line-height: 0.5em; }
   .timeline tbody td {
     border-radius: 5px; }
-  .timeline tbody span {
-    position: sticky;
-    padding: 0 2em;
-    left: 0; }
   .timeline tbody i {
     position: relative;
     float: left;
@@ -602,6 +605,8 @@ figcaption {
     -webkit-animation: ripple 3s linear infinite; }
   .timeline tbody i:after {
     -webkit-animation: ripple 3s linear infinite 0.75s; }
+  .timeline .extended-width {
+    min-width: 300px; }
 
 /* Post-specific: The Power of Keeping Lists */
 .post--keeping-lists table {
