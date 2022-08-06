@@ -2,7 +2,7 @@
 /* Blocks: General */
 .wp-admin .wp-block-spacer {
   border: 1px dotted #666666; }
-  .wp-admin .wp-block-spacer ::before {
+  .wp-admin .wp-block-spacer::before {
     content: "(spacer)";
     text-align: center;
     font-size: 0.65em; }

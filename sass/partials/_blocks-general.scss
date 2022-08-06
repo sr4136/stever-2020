@@ -3,7 +3,7 @@
 // Spacer (Admin) -- Outline
 .wp-admin .wp-block-spacer {
 	border: 1px dotted $gray-dark;
-	& ::before {
+	&::before {
 		content: "(spacer)";
 		text-align: center;
 		font-size: 0.65em;
