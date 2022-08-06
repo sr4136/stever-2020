@@ -474,6 +474,9 @@ figcaption {
     transform: scale(3.5);
     opacity: 0; } }
 
+.sr-bu-timeline .tpd-tooltip {
+  margin-left: 0.25em; }
+
 .is-style-stever-timeline-heading h3 {
   margin-top: 0; }
 
