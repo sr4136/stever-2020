@@ -1,20 +1,35 @@
-/*
- * My Time at BU Table
- */
+/* My Time at BU Table */
 
-/* Heading & Legend */
-.is-style-stever-timeline-heading h3 {
-	margin-top: 0;
+// Ripple transform for tooltip indicators.
+@-webkit-keyframes ripple {
+	from {
+		-webkit-transform: scale(0);
+		opacity: 1;
+	}
+	to {
+		-webkit-transform: scale(3);
+		opacity: 0;
+	}
 }
-.timeline-legend h4 {
-    margin: 0;
-    padding: 0.4em 0;
-    border: 1px solid $gray-med;
-    text-align: center;
-}
-.timeline-legend p {
-    margin: .25em 0 0 0;
-    padding: .25em 1em;
+
+
+// Heading & Legend
+.is-style-stever-timeline-heading{
+	h3 {
+		margin-top: 0;
+	}
+	.timeline-legend {
+		h4 {
+			margin: 0;
+			padding: 0.4em 0;
+			border: 1px solid $gray-med;
+			text-align: center;
+		}
+		p {
+			margin: .25em 0 0 0;
+			padding: .25em 1em;
+		}
+	}
 }
 @include breakpoint( ms ){
 	.is-style-stever-timeline-heading {
@@ -41,7 +56,41 @@
 	}
 }
 
-/* Timeline: General */
+// People: Legend and Table.
+.dev-me {
+	background: $timeline-me;
+	border: 2px solid $green-dark;
+	color: $white;
+	font-weight: bold;
+}
+.dev-direct{
+	background: $timeline-dev;
+	color: $white;
+	font-weight: bold;
+}
+.manager-direct {
+	background: $timeline-manager;
+	color: $white;
+	font-weight: bold;
+}
+.dev-other,
+.manager-other {
+	font-size: 0.75em;
+	font-weight: bold;
+	background: $gray-light;
+}
+.dev-other {
+	border: 2px dotted $timeline-dev;
+}
+.manager-other {
+	border: 2px dotted $timeline-manager;
+}
+.dev-other span,
+.manager-other span {
+	padding: 0 2.5em;
+}
+
+// Table
 .timeline {
     overflow-x: scroll;
 	border: 1px solid $gray-med;
@@ -51,145 +100,98 @@
         border-collapse: separate;
         border-spacing: 0 1px;
         margin-bottom: 1em;
+		
+		td {
+			position: relative;
+			width: 100px;
+			padding: 5px;
+		}
     }
 
-    td {
-        position: relative;
-        width: 100px;
-        padding: 5px;
-    }
+	thead {
+		.months {
+			font-size: .75em;
+			background-color: $teal;
+			color: $white;
+			text-align: center;
+			
+			td {
+				padding: 10px;
+				
+				// And the next td.
+				& + td {
+					border-left: 1px solid $teal-light;
+				}
+			}
+		}
 
-    tbody td {
-        border-radius: 5px;
-    }
-
-    /* Zero-Width Non-Joiner https://bit.ly/35ojLaW */
-    tbody:before {
-        content: "\200C";
-        display: block;
-        line-height: 0.5em;
-    }
-
-    span {
-        position: sticky;
-        padding: 0 2em;
-        left: 0;
-    }
-
-    /* Timeline: Months & Years */
-   .months,
-   .years {
-	    font-size: .75em;
+		.years {
+			font-size: .75em;
+			background: $teal-light;
+			color: $black;
+			
+			td {
+				padding-left: 1.5em;
+				
+				// And the next td.
+				& + td {
+					border-left: 1px solid $teal;
+				}
+			}
+		}
 	}
-    .months {
-        background-color: $teal;
-        color: $white;
-        text-align: center;
-    }
 
-    .months td {
-        padding: 10px;
-    }
-
-    .months td + td {
-        border-left: 1px solid $teal-light;
-    }
-
-    .years {
-        background: $teal-light;
-        color: $black;
-    }
-
-    .years td {
-        padding-left: 1.5em;
-    }
-
-    .years td + td {
-        border-left: 1px solid $teal;
-    }
-
-    /* Timeline: Text Indicators */
-    i {
-        position: absolute;
-        z-index: 2;
-        top: 0.55em;
-        left: 0.55em;
-        width: 15px;
-        height: 15px;
-        background: $white;
-        border: 5px solid $black;
-        border-radius: 50%;
-        cursor: pointer;
-
-    }
-
-    i:before,
-    i:after {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        border: 1px solid $black;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-    }
-
-    i:before {
-        -webkit-animation: ripple 3s linear infinite;
-    }
-
-    i:after {
-        -webkit-animation: ripple 3s linear infinite 0.75s;
-    }
-
-    @-webkit-keyframes ripple {
-        from {
-            -webkit-transform: scale(0);
-            opacity: 1;
-        }
-        to {
-            -webkit-transform: scale(3);
-            opacity: 0;
-        }
-    }
-
-
-    span + i {
-        left: auto;
-        right: 0.25em;
-    }
-}
-/* Timeline: People Rows */
-.dev-me {
-    background: $timeline-me;
-    border: 2px solid $green-dark;
-    color: $white;
-    font-weight: bold;
-}
-.dev-direct{
-    background: $timeline-dev;
-    color: $white;
-    font-weight: bold;
-}
-.manager-direct {
-    background: $timeline-manager;
-    color: $white;
-    font-weight: bold;
-}
-.dev-other,
-.manager-other {
-    font-size: 0.75em;
-    font-weight: bold;
-    background: $gray-light;
-}
-.dev-other {
-    border: 2px dotted $timeline-dev;
-}
-.manager-other {
-    border: 2px dotted $timeline-manager;
-}
-.dev-other span,
-.manager-other span {
-    padding: 0 2.5em;
+	tbody {
+		&:before {
+			// Zero-Width Non-Joiner https://bit.ly/35ojLaW
+			content: "\200C";
+			display: block;
+			line-height: 0.5em;
+		}
+		
+		td {
+			border-radius: 5px;
+		}
+		
+		span {
+			position: sticky;
+			padding: 0 2em;
+			left: 0;
+		}
+		
+		// Tooltip Indicators
+		i {
+			position: absolute;
+			z-index: 2;
+			top: 0.55em;
+			left: 0.55em;
+			width: 15px;
+			height: 15px;
+			background: $white;
+			border: 5px solid $black;
+			border-radius: 50%;
+			cursor: pointer;
+		}
+		i:before,
+		i:after {
+			content: "";
+			position: absolute;
+			top: -5px;
+			left: -5px;
+			border: 1px solid $black;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+		}
+		i:before {
+			-webkit-animation: ripple 3s linear infinite;
+		}
+		i:after {
+			-webkit-animation: ripple 3s linear infinite 0.75s;
+		}
+		span + i {
+			left: auto;
+			right: 0.25em;
+		}
+	}
 }

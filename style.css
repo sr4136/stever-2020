@@ -463,20 +463,25 @@ figcaption {
       font-size: 2em;
       margin-top: 1em; }
 
-/*
- * My Time at BU Table
- */
-/* Heading & Legend */
+/* My Time at BU Table */
+@-webkit-keyframes ripple {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(3);
+    opacity: 0; } }
+
 .is-style-stever-timeline-heading h3 {
   margin-top: 0; }
 
-.timeline-legend h4 {
+.is-style-stever-timeline-heading .timeline-legend h4 {
   margin: 0;
   padding: 0.4em 0;
   border: 1px solid #CCCCCC;
   text-align: center; }
 
-.timeline-legend p {
+.is-style-stever-timeline-heading .timeline-legend p {
   margin: .25em 0 0 0;
   padding: .25em 1em; }
 
@@ -496,88 +501,6 @@ figcaption {
   .is-style-stever-timeline-heading .wp-block-column:last-child {
     margin: 2em 0; } }
 
-/* Timeline: General */
-.timeline {
-  overflow-x: scroll;
-  border: 1px solid #CCCCCC;
-  /* Zero-Width Non-Joiner https://bit.ly/35ojLaW */
-  /* Timeline: Months & Years */
-  /* Timeline: Text Indicators */ }
-  .timeline table {
-    table-layout: fixed;
-    border-collapse: separate;
-    border-spacing: 0 1px;
-    margin-bottom: 1em; }
-  .timeline td {
-    position: relative;
-    width: 100px;
-    padding: 5px; }
-  .timeline tbody td {
-    border-radius: 5px; }
-  .timeline tbody:before {
-    content: "\200C";
-    display: block;
-    line-height: 0.5em; }
-  .timeline span {
-    position: sticky;
-    padding: 0 2em;
-    left: 0; }
-  .timeline .months,
-  .timeline .years {
-    font-size: .75em; }
-  .timeline .months {
-    background-color: #618985;
-    color: #FFFFFF;
-    text-align: center; }
-  .timeline .months td {
-    padding: 10px; }
-  .timeline .months td + td {
-    border-left: 1px solid #B1DDDA; }
-  .timeline .years {
-    background: #B1DDDA;
-    color: #000000; }
-  .timeline .years td {
-    padding-left: 1.5em; }
-  .timeline .years td + td {
-    border-left: 1px solid #618985; }
-  .timeline i {
-    position: absolute;
-    z-index: 2;
-    top: 0.55em;
-    left: 0.55em;
-    width: 15px;
-    height: 15px;
-    background: #FFFFFF;
-    border: 5px solid #000000;
-    border-radius: 50%;
-    cursor: pointer; }
-  .timeline i:before,
-  .timeline i:after {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    border: 1px solid #000000;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%; }
-  .timeline i:before {
-    -webkit-animation: ripple 3s linear infinite; }
-  .timeline i:after {
-    -webkit-animation: ripple 3s linear infinite 0.75s; }
-
-@-webkit-keyframes ripple {
-  from {
-    -webkit-transform: scale(0);
-    opacity: 1; }
-  to {
-    -webkit-transform: scale(3);
-    opacity: 0; } }
-  .timeline span + i {
-    left: auto;
-    right: 0.25em; }
-
-/* Timeline: People Rows */
 .dev-me {
   background: #8B9B31;
   border: 2px solid #5B573D;
@@ -609,6 +532,74 @@ figcaption {
 .dev-other span,
 .manager-other span {
   padding: 0 2.5em; }
+
+.timeline {
+  overflow-x: scroll;
+  border: 1px solid #CCCCCC; }
+  .timeline table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    margin-bottom: 1em; }
+    .timeline table td {
+      position: relative;
+      width: 100px;
+      padding: 5px; }
+  .timeline thead .months {
+    font-size: .75em;
+    background-color: #618985;
+    color: #FFFFFF;
+    text-align: center; }
+    .timeline thead .months td {
+      padding: 10px; }
+      .timeline thead .months td + td {
+        border-left: 1px solid #B1DDDA; }
+  .timeline thead .years {
+    font-size: .75em;
+    background: #B1DDDA;
+    color: #000000; }
+    .timeline thead .years td {
+      padding-left: 1.5em; }
+      .timeline thead .years td + td {
+        border-left: 1px solid #618985; }
+  .timeline tbody:before {
+    content: "\200C";
+    display: block;
+    line-height: 0.5em; }
+  .timeline tbody td {
+    border-radius: 5px; }
+  .timeline tbody span {
+    position: sticky;
+    padding: 0 2em;
+    left: 0; }
+  .timeline tbody i {
+    position: absolute;
+    z-index: 2;
+    top: 0.55em;
+    left: 0.55em;
+    width: 15px;
+    height: 15px;
+    background: #FFFFFF;
+    border: 5px solid #000000;
+    border-radius: 50%;
+    cursor: pointer; }
+  .timeline tbody i:before,
+  .timeline tbody i:after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    border: 1px solid #000000;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; }
+  .timeline tbody i:before {
+    -webkit-animation: ripple 3s linear infinite; }
+  .timeline tbody i:after {
+    -webkit-animation: ripple 3s linear infinite 0.75s; }
+  .timeline tbody span + i {
+    left: auto;
+    right: 0.25em; }
 
 /* Post-specific: The Power of Keeping Lists */
 .post--keeping-lists table {
