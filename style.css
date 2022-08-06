@@ -374,6 +374,7 @@ p:last-child {
 #stever-mapfilter {
   padding: .25em .5em; }
 
+/* Custom Body Class .sr-page-table */
 .sr-page-table thead {
   background-color: #E1E2C7;
   font-weight: bold;
@@ -389,41 +390,36 @@ p:last-child {
   padding: .5em;
   vertical-align: top; }
 
-/* Page-specific: Events & Conferences, etc. - Icon Hovers*/
-.sr-page-table .legend {
-  margin: 2em 0;
-  list-style: none; }
-
-.sr-page-table .legend li {
-  margin-bottom: .5em;
-  cursor: pointer;
-  padding: .25em .5em;
-  margin-left: 5px; }
-
-.sr-page-table .legend li:hover {
-  border-left: 5px solid #E1E2C7;
-  margin-left: 0;
-  color: black; }
-
-.sr-page-table .legend li.active {
-  border-left: 5px solid #8B9B31;
-  margin-left: 0;
-  font-weight: bold; }
-
-.sr-page-table .legend .show-all {
-  border-left: 5px solid #5F6B7E;
-  margin-left: 0; }
-
-.sr-page-table .legend i {
-  width: 2em;
-  text-align: center;
-  padding-right: 1em; }
-
-.sr-page-table .none-found {
+/* Page-specific: Professional Development */
+.sr-table-pro-dev .none-found {
   margin-top: -1.5em;
   background: #F7F7F7;
   padding: .75em 1em;
   font-style: italic; }
+
+.sr-table-pro-dev .legend {
+  margin: 2em 0;
+  list-style: none; }
+  .sr-table-pro-dev .legend li {
+    margin-bottom: .5em;
+    cursor: pointer;
+    padding: .25em .5em;
+    margin-left: 5px; }
+    .sr-table-pro-dev .legend li:hover {
+      border-left: 5px solid #E1E2C7;
+      margin-left: 0;
+      color: black; }
+    .sr-table-pro-dev .legend li.active {
+      border-left: 5px solid #8B9B31;
+      margin-left: 0;
+      font-weight: bold; }
+  .sr-table-pro-dev .legend .show-all {
+    border-left: 5px solid #5F6B7E;
+    margin-left: 0; }
+  .sr-table-pro-dev .legend i {
+    width: 2em;
+    text-align: center;
+    padding-right: 1em; }
 
 /* Page-specific: The Power of Keeping Lists */
 @media (max-width: 63.9375em) {
