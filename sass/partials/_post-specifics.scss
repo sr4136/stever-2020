@@ -20,7 +20,7 @@
 		margin-bottom: 2.5em;
 	}
 	
-	@include breakpoint( m ) {
+	@include breakpoint( l ) {
 		figure.alignright {
 			float: none;
 			margin: 0 auto;

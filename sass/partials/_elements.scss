@@ -59,6 +59,9 @@ blockquote {
     padding: 0.25em 0 .25em .5em;
     border-left: 3px solid $green-bright;
 }
+.entry-content ul {
+	margin-left: 0;
+}
 .entry-content li {
 	margin-left: 1em;
 }

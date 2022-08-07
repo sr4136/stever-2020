@@ -46,7 +46,7 @@ $fonts-icon: 			"Font Awesome 5 Free";
 // Breakpoints
 // HT: https://bit.ly/3beCmdq
 @mixin breakpoint( $size ) {
-	@if $size == "l" {
+	@if $size == "xl" {
 		@media( min-width: 64em ) {
 			@content;
 		}
@@ -56,12 +56,12 @@ $fonts-icon: 			"Font Awesome 5 Free";
 			@content;
 		}
 	}
-	@else if $size == "m" {
+	@else if $size == "l" {
 		@media ( max-width: 63.9375em ) {
 			@content;
 		}
 	}
-	@else if $size == "ms" {
+	@else if $size == "m" {
 		@media ( max-width: 48.75em ) {
 			@content;
 		}

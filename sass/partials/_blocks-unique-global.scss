@@ -30,22 +30,19 @@
 			padding-left: 4em;
 		}
 	}
-	ul {
-		margin: 0;
-	}
 }
-@include breakpoint( m ) {
+@include breakpoint( l ) {
 	.is-style-stever-columns-features{
 		.wp-block-column {
 			padding-right: 2em;
 			
-			& :last-child {
+			&:last-child {
 				padding-left: 2em;
 			}
 		}
 	}
 }
-@include breakpoint( ms ) {
+@include breakpoint( m ) {
 	.is-style-stever-columns-features .wp-block-column,
 	.is-style-stever-columns-features .wp-block-column:last-child {
 	    padding: 0;

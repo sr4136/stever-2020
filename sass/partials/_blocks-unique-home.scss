@@ -16,7 +16,7 @@
 		flex-direction: column;
 	}
 }
-@include breakpoint( m ) {
+@include breakpoint( l ) {
 	.stever-home-section-intro {
 		.wp-block-column:first-child {
 			flex-basis: calc(70% - 1em) !important;

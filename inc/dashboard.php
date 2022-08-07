@@ -1,7 +1,7 @@
 <?php
 /**
  * Custom Dashboard Widgets
- * @package SteveRudolfi
+ * @package stever
  */
 
 
@@ -9,10 +9,10 @@
  * Admin Columns: Remove Unnecessary Columns
  */
  function stever_remove_admin_columns( $defaults ) {
-  unset( $defaults[ 'comments' ] );
-  unset( $defaults[ 'author' ] );
-  unset( $defaults[ 'tags' ] );
-  return $defaults;
+	unset( $defaults[ 'comments' ] );
+	unset( $defaults[ 'author' ] );
+	unset( $defaults[ 'tags' ] );
+	return $defaults;
 }
 add_filter( 'manage_pages_columns', 'stever_remove_admin_columns' );
 add_filter( 'manage_posts_columns', 'stever_remove_admin_columns' );

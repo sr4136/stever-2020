@@ -12,22 +12,22 @@
 	text-align: center;
 	padding: 0.5em 0;
 
-	@include breakpoint( l ) {
-		content: "Large & up. min-width: 64em (1024px)";
+	@include breakpoint( xl ) {
+		content: "X-Large & up. min-width: 64em (~1024px)";
 	}
 	@include breakpoint( p ){
-		content: "Page-width & down. max-width: 87em (1392px)";
+		content: "Page-width & down. max-width: 87em (~1392px)";
+	}
+	@include breakpoint( l ) {
+		content: "Large & down. max-width: 63.9375em (~1023px)";
 	}
 	@include breakpoint( m ) {
-		content: "Medium & down. max-width: 63.9375em (1023px)";
-	}
-	@include breakpoint( ms ) {
-		content: "Medium-Small & down. max-width: 40em (780px)";
+		content: "Medium & down. max-width: 48.75em (~780px)";
 	}
 	@include breakpoint( s ) {
-		content: "Small & down. max-width: 40em (640px)";
+		content: "Small & down. max-width: 40em (~640px)";
 	}
 	@include breakpoint( xs ) {
-		content: "X-Small only. max-width: 27.5em (440px)";
+		content: "X-Small only. max-width: 27.5em (~440px)";
 	}
 }

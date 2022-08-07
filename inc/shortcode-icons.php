@@ -1,7 +1,7 @@
 <?php
 /**
  * Shortcode: Icons
- * @package SteveRudolfi
+ * @package stever
  */
 
 function stever_shortcode_icons( $atts ) {

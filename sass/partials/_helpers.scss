@@ -1,23 +1,32 @@
-// Helper: Universal 'hidden' Class 
+// Universal 'hidden' Class 
 .hidden {
 	display: none !important;
 	visibility: hidden;
 }
 
+// List: Indented;
+.entry-content .is-style-stever-list-indented {
+	margin-left: 1em;
+}
+@include breakpoint( xs ) {
+	.entry-content .is-style-stever-list-indented {
+		margin-left: 0;
+	}
+}
 
-// Helper: negative top margin
+// Negative top margin
 .margin-negative-top {
     margin-top: -1em;
 }
 
 
-// Helper: Hidden Page Header 
+// Hidden Page Header 
 .heading-hide .page-header {
     display: none;
 }
 
 
-// Helper: Button: Ghost 
+// Button: Ghost 
 .button-ghost,
 .button-ghost:visited,
 .button-ghost:active,
@@ -39,7 +48,7 @@
 }
 
 
-// Helper: Island Class 
+// Island Class 
 .island {
     margin: 0em -2em 2em -2em;
     border-left: 1px solid $gray-med;

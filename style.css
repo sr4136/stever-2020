@@ -15,6 +15,13 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   display: none !important;
   visibility: hidden; }
 
+.entry-content .is-style-stever-list-indented {
+  margin-left: 1em; }
+
+@media (max-width: 27.5em) {
+  .entry-content .is-style-stever-list-indented {
+    margin-left: 0; } }
+
 .margin-negative-top {
   margin-top: -1em; }
 
@@ -131,6 +138,9 @@ blockquote {
   margin: 0 0 1rem;
   padding: 0.25em 0 .25em .5em;
   border-left: 3px solid #8B9B31; }
+
+.entry-content ul {
+  margin-left: 0; }
 
 .entry-content li {
   margin-left: 1em; }
@@ -463,7 +473,7 @@ figcaption {
       font-size: 2em;
       margin-top: 1em; }
 
-/* My Time at BU Table */
+/* My Time at BU Page */
 @-webkit-keyframes ripple {
   from {
     -webkit-transform: scale(0);
@@ -489,14 +499,6 @@ figcaption {
 .is-style-stever-timeline-heading .timeline-legend p {
   margin: .25em 0 0 0;
   padding: .25em 1em; }
-
-@media (max-width: 48.75em) {
-  .is-style-stever-timeline-heading .wp-block-column:first-child {
-    flex-basis: 65% !important; }
-  .is-style-stever-timeline-heading .wp-block-column:last-child {
-    flex-basis: 35% !important;
-    padding-left: 2em;
-    margin-left: 0; } }
 
 @media (max-width: 27.5em) {
   .is-style-stever-timeline-heading .wp-block-column:first-child,
@@ -651,19 +653,19 @@ figcaption {
   padding: 0.5em 0; }
   @media (min-width: 64em) {
     .sr-breakpoints #page::before {
-      content: "Large & up. min-width: 64em (1024px)"; } }
+      content: "X-Large & up. min-width: 64em (~1024px)"; } }
   @media (max-width: 87em) {
     .sr-breakpoints #page::before {
-      content: "Page-width & down. max-width: 87em (1392px)"; } }
+      content: "Page-width & down. max-width: 87em (~1392px)"; } }
   @media (max-width: 63.9375em) {
     .sr-breakpoints #page::before {
-      content: "Medium & down. max-width: 63.9375em (1023px)"; } }
+      content: "Large & down. max-width: 63.9375em (~1023px)"; } }
   @media (max-width: 48.75em) {
     .sr-breakpoints #page::before {
-      content: "Medium-Small & down. max-width: 40em (780px)"; } }
+      content: "Medium & down. max-width: 48.75em (~780px)"; } }
   @media (max-width: 40em) {
     .sr-breakpoints #page::before {
-      content: "Small & down. max-width: 40em (640px)"; } }
+      content: "Small & down. max-width: 40em (~640px)"; } }
   @media (max-width: 27.5em) {
     .sr-breakpoints #page::before {
-      content: "X-Small only. max-width: 27.5em (440px)"; } }
+      content: "X-Small only. max-width: 27.5em (~440px)"; } }
