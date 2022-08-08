@@ -26,7 +26,7 @@ gulp.task( 'sass:blocks', function () {
         .pipe( rename( {
             extname: '.min.css'
         } ) )
-        .pipe( gulp.dest( './', { sourcemaps: true } ) );
+        .pipe( gulp.dest( './css/', { sourcemaps: true } ) );
 } );
 
 gulp.task( 'sass:admin', function () {
