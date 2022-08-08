@@ -38,7 +38,7 @@ function stever_scripts_styles() {
 		filemtime( get_stylesheet_directory() . '/css/foundation.css' )
 	);
 
-	// CSS: SteveR Theme Styles.
+	// CSS: SteveR Theme Styles. 
 	wp_enqueue_style( 'stever-style',
 		get_stylesheet_directory_uri() . '/style.min.css',
 		array(),

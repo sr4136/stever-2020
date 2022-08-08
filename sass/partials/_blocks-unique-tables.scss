@@ -176,15 +176,18 @@
 
 // Table: Speaking/Teaching 
 .is-style-stever-table-speaking {
-	// Event 
+	// Event
+	th:nth-child( 1 ),
 	td:nth-child( 1 ) {
 		width: 45%;
 	}
-	// Affiliation 
+	// Affiliation
+	th:nth-child( 2 )
 	td:nth-child( 2 ) {
 		width: 35%;
-	}
+	} 
 	// Date 
+	th:nth-child( 3 ),
 	td:nth-child( 3 ) {
 		width: 20%;
 	}
@@ -207,21 +210,20 @@
 
 	        // Title 
 			td:nth-child( 1 ) {
-			    width: 100% !important;
-			    font-weight: bold;
+				width: 100% !important;
+				font-weight: bold;
 			}
 			// Affiliation 
 			td:nth-child( 2 ) {
-			    width: 75% !important;
-			    padding-left: 2em;
-			    text-align: right;
-			    padding-right: 1em;
-			    font-style: italic;
+				width: 75% !important;
+				padding-right: 1em;
+				font-size: 0.9em;
+				font-style: italic;
 			}
 			// Date 
 			td:nth-child( 3 ) {
 				width: 25% !important;
 			}
 		}
-    }
+	}
 }
