@@ -1,14 +1,12 @@
 /* My Time at BU Page */
 
 // Ripple transform for tooltip indicators.
-@-webkit-keyframes ripple {
+@keyframes ripple {
 	from {
-		-webkit-transform: scale( 0 );
 		transform: scale( 0 );
 		opacity: 1;
 	}
 	to {
-		-webkit-transform: scale( 3.5 );
 		transform: scale( 3.5 );
 		opacity: 0;
 	}
@@ -97,14 +95,14 @@
 
 // Table
 .timeline {
-    overflow-x: scroll;
+	overflow-x: scroll;
 	border: 1px solid $gray-med;
 
-    table {
-        table-layout: fixed;
-        border-collapse: separate;
-        border-spacing: 0 1px;
-        margin-bottom: 1em;
+	table {
+		table-layout: fixed;
+		border-collapse: separate;
+		border-spacing: 0 1px;
+		margin-bottom: 1em;
 		
 		td {
 			position: relative;
@@ -201,14 +199,14 @@
 			border-radius: 50%;
 		}
 		i:before {
-			-webkit-animation: ripple 3s linear infinite;
+			animation: ripple 3s linear infinite;
 		}
 		i:after {
-			-webkit-animation: ripple 3s linear infinite 0.75s;
+			animation: ripple 3s linear infinite 0.75s;
 		}
 	}
 	// Add this to the "XYZ Month - Now" to give it extra width.
 	.extended-width {
-		min-width: 300px;
+		width: 300px;
 	}
 }
