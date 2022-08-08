@@ -47,9 +47,9 @@ function stever_scripts_styles() {
 
 	// CSS: SteveR Blocks Styles.
 	wp_enqueue_style( 'stever-blocks-front',
-		get_stylesheet_directory_uri() . '/css/blocks.css',
+		get_stylesheet_directory_uri() . '/css/blocks.min.css',
 		array(),
-		filemtime( get_stylesheet_directory() . '/css/blocks.css' )
+		filemtime( get_stylesheet_directory() . '/css/blocks.min.css' )
 	);
 	
 	// JS: Fix "skip-link focus".
@@ -131,16 +131,16 @@ add_action( 'wp_enqueue_scripts', 'stever_scripts_styles' );
 function stever_admin_scripts_styles() {
 	// CSS: Admin General.
 	wp_enqueue_style( 'stever-admin',
-		get_stylesheet_directory_uri() . '/css/admin.css',
+		get_stylesheet_directory_uri() . '/css/admin.min.css',
 		array(),
-		filemtime( get_stylesheet_directory() . '/css/admin.css' )
+		filemtime( get_stylesheet_directory() . '/css/admin.min.css' )
 	);
 
     // CSS: SteveR Blocks Styles.
 	wp_enqueue_style( 'stever-blocks',
-		get_stylesheet_directory_uri() . '/css/blocks.css',
+		get_stylesheet_directory_uri() . '/css/blocks.min.css',
 		array(),
-		filemtime( get_stylesheet_directory() . '/css/blocks.css' )
+		filemtime( get_stylesheet_directory() . '/css/blocks.min.css' )
 	);
 }
 add_action( 'admin_enqueue_scripts', 'stever_admin_scripts_styles' );
