@@ -4,47 +4,40 @@ var gulp        = require( 'gulp' );
 var sass        = require( 'gulp-sass' );
 var cssNano     = require( 'gulp-cssnano' );
 var rename      = require( 'gulp-rename' );
-var sourcemaps  = require( 'gulp-sourcemaps' );
 
 sass.compiler = require( 'node-sass' );
 
 gulp.task( 'sass:main', function () {
-    return gulp.src( './sass/style.scss' )
-        .pipe( sourcemaps.init() )
+    return gulp.src( './sass/style.scss', { sourcemaps: true } )
         .pipe( sass().on( 'error', sass.logError ) )
-        .pipe( gulp.dest( './' ) )
+        .pipe( gulp.dest( './', { sourcemaps: true } ) )
         .pipe( cssNano() )
         .pipe( rename( {
             extname: '.min.css'
         } ) )
-        .pipe( sourcemaps.write( './' ) )
-        .pipe( gulp.dest( './' ) );
+        .pipe( gulp.dest( './', { sourcemaps: true } ) );
 } );
 
 gulp.task( 'sass:blocks', function () {
-    return gulp.src( './sass/blocks.scss' )
-        .pipe( sourcemaps.init() )
+    return gulp.src( './sass/blocks.scss', { sourcemaps: true } )
         .pipe( sass().on( 'error', sass.logError ) )
-        .pipe( gulp.dest( './css/' ) )
+        .pipe( gulp.dest( './css/', { sourcemaps: true } ) )
         .pipe( cssNano() )
         .pipe( rename( {
             extname: '.min.css'
         } ) )
-        .pipe( sourcemaps.write( './css/' ) )
-        .pipe( gulp.dest( './' ) );
+        .pipe( gulp.dest( './', { sourcemaps: true } ) );
 } );
 
 gulp.task( 'sass:admin', function () {
-    return gulp.src( './sass/admin.scss' )
-        .pipe( sourcemaps.init() )
+    return gulp.src( './sass/admin.scss', { sourcemaps: true } )
 		.pipe( sass().on( 'error', sass.logError ) )
-        .pipe( gulp.dest( './css/' ) )
+        .pipe( gulp.dest( './css/', { sourcemaps: true } ) )
         .pipe( cssNano() )
         .pipe( rename( {
             extname: '.min.css'
         } ) )
-        .pipe( sourcemaps.write( './' ) )
-        .pipe( gulp.dest( './css/' ) );
+        .pipe( gulp.dest( './css/', { sourcemaps: true } ) );
 } );
 
 gulp.task( 'watch', function() {
