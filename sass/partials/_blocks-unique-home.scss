@@ -49,7 +49,7 @@
 
 // Statistics
 .stever-home-section-more .wp-block-column {
-	@include breakpoint( ms ) {
+	@include breakpoint( m ) {
 		@include columns-full-override;
 	}
 }

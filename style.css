@@ -500,6 +500,14 @@ figcaption {
   margin: .25em 0 0 0;
   padding: .25em 1em; }
 
+@media (max-width: 48.75em) {
+  .is-style-stever-timeline-heading .wp-block-column:first-child {
+    flex-basis: 65% !important; }
+  .is-style-stever-timeline-heading .wp-block-column:last-child {
+    flex-basis: 35% !important;
+    padding-left: 2em;
+    margin-left: 0; } }
+
 @media (max-width: 27.5em) {
   .is-style-stever-timeline-heading .wp-block-column:first-child,
   .is-style-stever-timeline-heading .wp-block-column:last-child {

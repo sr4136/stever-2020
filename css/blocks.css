@@ -325,6 +325,11 @@ table {
     .stever-home-section-intro .wp-block-column figure img {
       max-width: 250px; } }
 
+@media (max-width: 48.75em) {
+  .stever-home-section-more .wp-block-column {
+    flex-basis: 100% !important;
+    margin-left: 0; } }
+
 .home .is-style-stever-columns-statistics p {
   margin-bottom: 0.5em; }
 

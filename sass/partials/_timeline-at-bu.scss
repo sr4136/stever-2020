@@ -37,7 +37,7 @@
 		}
 	}
 }
-@include breakpoint( ms ){
+@include breakpoint( m ){
 	.is-style-stever-timeline-heading {
 		.wp-block-column:first-child {
 			flex-basis: 65% !important;
