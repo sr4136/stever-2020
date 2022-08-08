@@ -37,17 +37,26 @@
 	td:nth-child( 2 ) {
 		width: 55%;
 	}
-	// Date 
-	td:nth-child( 3 ) {
-		width: 10%;
-	}
 	// Affiliation 
-	td:nth-child( 4 ) {
+	td:nth-child( 3 ) {
 		width: 30%;
+	}
+	// Date 
+	th:nth-child( 4 ),
+	td:nth-child( 4 ) {
+		width: 10%;
+		text-align: right;
+		font-family: $fonts-mono;
+		font-size: 0.9em;
+		padding-right: 1.5em;
 	}
 }
 // Table: Professional Development (Admin)
-.wp-admin .is-style-stever-table-pro-dev tr {
+.wp-admin .is-style-stever-table-pro-dev {
+	font-size: 0.8em;
+	td {
+		vertical-align: top;
+	}
 	// Icon 
 	td:nth-child( 1 ) {
 		width: 15%;
@@ -57,48 +66,54 @@
 	td:nth-child( 2 ) {
 		width: 45%;
 	}
+	// Affiliation 
+	td:nth-child( 3 ) {
+		width: 25%;
+	}
+	// Date 
+	td:nth-child( 4 ) {
+		width: 15%;
+		padding-right: 0.5em;
+	}
 }
 // Table: Professional Development - Responsive
 @include breakpoint( s ) {
-    .is-style-stever-table-pro-dev {
-        display: block;
-        width: 100%;
+	.is-style-stever-table-pro-dev {
+		display: block;
+		width: 100%;
 
-        thead {
-	        display: none;
-	    }
-	    td {
-	        display: inline-block;
-	    }
-	    tr {
-	        display: block;
-	        width: 100%
+		td {
+			display: inline-block;
+		}
+		tr {
+			display: block;
+			width: 100%;
+			padding: 1em 0;
 
-	        // Icon 
+			// Icon 
 			td:nth-child( 1 ) {
-			    width: 10% !important;
+				width: 2.5em;
 			}
 			// Title 
 			td:nth-child( 2 ) {
-			    width: 90% !important;
-			    font-weight: bold;
-			}
-			// Date 
-			td:nth-child( 3 ) {
-			    padding-left: 1em;
-			    width: 30% !important;
-			    font-style: italic;
+				width: calc(100% + -2.5em);
+				font-weight: bold;
 			}
 			// Affiliation 
-			td:nth-child( 4 ) {
-			    width: 70% !important;
-			    padding-left: 2em;
-			    text-align: right;
-			    padding-right: 1em;
-			    font-style: italic;
+			td:nth-child( 3 ) {
+				width: 70%;
+				padding-left: 0.75em;
+				padding-top: 0;
+				font-size: 0.85em;
 			}
-	    }
-    }
+			// Date 
+			td:nth-child( 4 ) {
+				width: 30%;
+				padding-top: 0;
+				font-size: 0.75em;
+			}
+		}
+	}
 }
 
 
@@ -190,6 +205,10 @@
 	th:nth-child( 3 ),
 	td:nth-child( 3 ) {
 		width: 20%;
+		text-align: right;
+		font-family: $fonts-mono;
+		font-size: 0.9em;
+		padding-right: 1.5em;
 	}
 }
 // Table: Speaking/Teaching (Responsive)
@@ -217,8 +236,6 @@
 			td:nth-child( 2 ) {
 				width: 75% !important;
 				padding-right: 1em;
-				font-size: 0.9em;
-				font-style: italic;
 			}
 			// Date 
 			td:nth-child( 3 ) {
