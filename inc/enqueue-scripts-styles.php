@@ -16,6 +16,8 @@ function stever_scripts_styles() {
 	/* Fonts */
 	wp_enqueue_style( 'googleFonts-Lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
 	wp_enqueue_style( 'googleFonts-Merriweather', '//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic' );
+  wp_enqueue_style( 'bunnyFonts-B612', '//fonts.bunny.net/css?family=b612-mono:400' );
+
 	wp_enqueue_style( 'fontawesome',
 		get_stylesheet_directory_uri() . '/css/fontawesome-free-5.8.1-web/css/all.min.css',
 		array(),
@@ -38,9 +40,9 @@ function stever_scripts_styles() {
 
 	// CSS: SteveR Theme Styles.
 	wp_enqueue_style( 'stever-style',
-		get_stylesheet_directory_uri() . '/style.css',
+		get_stylesheet_directory_uri() . '/style.min.css',
 		array(),
-		filemtime( get_stylesheet_directory() . '/style.css' )
+		filemtime( get_stylesheet_directory() . '/style.min.css' )
 	);
 
 	// CSS: SteveR Blocks Styles.
