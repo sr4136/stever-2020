@@ -59,7 +59,7 @@
 	}
 }
 // Table: Professional Development - Responsive
-@include breakpoint( ms ) {
+@include breakpoint( s ) {
     .is-style-stever-table-pro-dev {
         display: block;
         width: 100%;
@@ -85,7 +85,7 @@
 			}
 			// Date 
 			td:nth-child(3) {
-			    padding-left: 10%;
+			    padding-left: 1em;
 			    width: 30% !important;
 			    font-style: italic;
 			}
@@ -133,7 +133,7 @@
 	}
 }
 // Table: Books I've Read (Responsive)
-@include breakpoint( ms ) {
+@include breakpoint( s ) {
     .is-style-stever-table-books {
         display: block;
         width: 100%;
@@ -190,7 +190,7 @@
 	}
 }
 // Table: Speaking/Teaching (Responsive)
-@include breakpoint( ms ) {
+@include breakpoint( s ) {
     .is-style-stever-table-speaking {
 	    display: block;
         width: 100%;

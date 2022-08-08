@@ -191,6 +191,33 @@ table {
 .wp-admin .is-style-stever-table-pro-dev tr td:nth-child(2) {
   width: 45%; }
 
+@media (max-width: 40em) {
+  .is-style-stever-table-pro-dev {
+    display: block;
+    width: 100%; }
+    .is-style-stever-table-pro-dev thead {
+      display: none; }
+    .is-style-stever-table-pro-dev td {
+      display: inline-block; }
+    .is-style-stever-table-pro-dev tr {
+      display: block;
+      width: 100% td; }
+      .is-style-stever-table-pro-dev tr :nth-child(1) {
+        width: 10% !important; }
+      .is-style-stever-table-pro-dev tr td:nth-child(2) {
+        width: 90% !important;
+        font-weight: bold; }
+      .is-style-stever-table-pro-dev tr td:nth-child(3) {
+        padding-left: 1em;
+        width: 30% !important;
+        font-style: italic; }
+      .is-style-stever-table-pro-dev tr td:nth-child(4) {
+        width: 70% !important;
+        padding-left: 2em;
+        text-align: right;
+        padding-right: 1em;
+        font-style: italic; } }
+
 .is-style-stever-table-books th:nth-child(1),
 .is-style-stever-table-books td:nth-child(1) {
   width: 55% !important;
@@ -212,6 +239,34 @@ table {
 .wp-admin .is-style-stever-table-books th, .wp-admin .is-style-stever-table-books td {
   padding: 0.5em; }
 
+@media (max-width: 40em) {
+  .is-style-stever-table-books {
+    display: block;
+    width: 100%; }
+    .is-style-stever-table-books thead {
+      display: none; }
+    .is-style-stever-table-books td {
+      display: inline-block; }
+    .is-style-stever-table-books tr {
+      display: block;
+      width: 100%; }
+    .is-style-stever-table-books th:nth-child(1),
+    .is-style-stever-table-books td:nth-child(1) {
+      width: 100% !important;
+      font-weight: bold;
+      padding-left: 1em;
+      padding-bottom: 0.25em; }
+    .is-style-stever-table-books th:nth-child(2),
+    .is-style-stever-table-books td:nth-child(2) {
+      width: 75% !important;
+      padding-left: 1em;
+      padding-top: 0.25em; }
+    .is-style-stever-table-books th:nth-child(3),
+    .is-style-stever-table-books td:nth-child(3) {
+      width: 25% !important;
+      padding-right: 1em;
+      padding-top: 0.25em; } }
+
 .is-style-stever-table-speaking td:nth-child(1) {
   width: 45%; }
 
@@ -220,6 +275,29 @@ table {
 
 .is-style-stever-table-speaking td:nth-child(3) {
   width: 35%; }
+
+@media (max-width: 40em) {
+  .is-style-stever-table-speaking {
+    display: block;
+    width: 100%; }
+    .is-style-stever-table-speaking thead {
+      display: none; }
+    .is-style-stever-table-speaking td {
+      display: inline-block; }
+    .is-style-stever-table-speaking tr {
+      display: block;
+      width: 100% td; }
+      .is-style-stever-table-speaking tr :nth-child(1) {
+        width: 100% !important;
+        font-weight: bold; }
+      .is-style-stever-table-speaking tr td:nth-child(2) {
+        width: 25% !important; }
+      .is-style-stever-table-speaking tr td:nth-child(3) {
+        width: 75% !important;
+        padding-left: 2em;
+        text-align: right;
+        padding-right: 1em;
+        font-style: italic; } }
 
 /* Blocks: Unique Classes - Home */
 .stever-home-section {
