@@ -75,22 +75,22 @@
 	        width: 100%
 
 	        // Icon 
-			td:nth-child(1) {
+			td:nth-child( 1 ) {
 			    width: 10% !important;
 			}
 			// Title 
-			td:nth-child(2) {
+			td:nth-child( 2 ) {
 			    width: 90% !important;
 			    font-weight: bold;
 			}
 			// Date 
-			td:nth-child(3) {
+			td:nth-child( 3 ) {
 			    padding-left: 1em;
 			    width: 30% !important;
 			    font-style: italic;
 			}
 			// Affiliation 
-			td:nth-child(4) {
+			td:nth-child( 4 ) {
 			    width: 70% !important;
 			    padding-left: 2em;
 			    text-align: right;
@@ -149,23 +149,23 @@
 	        width: 100%
 	    }
 		// Title 
-		th:nth-child(1),
-		td:nth-child(1) {
+		th:nth-child( 1 ),
+		td:nth-child( 1 ) {
 			width: 100% !important;
 			font-weight: bold;
 			padding-left: 1em;
 			padding-bottom: 0.25em;
 		}
 		// Author 
-		th:nth-child(2),
-		td:nth-child(2) {
+		th:nth-child( 2 ),
+		td:nth-child( 2 ) {
 			width: 75% !important;
 			padding-left: 1em;
 			padding-top: 0.25em;
 		}
 		// Date 
-		th:nth-child(3),
-		td:nth-child(3) {
+		th:nth-child( 3 ),
+		td:nth-child( 3 ) {
 			width: 25% !important;
 			padding-right: 1em;
 			padding-top: 0.25em;
@@ -176,17 +176,17 @@
 
 // Table: Speaking/Teaching 
 .is-style-stever-table-speaking {
-	// Date 
+	// Event 
 	td:nth-child( 1 ) {
 		width: 45%;
 	}
-	// Event 
-	td:nth-child( 2 ) {
-		width: 20%;
-	}
 	// Affiliation 
-	td:nth-child( 3 ) {
+	td:nth-child( 2 ) {
 		width: 35%;
+	}
+	// Date 
+	td:nth-child( 3 ) {
+		width: 20%;
 	}
 }
 // Table: Speaking/Teaching (Responsive)
@@ -206,21 +206,21 @@
 	        width: 100%
 
 	        // Title 
-			td:nth-child(1) {
+			td:nth-child( 1 ) {
 			    width: 100% !important;
 			    font-weight: bold;
 			}
-			// Date 
-			td:nth-child(2) {
-			    width: 25% !important;
-			}
 			// Affiliation 
-			td:nth-child(3) {
+			td:nth-child( 2 ) {
 			    width: 75% !important;
 			    padding-left: 2em;
 			    text-align: right;
 			    padding-right: 1em;
 			    font-style: italic;
+			}
+			// Date 
+			td:nth-child( 3 ) {
+				width: 25% !important;
 			}
 		}
     }
