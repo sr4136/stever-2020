@@ -1,5 +1,25 @@
 /* Blocks: Unique Classes - Tables */
 
+// Custom Body Class: .sr-page-table 
+.sr-page-table {
+	thead {
+	    background-color: $green-light;
+	    font-weight: bold;
+		text-align: left;
+	}
+	tbody tr:nth-child(2n+1) {
+	    background-color: $gray-light;
+	}
+	th {
+		padding: .5em;
+	}
+	td {
+		padding: .5em;
+		vertical-align: top;
+	}
+}
+
+
 // Heading: Year Divider 
 .is-style-year-divider {
     background-color: $green-bright;
