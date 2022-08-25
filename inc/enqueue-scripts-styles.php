@@ -14,15 +14,18 @@ function stever_scripts_styles() {
 	$stever_body_class_text = get_post_meta( get_the_id(), 'stever_body_class_text', true );
 
 	/* Fonts */
-	wp_enqueue_style( 'googleFonts-Lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
-	wp_enqueue_style( 'googleFonts-Merriweather', '//fonts.googleapis.com/css?family=Merriweather:400,700,400italic,700italic' );
-  wp_enqueue_style( 'bunnyFonts-B612', '//fonts.bunny.net/css?family=b612-mono:400' );
-
-	wp_enqueue_style( 'fontawesome',
-		get_stylesheet_directory_uri() . '/css/fontawesome-free-5.8.1-web/css/all.min.css',
-		array(),
-		filemtime( get_stylesheet_directory() . '/css/fontawesome-free-5.8.1-web/css/all.min.css' )
-	);
+    // Body.
+    wp_enqueue_style( 'googleFonts-Roboto', '//fonts.googleapis.com/css?family=Roboto:400,700,400italic,700italic' );
+    // Headings.
+    wp_enqueue_style( 'googleFonts-Lato', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' );
+    // Mono.
+    wp_enqueue_style( 'bunnyFonts-B612', '//fonts.bunny.net/css?family=b612-mono:400' );
+    // Icons.
+    wp_enqueue_style( 'fontawesome',
+        get_stylesheet_directory_uri() . '/css/fontawesome-free-5.8.1-web/css/all.min.css',
+        array(),
+        filemtime( get_stylesheet_directory() . '/css/fontawesome-free-5.8.1-web/css/all.min.css' )
+    );
 
 	// CSS: Underscores.
 	wp_enqueue_style( 'stever-underscores',
