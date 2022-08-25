@@ -2,21 +2,24 @@
 
 // Custom Body Class: .sr-page-table 
 .sr-page-table {
-	thead {
-	    background-color: $green-light;
-	    font-weight: bold;
-		text-align: left;
-	}
-	tbody tr:nth-child(2n+1) {
-	    background-color: $gray-light;
-	}
-	th {
-		padding: .5em;
-	}
-	td {
-		padding: .5em;
-		vertical-align: top;
-	}
+    thead {
+        background-color: $green-light;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    tbody tr:nth-child(2n+1) {
+        background-color: $gray-light;
+    }
+
+    th {
+        padding: .5em;
+    }
+
+    td {
+        padding: .5em;
+        vertical-align: top;
+    }
 }
 
 
@@ -27,240 +30,278 @@
     text-align: center;
     padding: .5em 0;
     font-weight: bold;
-	font-size: 1.2em;
-	margin-bottom: 0;
+    font-size: 1.2em;
+    margin-bottom: 0;
 }
 
 
 // Accordion: Upcoming Events 
 .accordion-upcoming h4 {
-	background: $red;
-	color: $white;
-	text-align: center;
-	padding: 0.2em 0 0.25em 0;
-	
-	&:after {
-		color: $white;
-		right: 0.65em;
-	}
+    background: $red;
+    color: $white;
+    text-align: center;
+    padding: 0.2em 0 0.25em 0;
+
+    &:after {
+        color: $white;
+        right: 0.65em;
+    }
 }
 
 
 // Table: Professional Development 
 .is-style-stever-table-pro-dev tr {
-	// Icon 
-	td:nth-child( 1 ) {
-		width: 5%;
-		text-align: center;
-	}
-	// Title 
-	td:nth-child( 2 ) {
-		width: 55%;
-	}
-	// Affiliation 
-	td:nth-child( 3 ) {
-		width: 30%;
-	}
-	// Date 
-	th:nth-child( 4 ),
-	td:nth-child( 4 ) {
-		width: 10%;
-		text-align: right;
-		font-family: $fonts-mono;
-		font-size: 0.9em;
-		padding-right: 1.5em;
-	}
+
+    // Icon 
+    td:nth-child(1) {
+        width: 5%;
+        text-align: center;
+    }
+
+    // Title 
+    td:nth-child(2) {
+        width: 55%;
+    }
+
+    // Affiliation 
+    td:nth-child(3) {
+        width: 30%;
+    }
+
+    // Date 
+    th:nth-child(4),
+    td:nth-child(4) {
+        width: 10%;
+        text-align: right;
+        font-family: $fonts-mono;
+        font-size: 0.9em;
+        padding-right: 1.5em;
+    }
 }
+
 // Table: Professional Development (Admin)
 .wp-admin .is-style-stever-table-pro-dev {
-	font-size: 0.8em;
-	td {
-		vertical-align: top;
-	}
-	// Icon 
-	td:nth-child( 1 ) {
-		width: 15%;
-		text-align: center;
-	}
-	// Title 
-	td:nth-child( 2 ) {
-		width: 45%;
-	}
-	// Affiliation 
-	td:nth-child( 3 ) {
-		width: 25%;
-	}
-	// Date 
-	td:nth-child( 4 ) {
-		width: 15%;
-		padding-right: 0.5em;
-	}
+    font-size: 0.8em;
+
+    td {
+        vertical-align: top;
+    }
+
+    // Icon 
+    td:nth-child(1) {
+        width: 15%;
+        text-align: center;
+    }
+
+    // Title 
+    td:nth-child(2) {
+        width: 45%;
+    }
+
+    // Affiliation 
+    td:nth-child(3) {
+        width: 25%;
+    }
+
+    // Date 
+    td:nth-child(4) {
+        width: 15%;
+        padding-right: 0.5em;
+    }
 }
+
 // Table: Professional Development - Responsive
-@include breakpoint( s ) {
-	.is-style-stever-table-pro-dev {
-		display: block;
-		width: 100%;
+@include breakpoint(s) {
+    .is-style-stever-table-pro-dev {
+        display: block;
+        width: 100%;
 
-		td {
-			display: inline-block;
-		}
-		tr {
-			display: block;
-			width: 100%;
-			padding: 1em 0;
+        td {
+            display: inline-block;
+        }
 
-			// Icon 
-			td:nth-child( 1 ) {
-				width: 2.5em;
-			}
-			// Title 
-			td:nth-child( 2 ) {
-				width: calc(100% + -2.5em);
-				font-weight: bold;
-			}
-			// Affiliation 
-			td:nth-child( 3 ) {
-				width: 70%;
-				padding-left: 0.75em;
-				padding-top: 0;
-				font-size: 0.85em;
-			}
-			// Date 
-			td:nth-child( 4 ) {
-				width: 30%;
-				padding-top: 0;
-				font-size: 0.75em;
-			}
-		}
-	}
+        tr {
+            display: block;
+            width: 100%;
+            padding: 1em 0;
+
+            // Icon 
+            td:nth-child(1) {
+                width: 2.5em;
+            }
+
+            // Title 
+            td:nth-child(2) {
+                width: calc(100% + -2.5em);
+                font-weight: bold;
+            }
+
+            // Affiliation 
+            td:nth-child(3) {
+                width: 70%;
+                padding-left: 0.75em;
+                padding-top: 0;
+                font-size: 0.85em;
+            }
+
+            // Date 
+            td:nth-child(4) {
+                width: 30%;
+                padding-top: 0;
+                font-size: 0.75em;
+            }
+        }
+    }
 }
 
 
 // Table: Books I've Read 
 .is-style-stever-table-books {
-	// Title 
-	th:nth-child( 1 ),
-	td:nth-child( 1 ) {
-		width: 55% !important;
-		text-align: left;
-		padding-left: 1.5em;
-	}
-	// Author 
-	th:nth-child( 2 ),
-	td:nth-child( 2 ) {
-		width: 30% !important;
-	}
-	// Date
-	th:nth-child( 3 ),
-	td:nth-child( 3 ) {
-		width: 10% !important;
-		text-align: right;
-		font-family: $fonts-mono;
-		font-size: 0.9em;
-		padding-right: 1.5em;
-	}
+
+    // Title 
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 55% !important;
+        text-align: left;
+        padding-left: 1.5em;
+    }
+
+    // Author 
+    th:nth-child(2),
+    td:nth-child(2) {
+        width: 30% !important;
+    }
+
+    // Date
+    th:nth-child(3),
+    td:nth-child(3) {
+        width: 10% !important;
+        text-align: right;
+        font-family: $fonts-mono;
+        font-size: 0.9em;
+        padding-right: 1.5em;
+    }
 }
+
 // Table: Books I've Read (Admin)
 .wp-admin .is-style-stever-table-books {
-	th, td {
-		padding: 0.5em;
-	}
+
+    th,
+    td {
+        padding: 0.5em;
+    }
 }
+
 // Table: Books I've Read (Responsive)
-@include breakpoint( s ) {
+@include breakpoint(s) {
     .is-style-stever-table-books {
         display: block;
         width: 100%;
 
         thead {
-	        display: none;
-	    }
-	    td {
-	        display: inline-block;
-	    }
-	    tr {
-	        display: block;
-	        width: 100%
-	    }
-		// Title 
-		th:nth-child( 1 ),
-		td:nth-child( 1 ) {
-			width: 100% !important;
-			font-weight: bold;
-			padding-left: 1em;
-			padding-bottom: 0.25em;
-		}
-		// Author 
-		th:nth-child( 2 ),
-		td:nth-child( 2 ) {
-			width: 75% !important;
-			padding-left: 1em;
-			padding-top: 0.25em;
-		}
-		// Date 
-		th:nth-child( 3 ),
-		td:nth-child( 3 ) {
-			width: 25% !important;
-			padding-right: 1em;
-			padding-top: 0.25em;
-		}
+            display: none;
+        }
+
+        td {
+            display: inline-block;
+        }
+
+        tr {
+            display: block;
+            width: 100%
+        }
+
+        // Title 
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 100% !important;
+            font-weight: bold;
+            padding-left: 1em;
+            padding-bottom: 0.25em;
+        }
+
+        // Author 
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 75% !important;
+            padding-left: 1em;
+            padding-top: 0.25em;
+        }
+
+        // Date 
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 25% !important;
+            padding-right: 1em;
+            padding-top: 0.25em;
+        }
     }
 }
 
 
 // Table: Speaking/Teaching 
 .is-style-stever-table-speaking {
-	// Event
-	th:nth-child( 1 ),
-	td:nth-child( 1 ) {
-		width: 45%;
-	}
-	// Affiliation
-	th:nth-child( 2 )
-	td:nth-child( 2 ) {
-		width: 35%;
-	} 
-	// Date 
-	th:nth-child( 3 ),
-	td:nth-child( 3 ) {
-		width: 20%;
-		text-align: right;
-		font-family: $fonts-mono;
-		font-size: 0.9em;
-		padding-right: 1.5em;
-	}
+    margin-top: 2em;
+
+    th,
+    td {
+        padding: 0.5em 1em;
+    }
+
+    // Event
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 45%;
+    }
+
+    // Affiliation
+    th:nth-child(2) td:nth-child(2) {
+        width: 35%;
+    }
+
+    // Date 
+    th:nth-child(3),
+    td:nth-child(3) {
+        width: 20%;
+        text-align: right;
+        font-family: $fonts-mono;
+        font-size: 0.9em;
+    }
 }
+
 // Table: Speaking/Teaching (Responsive)
-@include breakpoint( s ) {
+@include breakpoint(s) {
     .is-style-stever-table-speaking {
-	    display: block;
+        display: block;
         width: 100%;
 
         thead {
-	        display: none;
-	    }
-	    td {
-	        display: inline-block;
-	    }
-	    tr {
-	        display: block;
-	        width: 100%
+            display: none;
+        }
 
-	        // Title 
-			td:nth-child( 1 ) {
-				width: 100% !important;
-				font-weight: bold;
-			}
-			// Affiliation 
-			td:nth-child( 2 ) {
-				width: 75% !important;
-				padding-right: 1em;
-			}
-			// Date 
-			td:nth-child( 3 ) {
-				width: 25% !important;
-			}
-		}
-	}
+        td {
+            display: inline-block;
+        }
+
+        tr {
+            display: block;
+            width: 100% // Title 
+
+            td:nth-child(1) {
+                width: 100% !important;
+                font-weight: bold;
+            }
+
+            // Affiliation 
+            td:nth-child(2) {
+                width: 75% !important;
+                padding-right: 1em;
+            }
+
+            // Date 
+            td:nth-child(3) {
+                width: 25% !important;
+            }
+        }
+    }
 }

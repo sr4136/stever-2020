@@ -1,97 +1,131 @@
 html {
-	min-width: 320px;
+    min-width: 320px;
 }
+
 body {
-	background: rgb(247,247,247);
-    background: linear-gradient(90deg, rgba(247,247,247,1) 20%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(247,247,247,1) 80%);
-	font-family: $fonts-copy;
-	font-size: 16px;
+    background: rgb(247, 247, 247);
+    background: linear-gradient(90deg, rgba(247, 247, 247, 1) 20%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 70%, rgba(247, 247, 247, 1) 80%);
+    font-family: $fonts-copy;
+    font-size: 16px;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-family: $fonts-headings;
-	color: $gray-darkest;
-	line-height: 1em;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fonts-headings;
+    color: $gray-darkest;
+    line-height: 1em;
     margin: 0;
     padding: 0;
-    margin-bottom: 1em;
     font-weight: 900;
 }
+
 h1 {
     font-size: 2em;
 }
+
 h2 {
     font-size: 1.75em;
 }
+
 h3 {
     font-size: 1.5em;
 }
+
 h4 {
     font-size: 1.25em;
 }
+
 p {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
-.entry-title {
-	padding: .25em 0 .5em 0;
-	border-bottom: 1px solid $gray-med;
+
+a,
+a:visited {
+    color: $red;
+    transition: all .5s;
 }
-a, a:visited {
-	color: $red;
-	transition: all .5s;
-}
+
 a:hover,
 a:active {
-	text-decoration: underline;
-	color: $blue;
+    text-decoration: underline;
+    color: $blue;
 }
+
 #main {
-	padding: 1em;
+    padding: 1em;
 }
+
 code {
     border: 1px solid $gray-med;
     background-color: $gray-light;
 }
-blockquote, blockquote p {
+
+blockquote,
+blockquote p {
     color: $gray-darkest;
 }
+
 blockquote {
     margin: 0 0 1rem;
     padding: 0.25em 0 .25em .5em;
     border-left: 3px solid $green-bright;
 }
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+    margin: 2em 0 1em 0;
+}
+
 .entry-content ul {
-	margin-left: 0;
+    margin-left: 0;
 }
+
 .entry-content li {
-	margin-left: 1em;
+    margin-left: 1em;
 }
+
 .entry-content li li {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
+
 .entry-content ul ul li {
-	list-style-type: circle;
+    list-style-type: circle;
 }
+
 .post,
 .page {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
+
 .page-content,
 .entry-content,
 .entry-summary {
-	margin-top: 1em;
+    margin-top: 1em;
 }
+
 p:last-child {
     margin-bottom: 0;
 }
+
 #content {
-	background-color: $white;
-	border-radius: 3px;
-	border: 1px solid $gray-med;
-	margin-bottom: 4em;
+    background-color: $white;
+    border-radius: 3px;
+    border: 1px solid $gray-med;
+    margin-bottom: 4em;
 }
+
 .blog article {
-	margin-bottom: 2em;
+    margin-bottom: 2em;
 }
+
 figcaption {
-	font-size: 0.8em;
+    font-size: 0.8em;
 }
