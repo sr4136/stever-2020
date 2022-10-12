@@ -58,6 +58,11 @@ a:active {
 #main {
     padding: 1em;
 }
+@include breakpoint(s) {
+    #main {
+        padding: 1em 0.25em;
+    }
+}
 
 code {
     border: 1px solid $gray-med;
