@@ -13,11 +13,11 @@
     }
 
     th {
-        padding: .5em;
+        padding: .5em 1em;
     }
 
     td {
-        padding: .5em;
+        padding: .5em 1em;
         vertical-align: top;
     }
 }
@@ -33,6 +33,9 @@
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 0;
+}
+.is-style-year-divider:first-of-type {
+	margin-top: 0;
 }
 
 
@@ -78,13 +81,14 @@
     }
     td:nth-child(4) {
         font-family: $fonts-mono;
-        font-size: 0.8em;
+        font-size: 0.85em;
+		line-height: 2em;
     }
 }
 
 // Table: Professional Development (Admin)
 .wp-admin .is-style-stever-table-pro-dev {
-    font-size: 0.8em;
+    font-size: 0.85em;
 
     td {
         vertical-align: top;
@@ -166,7 +170,6 @@
     td:nth-child(1) {
         width: 55% !important;
         text-align: left;
-        padding-left: 1.5em;
     }
 
     // Author 
@@ -179,18 +182,17 @@
     th:nth-child(3),
     td:nth-child(3) {
         width: 10% !important;
-        text-align: right;
-        padding-right: 1.5em;
+        text-align: center;
     }
     td:nth-child(3) {
         font-family: $fonts-mono;
-        font-size: 0.8em;
+        font-size: 0.85em;
+		line-height: 2em;
     }
 }
 
 // Table: Books I've Read (Admin)
 .wp-admin .is-style-stever-table-books {
-
     th,
     td {
         padding: 0.5em;
@@ -221,7 +223,6 @@
         td:nth-child(1) {
             width: 100% !important;
             font-weight: bold;
-            padding-left: 1em;
             padding-bottom: 0.25em;
         }
 
@@ -229,7 +230,6 @@
         th:nth-child(2),
         td:nth-child(2) {
             width: 75% !important;
-            padding-left: 1em;
             padding-top: 0.25em;
         }
 
@@ -237,8 +237,8 @@
         th:nth-child(3),
         td:nth-child(3) {
             width: 25% !important;
-            padding-right: 1em;
             padding-top: 0.25em;
+			text-align: right;
         }
     }
 }
@@ -272,7 +272,8 @@
     }
     td:nth-child(3) {
         font-family: $fonts-mono;
-        font-size: 0.8em;
+        font-size: 0.85em;
+		line-height: 2em;
     }
 }
 
