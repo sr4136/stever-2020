@@ -56,8 +56,9 @@ a:active {
 }
 
 #main {
-    padding: 1em;
+    padding: 1em 1em 2em 1em;
 }
+
 @include breakpoint(s) {
     #main {
         padding: 1em 0.25em;

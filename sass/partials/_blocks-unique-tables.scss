@@ -2,6 +2,10 @@
 
 // Custom Body Class: .sr-page-table 
 .sr-page-table {
+	.wp-block-table table {
+		margin-bottom: 0;
+	}
+	
     thead {
         background-color: $green-light;
         font-weight: bold;
