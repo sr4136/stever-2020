@@ -1,85 +1,81 @@
 // Custom Colors
-$green:					#6B7D05;
-$green-dark:			#5B573D;
-$green-light:			#E1E2C7;
-$green-lightest:		lighten( $green-light, 10% ); 
-$green-bright:  		#8B9B31; // AA w/Large Text: https://bit.ly/2EnXiPj
-$brown:					#332012;
-$brown-light:			#96BCC5;
-$red:					#C2552E;
-$gray:					#5F6B7E;
-$gray-light:			#F7F7F7;
-$gray-med:				#CCCCCC;
-$gray-dark:				#666666;
-$gray-darkest:			#484848;
-$blue:          		#1468A0;
+$green: #6b7d05;
+$green-dark: #5b573d;
+$green-light: #e1e2c7;
+$green-lightest: lighten($green-light, 10%);
+$green-bright: #8b9b31; // AA w/Large Text: https://bit.ly/2EnXiPj
+$brown: #332012;
+$brown-light: #96bcc5;
+$red: #c2552e;
+$gray: #5f6b7e;
+$gray-light: #f7f7f7;
+$gray-med: #cccccc;
+$gray-dark: #666666;
+$gray-darkest: #484848;
+$blue: #1468a0;
+$yellow: #ffcc4d;
 
 // For Timeline Only
-$teal:					#618985;
-$teal-light:			#B1DDDA;
-$timeline-me:			$green-bright;
-$timeline-dev:			#048BA8;
-$timeline-manager:		#004777;
+$teal: #618985;
+$teal-light: #b1ddda;
+$timeline-me: $green-bright;
+$timeline-dev: #048ba8;
+$timeline-manager: #004777;
 
 // Accent Colors
-$accent-green:			#516322;
-$accent-teal:			#416E82;
-$accent-red:			#814519;
-$accent-blue:			#3F506C;
-$accent-teal-light:		lighten( $accent-teal, 10% ); 
-$accent-red-light:		lighten( $accent-red, 10% ); 
-$accent-blue-light:		lighten( $accent-blue, 10% );
-$accent-teal-dark:		darken( $accent-teal, 10% ); 
-$accent-red-dark:		darken( $accent-red, 10% ); 
-$accent-blue-dark:		darken( $accent-blue, 10% ); 
+$accent-green: #516322;
+$accent-teal: #416e82;
+$accent-red: #814519;
+$accent-blue: #3f506c;
+$accent-teal-light: lighten($accent-teal, 10%);
+$accent-red-light: lighten($accent-red, 10%);
+$accent-blue-light: lighten($accent-blue, 10%);
+$accent-teal-dark: darken($accent-teal, 10%);
+$accent-red-dark: darken($accent-red, 10%);
+$accent-blue-dark: darken($accent-blue, 10%);
 
 // "Standard" Colors
-$white:					#FFFFFF;
-$black:					#000000;
+$white: #ffffff;
+$black: #000000;
 
 // Fonts
-$fonts-copy:			"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fonts-headings:		"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fonts-mono:			"B612 Mono", monospace;
-$fonts-icon: 			"Font Awesome 5 Free";
+$fonts-copy: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fonts-headings: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$fonts-mono: "B612 Mono", monospace;
+$fonts-icon: "Font Awesome 5 Free";
 
 // Breakpoints
 // HT: https://bit.ly/3beCmdq
-@mixin breakpoint( $size ) {
-	@if $size == "xl" {
-		@media( min-width: 64em ) {
-			@content;
-		}
-	}
-	@else if $size == "p" {
-		@media ( max-width: 87em ) {
-			@content;
-		}
-	}
-	@else if $size == "l" {
-		@media ( max-width: 63.9375em ) {
-			@content;
-		}
-	}
-	@else if $size == "m" {
-		@media ( max-width: 48.75em ) {
-			@content;
-		}
-	}
-	@else if $size == "s" {
-		@media ( max-width: 40em ) {
-			@content;
-		}
-	}
-	@else if $size == "xs" {
-		@media ( max-width: 27.5em ) {
-			@content;
-		}
-	}
+@mixin breakpoint($size) {
+  @if $size == "xl" {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $size == "p" {
+    @media (max-width: 87em) {
+      @content;
+    }
+  } @else if $size == "l" {
+    @media (max-width: 63.9375em) {
+      @content;
+    }
+  } @else if $size == "m" {
+    @media (max-width: 48.75em) {
+      @content;
+    }
+  } @else if $size == "s" {
+    @media (max-width: 40em) {
+      @content;
+    }
+  } @else if $size == "xs" {
+    @media (max-width: 27.5em) {
+      @content;
+    }
+  }
 }
 
 // Columns Override to full-width
 @mixin columns-full-override() {
-	flex-basis: 100% !important;
-	margin-left: 0;
+  flex-basis: 100% !important;
+  margin-left: 0;
 }

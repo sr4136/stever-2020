@@ -10,12 +10,12 @@ if ( function_exists( 'register_block_style' ) ) {
             'name'         => 'stever-table-pro-dev',
             'label'        => 'Prof. Dev.',
         ) );
-        /* Table: Professional Development */
+        /* Table: Books */
         register_block_style( 'core/table', array(
             'name'         => 'stever-table-books',
             'label'        => 'Books',
         ) );
-        /* Table: Professional Development */
+        /* Table: Speaking/Teaching */
         register_block_style( 'core/table', array(
             'name'         => 'stever-table-speaking',
             'label'        => 'Speaking/Teaching',
@@ -58,11 +58,19 @@ if ( function_exists( 'register_block_style' ) ) {
 	            'name'         => 'stever-columns-statistics-commits',
 	            'label'        => 'Stats: Commits',
 	        ) );
+
 		/* Indented List */
         register_block_style( 'core/list', array(
             'name'         => 'stever-list-indented',
             'label'        => 'Indented List',
         ) );
+
+        /* Gallery: Fancybox */
+        register_block_style('core/quote', array(
+            'name'         => 'attention',
+            'label'        => 'Attention',
+        ));
+
     }
     add_action( 'init', 'stever_register_block_styles' );
 }

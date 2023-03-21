@@ -1,82 +1,98 @@
-// Universal 'hidden' Class 
+// Universal 'hidden' Class
 .hidden {
-	display: none !important;
-	visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 // List: Indented;
 .entry-content .is-style-stever-list-indented {
-	margin-left: 1em;
+  margin-left: 1em;
 }
-@include breakpoint( xs ) {
-	.entry-content .is-style-stever-list-indented {
-		margin-left: 0;
-	}
+@include breakpoint(xs) {
+  .entry-content .is-style-stever-list-indented {
+    margin-left: 0;
+  }
+}
+
+// Quote - Attention.
+.is-style-attention {
+  border-left: 3px solid $yellow;
+  background: $gray-light;
+  padding: 1em;
+
+  p {
+    margin: 0.25em;
+  }
 }
 
 // Negative top margin
 .margin-negative-top {
-    margin-top: -1em;
+  margin-top: -1em;
 }
 
-
-// Hidden Page Header 
+// Hidden Page Header
 .heading-hide .page-header {
-    display: none;
+  display: none;
 }
 
-
-// Button: Ghost 
+// Button: Ghost
 .button-ghost,
 .button-ghost:visited,
 .button-ghost:active,
 .button-ghost[type="submit"] {
-	font-size: .85em;
-	border: 3px solid $blue;
-	background: $white;
-	color: $black;
-	cursor: pointer;
-	transition: all .5s;
+  font-size: 0.85em;
+  border: 3px solid $blue;
+  background: $white;
+  color: $black;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 .button-ghost:hover,
 .button-ghost:visited:hover,
 .button-ghost:active:hover,
 .button-ghost[type="submit"]:hover {
-	border-color: $red;
-	background: $white;
-	color: $black;
+  border-color: $red;
+  background: $white;
+  color: $black;
 }
 
-
-// Island Class 
+// Island Class
 .island {
-    margin: 0em -2em 2em -2em;
-    border-left: 1px solid $gray-med;
-    border-right: 1px solid $gray-med;
-    padding: 3em;
-    background: url("img/bg_gray.png");
-    position: relative;
+  margin: 0em -2em 2em -2em;
+  border-left: 1px solid $gray-med;
+  border-right: 1px solid $gray-med;
+  padding: 3em;
+  background: url("img/bg_gray.png");
+  position: relative;
 }
 .island::before,
 .island::after {
-    width: 100%;
-    height: 2em;
-    background: rgb(255,255,255);
-    background: linear-gradient( 180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100% );
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0
+  width: 100%;
+  height: 2em;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .island::after {
-    top: auto;
-    bottom: 0;
-    background: rgb(255,255,255);
-    background: linear-gradient( 0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100% );
+  top: auto;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 .island iframe {
-    display: block;
-    border: 1px solid $gray-med;
-    width: 100%;
+  display: block;
+  border: 1px solid $gray-med;
+  width: 100%;
 }
