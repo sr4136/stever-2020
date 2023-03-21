@@ -71,6 +71,18 @@ if ( function_exists( 'register_block_style' ) ) {
             'label'        => 'Attention',
         ));
 
+        /* Lists: Extra Vertical Spacing */
+        register_block_style('core/list', array(
+            'name'         => 'extra-vertical-spacing',
+            'label'        => 'Extra Vertical Spacing',
+        ));
+
+        /* Lists: Extra Vertical Spacing */
+        register_block_style('core/heading', array(
+            'name'         => 'no-spacing-above',
+            'label'        => 'No Vertical Space Above',
+        ));
+
     }
     add_action( 'init', 'stever_register_block_styles' );
 }

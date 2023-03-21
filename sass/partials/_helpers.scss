@@ -25,6 +25,21 @@
   }
 }
 
+// List - Extra Vertical Spacing.
+.entry-content .is-style-extra-vertical-spacing {
+  > li {
+    margin-bottom: 1.5em;
+  }
+  ul > li {
+    margin-top: 0.75em;
+  }
+}
+
+// Heading - No Vertical Spacing Above.
+.is-style-no-spacing-above {
+  margin-top: 0 !important;
+}
+
 // Negative top margin
 .margin-negative-top {
   margin-top: -1em;
