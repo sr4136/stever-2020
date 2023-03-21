@@ -19,6 +19,14 @@ add_filter( 'manage_posts_columns', 'stever_remove_admin_columns' );
 
 
 /**
+ * Add admin menu item for Reusable Blocks.
+ */
+function stever_reusable_blocks_admin_menu() {
+	add_menu_page('Reusable Blocks', 'Reusable Blocks', 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22);
+}
+add_action( 'admin_menu', 'stever_reusable_blocks_admin_menu' );
+
+/**
  * Admin Menu: Custom Order
  */
  function stever_custom_menu_order( $menu_order ) {
@@ -33,6 +41,7 @@ add_filter( 'manage_posts_columns', 'stever_remove_admin_columns' );
 		'edit.php?post_type=stever_quotes', // Quotes
 		'wp-google-maps-menu', // WP Google Maps (Plugin)
 		'upload.php', // Media
+		'edit.php?post_type=wp_block', // Reusable Blocks
 		'separator2', // Second separator
 
 		'tools.php', // Tools
