@@ -37,30 +37,45 @@ get_header();
 
 				</div><!-- .page-content -->
 
+				<?php
+					$args = array(
+						'post_type' => 'page',
+						'orderby' => 'menu_order',
+						'order' => 'ASC',
+						'post_status' => 'publish',
+						'has_password' => false,
+						'meta_query' => array(
+							'relation' => 'OR',
+							// Doesn't exist (Yoast defaults to 'show').
+							array(
+								'key' => '_yoast_wpseo_meta-robots-noindex',
+								'compare' => 'NOT EXISTS'
+							),
+							// Is set to "no". 0 = default; 1 = no; 2 = yes;
+							array(
+								'key' => '_yoast_wpseo_meta-robots-noindex',
+								'value' => '1',
+								'compare' => '!=',
+							)
+						)
+					);
+				?>
+
 				<aside class="cell medium-4">
 					<div class="all-pages">
 						<h3>All pages:</h3>
 						<ul>
 							<?php
-							wp_list_pages( array(
-								'title_li' => null,
-								'post_status' => 'publish',
-								'has_password' => false,
-								'meta_query' => array(
-									'relation' => 'OR',
-									// Doesn't exist (Yoast defaults to 'show').
-									array(
-										'key' => '_yoast_wpseo_meta-robots-noindex',
-										'compare' => 'NOT EXISTS'
-									),
-									// Is set to "no". 0 = default; 1 = no; 2 = yes;
-									array(
-										'key' => '_yoast_wpseo_meta-robots-noindex',
-										'value' => '1',
-										'compare' => '!=',
-									)
-								)
-							) );
+								$pages_query = new WP_Query( $args );
+
+								if ($pages_query->have_posts()) {
+									while ($pages_query->have_posts()) {
+										$pages_query->the_post();
+										echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> </li> ';
+									}
+								}
+
+								wp_reset_postdata();
 							?>
 						</ul>
 					</div>
@@ -68,28 +83,18 @@ get_header();
 						<h3>Recent Posts</h3>
 						<ul>
 							<?php
-							$recent_posts = wp_get_recent_posts( array(
-								'post_status' => 'publish',
-								'has_password' => false,
-								'meta_query' => array(
-									'relation' => 'OR',
-									// Doesn't exist (Yoast defaults to 'show').
-									array(
-										'key' => '_yoast_wpseo_meta-robots-noindex',
-										'compare' => 'NOT EXISTS'
-									),
-									// Is set to "no". 0 = default; 1 = no; 2 = yes;
-									array(
-										'key' => '_yoast_wpseo_meta-robots-noindex',
-										'value' => '1',
-										'compare' => '!=',
-									)
-								)
-							) );
-							foreach( $recent_posts as $recent ){
-								echo '<li><a href="' . get_permalink( $recent["ID"] ) . '">' .   $recent["post_title"].'</a> </li> ';
-							}
-							wp_reset_query();
+								$args['post_type'] = 'post';
+								$args['orderby'] = 'date';
+								$posts_query = new WP_Query( $args );
+
+								if ($posts_query->have_posts()) {
+									while ($posts_query->have_posts()) {
+									$posts_query->the_post();
+										echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a> </li> ';
+									}
+								}
+								
+								wp_reset_postdata();
 							?>
 						</ul>
 					</div>
