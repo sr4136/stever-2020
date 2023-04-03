@@ -23,6 +23,13 @@ function stever_setup(){
 	add_theme_support( 'post-thumbnails' );
 
 	/*
+	 * Enable support for Responsive embeds.
+	 *
+	 * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#responsive-embedded-content
+	 */
+	add_theme_support('responsive-embeds');
+
+	/*
 	 * Menus.
 	 */
 	register_nav_menus( array(
