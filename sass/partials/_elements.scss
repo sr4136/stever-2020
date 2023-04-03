@@ -102,18 +102,31 @@ mark {
 
 .entry-content ul {
   margin-left: 0;
+  margin-bottom: 0.5em;
 }
 
 .entry-content li {
   margin-left: 1em;
-}
+  li {
+    margin-bottom: 0;
+    list-style-type: circle;
 
-.entry-content li li {
-  margin-bottom: 0;
-}
+    li {
+      list-style-type: disc;
 
-.entry-content ul ul li {
-  list-style-type: circle;
+      li {
+        list-style-type: circle;
+
+        li {
+          list-style-type: disc;
+        }
+      }
+    }
+  }
+
+  .wp-block-gallery {
+    margin: 1em 0;
+  }
 }
 
 .post,
