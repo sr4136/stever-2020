@@ -43,7 +43,23 @@ get_header();
 						<ul>
 							<?php
 							wp_list_pages( array(
-								'title_li' => null
+								'title_li' => null,
+								'post_status' => 'publish',
+								'has_password' => false,
+								'meta_query' => array(
+									'relation' => 'OR',
+									// Doesn't exist (Yoast defaults to 'show').
+									array(
+										'key' => '_yoast_wpseo_meta-robots-noindex',
+										'compare' => 'NOT EXISTS'
+									),
+									// Is set to "no". 0 = default; 1 = no; 2 = yes;
+									array(
+										'key' => '_yoast_wpseo_meta-robots-noindex',
+										'value' => '1',
+										'compare' => '!=',
+									)
+								)
 							) );
 							?>
 						</ul>
@@ -52,7 +68,24 @@ get_header();
 						<h3>Recent Posts</h3>
 						<ul>
 							<?php
-							$recent_posts = wp_get_recent_posts();
+							$recent_posts = wp_get_recent_posts( array(
+								'post_status' => 'publish',
+								'has_password' => false,
+								'meta_query' => array(
+									'relation' => 'OR',
+									// Doesn't exist (Yoast defaults to 'show').
+									array(
+										'key' => '_yoast_wpseo_meta-robots-noindex',
+										'compare' => 'NOT EXISTS'
+									),
+									// Is set to "no". 0 = default; 1 = no; 2 = yes;
+									array(
+										'key' => '_yoast_wpseo_meta-robots-noindex',
+										'value' => '1',
+										'compare' => '!=',
+									)
+								)
+							) );
 							foreach( $recent_posts as $recent ){
 								echo '<li><a href="' . get_permalink( $recent["ID"] ) . '">' .   $recent["post_title"].'</a> </li> ';
 							}
