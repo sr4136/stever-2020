@@ -154,3 +154,31 @@
 .is-style-no-spacing-above {
   margin-top: 0 !important;
 }
+
+// Query Block - Zebra Striped.
+.is-style-zebra-stripe {
+  li {
+    padding: 1em;
+    margin: 0 -1em;
+
+    &:nth-child(even) {
+      background: #f1f1f1;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgb(247, 247, 247) 30%,
+        rgb(241, 241, 241) 50%,
+        rgb(246, 246, 246) 70%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .wp-block-post-featured-image {
+    outline: 1px solid #ccc;
+  }
+}

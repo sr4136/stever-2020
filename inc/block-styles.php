@@ -83,6 +83,12 @@ if ( function_exists( 'register_block_style' ) ) {
             'label'        => 'No Vertical Space Above',
         ));
 
+        /* Lists: Extra Vertical Spacing */
+        register_block_style('core/query', array(
+            'name'         => 'zebra-stripe',
+            'label'        => 'Zebra Striped',
+        ));
+
     }
     add_action( 'init', 'stever_register_block_styles' );
 }
