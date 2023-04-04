@@ -328,3 +328,12 @@
 		}
 	}
 }
+
+// Table: Professional Development (Admin)
+.wp-admin.sr-table-pro-dev .editor-styles-wrapper {
+    // Legend Textarea size & spacing.
+    .wp-block-html textarea {
+        min-height: 500px;
+        line-height: 1.5em;
+    }
+}
