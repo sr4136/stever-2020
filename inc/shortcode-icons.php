@@ -13,6 +13,10 @@ function stever_shortcode_icons( $atts ) {
 				'label' => 'Book',
 				'class' => 'book',
 			),
+			'post' => array(
+				'label' => 'Post/Article',
+				'class' => 'newspaper',
+			),
 			'conference' => array(
 				'label' => 'Conference',
 				'class' => 'users',
