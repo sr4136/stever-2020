@@ -58,6 +58,11 @@ if ( function_exists( 'register_block_style' ) ) {
 	            'name'         => 'stever-columns-statistics-commits',
 	            'label'        => 'Stats: Commits',
 	        ) );
+        /* Columns: Event Notes Header */
+        register_block_style('core/columns', array(
+            'name'         => 'stever-columns-event-notes',
+            'label'        => 'Event Notes Header',
+        ));
 
 		/* Indented List */
         register_block_style( 'core/list', array(

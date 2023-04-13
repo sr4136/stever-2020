@@ -125,6 +125,13 @@
   }
 }
 
+// Columns: Event Notes Header.
+.is-style-stever-columns-event-notes {
+  figure {
+    outline: 1px solid $gray-med;
+  }
+}
+
 // Quote - Attention.
 .is-style-attention {
   border-left: 3px solid $yellow;
