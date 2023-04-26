@@ -1,134 +1,132 @@
 /* Header */
 // Header
 #site-branding {
-    position: relative;
-    padding: 0;
+  position: relative;
+  padding: 0;
 }
 
 #site-branding .custom-logo-link {
-    position: absolute;
-    top: 1em;
-    max-width: 300px;
+  position: absolute;
+  top: 1em;
+  max-width: 300px;
 }
 
 #site-branding img {
-    transition: all .2s;
+  transition: all 0.2s;
 }
 
 #site-branding img:hover {
-    filter: drop-shadow(3px 3px 3px #999);
+  filter: drop-shadow(3px 3px 3px #999);
 }
 
 #masthead ul {
-    text-align: right;
-    padding: .5em 0;
+  text-align: right;
+  padding: 0.5em 0;
 }
 
 #masthead li {
-    float: none;
-    display: inline-block;
-    padding: 1em 0;
-    font-weight: bold;
-    font-size: 1.2em;
-    line-height: 1.2em;
+  float: none;
+  display: inline-block;
+  padding: 1em 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1.2em;
 }
 
 #masthead li a {
-    display: inline;
-    font-size: .85em;
+  display: inline;
+  font-size: 0.85em;
 }
 
 #site-navigation li + li:before {
-    content: "|";
-    padding: 0 1.5em;
-    color: $gray-med;
+  content: "|";
+  padding: 0 1.5em;
+  color: $gray-med;
 }
 
 #social-navigation {
-    background-color: $white;
+  background-color: $white;
 }
 
 #social-navigation li + li a {
-    margin-left: 1em;
+  margin-left: 1em;
 }
 
 #social-navigation a i:before {
-    font-size: 1.75em;
+  font-size: 1.75em;
 }
 
 .page-header,
 .entry-header {
-    position: relative;
-    border-bottom: 1px solid $gray-med;
-    padding: 0.5em 0 0.5em 0;
-    margin-bottom: 2em;
+  position: relative;
+  border-bottom: 1px solid $gray-med;
+  padding: 0.5em 0 1em 0;
+  margin-bottom: 2em;
 
-    .button {
-        position: absolute;
-        right: 0;
-        top: 0.5em;
-    }
+  .button {
+    position: absolute;
+    right: 0;
+    top: 0.5em;
+  }
 }
 
 .home .page-header {
-    display: none;
+  display: none;
 }
-
 
 // Breakpoint: page-wide
 @include breakpoint(p) {
-
-    #site-branding,
-    #social-navigation,
-    #site-navigation {
-        padding: 0 1.5em;
-    }
+  #site-branding,
+  #social-navigation,
+  #site-navigation {
+    padding: 0 1.5em;
+  }
 }
 
 // Breakpoint: small
 @include breakpoint(s) {
-    #masthead ul {
-        text-align: center;
-    }
+  #masthead ul {
+    text-align: center;
+  }
 
-    #site-branding .custom-logo-link {
-        position: relative;
-        max-width: 100%;
-        width: 100%;
-        margin-bottom: -1em;
-        top: .5em;
-    }
+  #site-branding .custom-logo-link {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: -1em;
+    top: 0.5em;
+  }
 
-    #social-navigation {
-        padding: 0;
-    }
+  #social-navigation {
+    padding: 0;
+  }
 
-    #social-navigation li + li a {
-        margin-left: 4.5em;
-    }
+  #social-navigation li + li a {
+    margin-left: 4.5em;
+  }
 
-    #social-navigation a i::before {
-        font-size: 2.25em;
-    }
+  #social-navigation a i::before {
+    font-size: 2.25em;
+  }
 
-    #site-navigation {
-        padding: 0;
-    }
+  #site-navigation {
+    padding: 0;
+  }
 }
 
 // Breakpoint: x-small
 @include breakpoint(xs) {
-    #masthead #primary-menu {
-        padding-top: 0;
-    }
+  #masthead #primary-menu {
+    padding-top: 0;
+  }
 
-    #site-navigation li {
-        display: block;
-        border-top: 1px solid $gray-med;
-    }
+  #site-navigation li {
+    display: block;
+    border-top: 1px solid $gray-med;
+  }
 
-    #site-navigation li + li::before {
-        padding: 0;
-        content: '';
-    }
+  #site-navigation li + li::before {
+    padding: 0;
+    content: "";
+  }
 }
