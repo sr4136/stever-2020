@@ -1,61 +1,74 @@
 /* Header */
-// Header
+#masthead {
+  padding: 0;
+  position: relative;
+}
+
 #site-branding {
   position: relative;
   padding: 0;
-}
 
-#site-branding .custom-logo-link {
-  position: absolute;
-  top: 1em;
-  max-width: 300px;
-}
-
-#site-branding img {
-  transition: all 0.2s;
-}
-
-#site-branding img:hover {
-  filter: drop-shadow(3px 3px 3px #999);
-}
-
-#masthead ul {
-  text-align: right;
-  padding: 0.5em 0;
-}
-
-#masthead li {
-  float: none;
-  display: inline-block;
-  padding: 1em 0;
-  font-weight: bold;
-  font-size: 1.2em;
-  line-height: 1.2em;
-}
-
-#masthead li a {
-  display: inline;
-  font-size: 0.85em;
-}
-
-#site-navigation li + li:before {
-  content: "|";
-  padding: 0 1.5em;
-  color: $gray-med;
+  .custom-logo-link {
+    position: absolute;
+    max-width: 300px;
+    top: 1em;
+    left: 1em;
+    img {
+      transition: all 0.2s;
+    }
+    img:hover {
+      filter: drop-shadow(3px 3px 3px #999);
+    }
+  }
 }
 
 #social-navigation {
   background-color: $white;
+
+  #social-icons {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 0.5em;
+    margin: 0;
+    justify-content: right;
+    padding: 0.9375rem 1.875rem;
+
+    li {
+      list-style: none;
+      text-align: center;
+      font-size: 1.75em;
+
+      &:last-child {
+        margin-right: -0.25em;
+      }
+    }
+    a {
+      padding: 0 0.25em;
+    }
+  }
 }
 
-#social-navigation li + li a {
-  margin-left: 1em;
+#primary-menu {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: right;
+  list-style: none;
+  padding: 1.875rem;
+  margin: 0;
+  grid-gap: 1.25em;
+  font-size: 1.15em;
+
+  .current-menu-item {
+    font-weight: bold;
+  }
+
+  li + li a {
+    border-left: 2px solid #ccc;
+    padding-left: 1.25em;
+  }
 }
 
-#social-navigation a i:before {
-  font-size: 1.75em;
-}
-
+/* Page headings (H1s, buttons). */
 .page-header,
 .entry-header {
   position: relative;
@@ -70,63 +83,64 @@
   }
 }
 
+/* Hide home's H1. */
 .home .page-header {
   display: none;
 }
 
-// Breakpoint: page-wide
-@include breakpoint(p) {
-  #site-branding,
-  #social-navigation,
-  #site-navigation {
-    padding: 0 1.5em;
-  }
-}
-
 // Breakpoint: small
 @include breakpoint(s) {
-  #masthead ul {
-    text-align: center;
-  }
-
   #site-branding .custom-logo-link {
     position: relative;
     max-width: 100%;
     width: 100%;
-    margin-bottom: -1em;
-    top: 0.5em;
+    top: 0;
+    left: 0;
+    padding: 1em;
   }
 
   #social-navigation {
-    padding: 0;
+    #social-icons {
+      grid-gap: 2em;
+      justify-content: center;
+      li {
+        font-size: 2em;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
   }
 
-  #social-navigation li + li a {
-    margin-left: 4.5em;
-  }
-
-  #social-navigation a i::before {
-    font-size: 2.25em;
-  }
-
-  #site-navigation {
-    padding: 0;
+  #primary-menu {
+    justify-content: center;
+    font-size: 1.25em;
   }
 }
 
 // Breakpoint: x-small
 @include breakpoint(xs) {
-  #masthead #primary-menu {
-    padding-top: 0;
+  #social-navigation {
+    #social-icons {
+      li {
+        font-size: 2.25em;
+      }
+    }
   }
 
-  #site-navigation li {
+  #primary-menu {
     display: block;
-    border-top: 1px solid $gray-med;
-  }
-
-  #site-navigation li + li::before {
+    font-size: 1.5em;
     padding: 0;
-    content: "";
+
+    li {
+      padding: 0.9375rem;
+      border-top: 1px solid #ccc;
+    }
+    li + li a {
+      padding: 0;
+      border: 0 none;
+    }
   }
 }

@@ -1,33 +1,33 @@
 /*
  * Debugging Breakpoints. Adds helper text at the bottom of the page when a page has 'sr-breakpoints' as a class.
  */
-.sr-breakpoints #page::before {
-	position: fixed;
-	z-index: 100;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background: #000000;
-	color: #FFFFFF;
-	text-align: center;
-	padding: 0.5em 0;
+.sr-breakpoints.logged-in #page::before {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5em 0;
 
-	@include breakpoint( xl ) {
-		content: "X-Large & up. min-width: 64em (~1024px)";
-	}
-	@include breakpoint( p ){
-		content: "Page-width & down. max-width: 87em (~1392px)";
-	}
-	@include breakpoint( l ) {
-		content: "Large & down. max-width: 63.9375em (~1023px)";
-	}
-	@include breakpoint( m ) {
-		content: "Medium & down. max-width: 48.75em (~780px)";
-	}
-	@include breakpoint( s ) {
-		content: "Small & down. max-width: 40em (~640px)";
-	}
-	@include breakpoint( xs ) {
-		content: "X-Small only. max-width: 27.5em (~440px)";
-	}
+  @include breakpoint(xl) {
+    content: "X-Large & up. min-width: 64em (~1024px)";
+  }
+  @include breakpoint(p) {
+    content: "Page-width & down. max-width: 87em (~1392px)";
+  }
+  @include breakpoint(l) {
+    content: "Large & down. max-width: 63.9375em (~1023px)";
+  }
+  @include breakpoint(m) {
+    content: "Medium & down. max-width: 48.75em (~780px)";
+  }
+  @include breakpoint(s) {
+    content: "Small & down. max-width: 40em (~640px)";
+  }
+  @include breakpoint(xs) {
+    content: "X-Small only. max-width: 27.5em (~440px)";
+  }
 }
