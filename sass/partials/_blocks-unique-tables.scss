@@ -2,7 +2,8 @@
 
 // Custom Body Class: .sr-page-table 
 .sr-page-table {
-	.wp-block-table table {
+
+	table {
 		margin-bottom: 0;
 	}
 	
@@ -10,19 +11,22 @@
         background-color: $green-light;
         font-weight: bold;
         text-align: left;
+        border-bottom: 2px solid $gray;
     }
-
-    tbody tr:nth-child(2n+1) {
+    
+    tbody tr:nth-child( even of :not(.hidden) ) {
         background-color: $gray-light;
     }
 
     th {
         padding: .5em 1em;
+        border: 1px solid $gray-med;
     }
 
     td {
         padding: .5em 1em;
         vertical-align: top;
+        border: 1px solid $gray-med;
     }
 }
  
@@ -195,6 +199,18 @@
     }
 }
 
+#books-chart-wrapper {
+	border: 2px solid #8b9b31;
+	margin: 2em -3em 0 -3em;
+	background: white;
+	padding: 0 2em 1em 2em;
+	box-shadow: 0 0 10px #999;
+
+    h3 {
+        margin-top: 1em;
+    }
+}
+
 // Table: Books I've Read (Admin)
 .wp-admin .is-style-stever-table-books {
     th,
@@ -215,6 +231,7 @@
 
         td {
             display: inline-block;
+            padding: 0.5em;
         }
 
         tr {
@@ -245,7 +262,17 @@
 			text-align: right;
         }
     }
+
+    #books-chart-wrapper {
+        margin: 0 -0.5em 0 -0.5em;
+        padding: 0;
+
+        h3 {
+            padding-left: 1em;
+        }
+    }
 }
+
 
 
 // Table: Speaking/Teaching 
