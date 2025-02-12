@@ -2,14 +2,14 @@
 
 // Ripple transform for tooltip indicators.
 @keyframes ripple {
-	from {
-		transform: scale( 0 );
-		opacity: 1;
-	}
-	to {
-		transform: scale( 3.5 );
-		opacity: 0;
-	}
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
 }
 
 // Tooltip.
@@ -18,195 +18,196 @@
 }
 
 // Heading & Legend
-.is-style-stever-timeline-heading{
-	h3 {
-		margin-top: 0;
-	}
-	.timeline-legend {
-		h4 {
-			margin: 0;
-			padding: 0.4em 0;
-			border: 1px solid $gray-med;
-			text-align: center;
-		}
-		p {
-			margin: .25em 0 0 0;
-			padding: .25em 1em;
-		}
-	}
+.is-style-stever-timeline-heading {
+  h3 {
+    margin-top: 0;
+  }
+  .timeline-legend {
+    h4 {
+      margin: 0;
+      padding: 0.4em 0;
+      border: 1px solid $gray-med;
+      text-align: center;
+    }
+    p {
+      margin: 0.25em 0 0 0;
+      padding: 0.25em 1em;
+    }
+  }
 }
-@include breakpoint( m ){
-	.is-style-stever-timeline-heading {
-		.wp-block-column:first-child {
-			flex-basis: 65% !important;
-		}
-		.wp-block-column:last-child {
-			flex-basis: 35% !important;
-			padding-left: 2em;
-			margin-left: 0;
-		}
-	}
+@include breakpoint(m) {
+  .is-style-stever-timeline-heading {
+    .wp-block-column:first-child {
+      flex-basis: 65% !important;
+    }
+    .wp-block-column:last-child {
+      flex-basis: 35% !important;
+      padding-left: 2em;
+      margin-left: 0;
+    }
+  }
 }
-@include breakpoint( xs ){
-	.is-style-stever-timeline-heading {
-		.wp-block-column:first-child,
-		.wp-block-column:last-child {
-			flex-basis: 100% !important;
-			padding: 0;
-		}
-		.wp-block-column:last-child {
-			margin: 2em 0;
-		}
-	}
+@include breakpoint(xs) {
+  .is-style-stever-timeline-heading {
+    .wp-block-column:first-child,
+    .wp-block-column:last-child {
+      flex-basis: 100% !important;
+      padding: 0;
+    }
+    .wp-block-column:last-child {
+      margin: 2em 0;
+    }
+  }
 }
 
 // People: Legend and Table.
 .dev-me {
-	background: $timeline-me;
-	border: 2px solid $green-dark;
-	color: $white;
-	font-weight: bold;
+  background: $timeline-me;
+  border: 2px solid $green-dark;
+  color: $white;
+  font-weight: bold;
 }
-.dev-direct{
-	background: $timeline-dev;
-	color: $white;
-	font-weight: bold;
+.dev-direct {
+  background: $timeline-dev;
+  color: $white;
+  font-weight: bold;
 }
 .manager-direct {
-	background: $timeline-manager;
-	color: $white;
-	font-weight: bold;
+  background: $timeline-manager;
+  color: $white;
+  font-weight: bold;
 }
 .dev-other,
 .manager-other {
-	font-weight: bold;
-	background: $gray-light;
+  font-weight: bold;
+  background: $gray-light;
 }
 .dev-other {
-	border: 2px dotted $timeline-dev;
+  border: 2px dotted $timeline-dev;
 }
 .manager-other {
-	border: 2px dotted $timeline-manager;
+  border: 2px dotted $timeline-manager;
 }
 .dev-other span,
 .manager-other span {
-	padding: 0 2.5em;
+  padding: 0 2.5em;
 }
 
 // Table
 .timeline {
-	overflow-x: scroll;
-	border: 1px solid $gray-med;
+  overflow-x: scroll;
+  border: 1px solid $gray-med;
+  cursor: grab;
 
-	table {
-		table-layout: fixed;
-		border-collapse: separate;
-		border-spacing: 0 1px;
-		margin-bottom: 1em;
-		
-		td {
-			position: relative;
-			width: 100px;
-			padding: 5px;
-		}
+  table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    margin-bottom: 1em;
+
+    td {
+      position: relative;
+      width: 100px;
+      padding: 5px;
     }
-	
-	span {
-		position: sticky;
-		padding: 0 2em;
-		left: 0;
-	}
+  }
 
-	thead {
-		.months {
-			font-size: .75em;
-			background-color: $teal;
-			color: $white;
-			text-align: center;
-			
-			td {
-				padding: 10px;
-				
-				// And the next td.
-				& + td {
-					border-left: 1px solid $teal-light;
-				}
-			}
-		}
+  span {
+    position: sticky;
+    padding: 0 2em;
+    left: 0;
+  }
 
-		.years {
-			font-size: .75em;
-			background: $teal-light;
-			color: $black;
-			
-			td {
-				padding-left: 1.5em;
-				
-				// And the next td.
-				& + td {
-					border-left: 1px solid $teal;
-				}
-				span {
-					font-weight: bold;
-					left: 0.5em;
-				}
-			}
-		}
-	}
+  thead {
+    .months {
+      font-size: 0.75em;
+      background-color: $teal;
+      color: $white;
+      text-align: center;
 
-	tbody {
-		&:before {
-			// Zero-Width Non-Joiner https://bit.ly/35ojLaW
-			content: "\200C";
-			display: block;
-			line-height: 0.5em;
-		}
-		
-		td {
-			border-radius: 5px;
-		}
-		
-		// Tooltip Indicators
-		// Default is left (indicator then span).
-		i {
-			position: relative;
-			float: left;
-			margin: 4.5px 0 0 0.25em;
-			width: 15px;
-			height: 15px;
-			background: $white;
-			border: 5px solid $black;
-			border-radius: 50%;
-			cursor: pointer;
-		}
-		// Override for when (span then indicator).
-		span + i {
-			float: right;
-			left: auto;
-			margin: 4.5px 0.25em 0 0;
-		}
-		
-		i:before,
-		i:after {
-			content: "";
-			position: absolute;
-			z-index: 2;
-			top: -5px;
-			left: -5px;
-			border: 1px solid $black;
-			width: 15px;
-			height: 15px;
-			border-radius: 50%;
-		}
-		i:before {
-			animation: ripple 3s linear infinite;
-		}
-		i:after {
-			animation: ripple 3s linear infinite 0.75s;
-		}
-	}
-	// Add this to the "XYZ Month - Now" to give it extra width.
-	.extended-width {
-		width: 150px;
-	}
+      td {
+        padding: 10px;
+
+        // And the next td.
+        & + td {
+          border-left: 1px solid $teal-light;
+        }
+      }
+    }
+
+    .years {
+      font-size: 0.75em;
+      background: $teal-light;
+      color: $black;
+
+      td {
+        padding-left: 1.5em;
+
+        // And the next td.
+        & + td {
+          border-left: 1px solid $teal;
+        }
+        span {
+          font-weight: bold;
+          left: 0.5em;
+        }
+      }
+    }
+  }
+
+  tbody {
+    &:before {
+      // Zero-Width Non-Joiner https://bit.ly/35ojLaW
+      content: "\200C";
+      display: block;
+      line-height: 0.5em;
+    }
+
+    td {
+      border-radius: 5px;
+    }
+
+    // Tooltip Indicators
+    // Default is left (indicator then span).
+    i {
+      position: relative;
+      float: left;
+      margin: 4.5px 0 0 0.25em;
+      width: 15px;
+      height: 15px;
+      background: $white;
+      border: 5px solid $black;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    // Override for when (span then indicator).
+    span + i {
+      float: right;
+      left: auto;
+      margin: 4.5px 0.25em 0 0;
+    }
+
+    i:before,
+    i:after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: -5px;
+      left: -5px;
+      border: 1px solid $black;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+    }
+    i:before {
+      animation: ripple 3s linear infinite;
+    }
+    i:after {
+      animation: ripple 3s linear infinite 0.75s;
+    }
+  }
+  // Add this to the "XYZ Month - Now" to give it extra width.
+  .extended-width {
+    width: 150px;
+  }
 }
