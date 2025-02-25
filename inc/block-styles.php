@@ -70,11 +70,17 @@ if ( function_exists( 'register_block_style' ) ) {
             'label'        => 'Indented List',
         ) );
 
-        /* Gallery: Fancybox */
+        /* Quote: Attention*/
         register_block_style('core/quote', array(
             'name'         => 'attention',
             'label'        => 'Attention',
         ));
+        /* Quote: Graphic*/
+        register_block_style('core/quote', array(
+            'name'         => 'graphic',
+            'label'        => 'Graphic',
+        ));
+
 
         /* Lists: Extra Vertical Spacing */
         register_block_style('core/list', array(

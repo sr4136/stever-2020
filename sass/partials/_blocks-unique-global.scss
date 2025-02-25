@@ -159,6 +159,29 @@
     margin-bottom: 0;
   }
 }
+.is-style-graphic {
+  position: relative;
+  border: 0 none;
+  background: #f7f7f7;
+  padding: 1.25em 1em 0.25em 1em;
+
+  p {
+    margin: 0 0.5em 1em 0.5em;
+  }
+
+  ul {
+    margin: 0 0 1em 1em;
+  }
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    font-size: 4em;
+    top: -0.25em;
+    left: -0.15em;
+    color: $green-bright;
+  }
+}
 
 // List - Extra Vertical Spacing.
 .is-style-extra-vertical-spacing {
