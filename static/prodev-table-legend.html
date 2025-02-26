@@ -22,10 +22,13 @@
 			const sr_tl_tables = document.querySelectorAll(".wp-block-table"); // All tables.
 			const sr_tl_rows = document.querySelectorAll(".wp-block-table tbody tr"); // All rows in the tables.
 			const sr_tablesearch = document.getElementById("sr-table-search--container"); // The search container.
+			const sr_ts_button = document.getElementById("sr-table-search--button"); // Button to trigger input clear.
 
 			sr_tl_legend.addEventListener("click", sr_tl_process); // Process an option click.
 
 			function sr_tl_process( event ) {
+				sr_ts_button.click();
+				
 				const sr_tl_legend_options = document.querySelectorAll("#sr-legend li");
 				const element = event.target;
 				let the_li = null;
@@ -71,7 +74,7 @@
 				});
 				
 
-
+				/* Toggle the "Show All" item. */
 				if(sr_tl_legend.lastElementChild.firstChild.getAttribute("data-title") !== 'all'){
 					sr_tl_legend.innerHTML += '<li class="show-all"><i data-title="all" class="fa fa-window-close"></i>Show All</li>';
 					sr_tablesearch.classList.add('hidden');
