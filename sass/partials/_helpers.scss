@@ -3,6 +3,9 @@
   display: none !important;
   visibility: hidden;
 }
+.visually-hidden {
+  opacity: 0;
+}
 
 // List: Indented;
 .entry-content .is-style-stever-list-indented {

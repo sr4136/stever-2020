@@ -14,6 +14,12 @@
 			Attend  Meetups</li>
 	</ul>
 
+	<style>
+		#sr-legend {
+ 		   transition: all 0.5s ease;
+		}
+	</style>
+
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", () => {
 			// Gather the elements.
@@ -27,8 +33,11 @@
 			sr_tl_legend.addEventListener("click", sr_tl_process); // Process an option click.
 
 			function sr_tl_process( event ) {
-				sr_ts_button.click();
 				
+				if(sr_ts_button){
+					sr_ts_button.click();
+				}
+
 				const sr_tl_legend_options = document.querySelectorAll("#sr-legend li");
 				const element = event.target;
 				let the_li = null;
@@ -77,14 +86,20 @@
 				/* Toggle the "Show All" item. */
 				if(sr_tl_legend.lastElementChild.firstChild.getAttribute("data-title") !== 'all'){
 					sr_tl_legend.innerHTML += '<li class="show-all"><i data-title="all" class="fa fa-window-close"></i>Show All</li>';
-					sr_tablesearch.classList.add('hidden');
+
+					if(sr_tablesearch){
+						sr_tablesearch.classList.add('visually-hidden');
+					}
 				}
 				if( legend_chosen == 'all' ){
 					the_li.remove();
 					sr_tl_tables.forEach(e => e.classList.remove('hidden')); // Show all tables.
 					sr_tl_rows.forEach(e => e.classList.remove('hidden')); // Show all rows.
 					sr_tl_headings.forEach(e => e.classList.remove('hidden')); // Show all rows.
-					sr_tablesearch.classList.remove('hidden');
+
+					if(sr_tablesearch){
+						sr_tablesearch.classList.remove('visually-hidden');
+					}
 				}
 
 			}

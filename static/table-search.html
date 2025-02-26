@@ -14,6 +14,7 @@
 		grid-gap: 0 2em;
 		padding: 0;
 		margin: 5em 0 2em 0;
+		transition: all 0.5s ease;
 	}
 	.sr-table-pro-dev #sr-table-search--container {
 		margin-top: 0;
@@ -89,9 +90,10 @@
 			const sr_ts_button = document.getElementById("sr-table-search--button"); // Button to trigger input clear.
 			const sr_ts_count_total = document.getElementById("sr-table-search--count-total"); // Element to show count of total rows.
 			const sr_ts_count_showing = document.getElementById("sr-table-search--count-showing"); // Element to show count of visible rows.
-			const sr_ts_chart_optional = document.getElementById("sr-chart-container"); // Optional chart container.
 			const sr_ts_tables = document.querySelectorAll(".wp-block-table"); // All tables.
 			const sr_ts_rows = document.querySelectorAll(".wp-block-table tbody tr"); // All rows in the tables.
+			const sr_ts_chart_optional = document.getElementById("sr-chart-container"); // Optional chart container.
+			const sr_tl_legend_optional = document.getElementById("sr-legend"); // Optional legend legend.
 
 			// Set initial counts.
 			const count_sr_table_total = sr_ts_rows.length; // Count the total number of rows.
@@ -147,6 +149,9 @@
 				if (sr_ts_chart_optional) {
 					sr_ts_chart_optional.classList.toggle('hidden', query); // Show/hide chart based on query.
 				}
+				if (sr_tl_legend_optional) {
+					sr_tl_legend_optional.classList.toggle('visually-hidden', query); // Show/hide legend based on query.
+				}
 				query ? sr_ts_process(query) : sr_ts_clear(); // Process query or clear if empty.
 			}
 
@@ -168,7 +173,10 @@
 				sr_ts_button.classList.replace('fa-times', 'fa-search'); // Reset button icon to search.
 				sr_ts_input.value = ""; // Clear the input field.
 				if (sr_ts_chart_optional) {
-					sr_ts_chart_optional.classList.remove('hidden'); // Show the optional chart.
+					sr_ts_chart_optional.classList.remove('hidden'); // Show chart.
+				}
+				if (sr_tl_legend_optional) {
+					sr_tl_legend_optional.classList.remove('visually-hidden'); // Show legend.
 				}
 				sr_ts_tables.forEach(e => e.classList.remove('hidden')); // Show all tables.
 				sr_ts_rows.forEach(e => e.classList.remove('hidden')); // Show all rows.
