@@ -1,0 +1,91 @@
+<div id="sr-legend--container">
+	<ul id="sr-legend">
+		<li><i data-title="Conference (Remote Participation)" class="remote fas fa-laptop"></i>
+			Watch Remote Conferences</li>
+		<li><i data-title="Remote Webinar/Meetup/Podcast" class="webinar fas fa-keyboard"></i
+			>Remote Webinar/Meetup/Podcast</li>
+		<li><i data-title="Read Books/Articles" class="book fas fa-book"></i>
+			Read Books & Articles</li>
+		<li><i data-title="Training" class="training fas fa-graduation-cap"></i>
+			Training Sessions/Bootcamps</li>
+		<li><i data-title="Conference" class="conference fas fa-users"></i>
+			Attend Conferences</li>
+		<li><i data-title="Meetup" class="meetup fas fa-lightbulb"></i>
+			Attend  Meetups</li>
+	</ul>
+
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", () => {
+			// Gather the elements.
+			const sr_tl_legend = document.getElementById("sr-legend"); // The legend.
+			const sr_tl_headings = document.querySelectorAll(".wp-block-heading"); // All headings.
+			const sr_tl_tables = document.querySelectorAll(".wp-block-table"); // All tables.
+			const sr_tl_rows = document.querySelectorAll(".wp-block-table tbody tr"); // All rows in the tables.
+			const sr_tablesearch = document.getElementById("sr-table-search--container"); // The search container.
+
+			sr_tl_legend.addEventListener("click", sr_tl_process); // Process an option click.
+
+			function sr_tl_process( event ) {
+				const sr_tl_legend_options = document.querySelectorAll("#sr-legend li");
+				const element = event.target;
+				let the_li = null;
+				let the_i = null;
+				let legend_chosen = null;
+				
+				if(element.tagName == 'I' ){
+					the_li = element.parentElement;
+					the_i = element;
+				}
+				if(element.tagName == 'LI'){
+					the_li = element;
+					the_i = element.firstChild;
+				}
+				legend_chosen = the_i.getAttribute("data-title");
+				sr_tl_legend_options.forEach((legend_option) => {
+					console.log(legend_option);
+					legend_option.classList.remove("active");
+				});
+				the_li.classList.add("active");
+
+				sr_tl_tables.forEach((table) => {
+					const tableheading = table.previousElementSibling; // Get the heading of the current table.
+					const rows = table.querySelectorAll("tbody tr"); // Get all rows in the current table.
+					let count_results = 0; // Initialize a counter for visible results.
+
+					// Reset everything to visible.
+					tableheading.classList.remove('hidden'); // Show the table heading.
+					table.classList.remove('hidden'); // Show the table.
+
+					// Check each row.
+					rows.forEach((row) => {
+						const theType = row.querySelector("i").getAttribute("data-title");
+						const isVisible = (theType === legend_chosen);
+						row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row.
+						if (isVisible) count_results++; // Increment the count of visible results.
+					});
+
+					// If no results.
+					if (count_results === 0) {
+						tableheading.classList.add('hidden'); // Hide heading if no results.
+						table.classList.add('hidden'); // Hide table if no results.
+					}
+				});
+				
+
+
+				if(sr_tl_legend.lastElementChild.firstChild.getAttribute("data-title") !== 'all'){
+					sr_tl_legend.innerHTML += '<li class="show-all"><i data-title="all" class="fa fa-window-close"></i>Show All</li>';
+					sr_tablesearch.classList.add('hidden');
+				}
+				if( legend_chosen == 'all' ){
+					the_li.remove();
+					sr_tl_tables.forEach(e => e.classList.remove('hidden')); // Show all tables.
+					sr_tl_rows.forEach(e => e.classList.remove('hidden')); // Show all rows.
+					sr_tl_headings.forEach(e => e.classList.remove('hidden')); // Show all rows.
+					sr_tablesearch.classList.remove('hidden');
+				}
+
+			}
+		});
+	</script>
+</div>

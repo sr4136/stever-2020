@@ -9,13 +9,13 @@ function stever_shortcode_icons( $atts ) {
 
 	if( $type ){
 		$labels = array(
-			'book' => array(
-				'label' => 'Book',
+			'read' => array(
+				'label' => 'Read Books/Articles',
 				'class' => 'book',
 			),
-			'post' => array(
-				'label' => 'Post/Article',
-				'class' => 'newspaper',
+			'training' => array(
+				'label' => 'Training',
+				'class' => 'graduation-cap',
 			),
 			'conference' => array(
 				'label' => 'Conference',
@@ -25,20 +25,12 @@ function stever_shortcode_icons( $atts ) {
 				'label' => 'Meetup',
 				'class' => 'lightbulb',
 			),
-			'podcast' => array(
-				'label' => 'Video/Podcast',
-				'class' => 'headphones',
-			),
 			'remote' => array(
 				'label' => 'Conference (Remote Participation)',
 				'class' => 'laptop',
 			),
-			'training' => array(
-				'label' => 'Training',
-				'class' => 'graduation-cap',
-			),
 			'webinar' => array(
-				'label' => 'Webinar',
+				'label' => 'Remote Webinar/Meetup/Podcast',
 				'class' => 'keyboard',
 			),
 		);

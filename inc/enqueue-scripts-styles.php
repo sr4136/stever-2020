@@ -114,16 +114,6 @@ function stever_scripts_styles() {
             true
         );
 	}
-
-	// JS: Professional Development Page - Table Filter.
-    if ( strpos( $stever_body_class_text, 'sr-table-pro-dev' ) ){
-		wp_enqueue_script( 'stever-table-filter',
-            get_template_directory_uri() . '/js/table-filter.js',
-            array(),
-            filemtime( get_stylesheet_directory() . '/js/table-filter.js' ),
-            true
-        );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'stever_scripts_styles' );
 

@@ -42,8 +42,8 @@
     font-size: 1.2em;
     margin-bottom: 0;
 }
-.is-style-year-divider:first-of-type {
-	margin-top: 0;
+.entry-content > .is-style-year-divider:not(.hidden) {
+  margin-top: 0;
 }
 
 
