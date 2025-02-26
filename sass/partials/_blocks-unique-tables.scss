@@ -62,9 +62,22 @@
 
 
 // Table: Professional Development 
-.prodev-image {
-    margin-bottom: 4em;
+.sr-table-pro-dev {
+    .prodev-image {
+        margin-bottom: 4em;
+    }
+
+    @include breakpoint(m) {
+        .prodev-columns {
+            flex-direction: column-reverse;
+        }
+        .prodev-image {
+            margin: 0 2em;
+        }
+    }
 }
+
+
 .is-style-stever-table-pro-dev tr {
 
     // Icon 
