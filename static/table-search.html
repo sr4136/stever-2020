@@ -1,0 +1,179 @@
+<div id="sr-table-search--container">
+	<div id="sr-table-search--wrapper">
+		<input id="sr-table-search--input" type="text" placeholder="Search&hellip;" />
+		<button id="sr-table-search--button" class="fas fa-search" />
+	</div>
+	<div id="sr-table-search--count-wrapper">
+		Showing <span id="sr-table-search--count-showing"></span> of <span id="sr-table-search--count-total"></span>
+	</div>
+
+	<style>
+	#sr-table-search--container {
+		display: grid;
+		grid-template-columns: calc(70% - 2em ) 30%;
+		grid-gap: 0 2em;
+		padding: 0;
+		margin: 5em 0 2em 0;
+	}
+	.sr-table-pro-dev #sr-table-search--container {
+		margin-top: 0;
+	}
+	#sr-table-search--wrapper {
+		display: grid;
+		grid-template-columns: 90% 10%;
+		border: 1px solid #ccc;
+	}
+	#sr-table-search--wrapper input {
+		padding: 4px 12px;
+		border: 0 none;
+		margin-bottom: 0;
+	}
+	#sr-table-search--wrapper input::placeholder {
+		color: #333;
+	}
+	#sr-table-search--wrapper button {
+		text-align: center;
+		cursor: pointer;
+		background-color: #e1e2c7;
+	}
+	#sr-table-search--wrapper button:hover {
+		background-color: #8b9b31;
+		color: #fff;
+	}
+	#sr-table-search--wrapper button span {
+		font-size: 2em;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		margin-top: -4px;
+	}
+	#sr-table-search--container.zero-results #sr-table-search--wrapper {
+		outline: 1px solid #FF0000;
+	}
+	#sr-table-search--container.zero-results:after {
+		content: "No results.";
+  		padding: 0.5em;
+	}
+	#sr-table-search--count-wrapper {
+		align-self: center;
+		background: #e1e2c7;
+		padding: 0.55em 0;
+		text-align: center;
+	}
+	#sr-table-search--count-wrapper span {
+		font-weight: bold;
+	}
+
+	/* Media query: small screens. */
+	@media only screen and (max-width: 640px) {
+		#sr-table-search--container{
+  			grid-template-columns: unset;
+			grid-gap: 0.25em;
+		}
+		#sr-table-search--wrapper {
+			grid-template-columns: 80% 20%;
+		}
+		#sr-table-search--wrapper button span {
+			margin-top: -8px;
+		}
+	}
+	</style>
+
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", () => {
+		
+			// Gather the elements.
+			const sr_ts_container = document.getElementById("sr-table-search--container"); // Container for search results.
+			const sr_ts_input = document.getElementById("sr-table-search--input"); // Input field for search query.
+			const sr_ts_button = document.getElementById("sr-table-search--button"); // Button to trigger input clear.
+			const sr_ts_count_total = document.getElementById("sr-table-search--count-total"); // Element to show count of total rows.
+			const sr_ts_count_showing = document.getElementById("sr-table-search--count-showing"); // Element to show count of visible rows.
+			const sr_ts_chart_optional = document.getElementById("sr-chart-container"); // Optional chart container.
+			const sr_ts_tables = document.querySelectorAll(".wp-block-table"); // All tables.
+			const sr_ts_rows = document.querySelectorAll(".wp-block-table tbody tr"); // All rows in the tables.
+
+			// Set initial counts.
+			const count_sr_table_total = sr_ts_rows.length; // Count the total number of rows.
+			sr_ts_count_showing.textContent = count_sr_table_total; // Display total count of rows.
+			sr_ts_count_total.textContent = count_sr_table_total; // Display total count of rows.
+
+			// Set listeners for user interactions.
+			sr_ts_input.addEventListener("keyup", sr_ts_go); // Trigger search on keyup in the input.
+			sr_ts_button.addEventListener("click", sr_ts_clear); // Clear search & reset input on button click.
+
+
+			/**
+			 * Processes the search query and filters the rows of each table based on the query.
+			 * It shows or hides table headings and rows depending on whether they contain content that matches the query.
+			 * 
+			 * @param {string} query - The search query to filter the table rows.
+			 */
+			function sr_ts_process(query) {
+				sr_ts_tables.forEach((table) => {
+					const tableheading = table.previousElementSibling; // Get the heading of the current table.
+					const rows = table.querySelectorAll("tbody tr"); // Get all rows in the current table.
+					let count_results = 0; // Initialize a counter for visible results.
+
+					// Reset everything to visible.
+					tableheading.classList.remove('hidden'); // Show the table heading.
+					table.classList.remove('hidden'); // Show the table.
+
+					// Check each row.
+					rows.forEach((row) => {
+						const isVisible = row.innerHTML.toLowerCase().includes(query.toLowerCase()); // Check if the row contains the query.
+						row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row.
+						if (isVisible) count_results++; // Increment the count of visible results.
+					});
+
+					// If no results.
+					if (count_results === 0) {
+						tableheading.classList.add('hidden'); // Hide heading if no results.
+						table.classList.add('hidden'); // Hide table if no results.
+					}
+				});
+
+				sr_ts_updateCounts(); // Update counts after processing the search.
+			}
+
+			/**
+			 * Handles the search action by retrieving the input value, updating the button icons,
+			 * and either processing the search query or clearing the results.
+			 */
+			function sr_ts_go() {
+				const query = sr_ts_input.value.trim(); // Get the trimmed value from the input.
+				sr_ts_button.classList.toggle('fa-search', !query); // Toggle search icon based on query presence.
+				sr_ts_button.classList.toggle('fa-times', query); // Toggle clear icon based on query presence.
+				if (sr_ts_chart_optional) {
+					sr_ts_chart_optional.classList.toggle('hidden', query); // Show/hide chart based on query.
+				}
+				query ? sr_ts_process(query) : sr_ts_clear(); // Process query or clear if empty.
+			}
+
+			/**
+			 * Updates the count of currently visible rows and toggles a class on the container
+			 * if there are no visible results.
+			 */
+			function sr_ts_updateCounts() {
+				const current_showing = document.querySelectorAll('.wp-block-table tbody tr:not(.hidden)').length; // Count visible rows.
+				sr_ts_count_showing.textContent = current_showing; // Update the count showing.
+				sr_ts_container.classList.toggle('zero-results', current_showing === 0); // Toggle class if no results.
+			}
+
+			/**
+			 * Clears the search input, resets the button icon, shows all tables and rows,
+			 * and updates the counts after clearing the search.
+			 */
+			function sr_ts_clear() {
+				sr_ts_button.classList.replace('fa-times', 'fa-search'); // Reset button icon to search.
+				sr_ts_input.value = ""; // Clear the input field.
+				if (sr_ts_chart_optional) {
+					sr_ts_chart_optional.classList.remove('hidden'); // Show the optional chart.
+				}
+				sr_ts_tables.forEach(e => e.classList.remove('hidden')); // Show all tables.
+				sr_ts_rows.forEach(e => e.classList.remove('hidden')); // Show all rows.
+				sr_ts_updateCounts(); // Update counts after clearing the search.
+			}
+		});
+	</script>
+</div>
