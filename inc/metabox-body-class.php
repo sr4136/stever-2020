@@ -49,13 +49,28 @@ add_action( 'save_post', 'stever_body_class_save' );
 
 
 
-/* Add Body Class from Metabox  */
+/* Add Body Class */
 function stever_body_class( $classes ) {
+
+	/* Add from Post Cat */
+	if( 'post' == get_post_type() ){
+		$post_cats = get_the_terms( get_the_id(), 'category' );
+		
+		foreach( $post_cats as $post_cat ){
+			$post_slug = $post_cat->slug;
+			if( 'uncategorized' !== $post_slug ){
+				$classes[] = 'cat-' . $post_slug;
+				$classes = array_unique( $classes );
+			}
+		}
+	}
+
+	/* Add from Metabox  */
 	$add_classes = stever_body_class_get_meta( 'stever_body_class_text' );
 	if( !empty( $add_classes ) && $classes ){
 		/* Transform to lowercase, remove duplicates */
 		$add_classes_separate = explode( ' ', strtolower( $add_classes ) );
-		return array_merge( $classes, array_unique( $add_classes_separate ) );
+		$classes = array_unique( array_merge( $classes, $add_classes_separate) );
 	}
 	return $classes;
 }
