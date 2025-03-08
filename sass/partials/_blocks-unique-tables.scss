@@ -65,6 +65,7 @@
 .sr-table-pro-dev {
     .prodev-image {
         margin-bottom: 4em;
+        border: 1px solid $gray-med;
     }
 
     @include breakpoint(m) {
@@ -217,7 +218,7 @@
 
 #sr-chart-container {
 	border: 2px solid #8b9b31;
-	margin: 2em -3em 0 -3em;
+	margin: 2em -3em;
 	background: white;
 	padding: 0 2em 1em 2em;
 	box-shadow: 0 0 10px #999;
@@ -292,10 +293,11 @@
 
 @include breakpoint(p) {
     #sr-chart-container {
-        margin: 0 -0.5em 0 -0.5em;
-        padding: 0;
+        margin: 2em -.5em;
+        padding: 0.5em;
         h3 {
-            padding-left: 1em;
+            padding: 0 0 0 0.25em;
+            margin: 0 0 0.25em 0;
         }
     }
 }
