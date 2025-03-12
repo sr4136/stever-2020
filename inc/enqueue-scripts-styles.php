@@ -66,7 +66,8 @@ function stever_scripts_styles() {
     // CSS & JS: Tipped.
     if (
         strpos( $stever_body_class_text, 'sr-table-pro-dev' ) !== false ||
-        strpos( $stever_body_class_text, 'sr-bu-timeline' ) !== false
+        strpos( $stever_body_class_text, 'sr-bu-timeline' ) !== false ||
+        strpos($stever_body_class_text, 'sr-page-table-books') !== false
     ) {
         wp_enqueue_style( 'stever-tipped',
             get_stylesheet_directory_uri() . '/js/tipped/tipped.css',

@@ -6,11 +6,14 @@
 	<div id="sr-table-search--count-wrapper">
 		Showing <span id="sr-table-search--count-showing"></span> of <span id="sr-table-search--count-total"></span>
 	</div>
+	<div id="sr-table-search--show-row-counter">
+		<i class="fas fa-list-ol" data-title="Toggle counts on the table rows."></i>
+	</div>
 
 	<style>
 	#sr-table-search--container {
 		display: grid;
-		grid-template-columns: calc(70% - 2em ) 30%;
+		grid-template-columns:  70fr 25fr 5fr;
 		grid-gap: 0 2em;
 		padding: 0;
 		margin: 5em 0 2em 0;
@@ -65,6 +68,58 @@
 	#sr-table-search--count-wrapper span {
 		font-weight: bold;
 	}
+	
+	#sr-table-search--show-row-counter {
+		background-color: #e1e2c7;
+		text-align: center;
+		align-content: center;
+	}
+	#sr-table-search--show-row-counter:hover {
+		border: 3px solid #8b9b31;
+		cursor: pointer;
+	}
+	#sr-table-search--show-row-counter.active {
+		background-color: #8b9b31;
+	}
+	#sr-table-search--show-row-counter.active i {
+		color: white;
+	}
+	#sr-table-search--show-row-counter.active:hover {
+		border: 3px solid #e1e2c7;
+	}
+
+	/* Table item counts. */
+	.sr-table-row-counter .wp-block-table {
+		overflow: visible;
+	}
+	.sr-table-row-counter tbody {
+		counter-reset: reversed(table-counter);
+	}
+	.sr-table-row-counter tbody tr {
+		counter-increment: table-counter -1;
+	}
+	.sr-table-row-counter tbody td {
+		position: relative;
+	}
+	.sr-table-row-counter tbody td:first-child:before {
+		content: counter(table-counter);
+		position: absolute;
+		top: 0.75em;
+		left: -4em;
+		background: #fff;
+		outline: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 0.65em;
+		width: 22px;
+		height: 22px;
+		line-height: 22px;
+		text-align: center;
+		color: #aaa;
+	}
+	.sr-table-row-counter tbody tr:nth-child(2n of :not(.hidden)) td:first-child:before {
+		background: #f1f1f1;
+	}
+	
 
 	/* Media query: small screens. */
 	@media only screen and (max-width: 640px) {
@@ -90,6 +145,7 @@
 			const sr_ts_button = document.getElementById("sr-table-search--button"); // Button to trigger input clear.
 			const sr_ts_count_total = document.getElementById("sr-table-search--count-total"); // Element to show count of total rows.
 			const sr_ts_count_showing = document.getElementById("sr-table-search--count-showing"); // Element to show count of visible rows.
+			const sr_ts_row_counter = document.getElementById("sr-table-search--show-row-counter"); // Element to toggle the row counter class.
 			const sr_ts_headings = document.querySelectorAll(".wp-block-heading"); // All headings.
 			const sr_ts_tables = document.querySelectorAll(".wp-block-table"); // All tables.
 			const sr_ts_rows = document.querySelectorAll(".wp-block-table tbody tr"); // All rows in the tables.
@@ -104,6 +160,13 @@
 			// Set listeners for user interactions.
 			sr_ts_input.addEventListener("keyup", sr_ts_go); // Trigger search on keyup in the input.
 			sr_ts_button.addEventListener("click", sr_ts_clear); // Clear search & reset input on button click.
+			sr_ts_row_counter.addEventListener("click", sr_ts_row_counter_toggle); // Clear search & reset input on button click.
+
+			// Check localstorage for Row Counter Toggle.
+			if (localStorage.getItem('sr-table-row-counter') == 1) {
+				sr_ts_row_counter.classList.add('active');
+				document.body.classList.add('sr-table-row-counter');
+			}
 
 
 			/**
@@ -124,7 +187,7 @@
 
 					// Check each row.
 					rows.forEach((row) => {
-						const isVisible = row.innerHTML.toLowerCase().includes(query.toLowerCase()); // Check if the row contains the query.
+						const isVisible = row.textContent.toLowerCase().includes(query.toLowerCase()); // Check if the row contains the query.
 						row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row.
 						if (isVisible) count_results++; // Increment the count of visible results.
 					});
@@ -184,6 +247,23 @@
 				sr_ts_rows.forEach(e => e.classList.remove('hidden')); // Show all rows.
 				sr_ts_updateCounts(); // Update counts after clearing the search.
 			}
+
+			/**
+			 * Click handler for the Row Counter Toggle button.
+			 * Toggles the button class & body class.
+			 */
+			function sr_ts_row_counter_toggle(e){
+				document.body.classList.toggle('sr-table-row-counter');
+
+				if (document.body.classList.contains('sr-table-row-counter')) {
+					sr_ts_row_counter.classList.add('active');
+					localStorage.setItem('sr-table-row-counter', 1);
+				}else {
+					sr_ts_row_counter.classList.remove('active');
+					localStorage.setItem('sr-table-row-counter', 0);
+				}
+			}
+
 		});
 	</script>
 </div>

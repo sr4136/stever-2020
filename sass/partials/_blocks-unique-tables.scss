@@ -67,6 +67,14 @@
         margin-bottom: 4em;
         border: 1px solid $gray-med;
     }
+    .prodev-upcoming {
+        .is-style-year-divider {
+            background-color: $accent-teal;
+        }
+        thead {
+            background-color: $accent-teal-lightest;
+        }
+    }
 
     @include breakpoint(m) {
         .prodev-columns {
