@@ -1,385 +1,32 @@
 /* Blocks: Unique Classes - Tables */
 
-// Custom Body Class: .sr-page-table 
+// Custom Body Class: .sr-page-table
 .sr-page-table {
-
 	table {
 		margin-bottom: 0;
 	}
-	
-    thead {
-        background-color: $green-light;
-        font-weight: bold;
-        text-align: left;
-        border-bottom: 2px solid $gray;
-    }
-    
-    tbody tr:nth-child( even of :not(.hidden) ) {
-        background-color: $gray-light;
-    }
 
-    th {
-        padding: .5em 1em;
-        border: 1px solid $gray-med;
-    }
+	thead {
+		background-color: $green-light;
+		font-weight: bold;
+		text-align: left;
+		border-bottom: 2px solid $gray;
+	}
 
-    td {
-        padding: .5em 1em;
-        vertical-align: top;
-        border: 1px solid $gray-med;
-    }
-}
- 
+	tbody tr:nth-child(even of :not(.hidden)) {
+		background-color: $gray-light;
+	}
 
-// Heading: Year Divider 
-.entry-content .is-style-year-divider,
-.block-editor .is-style-year-divider {
-    background-color: $green-bright;
-    color: $white;
-    text-align: center;
-    padding: .5em 0;
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-bottom: 0;
-}
-.entry-content > .is-style-year-divider:not(.hidden) {
-  margin-top: 0;
-}
+	th {
+		padding: 0.5em 1em;
+		border: 1px solid $gray-med;
+	}
 
-
-// Accordion: Upcoming Events 
-.accordion-upcoming h4 {
-    background: $red;
-    color: $white;
-    text-align: center;
-    padding: 0.2em 0 0.25em 0;
-
-    &:after {
-        color: $white;
-        right: 0.65em;
-    }
-}
-
-
-// Table: Professional Development 
-.sr-table-pro-dev {
-    .prodev-image {
-        margin-bottom: 4em;
-        border: 1px solid $gray-med;
-    }
-    .prodev-upcoming {
-        .is-style-year-divider {
-            background-color: $accent-teal;
-        }
-        thead {
-            background-color: $accent-teal-lightest;
-        }
-    }
-
-    @include breakpoint(m) {
-        .prodev-columns {
-            flex-direction: column-reverse;
-        }
-        .prodev-image {
-            margin: 0 2em;
-        }
-    }
-}
-
-
-.is-style-stever-table-pro-dev tr {
-
-    // Icon 
-    td:nth-child(1) {
-        width: 5%;
-        text-align: center;
-    }
-
-    // Title 
-    td:nth-child(2) {
-        width: 55%;
-    }
-
-    // Affiliation 
-    td:nth-child(3) {
-        width: 30%;
-    }
-
-    // Date 
-    th:nth-child(4),
-    td:nth-child(4) {
-        width: 10%;
-        text-align: right;
-        padding-right: 1.5em;
-    }
-    td:nth-child(4) {
-        font-family: $fonts-mono;
-        font-size: 0.75em;
-		line-height: 2.25em;
-    }
-}
-
-// Table: Professional Development (Admin)
-.wp-admin .is-style-stever-table-pro-dev {
-    font-size: 0.85em;
-
-    td {
-        vertical-align: top;
-    }
-
-    // Icon 
-    td:nth-child(1) {
-        width: 15%;
-        text-align: center;
-    }
-
-    // Title 
-    td:nth-child(2) {
-        width: 45%;
-    }
-
-    // Affiliation 
-    td:nth-child(3) {
-        width: 25%;
-    }
-
-    // Date 
-    td:nth-child(4) {
-        width: 15%;
-        padding-right: 0.5em;
-    }
-}
-
-// Table: Professional Development - Responsive
-@include breakpoint(s) {
-    .is-style-stever-table-pro-dev {
-        display: block;
-        width: 100%;
-
-        td {
-            display: inline-block;
-        }
-
-        tr {
-            display: block;
-            width: 100%;
-            padding: 1em 0;
-
-            // Icon 
-            td:nth-child(1) {
-                width: 2.5em;
-            }
-
-            // Title 
-            td:nth-child(2) {
-                width: calc(100% + -2.5em);
-                font-weight: bold;
-            }
-
-            // Affiliation 
-            td:nth-child(3) {
-                width: 70%;
-                padding-left: 0.75em;
-                padding-top: 0;
-                font-size: 0.85em;
-            }
-
-            // Date 
-            td:nth-child(4) {
-                width: 30%;
-                padding-top: 0;
-                font-size: 0.75em;
-            }
-        }
-    }
-}
-
-
-// Table: Books I've Read 
-.is-style-stever-table-books {
-
-    // Title 
-    th:nth-child(1),
-    td:nth-child(1) {
-        width: 55% !important;
-        text-align: left;
-    }
-
-    // Author 
-    th:nth-child(2),
-    td:nth-child(2) {
-        width: 30% !important;
-    }
-
-    // Date
-    th:nth-child(3),
-    td:nth-child(3) {
-        width: 10% !important;
-        text-align: center;
-    }
-    td:nth-child(3) {
-        font-family: $fonts-mono;
-        font-size: 0.75em;
-		line-height: 2.25em; 
-    }
-}
-
-#sr-chart-container {
-	border: 2px solid #8b9b31;
-	margin: 2em -3em;
-	background: white;
-	padding: 0 2em 1em 2em;
-	box-shadow: 0 0 10px #999;
-
-    h3 {
-        margin-top: 1em;
-    }
-}
-
-// Table: Books I've Read (Admin)
-.wp-admin .is-style-stever-table-books {
-    th,
-    td {
-        padding: 0.5em;
-    }
-}
-
-// Table: Books I've Read (Responsive)
-@include breakpoint(s) {
-    .is-style-stever-table-pro-dev {
-         thead {
-            display: none;
-         }
-         tbody tr td:nth-child(3){
-            padding-left: 1.25em;
-         }
-
-    }
-
-    .is-style-stever-table-books {
-        display: block;
-        width: 100%;
-
-        thead {
-            display: none;
-        }
-
-        td {
-            display: inline-block;
-            padding: 0.5em;
-        }
-
-        tr {
-            display: block;
-            width: 100%
-        }
-
-        // Title 
-        th:nth-child(1),
-        td:nth-child(1) {
-            width: 100% !important;
-            font-weight: bold;
-            padding-bottom: 0.25em;
-        }
-
-        // Author 
-        th:nth-child(2),
-        td:nth-child(2) {
-            width: 75% !important;
-            padding-top: 0.25em;
-        }
-
-        // Date 
-        th:nth-child(3),
-        td:nth-child(3) {
-            width: 25% !important;
-            padding-top: 0.25em;
-			text-align: right;
-        }
-    }
-}
-
-@include breakpoint(p) {
-    #sr-chart-container {
-        margin: 2em -.5em;
-        padding: 0.5em;
-        h3 {
-            padding: 0 0 0 0.25em;
-            margin: 0 0 0.25em 0;
-        }
-    }
-}
-
-
-
-// Table: Speaking/Teaching 
-.is-style-stever-table-speaking {
-    margin-top: 2em;
-
-    th,
-    td {
-        padding: 0.5em 1em;
-    }
-
-    // Event
-    th:nth-child(1),
-    td:nth-child(1) {
-        width: 45%;
-    }
-
-    // Affiliation
-    th:nth-child(2) td:nth-child(2) {
-        width: 35%;
-    }
-
-    // Date 
-    th:nth-child(3),
-    td:nth-child(3) {
-        width: 20%;
-        text-align: right;
-    }
-    td:nth-child(3) {
-        font-family: $fonts-mono;
-        font-size: 0.85em;
-		line-height: 2em;
-    }
-}
-
-// Table: Speaking/Teaching (Responsive)
-@include breakpoint(s) {
-    .is-style-stever-table-speaking {
-        display: block;
-        width: 100%;
-
-        thead {
-            display: none;
-        }
-
-        td {
-            display: inline-block;
-        }
-
-        tr {
-            display: block;
-            width: 100% // Title 
-
-            td:nth-child(1) {
-                width: 100% !important;
-                font-weight: bold;
-            }
-
-            // Affiliation 
-            td:nth-child(2) {
-                width: 75% !important;
-                padding-right: 1em;
-            }
-
-            // Date 
-            td:nth-child(3) {
-                width: 25% !important;
-            }
-        }
-    }
+	td {
+		padding: 0.5em 1em;
+		vertical-align: top;
+		border: 1px solid $gray-med;
+	}
 }
 
 @include breakpoint(s) {
@@ -387,17 +34,328 @@
 		tr:not(:last-child) {
 			border-bottom: 1px solid $gray-med;
 		}
-		td { 
+		td {
 			border: 0 none;
+		}
+	}
+}
+
+// Heading: Year Divider
+.entry-content .is-style-year-divider,
+.block-editor .is-style-year-divider {
+	background-color: $green-bright;
+	color: $white;
+	text-align: center;
+	padding: 0.5em 0;
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 0;
+}
+
+#sr-chart-container {
+	border: 2px solid #8b9b31;
+	margin: 2em -3em;
+	background: white;
+	padding: 1em 2em;
+	box-shadow: 0 0 10px #999;
+
+	h3 {
+		margin: 0.5em 0 1em 0;
+	}
+}
+@include breakpoint(p) {
+	#sr-chart-container {
+		margin: 2em -0.5em;
+		h3 {
+			margin: 0 0 0.5em 0;
+		}
+	}
+}
+@include breakpoint(m) {
+	#sr-chart-container {
+		padding: 0.5em;
+	}
+}
+
+// Page: Professional Development
+.sr-page-table-prodev {
+	// Copy/Header
+	.prodev-image {
+		margin-bottom: 4em;
+		border: 1px solid $gray-med;
+	}
+
+	// Upcoming Events Table
+	.is-style-year-divider-upcoming {
+		background-color: $accent-teal;
+	}
+	.is-style-stever-table-pro-dev-upcoming thead {
+		background-color: $accent-teal-lightest;
+	}
+
+	.is-style-stever-table-pro-dev {
+		// Date (heading)
+		th:nth-child(4) {
+			text-align: right;
+			padding-right: 1.25em;
+		}
+		// Icon
+		td:nth-child(1) {
+			width: 5%;
+			text-align: center;
+		}
+		// Title
+		td:nth-child(2) {
+			width: 50%;
+		}
+		// Affiliation
+		td:nth-child(3) {
+			width: 30%;
+		}
+		td:nth-child(4) {
+			width: 15%;
+			font-family: $fonts-mono;
+			font-size: 0.75em;
+			line-height: 2.25em;
+			text-align: right;
+		}
+	}
+}
+
+// Table: Professional Development (Admin)
+.wp-admin .is-style-stever-table-pro-dev {
+	font-size: 0.85em;
+
+	td {
+		vertical-align: top;
+	}
+	// Icon
+	td:nth-child(1) {
+		width: 15%;
+		text-align: center;
+	}
+	// Title
+	td:nth-child(2) {
+		width: 45%;
+	}
+	// Affiliation
+	td:nth-child(3) {
+		width: 25%;
+	}
+	// Date
+	td:nth-child(4) {
+		width: 15%;
+		padding-right: 0.5em;
+	}
+}
+
+// Table: Professional Development - Responsive
+@include breakpoint(m) {
+	.prodev-columns {
+		flex-direction: column-reverse;
+	}
+	.prodev-image {
+		margin: 0 2em;
+	}
+}
+@include breakpoint(s) {
+	.sr-table-pro-dev .is-style-year-divider {
+		margin: 1em -0.25em 0 -0.25em;
+	}
+	.sr-page-table-prodev .is-style-stever-table-pro-dev {
+		display: block;
+		overflow: auto;
+		margin: 0 -0.25em;
+
+		thead {
+			display: none;
+		}
+
+		tr {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 1em 0;
+
+			td {
+				padding: 0.25em 0.5em;
+				align-content: start;
+			}
+			// Icon
+			td:nth-child(1) {
+				width: 35px;
+				order: 1;
+				text-align: left;
+			}
+			// Title
+			td:nth-child(2) {
+				width: 100%;
+				> a {
+					font-weight: bold;
+				}
+			}
+			// Affiliation
+			td:nth-child(3) {
+				order: 2;
+				width: calc(75% - 35px);
+			}
+			// Date
+			td:nth-child(4) {
+				width: 25%;
+				font-size: 0.75em;
+				order: 3;
+				padding-top: 0.5em;
+			}
 		}
 	}
 }
 
 // Table: Professional Development (Admin)
 .wp-admin.sr-table-pro-dev .editor-styles-wrapper {
-    // Legend Textarea size & spacing.
-    .wp-block-html textarea {
-        min-height: 500px;
-        line-height: 1.5em;
-    }
+	// Legend Textarea size & spacing.
+	.wp-block-html textarea {
+		min-height: 500px;
+		line-height: 1.5em;
+	}
+}
+
+// Table: Books I've Read
+.is-style-stever-table-books {
+	// Title
+	th:nth-child(1),
+	td:nth-child(1) {
+		width: 55% !important;
+		text-align: left;
+	}
+
+	// Author
+	th:nth-child(2),
+	td:nth-child(2) {
+		width: 30% !important;
+	}
+
+	// Date
+	th:nth-child(3),
+	td:nth-child(3) {
+		width: 10% !important;
+		text-align: center;
+	}
+	td:nth-child(3) {
+		font-family: $fonts-mono;
+		font-size: 0.75em;
+		line-height: 2.25em;
+	}
+}
+
+// Table: Books I've Read (Responsive)
+@include breakpoint(s) {
+	.is-style-stever-table-books {
+		display: block;
+		width: 100%;
+
+		thead {
+			display: none;
+		}
+
+		td {
+			display: inline-block;
+			padding: 0.5em;
+		}
+
+		tr {
+			display: block;
+			width: 100%;
+		}
+
+		// Title
+		th:nth-child(1),
+		td:nth-child(1) {
+			width: 100% !important;
+			font-weight: bold;
+			padding-bottom: 0.25em;
+		}
+
+		// Author
+		th:nth-child(2),
+		td:nth-child(2) {
+			width: 75% !important;
+			padding-top: 0.25em;
+		}
+
+		// Date
+		th:nth-child(3),
+		td:nth-child(3) {
+			width: 25% !important;
+			padding-top: 0.25em;
+			text-align: right;
+		}
+	}
+}
+
+// Table: Books I've Read (Admin)
+.wp-admin .is-style-stever-table-books {
+	th,
+	td {
+		padding: 0.5em;
+	}
+}
+
+// Table: Speaking/Teaching
+.is-style-stever-table-speaking {
+	margin-top: 2em;
+
+	th,
+	td {
+		padding: 0.5em 1em;
+	}
+
+	// Event
+	th:nth-child(1),
+	td:nth-child(1) {
+		width: 45%;
+	}
+
+	// Affiliation
+	th:nth-child(2) td:nth-child(2) {
+		width: 35%;
+	}
+
+	// Date
+	th:nth-child(3),
+	td:nth-child(3) {
+		width: 20%;
+		text-align: right;
+	}
+	td:nth-child(3) {
+		font-family: $fonts-mono;
+		font-size: 0.85em;
+		line-height: 2em;
+	}
+}
+
+// Table: Speaking/Teaching (Responsive)
+@include breakpoint(s) {
+	.is-style-stever-table-speaking {
+		display: block;
+		width: 100%;
+
+		thead {
+			display: none;
+		}
+
+		tr {
+			display: block;
+			width: 100%;
+			padding: 0.5em;
+		}
+		td {
+			display: block;
+			width: 100% !important;
+			text-align: left !important;
+			padding: 0.25em 0.5em;
+		}
+		td:first-child {
+			font-weight: bold;
+		}
+	}
 }

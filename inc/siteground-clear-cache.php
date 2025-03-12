@@ -47,15 +47,16 @@ function find_last_modified_filetime($dir) {
  * Compare last known change (in transient) to current  and clears the SG cache if they have.
  */
 function check_theme_files_change() {
-	
+
 	// Only run when logged in!
-	if(is_user_logged_in()){
+	if (is_user_logged_in()) {
 		$target_dir = wp_get_theme()->get_stylesheet_directory(); // Get the theme's stylesheet directory
 		$check_for_newest = find_last_modified_filetime($target_dir); // Find the last modified time of theme files
 		$theme_last_modified = get_transient('sr_theme_last_modified'); // Retrieve the stored last modified time
 
 		// Check if the transient is false or if the new last modified time is greater than the stored one
 		if ($theme_last_modified === false || $check_for_newest > $theme_last_modified) {
+			echo '<script type="text/javascript">alert("Purged");</script>';
 			// Clear the cache if files have changed
 			if (function_exists('sg_cachepress_purge_cache')) {
 				sg_cachepress_purge_cache(); // Purge the cache using the specific function

@@ -1,156 +1,208 @@
 <div id="sr-table-search--container">
 	<div id="sr-table-search--wrapper">
-		<input id="sr-table-search--input" type="text" placeholder="Type to search&hellip;" />
+		<input
+			id="sr-table-search--input"
+			type="text"
+			placeholder="Type to search&hellip;"
+		/>
 		<button id="sr-table-search--button" class="fas fa-search" />
 	</div>
 	<div id="sr-table-search--count-wrapper">
-		Showing <span id="sr-table-search--count-showing"></span> of <span id="sr-table-search--count-total"></span>
+		Showing
+		<span id="sr-table-search--count-showing"></span>
+		of
+		<span id="sr-table-search--count-total"></span>
 	</div>
 	<div id="sr-table-search--show-row-counter">
-		<i class="fas fa-list-ol" data-title="Toggle counts on the table rows."></i>
+		<i
+			class="fas fa-list-ol"
+			data-title="Toggle counts on the table rows."
+		></i>
 	</div>
 
 	<style>
-	#sr-table-search--container {
-		display: grid;
-		grid-template-columns:  70fr 25fr 5fr;
-		grid-gap: 0 2em;
-		padding: 0;
-		margin: 5em 0 2em 0;
-		transition: all 0.5s ease;
-	}
-	.sr-table-pro-dev #sr-table-search--container {
-		margin-top: 0;
-	}
-	#sr-table-search--wrapper {
-		display: grid;
-		grid-template-columns: 90% 10%;
-		border: 1px solid #ccc;
-	}
-	#sr-table-search--wrapper input {
-		padding: 4px 12px;
-		border: 0 none;
-		margin-bottom: 0;
-	}
-	#sr-table-search--wrapper input::placeholder {
-		color: #333;
-	}
-	#sr-table-search--wrapper button {
-		text-align: center;
-		cursor: pointer;
-		background-color: #e1e2c7;
-	}
-	#sr-table-search--wrapper button:hover {
-		background-color: #8b9b31;
-		color: #fff;
-	}
-	#sr-table-search--wrapper button span {
-		font-size: 2em;
-		display: flex;
-		height: 100%;
-		justify-content: center;
-		align-items: center;
-		margin-top: -4px;
-	}
-	#sr-table-search--container.zero-results #sr-table-search--wrapper {
-		outline: 1px solid #FF0000;
-	}
-	#sr-table-search--container.zero-results:after {
-		content: "No results.";
-  		padding: 0.5em;
-	}
-	#sr-table-search--count-wrapper {
-		align-self: center;
-		background: #e1e2c7;
-		padding: 0.55em 0;
-		text-align: center;
-	}
-	#sr-table-search--count-wrapper span {
-		font-weight: bold;
-	}
-	
-	#sr-table-search--show-row-counter {
-		background-color: #e1e2c7;
-		text-align: center;
-		align-content: center;
-	}
-	#sr-table-search--show-row-counter:hover {
-		border: 3px solid #8b9b31;
-		cursor: pointer;
-	}
-	#sr-table-search--show-row-counter.active {
-		background-color: #8b9b31;
-	}
-	#sr-table-search--show-row-counter.active i {
-		color: white;
-	}
-	#sr-table-search--show-row-counter.active:hover {
-		border: 3px solid #e1e2c7;
-	}
-
-	/* Table item counts. */
-	.sr-table-row-counter .wp-block-table {
-		overflow: visible;
-	}
-	.sr-table-row-counter tbody {
-		counter-reset: reversed(table-counter);
-	}
-	.sr-table-row-counter tbody tr {
-		counter-increment: table-counter -1;
-	}
-	.sr-table-row-counter tbody td {
-		position: relative;
-	}
-	.sr-table-row-counter tbody td:first-child:before {
-		content: counter(table-counter);
-		position: absolute;
-		top: 0.75em;
-		left: -4em;
-		background: #fff;
-		outline: 1px solid #ccc;
-		border-radius: 4px;
-		font-size: 0.65em;
-		width: 22px;
-		height: 22px;
-		line-height: 22px;
-		text-align: center;
-		color: #aaa;
-	}
-	.sr-table-row-counter tbody tr:nth-child(2n of :not(.hidden)) td:first-child:before {
-		background: #f1f1f1;
-	}
-	
-
-	/* Media query: small screens. */
-	@media only screen and (max-width: 640px) {
-		#sr-table-search--container{
-  			grid-template-columns: unset;
-			grid-gap: 0.25em;
+		#sr-table-search--container {
+			display: grid;
+			grid-template-columns: 70fr 25fr 5fr;
+			grid-gap: 0 2em;
+			padding: 0;
+			margin: 5em 0 2em 0;
+			transition: all 0.5s ease;
+		}
+		.sr-table-pro-dev #sr-table-search--container {
+			margin-top: 0;
 		}
 		#sr-table-search--wrapper {
-			grid-template-columns: 80% 20%;
+			display: grid;
+			grid-template-columns: 90% 10%;
+			border: 1px solid #ccc;
+		}
+		#sr-table-search--wrapper input {
+			padding: 4px 12px;
+			border: 0 none;
+			margin-bottom: 0;
+		}
+		#sr-table-search--wrapper input::placeholder {
+			color: #333;
+		}
+		#sr-table-search--wrapper button {
+			text-align: center;
+			cursor: pointer;
+			background-color: #e1e2c7;
+		}
+		#sr-table-search--wrapper button:hover {
+			background-color: #8b9b31;
+			color: #fff;
 		}
 		#sr-table-search--wrapper button span {
-			margin-top: -8px;
+			font-size: 2em;
+			display: flex;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			margin-top: -4px;
 		}
-	}
+		#sr-table-search--container.zero-results #sr-table-search--wrapper {
+			outline: 1px solid #ff0000;
+		}
+		#sr-table-search--container.zero-results:after {
+			content: 'No results.';
+			padding: 0.5em;
+		}
+		#sr-table-search--count-wrapper {
+			align-self: center;
+			background: #e1e2c7;
+			padding: 0.55em 0;
+			text-align: center;
+		}
+		#sr-table-search--count-wrapper span {
+			font-weight: bold;
+		}
+
+		#sr-table-search--show-row-counter {
+			background-color: #e1e2c7;
+			text-align: center;
+			align-content: center;
+		}
+		#sr-table-search--show-row-counter:hover {
+			border: 3px solid #8b9b31;
+			cursor: pointer;
+		}
+		#sr-table-search--show-row-counter.active {
+			background-color: #8b9b31;
+		}
+		#sr-table-search--show-row-counter.active i {
+			color: white;
+		}
+		#sr-table-search--show-row-counter.active:hover {
+			border: 3px solid #e1e2c7;
+		}
+
+		/* Table item counts. */
+		.sr-table-row-counter .wp-block-table {
+			overflow: visible;
+		}
+		.sr-table-row-counter tbody {
+			counter-reset: reversed(table-counter);
+		}
+		.sr-table-row-counter tbody tr {
+			counter-increment: table-counter -1;
+		}
+		.sr-table-row-counter tbody td {
+			position: relative;
+		}
+		/* Title is [1st box on Books] page & [2nd box on ProDev] page. */
+		.sr-page-table-books.sr-table-row-counter tbody td:nth-child(1),
+		.sr-page-table-prodev.sr-table-row-counter tbody td:nth-child(2) {
+			padding-right: 3em;
+		}
+		.sr-page-table-books.sr-table-row-counter tbody td:nth-child(1):before,
+		.sr-page-table-prodev.sr-table-row-counter
+			tbody
+			td:nth-child(2):before {
+			content: counter(table-counter);
+			position: absolute;
+			top: 0.75em;
+			right: 0.75em;
+			display: grid;
+			outline: 1px solid #d4d4d480;
+			border-radius: 4px;
+			font-size: 0.65em;
+			width: 25px;
+			height: 22px;
+			line-height: 22px;
+			text-align: center;
+			align-content: center;
+			color: #aaa;
+		}
+
+		/* Media query: medium-lg, screens. */
+		@media only screen and (max-width: 900px) {
+			#sr-table-search--container {
+				grid-template-columns: 60fr 30fr 10fr;
+			}
+		}
+		/* Media query: medium-sm, screens. */
+		@media only screen and (max-width: 700px) {
+			#sr-table-search--container {
+				grid-gap: 0 1em;
+			}
+		}
+		/* Media query: small screens. */
+		@media only screen and (max-width: 640px) {
+			#sr-table-search--container {
+				grid-template-columns: repeat(auto-fill, calc(10% - 0.25em));
+				grid-gap: 0.25em;
+			}
+			#sr-table-search--wrapper {
+				grid-template-columns: 80% 20%;
+				grid-column-start: 1;
+				grid-column-end: 11;
+			}
+			#sr-table-search--wrapper button span {
+				margin-top: -8px;
+			}
+			#sr-table-search--count-wrapper {
+				grid-column-start: 1;
+				grid-column-end: 9;
+			}
+			#sr-table-search--show-row-counter {
+				grid-column-start: 9;
+				grid-column-end: 11;
+			}
+		}
 	</style>
 
 	<script type="text/javascript">
-		document.addEventListener("DOMContentLoaded", () => {
-		
+		document.addEventListener('DOMContentLoaded', () => {
 			// Gather the elements.
-			const sr_ts_container = document.getElementById("sr-table-search--container"); // Container for search results.
-			const sr_ts_input = document.getElementById("sr-table-search--input"); // Input field for search query.
-			const sr_ts_button = document.getElementById("sr-table-search--button"); // Button to trigger input clear.
-			const sr_ts_count_total = document.getElementById("sr-table-search--count-total"); // Element to show count of total rows.
-			const sr_ts_count_showing = document.getElementById("sr-table-search--count-showing"); // Element to show count of visible rows.
-			const sr_ts_row_counter = document.getElementById("sr-table-search--show-row-counter"); // Element to toggle the row counter class.
-			const sr_ts_headings = document.querySelectorAll(".wp-block-heading"); // All headings.
-			const sr_ts_tables = document.querySelectorAll(".wp-block-table"); // All tables.
-			const sr_ts_rows = document.querySelectorAll(".wp-block-table tbody tr"); // All rows in the tables.
-			const sr_ts_chart_optional = document.getElementById("sr-chart-container"); // Optional chart container.
-			const sr_tl_legend_optional = document.getElementById("sr-legend"); // Optional legend legend.
+			const sr_ts_container = document.getElementById(
+				'sr-table-search--container'
+			); // Container for search results.
+			const sr_ts_input = document.getElementById(
+				'sr-table-search--input'
+			); // Input field for search query.
+			const sr_ts_button = document.getElementById(
+				'sr-table-search--button'
+			); // Button to trigger input clear.
+			const sr_ts_count_total = document.getElementById(
+				'sr-table-search--count-total'
+			); // Element to show count of total rows.
+			const sr_ts_count_showing = document.getElementById(
+				'sr-table-search--count-showing'
+			); // Element to show count of visible rows.
+			const sr_ts_row_counter = document.getElementById(
+				'sr-table-search--show-row-counter'
+			); // Element to toggle the row counter class.
+			const sr_ts_headings =
+				document.querySelectorAll('.wp-block-heading'); // All headings.
+			const sr_ts_tables = document.querySelectorAll('.wp-block-table'); // All tables.
+			const sr_ts_rows = document.querySelectorAll(
+				'.wp-block-table tbody tr'
+			); // All rows in the tables.
+			const sr_ts_chart_optional =
+				document.getElementById('sr-chart-container'); // Optional chart container.
+			const sr_tl_legend_optional = document.getElementById('sr-legend'); // Optional legend legend.
 
 			// Set initial counts.
 			const count_sr_table_total = sr_ts_rows.length; // Count the total number of rows.
@@ -158,9 +210,12 @@
 			sr_ts_count_total.textContent = count_sr_table_total; // Display total count of rows.
 
 			// Set listeners for user interactions.
-			sr_ts_input.addEventListener("keyup", sr_ts_go); // Trigger search on keyup in the input.
-			sr_ts_button.addEventListener("click", sr_ts_clear); // Clear search & reset input on button click.
-			sr_ts_row_counter.addEventListener("click", sr_ts_row_counter_toggle); // Clear search & reset input on button click.
+			sr_ts_input.addEventListener('keyup', sr_ts_go); // Trigger search on keyup in the input.
+			sr_ts_button.addEventListener('click', sr_ts_clear); // Clear search & reset input on button click.
+			sr_ts_row_counter.addEventListener(
+				'click',
+				sr_ts_row_counter_toggle
+			); // Clear search & reset input on button click.
 
 			// Check localstorage for Row Counter Toggle.
 			if (localStorage.getItem('sr-table-row-counter') == 1) {
@@ -168,17 +223,16 @@
 				document.body.classList.add('sr-table-row-counter');
 			}
 
-
 			/**
 			 * Processes the search query and filters the rows of each table based on the query.
 			 * It shows or hides table headings and rows depending on whether they contain content that matches the query.
-			 * 
+			 *
 			 * @param {string} query - The search query to filter the table rows.
 			 */
 			function sr_ts_process(query) {
 				sr_ts_tables.forEach((table) => {
 					const tableheading = table.previousElementSibling; // Get the heading of the current table.
-					const rows = table.querySelectorAll("tbody tr"); // Get all rows in the current table.
+					const rows = table.querySelectorAll('tbody tr'); // Get all rows in the current table.
 					let count_results = 0; // Initialize a counter for visible results.
 
 					// Reset everything to visible.
@@ -187,7 +241,9 @@
 
 					// Check each row.
 					rows.forEach((row) => {
-						const isVisible = row.textContent.toLowerCase().includes(query.toLowerCase()); // Check if the row contains the query.
+						const isVisible = row.textContent
+							.toLowerCase()
+							.includes(query.toLowerCase()); // Check if the row contains the query.
 						row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row.
 						if (isVisible) count_results++; // Increment the count of visible results.
 					});
@@ -214,7 +270,10 @@
 					sr_ts_chart_optional.classList.toggle('hidden', query); // Show/hide chart based on query.
 				}
 				if (sr_tl_legend_optional) {
-					sr_tl_legend_optional.classList.toggle('visually-hidden', query); // Show/hide legend based on query.
+					sr_tl_legend_optional.classList.toggle(
+						'visually-hidden',
+						query
+					); // Show/hide legend based on query.
 				}
 				query ? sr_ts_process(query) : sr_ts_clear(); // Process query or clear if empty.
 			}
@@ -224,9 +283,14 @@
 			 * if there are no visible results.
 			 */
 			function sr_ts_updateCounts() {
-				const current_showing = document.querySelectorAll('.wp-block-table tbody tr:not(.hidden)').length; // Count visible rows.
+				const current_showing = document.querySelectorAll(
+					'.wp-block-table tbody tr:not(.hidden)'
+				).length; // Count visible rows.
 				sr_ts_count_showing.textContent = current_showing; // Update the count showing.
-				sr_ts_container.classList.toggle('zero-results', current_showing === 0); // Toggle class if no results.
+				sr_ts_container.classList.toggle(
+					'zero-results',
+					current_showing === 0
+				); // Toggle class if no results.
 			}
 
 			/**
@@ -235,16 +299,16 @@
 			 */
 			function sr_ts_clear() {
 				sr_ts_button.classList.replace('fa-times', 'fa-search'); // Reset button icon to search.
-				sr_ts_input.value = ""; // Clear the input field.
+				sr_ts_input.value = ''; // Clear the input field.
 				if (sr_ts_chart_optional) {
 					sr_ts_chart_optional.classList.remove('hidden'); // Show chart.
 				}
 				if (sr_tl_legend_optional) {
 					sr_tl_legend_optional.classList.remove('visually-hidden'); // Show legend.
 				}
-				sr_ts_headings.forEach(e => e.classList.remove('hidden')); // Show all headings.
-				sr_ts_tables.forEach(e => e.classList.remove('hidden')); // Show all tables.
-				sr_ts_rows.forEach(e => e.classList.remove('hidden')); // Show all rows.
+				sr_ts_headings.forEach((e) => e.classList.remove('hidden')); // Show all headings.
+				sr_ts_tables.forEach((e) => e.classList.remove('hidden')); // Show all tables.
+				sr_ts_rows.forEach((e) => e.classList.remove('hidden')); // Show all rows.
 				sr_ts_updateCounts(); // Update counts after clearing the search.
 			}
 
@@ -252,18 +316,17 @@
 			 * Click handler for the Row Counter Toggle button.
 			 * Toggles the button class & body class.
 			 */
-			function sr_ts_row_counter_toggle(e){
+			function sr_ts_row_counter_toggle(e) {
 				document.body.classList.toggle('sr-table-row-counter');
 
 				if (document.body.classList.contains('sr-table-row-counter')) {
 					sr_ts_row_counter.classList.add('active');
 					localStorage.setItem('sr-table-row-counter', 1);
-				}else {
+				} else {
 					sr_ts_row_counter.classList.remove('active');
 					localStorage.setItem('sr-table-row-counter', 0);
 				}
 			}
-
 		});
 	</script>
 </div>
