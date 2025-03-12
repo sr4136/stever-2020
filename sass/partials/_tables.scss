@@ -1,45 +1,45 @@
 /* Page-specific: Professional Development */
-.sr-table-pro-dev {
-  #sr-legend--container {
-    #sr-legend {
-      margin: 2em 0;
-      border: 1px solid $green-light;
-      list-style: none;
+.sr-page-table-prodev {
+	#sr-legend--container {
+		#sr-legend {
+			margin: 2em 0;
+			border: 1px solid $green-light;
+			list-style: none;
 
-      li {
-        cursor: pointer;
-        padding: 0.25em 0.5em;
-        margin-left: 0;
-        border-left: 5px solid transparent;
-        &:not(:last-child) {
-          border-bottom: 1px solid $green-light;
-        }
+			li {
+				cursor: pointer;
+				padding: 0.25em 0.5em;
+				margin-left: 0;
+				border-left: 5px solid transparent;
+				&:not(:last-child) {
+					border-bottom: 1px solid $green-light;
+				}
 
-        &:hover {
-          border-left: 5px solid $green-light;
-          margin-left: 0;
-          color: black;
-        }
-        &.active {
-          border-left: 5px solid $green-bright;
-          background: $green-lightest;
-          box-shadow: 2px 1px 2px $gray-med;
-          margin-left: 0;
-          font-weight: bold;
-        }
-      }
+				&:hover {
+					border-left: 5px solid $green-light;
+					margin-left: 0;
+					color: black;
+				}
+				&.active {
+					border-left: 5px solid $green-bright;
+					background: $green-lightest;
+					box-shadow: 2px 1px 2px $gray-med;
+					margin-left: 0;
+					font-weight: bold;
+				}
+			}
 
-      .show-all {
-        border-left: 5px solid $gray;
-        margin-left: 0;
-        background: $gray-light;
-      }
+			.show-all {
+				border-left: 5px solid $gray;
+				margin-left: 0;
+				background: $gray-light;
+			}
 
-      i {
-        width: 40px;
-        text-align: center;
-        padding-right: 1em;
-      }
-    }
-  }
+			i {
+				width: 40px;
+				text-align: center;
+				padding-right: 1em;
+			}
+		}
+	}
 }
