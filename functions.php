@@ -128,3 +128,6 @@ require get_template_directory() .'/inc/taxonomy-workflow.php';
 
 // Blocks: Custom Styles
 require get_template_directory() .'/inc/block-styles.php';
+
+// Siteground: Clear Cache on Theme File Change
+require get_template_directory() . '/inc/siteground-clear-cache.php';
