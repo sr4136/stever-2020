@@ -238,12 +238,13 @@
 	th:nth-child(3),
 	td:nth-child(3) {
 		width: 10% !important;
-		text-align: center;
+		text-align: right;
 	}
 	td:nth-child(3) {
 		font-family: $fonts-mono;
 		font-size: 0.75em;
 		line-height: 2.25em;
+		padding-right: 1.45em;
 	}
 }
 
@@ -287,7 +288,6 @@
 		td:nth-child(3) {
 			width: 25% !important;
 			padding-top: 0.25em;
-			text-align: right;
 		}
 	}
 }
