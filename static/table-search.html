@@ -121,6 +121,13 @@
 		.sr-page-table-prodev.sr-table-row-counter tbody td:nth-child(2) {
 			padding-right: 3em;
 		}
+
+		.sr-page-table-books tbody td:nth-child(1):before,
+		.sr-page-table-prodev tbody td:nth-child(2):before {
+			content: '';
+			outline: 5px solid #8b9b31;
+			opacity: 0;
+		}
 		.sr-page-table-books.sr-table-row-counter tbody td:nth-child(1):before,
 		.sr-page-table-prodev.sr-table-row-counter
 			tbody
@@ -133,12 +140,14 @@
 			outline: 1px solid #d4d4d480;
 			border-radius: 4px;
 			font-size: 0.65em;
-			width: 25px;
+			width: 22px;
 			height: 22px;
-			line-height: 22px;
 			text-align: center;
 			align-content: center;
 			color: #aaa;
+			transition: outline 0.5s ease;
+			background-color: transparent;
+			opacity: 1;
 		}
 
 		/* Media query: medium-lg, screens. */
