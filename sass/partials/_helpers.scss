@@ -1,116 +1,121 @@
+// Tell browswers to use view transitions.
+@view-transition {
+	navigation: auto;
+}
+
 // Universal 'hidden' Class
 .hidden {
-  display: none !important;
-  visibility: hidden;
+	display: none !important;
+	visibility: hidden;
 }
 .visually-hidden {
-  opacity: 0;
+	opacity: 0;
 }
 
 // List: Indented;
 .entry-content .is-style-stever-list-indented {
-  margin-left: 1em;
+	margin-left: 1em;
 }
 @include breakpoint(xs) {
-  .entry-content .is-style-stever-list-indented {
-    margin-left: 0;
-  }
+	.entry-content .is-style-stever-list-indented {
+		margin-left: 0;
+	}
 }
 
 // Quote - Attention.
 .is-style-attention {
-  border-left: 3px solid $yellow;
-  background: $gray-light;
-  padding: 1em;
+	border-left: 3px solid $yellow;
+	background: $gray-light;
+	padding: 1em;
 
-  p {
-    margin: 0.25em;
-  }
+	p {
+		margin: 0.25em;
+	}
 }
 
 // List - Extra Vertical Spacing.
 .entry-content .is-style-extra-vertical-spacing {
-  > li {
-    margin-bottom: 1.5em;
-  }
-  ul > li {
-    margin-top: 0.75em;
-  }
+	> li {
+		margin-bottom: 1.5em;
+	}
+	ul > li {
+		margin-top: 0.75em;
+	}
 }
 
 // Heading - No Vertical Spacing Above.
 .is-style-no-spacing-above {
-  margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 // Negative top margin
 .margin-negative-top {
-  margin-top: -1em;
+	margin-top: -1em;
 }
 
 // Hidden Page Header
 .heading-hide .page-header {
-  display: none;
+	display: none;
 }
 
 // Button: Ghost
 .button-ghost,
 .button-ghost:visited,
 .button-ghost:active,
-.button-ghost[type="submit"] {
-  font-size: 0.85em;
-  border: 3px solid $blue;
-  background: $white;
-  color: $black;
-  cursor: pointer;
-  transition: all 0.5s;
+.button-ghost[type='submit'] {
+	font-size: 0.85em;
+	border: 3px solid $blue;
+	background: $white;
+	color: $black;
+	cursor: pointer;
+	transition: all 0.5s;
 }
 .button-ghost:hover,
 .button-ghost:visited:hover,
 .button-ghost:active:hover,
-.button-ghost[type="submit"]:hover {
-  border-color: $red;
-  background: $white;
-  color: $black;
+.button-ghost[type='submit']:hover {
+	border-color: $red;
+	background: $white;
+	color: $black;
 }
 
 // Island Class
 .island {
-  margin: 0em -2em 2em -2em;
-  border-left: 1px solid $gray-med;
-  border-right: 1px solid $gray-med;
-  padding: 3em;
-  background: url("img/bg_gray.png");
-  position: relative;
+	margin: 0em -2em 2em -2em;
+	border-left: 1px solid $gray-med;
+	border-right: 1px solid $gray-med;
+	padding: 3em;
+	background: url('img/bg_gray.png');
+	position: relative;
 }
 .island::before,
 .island::after {
-  width: 100%;
-  height: 2em;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  display: block;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+	width: 100%;
+	height: 2em;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 .island::after {
-  top: auto;
-  bottom: 0;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+	top: auto;
+	bottom: 0;
+	background: rgb(255, 255, 255);
+	background: linear-gradient(
+		0deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
 }
 .island iframe {
-  display: block;
-  border: 1px solid $gray-med;
-  width: 100%;
+	display: block;
+	border: 1px solid $gray-med;
+	width: 100%;
 }
