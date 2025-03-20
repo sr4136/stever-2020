@@ -2,22 +2,22 @@
 
 // Spacer (Admin) -- Outline
 .wp-admin .wp-block-spacer {
-  border: 1px dotted $gray-dark;
-  &::before {
-    content: "(spacer)";
-    text-align: center;
-    font-size: 0.65em;
-  }
+	border: 1px dotted $gray-dark;
+	&::before {
+		content: '(spacer)';
+		text-align: center;
+		font-size: 0.65em;
+	}
 }
 
 // Group (Admin) -- Outline
 .wp-admin .wp-block-group {
-  border: 1px dotted $gray-dark;
+	border: 1px dotted $gray-dark;
 }
 
 // Coulumns (Admin) -- Outline
 .wp-admin .wp-block-columns {
-  border: 1px dotted $gray-dark;
+	border: 1px dotted $gray-dark;
 }
 
 // Cover Image
@@ -37,81 +37,81 @@
 
 // Image
 .wp-block-image {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 // Mark
 mark {
-  padding: 0 0.25em;
+	padding: 0 0.25em;
 }
 
 // Buttons
 .wp-block-button__link,
 .wp-block-button__link:visited {
-  background-color: transparent;
-  padding: 0.3em 1em;
-  font-size: 1em;
-  border: 1px solid $red;
-  color: $red;
-  font-weight: normal;
+	background-color: transparent;
+	padding: 0.3em 1em;
+	font-size: 1em;
+	border: 1px solid $red;
+	color: $red;
+	font-weight: normal;
 }
 .wp-block-button__link:hover,
 .wp-block-button__link:focus,
 .wp-block-button__link:active {
-  border: 1px solid $white;
-  color: $white;
-  background-color: $red;
-  text-decoration: none;
+	border: 1px solid $white;
+	color: $white;
+	background-color: $red;
+	text-decoration: none;
 }
 
 // Tables
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 // Gallery
 .blocks-gallery-grid,
 .wp-block-gallery {
-  width: 100%;
+	width: 100%;
 }
 
 // General Accordions (from "Accordion Blocks" plugin)
 .c-accordion__item {
-  background: $gray-light;
-  margin-bottom: 1em;
+	background: $gray-light;
+	margin-bottom: 1em;
 
-  .c-accordion__title {
-    margin: 0 !important;
-    padding: 0.5em !important;
-  }
-  .c-accordion__title::after {
-    right: 0.5em;
-  }
-  .c-accordion__content {
-    padding: 1em;
-  }
-  button {
-    border: 1px dashed #ccc;
-    padding: 0.5em 0.75em;
-  }
-  button::after {
-    display: none !important;
-  }
-  button::before {
-    content: "\F0FE";
-    font-family: "Font Awesome 5 Free";
-    font-weight: normal;
-    font-style: normal;
-    padding: 0 1em 0 0.5em;
-    color: $gray-dark;
-  }
-  &.is-open {
-    button {
-      border: 1px solid #ccc;
-    }
-    button::before {
-      content: "\F146";
-    }
-  }
+	.c-accordion__title {
+		margin: 0 !important;
+		padding: 0.5em !important;
+	}
+	.c-accordion__title::after {
+		right: 0.5em;
+	}
+	.c-accordion__content {
+		padding: 1em;
+	}
+	button {
+		border: 1px dashed #ccc;
+		padding: 0.5em 0.75em;
+	}
+	button::after {
+		display: none !important;
+	}
+	button::before {
+		content: '\F0FE';
+		font-family: 'Font Awesome 5 Free';
+		font-weight: normal;
+		font-style: normal;
+		padding: 0 1em 0 0.5em;
+		color: $gray-dark;
+	}
+	&.is-open {
+		button {
+			border: 1px solid #ccc;
+		}
+		button::before {
+			content: '\F146';
+		}
+	}
 }

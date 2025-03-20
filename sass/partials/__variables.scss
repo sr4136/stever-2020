@@ -40,49 +40,49 @@ $white: #ffffff;
 $black: #000000;
 
 // Fonts
-$fonts-copy: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fonts-headings: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$fonts-mono: "B612 Mono", monospace;
-$fonts-icon: "Font Awesome 5 Free";
+$fonts-copy: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fonts-headings: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fonts-mono: 'B612 Mono', monospace;
+$fonts-icon: 'Font Awesome 5 Free';
 
 // Breakpoints
 // HT: https://bit.ly/3beCmdq
 @mixin breakpoint($size) {
-  // ~1024px
-  @if $size == "xl" {
-    @media (min-width: 64em) {
-      @content;
-    }
-    // ~1392px
-  } @else if $size == "p" {
-    @media (max-width: 87em) {
-      @content;
-    }
-    // ~1023px
-  } @else if $size == "l" {
-    @media (max-width: 63.9375em) {
-      @content;
-    }
-    // ~780px
-  } @else if $size == "m" {
-    @media (max-width: 48.75em) {
-      @content;
-    }
-    // ~640px
-  } @else if $size == "s" {
-    @media (max-width: 40em) {
-      @content;
-    }
-    // ~440px
-  } @else if $size == "xs" {
-    @media (max-width: 27.5em) {
-      @content;
-    }
-  }
+	// ~1024px
+	@if $size == 'xl' {
+		@media (min-width: 64em) {
+			@content;
+		}
+		// ~1392px
+	} @else if $size == 'p' {
+		@media (max-width: 87em) {
+			@content;
+		}
+		// ~1023px
+	} @else if $size == 'l' {
+		@media (max-width: 63.9375em) {
+			@content;
+		}
+		// ~780px
+	} @else if $size == 'm' {
+		@media (max-width: 48.75em) {
+			@content;
+		}
+		// ~640px
+	} @else if $size == 's' {
+		@media (max-width: 40em) {
+			@content;
+		}
+		// ~440px
+	} @else if $size == 'xs' {
+		@media (max-width: 27.5em) {
+			@content;
+		}
+	}
 }
 
 // Columns Override to full-width
 @mixin columns-full-override() {
-  flex-basis: 100% !important;
-  margin-left: 0;
+	flex-basis: 100% !important;
+	margin-left: 0;
 }
