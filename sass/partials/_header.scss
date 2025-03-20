@@ -1,146 +1,149 @@
 /* Header */
 #masthead {
-  padding: 0;
-  position: relative;
+	padding: 0;
+	position: relative;
 }
 
 #site-branding {
-  position: relative;
-  padding: 0;
+	position: relative;
+	padding: 0;
 
-  .custom-logo-link {
-    position: absolute;
-    max-width: 300px;
-    top: 1em;
-    left: 1em;
-    img {
-      transition: all 0.2s;
-    }
-    img:hover {
-      filter: drop-shadow(3px 3px 3px #999);
-    }
-  }
+	.custom-logo-link {
+		position: absolute;
+		max-width: 300px;
+		top: 1em;
+		left: 1em;
+		img {
+			transition: all 0.2s;
+		}
+		img:hover {
+			filter: drop-shadow(3px 3px 3px #999);
+		}
+	}
 }
 
 #social-navigation {
-  background-color: $white;
+	background-color: $white;
 
-  #social-icons {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 0.5em;
-    margin: 0;
-    justify-content: right;
-    padding: 0.9375rem 1.875rem;
+	#social-icons {
+		display: grid;
+		grid-template-columns: repeat(4, auto);
+		grid-gap: 0.5em;
+		margin: 0;
+		justify-content: right;
+		padding: 0.9375rem 1.875rem;
 
-    li {
-      list-style: none;
-      text-align: center;
-      font-size: 1.75em;
+		li {
+			list-style: none;
+			text-align: center;
+			font-size: 1.75em;
 
-      &:last-child {
-        margin-right: -0.25em;
-      }
-    }
-    a {
-      padding: 0 0.25em;
-    }
-  }
+			&:last-child {
+				margin-right: -0.25em;
+			}
+		}
+		a {
+			padding: 0 0.25em;
+		}
+	}
 }
 
 #primary-menu {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  justify-content: right;
-  list-style: none;
-  padding: 1.875rem;
-  margin: 0;
-  grid-gap: 1.25em;
-  font-size: 1.15em;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-content: right;
+	list-style: none;
+	padding: 1.875rem;
+	margin: 0;
+	grid-gap: 1.25em;
+	font-size: 1.15em;
 
-  .current-menu-item {
-    font-weight: bold;
-  }
+	.current-menu-item {
+		font-weight: bold;
+	}
+	li {
+		line-height: 100%;
+	}
 
-  li + li a {
-    border-left: 2px solid #ccc;
-    padding-left: 1.25em;
-  }
+	li + li {
+		border-left: 2px solid #ccc;
+		padding-left: 1.25em;
+	}
 }
 
 /* Page headings (H1s, buttons). */
 .page-header,
 .entry-header {
-  position: relative;
-  border-bottom: 1px solid $gray-med;
-  padding: 0.5em 0 1em 0;
-  margin-bottom: 2em;
+	position: relative;
+	border-bottom: 1px solid $gray-med;
+	padding: 0.5em 0 1em 0;
+	margin-bottom: 2em;
 
-  .button {
-    position: absolute;
-    right: 0;
-    top: 0.5em;
-  }
+	.button {
+		position: absolute;
+		right: 0;
+		top: 0.5em;
+	}
 }
 
 /* Hide home's H1. */
 .home .page-header {
-  display: none;
+	display: none;
 }
 
 // Breakpoint: small
 @include breakpoint(s) {
-  #site-branding .custom-logo-link {
-    position: relative;
-    max-width: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding: 1em;
-  }
+	#site-branding .custom-logo-link {
+		position: relative;
+		max-width: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		padding: 1em;
+	}
 
-  #social-navigation {
-    #social-icons {
-      grid-gap: 2em;
-      justify-content: center;
-      li {
-        font-size: 2em;
+	#social-navigation {
+		#social-icons {
+			grid-gap: 2em;
+			justify-content: center;
+			li {
+				font-size: 2em;
 
-        &:last-child {
-          margin: 0;
-        }
-      }
-    }
-  }
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+	}
 
-  #primary-menu {
-    justify-content: center;
-    font-size: 1.25em;
-  }
+	#primary-menu {
+		justify-content: center;
+		font-size: 1.25em;
+	}
 }
 
 // Breakpoint: x-small
 @include breakpoint(xs) {
-  #social-navigation {
-    #social-icons {
-      li {
-        font-size: 2.25em;
-      }
-    }
-  }
+	#social-navigation {
+		#social-icons {
+			li {
+				font-size: 2.25em;
+			}
+		}
+	}
 
-  #primary-menu {
-    display: block;
-    font-size: 1.5em;
-    padding: 0;
+	#primary-menu {
+		display: block;
+		font-size: 1.5em;
+		padding: 0;
 
-    li {
-      padding: 0.9375rem;
-      border-top: 1px solid #ccc;
-    }
-    li + li a {
-      padding: 0;
-      border: 0 none;
-    }
-  }
+		li {
+			padding: 0.9375rem;
+			border-top: 1px solid #ccc;
+		}
+		li + li a {
+			padding: 0;
+			border: 0 none;
+		}
+	}
 }
