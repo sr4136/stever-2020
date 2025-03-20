@@ -136,6 +136,13 @@ function stever_admin_scripts_styles() {
 		array(),
 		filemtime( get_stylesheet_directory() . '/css/blocks.min.css' )
 	);
+	// Icons.
+	wp_enqueue_style(
+		'fontawesome',
+		get_stylesheet_directory_uri() . '/css/fontawesome-free-5.8.1-web/css/all.min.css',
+		array(),
+		filemtime(get_stylesheet_directory() . '/css/fontawesome-free-5.8.1-web/css/all.min.css')
+	);
 }
 add_action( 'admin_enqueue_scripts', 'stever_admin_scripts_styles' );
 
