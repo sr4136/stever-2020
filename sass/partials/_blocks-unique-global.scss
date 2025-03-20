@@ -2,226 +2,294 @@
 
 // Gallery: Fancybox Outline
 .is-style-fancybox {
-  a {
-    border: 1px solid $gray-dark;
-  }
-  img {
-    transition: all 0.5s;
-    opacity: 0.7;
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-// Columns: Features (Plain text w/lists)
-.is-style-stever-columns-features {
-  .wp-block-column {
-    margin: 2em 0 0 0;
-
-    h4 {
-      margin-top: 0;
-    }
-    // (the second column)
-    & + .wp-block-column {
-      border-left: 1px solid #f1f1f1;
-      padding-left: 4em;
-    }
-  }
-}
-@include breakpoint(l) {
-  .is-style-stever-columns-features {
-    .wp-block-column {
-      padding-right: 2em;
-
-      &:last-child {
-        padding-left: 2em;
-      }
-    }
-  }
-}
-@include breakpoint(m) {
-  .is-style-stever-columns-features .wp-block-column,
-  .is-style-stever-columns-features .wp-block-column:last-child {
-    padding: 0;
-    flex-basis: 100% !important;
-    border: 0 none;
-  }
-}
-
-// Columns: Statistics (Stylized backgrounds w/lists)
-.is-style-stever-columns-statistics {
-  .wp-block-column {
-    position: relative;
-    background: #f1f1f1;
-    padding: 2em 2em 4.5em 2em;
-    margin-bottom: 1em;
-    color: white;
-    border-top-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    transition: all 0.5s;
-
-    &:hover {
-      box-shadow: inset 0 0 10px 5px #ccc;
-    }
-
-    h4 {
-      margin: 0 0 0.5em 0;
-      font-size: 2.5em;
-      font-weight: bold;
-      color: $white;
-      padding: 0;
-
-      &:before {
-        font-family: $fonts-icon;
-        display: block;
-        margin-bottom: 0.5em;
-        font-size: 0.75em;
-        text-align: center;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-    h5 {
-      color: $white;
-    }
-    .wp-block-button {
-      text-decoration: none;
-      position: absolute;
-      bottom: 1.5em;
-      left: 50%;
-      transform: translatex(-50%);
-    }
-  }
-}
-
-// Columns: Statistics (Stylized backgrounds w/lists) - Admin
-.wp-admin .is-style-stever-columns-statistics .wp-block-column h4 {
-  font-size: 1.25em;
-}
-
-// Columns: Statistics (Stylized backgrounds w/lists) - Class Variations: Icon & Color.
-.is-style-stever-columns-statistics {
-  // "Pointer" Icon (Green)
-  .is-style-stever-columns-statistics-pointer {
-    background: $accent-green;
-
-    h4:before {
-      content: "\f245";
-    }
-  }
-  // "Themes" Icon (Teal)
-  .is-style-stever-columns-statistics-themes {
-    background: $accent-teal;
-
-    h4:before {
-      content: "\f0e8";
-    }
-  }
-  // Teams Icon (Red)
-  .is-style-stever-columns-statistics-team {
-    background: $accent-red;
-
-    h4:before {
-      content: "\f0c0";
-    }
-  }
-  // Commits Icon (Blue)
-  .is-style-stever-columns-statistics-commits {
-    background: $accent-blue;
-
-    h4:before {
-      content: "\f126";
-    }
-  }
+	a {
+		border: 1px solid $gray-dark;
+	}
+	img {
+		transition: all 0.5s;
+		opacity: 0.7;
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
 // Columns: Event Notes Header.
 .is-style-stever-columns-event-notes {
-  figure {
-    outline: 1px solid $gray-med;
-  }
+	figure {
+		outline: 1px solid $gray-med;
+	}
 }
 
-// Quote - Attention.
+// Quote - Attention (cautionary note)
 .is-style-attention {
-  border-left: 3px solid $yellow;
-  background: $gray-light;
-  padding: 1em;
+	border-left: 3px solid $yellow;
+	background: $gray-light;
+	padding: 1em;
 
-  p {
-    margin: 0.25em;
-  }
+	p {
+		margin: 0.25em;
+	}
 
-  ul {
-    margin-bottom: 0;
-  }
+	ul {
+		margin-bottom: 0;
+	}
 }
+// Quote - Graphic (with a big ")
 .is-style-graphic {
-  position: relative;
-  border: 0 none;
-  background: #f7f7f7;
-  padding: 1.25em 1em 0.25em 1em;
+	position: relative;
+	border: 0 none;
+	background: #f7f7f7;
+	padding: 1.25em 1em 0.25em 1em;
 
-  p {
-    margin: 0 0.5em 1em 0.5em;
-  }
+	p {
+		margin: 0 0.5em 1em 0.5em;
+	}
 
-  ul {
-    margin: 0 0 1em 1em;
-  }
+	ul {
+		margin: 0 0 1em 1em;
+	}
 
-  &::before {
-    content: "\201C";
-    position: absolute;
-    font-size: 4em;
-    top: -0.25em;
-    left: -0.15em;
-    color: $green-bright;
-  }
+	&::before {
+		content: '\201C';
+		position: absolute;
+		font-size: 4em;
+		top: -0.25em;
+		left: -0.15em;
+		color: $green-bright;
+	}
 }
 
 // List - Extra Vertical Spacing.
 .is-style-extra-vertical-spacing {
-  > li {
-    margin-bottom: 1.5em;
-  }
-  ul > li {
-    margin-top: 0.75em;
-  }
+	> li {
+		margin-bottom: 1.5em;
+	}
+	ul > li {
+		margin-top: 0.75em;
+	}
 }
 
 // Heading - No Vertical Spacing Above.
 .is-style-no-spacing-above {
-  margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 // Query Block - Zebra Striped.
 .is-style-zebra-stripe {
-  li {
-    padding: 1em;
-    margin: 0 -1em;
+	li {
+		padding: 1em;
+		margin: 0 -1em;
 
-    &:nth-child(even) {
-      background: #f1f1f1;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgb(247, 247, 247) 30%,
-        rgb(241, 241, 241) 50%,
-        rgb(246, 246, 246) 70%,
-        rgba(255, 255, 255, 0) 100%
-      );
-    }
-  }
+		&:nth-child(even) {
+			background: #f1f1f1;
+			background: linear-gradient(
+				to right,
+				rgba(255, 255, 255, 0) 0%,
+				rgb(247, 247, 247) 30%,
+				rgb(241, 241, 241) 50%,
+				rgb(246, 246, 246) 70%,
+				rgba(255, 255, 255, 0) 100%
+			);
+		}
+	}
 
-  h2 {
-    margin-top: 0;
-  }
+	h2 {
+		margin-top: 0;
+	}
 
-  .wp-block-post-featured-image {
-    outline: 1px solid #ccc;
-  }
+	.wp-block-post-featured-image {
+		outline: 1px solid #ccc;
+	}
+}
+
+/* Group->Grid */
+.wp-block-group.is-layout-grid {
+	gap: 2em;
+}
+@include breakpoint(m) {
+	.wp-block-group.is-layout-grid {
+		grid-template-columns: 100%;
+
+		.wp-block-group {
+			grid-column: unset !important;
+		}
+		.wp-block-group::before,
+		.wp-block-group::after {
+			content: '' !important;
+			display: none !important;
+		}
+	}
+}
+
+/* Group->Grid: Internal Grid */
+.wp-block-group.is-layout-grid.is-style-stever-grid-internal {
+	overflow: hidden;
+	margin-top: 4em;
+
+	.wp-block-group {
+		position: relative;
+		.wp-block-group__inner-container {
+			padding: 0.5em 1em;
+			margin: -0.5em -1em;
+		}
+
+		.wp-block-heading {
+			margin-top: 0;
+		}
+	}
+
+	/* Internal Grid. Via: https://geary.co/internal-borders-css-grid */
+	/* Internal Grid: Pseudo Element Shared Styling */
+	.wp-block-group::before,
+	.wp-block-group::after {
+		content: '';
+		position: absolute;
+		background-color: $gray-light;
+		z-index: 1;
+	}
+
+	/* Internal Grid: Row Borders */
+	.wp-block-group::after {
+		inline-size: 100vw;
+		block-size: 1px;
+		inset-inline-start: 0;
+		inset-block-start: -1em;
+	}
+
+	/* Internal Grid: Column Borders */
+	.wp-block-group::before {
+		inline-size: 1px;
+		block-size: 100vh;
+		inset-inline-start: -1em;
+		margin-top: -1em;
+	}
+}
+
+/* Half-Rounded - For Columns & Groups. */
+.is-style-stever-attention-half-rounded {
+	border-top-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	transition: all 0.5s;
+	color: $white;
+	padding: 2.5em 2em 4em 2em;
+
+	&:hover {
+		box-shadow: inset 0 0 10px 5px $gray-med;
+		transition: all 0.5s;
+
+		.wp-block-button a,
+		.wp-block-button a:visited {
+			border-color: $white;
+			color: $white;
+			background-color: #ffffff4f;
+			outline: 1.5px solid white;
+			transition: all 0.5s;
+		}
+	}
+
+	h4 {
+		font-size: 2.5em;
+	}
+	a,
+	a:visited {
+		color: $white;
+	}
+	p {
+		color: $white;
+	}
+
+	.wp-block-heading {
+		color: $white;
+		margin: 0 0 0.5em 0;
+
+		i,
+		em {
+			font-family: $fonts-icon;
+			font-style: unset;
+			font-weight: unset;
+			font-size: 0.75em;
+			display: block;
+			margin-bottom: 1em;
+		}
+	}
+	.wp-block-separator {
+		mix-blend-mode: luminosity;
+	}
+	.wp-block-button {
+		mix-blend-mode: luminosity;
+
+		a {
+			border-color: $white;
+		}
+	}
+}
+/* HOME: Half-Rounded - For Columns & Groups. */
+.home .is-style-stever-attention-half-rounded {
+	position: relative;
+	padding-bottom: 5em;
+
+	h5 {
+		font-size: 1.5em;
+	}
+
+	.wp-block-buttons {
+		position: absolute;
+		bottom: 2em;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+/* Color Palette Classes. */
+.has-green-background-color {
+	background-color: $green;
+}
+
+.has-green-bright-background-color {
+	background-color: $green-bright;
+}
+
+.has-brown-background-color {
+	background-color: $brown;
+}
+
+.has-red-background-color {
+	background-color: $red;
+}
+
+.has-white-background-color {
+	background-color: $white;
+}
+
+.has-gray-background-color {
+	background-color: $gray;
+}
+
+.has-gray-light-background-color {
+	background-color: $gray-light;
+}
+
+.has-gray-med-background-color {
+	background-color: $gray-med;
+}
+
+.has-gray-dark-background-color {
+	background-color: $gray-dark;
+}
+
+.has-accent-green-background-color {
+	background-color: $accent-green;
+}
+
+.has-accent-teal-background-color {
+	background-color: $accent-teal;
+}
+
+.has-accent-red-background-color {
+	background-color: $accent-red;
+}
+
+.has-accent-blue-background-color {
+	background-color: $accent-blue;
 }

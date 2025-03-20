@@ -1,129 +1,50 @@
 /* Blocks: Unique Classes - Home */
 
 #hi {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 // Home: Section Blocks
 .stever-home-section {
-  margin-bottom: 4em;
+	margin-bottom: 4em;
 
-  &:last-of-type {
-    margin-bottom: 2em;
-  }
+	&:last-of-type {
+		margin-bottom: 2em;
+	}
 }
 
 // Bio
 .stever-home-section-intro {
-  figure {
-    flex-direction: column;
-  }
+	figure {
+		flex-direction: column;
+	}
 }
 @include breakpoint(l) {
-  .stever-home-section-intro {
-    .wp-block-column:first-child {
-      flex-basis: calc(70% - 1em) !important;
-    }
-    .wp-block-column:last-child {
-      flex-basis: calc(30% - 1em) !important;
-    }
-  }
+	.stever-home-section-intro {
+		.wp-block-column:first-child {
+			flex-basis: calc(70% - 1em) !important;
+		}
+		.wp-block-column:last-child {
+			flex-basis: calc(30% - 1em) !important;
+		}
+	}
 }
 @include breakpoint(s) {
-  .stever-home-section-intro {
-    .wp-block-column:first-child,
-    .wp-block-column:last-child {
-      flex-basis: 100% !important;
-    }
-    .wp-block-column {
-      & figure {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+	.stever-home-section-intro {
+		.wp-block-column:first-child,
+		.wp-block-column:last-child {
+			flex-basis: 100% !important;
+		}
+		.wp-block-column {
+			& figure {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
-        & img {
-          max-width: 250px;
-        }
-      }
-    }
-  }
-}
-
-// Statistics
-.stever-home-section-more .wp-block-column {
-  @include breakpoint(m) {
-    @include columns-full-override;
-  }
-}
-
-// Columns: Statistics
-.home .is-style-stever-columns-statistics {
-  p {
-    margin-bottom: 0.5em;
-  }
-  a {
-    text-decoration: underline;
-    color: $white;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-  h4 {
-    font-size: 1.5em;
-    margin: 0;
-    padding: 0 0 0.15em 0;
-
-    &:before {
-      display: none;
-    }
-    a {
-      text-decoration: none;
-    }
-  }
-  .wp-block-button {
-    text-decoration: none;
-    margin-top: 1em;
-
-    .wp-block-button__link,
-    .wp-block-button__link:visited {
-      color: $white;
-      border: 2px solid $white;
-      text-decoration: none;
-      opacity: 0.75;
-      cursor: pointer;
-    }
-    .wp-block-button__link:hover {
-      border: 2px solid $black;
-      opacity: 1;
-    }
-  }
-  .is-style-stever-columns-statistics-themes {
-    hr {
-      border-color: $accent-teal-light;
-    }
-    .wp-block-button__link,
-    .wp-block-button__link:visited {
-      background: $accent-teal-dark;
-      border-color: $accent-teal-light;
-      &:hover {
-        background: $accent-teal-light;
-        border-color: $accent-teal-dark;
-      }
-    }
-  }
-  .is-style-stever-columns-statistics-team {
-    hr {
-      border-color: $accent-red-light;
-    }
-    .wp-block-button__link,
-    .wp-block-button__link:visited {
-      background: $accent-red-dark;
-      border-color: $accent-red-light;
-      &:hover {
-        background: $accent-red-light;
-        border-color: $accent-red-dark;
-      }
-    }
-  }
+				& img {
+					max-width: 250px;
+				}
+			}
+		}
+	}
 }
