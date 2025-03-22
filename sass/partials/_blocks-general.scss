@@ -76,42 +76,21 @@ table {
 	width: 100%;
 }
 
-// General Accordions (from "Accordion Blocks" plugin)
-.c-accordion__item {
+// General Accordions (Details Block)
+.wp-block-details {
 	background: $gray-light;
 	margin-bottom: 1em;
 
-	.c-accordion__title {
-		margin: 0 !important;
-		padding: 0.5em !important;
+	summary {
+		border: 1px dashed $gray;
+		padding: 0.5em;
 	}
-	.c-accordion__title::after {
-		right: 0.5em;
-	}
-	.c-accordion__content {
-		padding: 1em;
-	}
-	button {
-		border: 1px dashed #ccc;
-		padding: 0.5em 0.75em;
-	}
-	button::after {
-		display: none !important;
-	}
-	button::before {
-		content: '\F0FE';
-		font-family: 'Font Awesome 5 Free';
-		font-weight: normal;
-		font-style: normal;
-		padding: 0 1em 0 0.5em;
-		color: $gray-dark;
-	}
-	&.is-open {
-		button {
-			border: 1px solid #ccc;
-		}
-		button::before {
-			content: '\F146';
+
+	&[open] {
+		padding: 0 1em 1em 1em;
+
+		summary {
+			margin: 0 -1em 1em -1em;
 		}
 	}
 }
