@@ -33,6 +33,7 @@
 			margin-top: 0;
 		}
 		#sr-table-search--wrapper {
+			z-index: 5;
 			display: grid;
 			grid-template-columns: 90% 10%;
 			border: 1px solid #ccc;
@@ -67,6 +68,7 @@
 		}
 		#sr-table-search--container.zero-results:after {
 			content: 'No results.';
+			outline: 1px dashed red;
 			padding: 0.5em;
 		}
 		#sr-table-search--count-wrapper {
@@ -167,6 +169,10 @@
 			#sr-table-search--container {
 				grid-template-columns: repeat(auto-fill, calc(10% - 0.25em));
 				grid-gap: 0.25em;
+			}
+			#sr-table-search--container.zero-results:after {
+				grid-column-start: 1;
+				grid-column-end: 11;
 			}
 			#sr-table-search--wrapper {
 				grid-template-columns: 80% 20%;
