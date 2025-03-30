@@ -130,12 +130,6 @@ function stever_admin_scripts_styles() {
 		filemtime( get_stylesheet_directory() . '/css/admin.min.css' )
 	);
 
-    // CSS: SteveR Blocks Styles.
-	wp_enqueue_style( 'stever-blocks',
-		get_stylesheet_directory_uri() . '/css/blocks.min.css',
-		array(),
-		filemtime( get_stylesheet_directory() . '/css/blocks.min.css' )
-	);
 	// Icons.
 	wp_enqueue_style(
 		'fontawesome',
@@ -145,6 +139,29 @@ function stever_admin_scripts_styles() {
 	);
 }
 add_action( 'admin_enqueue_scripts', 'stever_admin_scripts_styles' );
+
+/**
+ * Block admin
+ */
+function stever_block_styles() {
+	if (is_admin()) {
+		wp_enqueue_style(
+			'stever-blocks',
+			get_stylesheet_directory_uri() . '/css/blocks.min.css',
+			array(),
+			filemtime(get_stylesheet_directory() . '/css/blocks.min.css')
+		);
+	}
+	if (is_admin()) {
+		wp_enqueue_style(
+			'stever-admin-blocks',
+			get_stylesheet_directory_uri() . '/css/admin-blocks.min.css',
+			array(),
+			filemtime(get_stylesheet_directory() . '/css/admin-blocks.min.css')
+		);
+	}
+}
+add_action('enqueue_block_assets', 'stever_block_styles');
 
 
 /**
