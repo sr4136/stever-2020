@@ -49,16 +49,14 @@ p {
 	margin-bottom: 1em;
 }
 
-a,
-a:visited {
-	color: $red;
-	transition: all 0.5s;
-}
-
-a:hover,
-a:active {
+a {
 	text-decoration: underline;
+	text-underline-offset: 2px;
 	color: $blue;
+}
+a:not(:is(:hover, :focus)) {
+	color: $red;
+	text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
 }
 
 #main {
