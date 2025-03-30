@@ -5,38 +5,37 @@
 }
 
 // Table: Professional Development (Admin)
-.is-style-stever-table-pro-dev {
-	font-size: 0.85em;
-
-	td {
-		vertical-align: top;
-	}
-	// Icon
-	td:nth-child(1) {
-		width: 15%;
-		text-align: center;
-	}
-	// Title
-	td:nth-child(2) {
-		width: 45%;
-	}
-	// Affiliation
-	td:nth-child(3) {
-		width: 25%;
-	}
-	// Date
-	td:nth-child(4) {
-		width: 15%;
-		padding-right: 0.5em;
-	}
-}
-
-// Table: Professional Development
-.sr-table-pro-dev {
+.sr-page-table-prodev {
 	// Legend Textarea size & spacing.
 	.wp-block-html textarea {
 		min-height: 500px;
 		line-height: 1.5em;
+	}
+
+	.is-style-stever-table-pro-dev {
+		// Hide placeholder text.
+		thead th:first-child {
+			opacity: 0;
+		}
+		// Icon
+		td:nth-child(1) {
+			width: 10%;
+			font-size: 0.75em;
+			padding: 0.75em 0;
+		}
+		// Title
+		td:nth-child(2) {
+			width: 45%;
+		}
+		// Affiliation
+		td:nth-child(3) {
+			width: 30%;
+		}
+		// Date
+		td:nth-child(4) {
+			width: 15%;
+			padding-right: 0.5em;
+		}
 	}
 }
 

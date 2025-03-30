@@ -89,3 +89,35 @@ function stever_admin_body_class( $classes ) {
 	}
 }
 add_filter( 'admin_body_class', 'stever_admin_body_class' );
+
+
+
+/* Adds body class to block editor iframe.
+ * See: `/js/editor.js`
+ * @via: https://wordpress.stackexchange.com/a/427560
+ */
+
+function site_editor_styles() {
+	$screen = get_current_screen();
+
+	if ('page' == $screen->id) {
+		$add_classes = stever_body_class_get_meta('stever_body_class_text');
+		if (!empty($add_classes)) {
+			$classes .= $add_classes;
+		}
+		// Enqueue or Javascript
+		wp_enqueue_script(
+			'sr-block-iframe-classes',
+			get_template_directory_uri() . '/js/editor.js',
+			array('wp-blocks', 'wp-dom'),
+			filemtime(get_stylesheet_directory() . '/js/editor.js'),
+			true
+		);
+
+		// Pass the class names to the script
+		wp_localize_script('sr-block-iframe-classes', 'iframeBodyData', [
+			'classes' => $classes,
+		]);		
+	}
+}
+add_action('enqueue_block_assets', 'site_editor_styles');
