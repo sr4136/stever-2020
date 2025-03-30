@@ -41,8 +41,8 @@
 }
 
 // Heading: Year Divider
-.entry-content .is-style-year-divider,
-.block-editor .is-style-year-divider {
+.is-style-year-divider,
+.entry-content .is-style-year-divider {
 	background-color: $green-bright;
 	color: $white;
 	text-align: center;
@@ -122,33 +122,6 @@
 	}
 }
 
-// Table: Professional Development (Admin)
-.wp-admin .is-style-stever-table-pro-dev {
-	font-size: 0.85em;
-
-	td {
-		vertical-align: top;
-	}
-	// Icon
-	td:nth-child(1) {
-		width: 15%;
-		text-align: center;
-	}
-	// Title
-	td:nth-child(2) {
-		width: 45%;
-	}
-	// Affiliation
-	td:nth-child(3) {
-		width: 25%;
-	}
-	// Date
-	td:nth-child(4) {
-		width: 15%;
-		padding-right: 0.5em;
-	}
-}
-
 // Table: Professional Development - Responsive
 @include breakpoint(m) {
 	.prodev-columns {
@@ -207,15 +180,6 @@
 				padding-top: 0.5em;
 			}
 		}
-	}
-}
-
-// Table: Professional Development (Admin)
-.wp-admin.sr-table-pro-dev .editor-styles-wrapper {
-	// Legend Textarea size & spacing.
-	.wp-block-html textarea {
-		min-height: 500px;
-		line-height: 1.5em;
 	}
 }
 
@@ -289,14 +253,6 @@
 			width: 25% !important;
 			padding-top: 0.25em;
 		}
-	}
-}
-
-// Table: Books I've Read (Admin)
-.wp-admin .is-style-stever-table-books {
-	th,
-	td {
-		padding: 0.5em;
 	}
 }
 

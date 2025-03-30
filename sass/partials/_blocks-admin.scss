@@ -1,0 +1,75 @@
+// Page Title: Extra Attention
+.editor-post-title {
+	border-bottom: 4px double black;
+	margin-bottom: 2em;
+}
+
+// Table: Professional Development (Admin)
+.is-style-stever-table-pro-dev {
+	font-size: 0.85em;
+
+	td {
+		vertical-align: top;
+	}
+	// Icon
+	td:nth-child(1) {
+		width: 15%;
+		text-align: center;
+	}
+	// Title
+	td:nth-child(2) {
+		width: 45%;
+	}
+	// Affiliation
+	td:nth-child(3) {
+		width: 25%;
+	}
+	// Date
+	td:nth-child(4) {
+		width: 15%;
+		padding-right: 0.5em;
+	}
+}
+
+// Table: Professional Development
+.sr-table-pro-dev {
+	// Legend Textarea size & spacing.
+	.wp-block-html textarea {
+		min-height: 500px;
+		line-height: 1.5em;
+	}
+}
+
+code {
+	border: 1px solid $gray-med;
+	background-color: $gray-light;
+	padding: 1px 3px;
+}
+
+// Table: Books I've Read
+.is-style-stever-table-books {
+	th,
+	td {
+		padding: 0.5em;
+	}
+}
+
+// Spacer - Outline
+.wp-block-spacer {
+	border: 1px dotted $gray-dark;
+	&::before {
+		content: '(spacer)';
+		text-align: center;
+		font-size: 0.65em;
+	}
+}
+
+// Group -- Outline
+.wp-block-group {
+	border: 1px dotted $gray-dark;
+}
+
+// Coulumns  -- Outline
+.wp-block-columns {
+	border: 1px dotted $gray-dark;
+}

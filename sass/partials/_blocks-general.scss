@@ -1,25 +1,5 @@
 /* Blocks: General */
 
-// Spacer (Admin) -- Outline
-.wp-admin .wp-block-spacer {
-	border: 1px dotted $gray-dark;
-	&::before {
-		content: '(spacer)';
-		text-align: center;
-		font-size: 0.65em;
-	}
-}
-
-// Group (Admin) -- Outline
-.wp-admin .wp-block-group {
-	border: 1px dotted $gray-dark;
-}
-
-// Coulumns (Admin) -- Outline
-.wp-admin .wp-block-columns {
-	border: 1px dotted $gray-dark;
-}
-
 // Cover Image
 .wp-block-cover {
 	margin-bottom: 2em;
@@ -40,11 +20,6 @@
 	margin-bottom: 1em;
 }
 
-// Mark
-mark {
-	padding: 0 0.25em;
-}
-
 // Buttons
 .wp-block-button__link,
 .wp-block-button__link:visited {
@@ -62,12 +37,6 @@ mark {
 	color: $white;
 	background-color: $red;
 	text-decoration: none;
-}
-
-// Tables
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
 // Gallery
@@ -93,11 +62,4 @@ table {
 			margin: 0 -1em 1em -1em;
 		}
 	}
-}
-
-// Tables
-.editor-styles-wrapper code {
-	border: 1px solid $gray-med;
-	background-color: $gray-light;
-	padding: 1px 3px;
 }
