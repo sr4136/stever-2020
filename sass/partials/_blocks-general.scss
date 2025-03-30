@@ -94,3 +94,10 @@ table {
 		}
 	}
 }
+
+// Tables
+.editor-styles-wrapper code {
+	border: 1px solid $gray-med;
+	background-color: $gray-light;
+	padding: 1px 3px;
+}
