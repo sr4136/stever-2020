@@ -22,7 +22,8 @@
 
 // Cover Image
 .wp-block-cover {
-	margin-bottom: 2em;
+	margin: -2em -1.9em 2em -1.9em;
+	border-radius: 3px 3px 0 0;
 	padding: 3em;
 
 	.wp-block-cover__inner-container {

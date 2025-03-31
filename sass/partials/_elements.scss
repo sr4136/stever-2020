@@ -54,18 +54,27 @@ a {
 	text-underline-offset: 2px;
 	color: $blue;
 }
-a:not(:is(:hover, :focus)) {
+a:not(:is(:hover, :focus, .button)) {
 	color: $red;
 	text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
 }
 
 #main {
-	padding: 0.9375rem 0.9375rem 1.875rem 0.9375rem;
+	padding: $frem $frem $dfrem $frem;
 }
-
 @include breakpoint(s) {
 	#main {
 		padding: 1em 0.25em;
+	}
+}
+@include breakpoint(xs) {
+	#main::before {
+		content: '';
+		width: 50%;
+		height: 1px;
+		background: #ccc;
+		margin: 2em auto 3.75em auto;
+		display: block;
 	}
 }
 
