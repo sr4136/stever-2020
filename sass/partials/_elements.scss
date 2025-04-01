@@ -154,6 +154,11 @@ table {
 .entry-summary {
 	margin-top: 1.5em;
 }
+@include breakpoint(s) {
+	.entry-content {
+		margin-top: 0;
+	}
+}
 
 p:last-child {
 	margin-bottom: 0;

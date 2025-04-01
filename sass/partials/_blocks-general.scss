@@ -19,6 +19,13 @@
 	border-radius: 3px 3px 0 0;
 }
 
+// Breakpoint: x-small
+@include breakpoint(s) {
+	.page .wp-block-cover.is-style-pageTop-fullBleed {
+		margin-top: -1em;
+	}
+}
+
 // Image
 .wp-block-image {
 	margin-bottom: 1em;
