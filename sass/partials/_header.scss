@@ -59,18 +59,22 @@
 	grid-gap: 1.25em;
 	font-size: 1.15em;
 
-	.current-menu-item {
-		font-weight: bold;
-	}
-	a {
-		font-weight: bold;
-	}
 	li {
 		line-height: 100%;
 	}
 	li + li {
 		border-left: 2px solid $gray-med;
 		padding-left: 1.25em;
+	}
+	a {
+		font-weight: bold;
+	}
+	.current-menu-item {
+		font-weight: bold;
+
+		a:not(:is(:hover, :focus, .button)) {
+			color: #412613;
+		}
 	}
 }
 

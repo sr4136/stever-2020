@@ -67,6 +67,11 @@ if (function_exists('register_block_style')) {
 			'name'         => 'extra-spacing-above',
 			'label'        => 'Extra Space Above',
 		));
+		/* Group: Notes-Sessions */
+		register_block_style('core/group', array(
+			'name'         => 'notes-sessions-list',
+			'label'        => 'Notes: Sessions List',
+		));
 
 
 		// Column: Event Notes Header

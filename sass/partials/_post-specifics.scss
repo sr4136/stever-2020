@@ -30,9 +30,25 @@
 
 /* Posts w/ "Event Notes" category get larger heading spacing.*/
 .cat-event-notes {
-	.entry-content {
-		.wp-block-heading {
-			margin-top: 4em;
+	h2 {
+		margin: 0 0 1em 0;
+		padding: 1em 1em 0 0;
+		border-bottom: 2px solid transparent;
+		background: linear-gradient($white, $white) padding-box,
+			linear-gradient(to right, $green-bright, transparent 75%) border-box;
+	}
+
+	.is-style-notes-sessions-list .wp-block-group {
+		border-left: 1px dashed $gray-med;
+		padding-left: 1em;
+		margin-bottom: 3em;
+
+		h3 {
+			font-size: 1.25em;
+			margin: 0 0.5em 1em;
+		}
+		.wp-block-quote {
+			margin-left: calc(-1em - 1px);
 		}
 	}
 }
