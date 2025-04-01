@@ -31,7 +31,7 @@
 		grid-gap: 0.5em;
 		margin: 0;
 		justify-content: right;
-		padding: 0.9375rem 1.875rem;
+		padding: $frem $dfrem;
 
 		li {
 			list-style: none;
@@ -61,12 +61,14 @@
 	.current-menu-item {
 		font-weight: bold;
 	}
+	a {
+		font-weight: bold;
+	}
 	li {
 		line-height: 100%;
 	}
-
 	li + li {
-		border-left: 2px solid #ccc;
+		border-left: 2px solid $gray-med;
 		padding-left: 1.25em;
 	}
 }
@@ -75,14 +77,21 @@
 .page-header,
 .entry-header {
 	position: relative;
-	border-bottom: 1px solid $gray-med;
-	padding: 0.5em 0 1em 0;
-	margin-bottom: 2em;
+	border-left: 10px solid $green-bright;
+	padding: 1.5em 1em 1.5em 1.25em;
+	margin: $nfrem $ndfrem 1rem $ndfrem;
+	background: $green;
+
+	h1 {
+		color: $white;
+		line-height: 1.25em;
+	}
 
 	.button {
 		position: absolute;
-		right: 0;
-		top: 0.5em;
+		right: 2em;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 }
 
@@ -120,6 +129,11 @@
 		justify-content: center;
 		font-size: 1.2em;
 	}
+
+	.page-header,
+	.entry-header {
+		margin: -1em -1em 2em -1em;
+	}
 }
 
 // Breakpoint: x-small
@@ -132,22 +146,55 @@
 		}
 	}
 
+	.menu-primary-container {
+		position: relative;
+		border: 1px solid $gray-med;
+	}
 	#primary-menu {
 		display: block;
 		font-size: 1.5em;
 		padding: 0;
+		border-left: 1.5em solid $gray-light;
 
 		li {
 			padding: 0.75em;
-			border-top: 1px solid #ccc;
+			border-top: 1px solid $gray-med;
+			border-left: 1px solid $gray-med;
 		}
 		li + li {
 			padding: 0.75em;
+			border-top: 1px solid $gray-med;
+			border-left: 1px solid $gray-med;
 
 			a {
 				padding: 0;
 				border: 0 none;
 			}
+		}
+		li:first-child {
+			border-top: 0 none;
+		}
+	}
+	#primary-menu::before {
+		content: '\f0c9\2004\2004 Menu';
+		text-transform: uppercase;
+		position: absolute;
+		font-size: 0.75em;
+		top: 50%;
+		left: 1em;
+		transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+		font-family: $fonts-icon;
+		font-weight: 900;
+		color: $gray-darkest;
+	}
+	#content {
+		border: 0 none;
+	}
+
+	#primary-menu .current-menu-item {
+		border-left: 10px solid #c2552e;
+		a {
+			margin-left: -10px;
 		}
 	}
 }

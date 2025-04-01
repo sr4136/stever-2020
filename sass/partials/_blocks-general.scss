@@ -2,8 +2,8 @@
 
 // Cover Image
 .wp-block-cover {
-	margin-bottom: 2em;
 	padding: 3em;
+	margin: 0 auto 1em auto;
 
 	.wp-block-cover__inner-container {
 		h1 {
@@ -13,6 +13,10 @@
 			margin-top: -4em;
 		}
 	}
+}
+.page .wp-block-cover.is-style-pageTop-fullBleed {
+	margin: -2.5em $ndfrem 1.5em $ndfrem;
+	border-radius: 3px 3px 0 0;
 }
 
 // Image

@@ -69,19 +69,20 @@
 .button-ghost:active,
 .button-ghost[type='submit'] {
 	font-size: 0.85em;
-	border: 3px solid $blue;
-	background: $white;
+	border: 2px solid $black;
+	background: #fff5;
 	color: $black;
 	cursor: pointer;
-	transition: all 0.5s;
+	text-decoration: none;
+	border-radius: 3px;
 }
 .button-ghost:hover,
 .button-ghost:visited:hover,
 .button-ghost:active:hover,
 .button-ghost[type='submit']:hover {
-	border-color: $red;
-	background: $white;
-	color: $black;
+	border-color: $black;
+	background: #0005;
+	color: $white;
 }
 
 // Island Class

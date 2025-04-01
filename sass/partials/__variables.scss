@@ -39,12 +39,20 @@ $red-error: #ff0000;
 // "Standard" Colors
 $white: #ffffff;
 $black: #000000;
+$black-copy: #0a0a0a;
+
+// Sizes, mostly for Foundation values
+$frem: 0.9375rem;
+$dfrem: 1.875rem;
+$nfrem: -0.9375rem;
+$ndfrem: -1.875rem;
 
 // Fonts
 $fonts-copy: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $fonts-headings: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $fonts-mono: 'B612 Mono', monospace;
-$fonts-icon: 'Font Awesome 5 Free';
+$fonts-icon: 'Font Awesome 5 Free', 'Lato', 'Roboto', 'Helvetica Neue',
+	Helvetica, Arial, sans-serif;
 
 // Breakpoints
 // HT: https://bit.ly/3beCmdq
