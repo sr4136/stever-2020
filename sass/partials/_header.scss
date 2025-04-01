@@ -75,6 +75,11 @@
 		a:not(:is(:hover, :focus, .button)) {
 			color: #412613;
 		}
+		@include breakpoint(xs) {
+			a:not(:is(:hover, :focus, .button)) {
+				color: $red;
+			}
+		}
 	}
 }
 

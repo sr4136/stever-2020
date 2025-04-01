@@ -76,6 +76,10 @@ a:not(:is(:hover, :focus, .button)) {
 		margin: 2em auto 3.75em auto;
 		display: block;
 	}
+	.home #main::before {
+		background: transparent;
+		margin: 1em auto;
+	}
 }
 
 code {
