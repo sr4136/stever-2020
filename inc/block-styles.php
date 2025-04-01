@@ -6,7 +6,7 @@
 if (function_exists('register_block_style')) {
 	function stever_register_block_styles() {
 
-		/* Table: Professional Development */
+		// Table: Professional Development
 		register_block_style('core/table', array(
 			'name'         => 'stever-table-pro-dev',
 			'label'        => 'Prof. Dev.',
@@ -23,77 +23,87 @@ if (function_exists('register_block_style')) {
 		));
 
 
-		/* Gallery: Fancybox */
+		// Image: Polaroid
+		register_block_style('core/image', array(
+			'name'         => 'polaroid',
+			'label'        => 'Polaroid',
+		));
+		// Cover Image: Page-top Full-bleed
+		register_block_style('core/cover', array(
+			'name'         => 'pageTop-fullBleed',
+			'label'        => 'Page-top Full-bleed',
+		));
+		// Gallery: Fancybox
 		register_block_style('core/gallery', array(
 			'name'         => 'fancybox',
 			'label'        => 'Fancybox Gallery',
 		));
 
-		/* Heading: Year Divider */
+
+		// Heading: Year Divider
 		register_block_style('core/heading', array(
 			'name'         => 'year-divider',
 			'label'        => 'Year Divider',
 		));
-
-
-		// Group: half-rounded
-		register_block_style('core/group', array(
-			'name'  => 'stever-attention-half-rounded',
-			'label' => 'Attention: Half Rounded',
-		));
-		// Group: grid-internal
-		register_block_style('core/group', array(
-			'name'  => 'stever-grid-internal',
-			'label' => 'Grid: Internal',
-		));
-
-
-		/* Columns: Event Notes Header */
-		register_block_style('core/columns', array(
-			'name'         => 'stever-columns-event-notes',
-			'label'        => 'Event Notes Header',
-		));
-
-		/* Indented List */
-		register_block_style('core/list', array(
-			'name'         => 'stever-list-indented',
-			'label'        => 'Indented List',
-		));
-
-		/* Quote: Attention*/
-		register_block_style('core/quote', array(
-			'name'         => 'attention',
-			'label'        => 'Attention',
-		));
-		/* Quote: Graphic*/
-		register_block_style('core/quote', array(
-			'name'         => 'graphic',
-			'label'        => 'Graphic',
-		));
-
-
-		/* Lists: Extra Vertical Spacing */
-		register_block_style('core/list', array(
-			'name'         => 'extra-vertical-spacing',
-			'label'        => 'Extra Vertical Spacing',
-		));
-
-		/* Lists: Extra Vertical Spacing */
+		/* Heading: Extra Vertical Spacing */
 		register_block_style('core/heading', array(
 			'name'         => 'no-spacing-above',
 			'label'        => 'No Vertical Space Above',
 		));
 
-		/* Lists: Extra Vertical Spacing */
+
+		// Group: Half-Rounded
+		register_block_style('core/group', array(
+			'name'  => 'stever-attention-half-rounded',
+			'label' => 'Attention: Half Rounded',
+		));
+		// Group: Grid - Internal
+		register_block_style('core/group', array(
+			'name'  => 'stever-grid-internal',
+			'label' => 'Grid: Internal',
+		));
+		/* Group: Extra Vertical Spacing */
+		register_block_style('core/group', array(
+			'name'         => 'extra-spacing-above',
+			'label'        => 'Extra Space Above',
+		));
+
+
+		// Column: Event Notes Header
+		register_block_style('core/columns', array(
+			'name'         => 'stever-columns-event-notes',
+			'label'        => 'Event Notes Header',
+		));
+
+
+		// Query: Extra Vertical Spacing
 		register_block_style('core/query', array(
 			'name'         => 'zebra-stripe',
 			'label'        => 'Zebra Striped',
 		));
 
-		/* Cover Image: Page-top Full-bleed */
-		register_block_style('core/cover', array(
-			'name'         => 'pageTop-fullBleed',
-			'label'        => 'Page-top Full-bleed',
+
+		// List: Indented
+		register_block_style('core/list', array(
+			'name'         => 'stever-list-indented',
+			'label'        => 'Indented List',
+		));
+		// List: Extra Vertical Spacing
+		register_block_style('core/list', array(
+			'name'         => 'extra-vertical-spacing',
+			'label'        => 'Extra Vertical Spacing',
+		));
+
+
+		// Quote: Attention
+		register_block_style('core/quote', array(
+			'name'         => 'attention',
+			'label'        => 'Attention',
+		));
+		// Quote: Graphic
+		register_block_style('core/quote', array(
+			'name'         => 'graphic',
+			'label'        => 'Graphic',
 		));
 	}
 	add_action('init', 'stever_register_block_styles');

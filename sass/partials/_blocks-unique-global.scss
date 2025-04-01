@@ -60,7 +60,27 @@
 	}
 }
 
-// List - Extra Vertical Spacing.
+// Image - Polaroid
+.is-style-polaroid {
+	transform: rotate(3deg);
+	margin: 1em 1em 0 1em;
+	padding: 0.5em;
+	border: 1px solid $gray-med;
+	border-radius: 3px;
+	box-shadow: 3px 3px 3px $gray-med;
+	text-align: center;
+
+	figcaption {
+		margin-bottom: 0;
+	}
+
+	&:hover {
+		transition: all 0.25s;
+		box-shadow: 0 0 8px $black;
+	}
+}
+
+// List - Extra Vertical Spacing
 .is-style-extra-vertical-spacing {
 	> li {
 		margin-bottom: 1.5em;
@@ -68,6 +88,11 @@
 	ul > li {
 		margin-top: 0.75em;
 	}
+}
+
+// Group - Extra Spacing Above
+.is-style-extra-spacing-above {
+	margin-top: 8em;
 }
 
 // Heading - No Vertical Spacing Above.
