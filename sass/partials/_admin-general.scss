@@ -3,6 +3,21 @@
 	width: 100%;
 }
 
+// Post Status: Add Attention
+.editor-post-status {
+	.components-button[aria-label='Change status: Private'] {
+		color: #cc0000;
+	}
+
+	.components-button[aria-label='Change status: Draft'] {
+		color: #ff6000;
+	}
+
+	.components-button[aria-label='Change status: Published'] {
+		color: #008000;
+	}
+}
+
 // Edit Post Header: Extra Attention (light blue)
 .edit-post-header {
 	background-color: #defafa;
@@ -31,12 +46,13 @@
 	}
 	// Title Column: Post State Tags (Plugin).
 	.column-title .post-state {
-		opacity: 0.5;
-		margin-left: 2em;
-
-		.states {
-			background: $black !important;
-		}
+		background: #666;
+		padding: 1px 4px 2px 4px;
+		border-radius: 4px;
+		color: #fff;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: 0.8em;
 	}
 
 	// Category Column
@@ -137,8 +153,13 @@
 		transition: all 0.5s;
 
 		/* Duplicate Post plugin: hide the "number of duplicates" input. */
-		.dppmc_btn_count input {
-			display: none !important;
+		.dppmc_btn_count {
+			a {
+				cursor: pointer;
+			}
+			input {
+				display: none !important;
+			}
 		}
 
 		/* Simple Page Ordering plugin. */

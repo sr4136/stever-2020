@@ -63,12 +63,52 @@ code {
 	}
 }
 
-// Group -- Outline
-.wp-block-group {
+// Group, Columns -- Outline
+.wp-block-group,
+.wp-block-columns,
+.wp-block-column {
 	border: 1px dotted $gray-dark;
+	background-image: repeating-linear-gradient(
+		45deg,
+		transparent,
+		transparent 5px,
+		$gray-med 0,
+		$gray-med 10px
+	);
+	background-size: 3px 100%;
+	background-repeat: no-repeat;
+	padding-left: 1rem;
 }
 
-// Coulumns  -- Outline
-.wp-block-columns {
-	border: 1px dotted $gray-dark;
+.wp-block-group::before,
+.wp-block-columns::before,
+.wp-block-column::before {
+	content: 'group';
+	position: absolute;
+	top: 0px;
+	left: 0;
+	transform: rotate(-90deg) translateX(-100%);
+	transform-origin: top left;
+	background: $gray-med;
+	padding: 0 2px 4px 2px;
+	color: $white;
+	font-size: 8px;
+
+	line-height: 8px;
+}
+.wp-block-columns::before {
+	content: 'columns';
+}
+.wp-block-column::before {
+	content: 'column';
+}
+
+/* Home - Half Rounded: Account for buttons. */
+.home .is-style-stever-attention-half-rounded {
+	padding-bottom: 1em;
+
+	.wp-block-buttons {
+		position: relative;
+		bottom: 0;
+	}
 }
