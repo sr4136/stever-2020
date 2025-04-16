@@ -85,6 +85,8 @@ a:not(:is(:hover, :focus, .button)) {
 code {
 	border: 1px solid $gray-med;
 	background-color: $gray-light;
+	font-family: $fonts-mono;
+	font-size: 0.75em;
 }
 
 blockquote,

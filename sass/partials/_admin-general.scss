@@ -5,6 +5,10 @@
 
 // Post Status: Add Attention
 .editor-post-status {
+	.components-button {
+		font-weight: bold;
+		font-variant-caps: small-caps;
+	}
 	.components-button[aria-label='Change status: Private'] {
 		color: #cc0000;
 	}
