@@ -1,19 +1,26 @@
 /* Page-specific: Professional Development */
 .sr-page-table-prodev {
 	#sr-legend--container {
+		border: 1px solid $green-light;
+		margin-bottom: 2em;
+
+		p {
+			margin: 0;
+			padding: 0.5em 1em;
+			font-weight: bold;
+			border-left: 5px solid $green-light;
+		}
+
 		#sr-legend {
-			margin: 2em 0;
-			border: 1px solid $green-light;
 			list-style: none;
+			margin: 0;
 
 			li {
 				cursor: pointer;
 				padding: 0.25em 0.5em;
 				margin-left: 0;
 				border-left: 5px solid transparent;
-				&:not(:last-child) {
-					border-bottom: 1px solid $green-light;
-				}
+				border-top: 1px solid $green-light;
 
 				&:hover {
 					border-left: 5px solid $green-light;
