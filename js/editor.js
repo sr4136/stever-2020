@@ -15,7 +15,7 @@ wp.domReady(() => {
 
 			if (editorBody) {
 				editorBody.classList.add(...iframeBodyData.classes.split(' '));
-				console.log('Classes added to iframe body');
+				// console.log('Classes added to iframe body');
 				return true;
 			}
 		}
@@ -35,17 +35,15 @@ wp.domReady(() => {
 				if (editorBody) {
 					if (addClassesToIframeBody()) {
 						observer.disconnect();
-						console.log(
-							'Stopped observing - iframe body found and modified'
-						);
+						// console.log('Stopped observing - iframe body found and modified');
 					}
 				} else {
-					console.log('No body (.editor-styles-wrapper) found');
+					// console.log('No body (.editor-styles-wrapper) found');
 				}
 			}
 		});
 
-		console.log('Starting MutationObserver on document.body');
+		// console.log('Starting MutationObserver on document.body');
 		observer.observe(document.body, { childList: true, subtree: true });
 	}
 });
