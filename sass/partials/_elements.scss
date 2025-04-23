@@ -12,6 +12,7 @@ body {
 		rgba(247, 247, 247, 1) 80%
 	);
 	font-family: $fonts-copy;
+	font-display: fallback;
 	font-size: 16px;
 }
 
@@ -22,6 +23,7 @@ h4,
 h5,
 h6 {
 	font-family: $fonts-headings;
+	font-display: fallback;
 	color: $gray-darkest;
 	line-height: 1em;
 	margin: 0;
@@ -86,6 +88,7 @@ code {
 	border: 1px solid $gray-med;
 	background-color: $gray-light;
 	font-family: $fonts-mono;
+	font-display: fallback;
 	font-size: 0.75em;
 }
 
