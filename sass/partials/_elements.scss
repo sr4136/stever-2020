@@ -92,6 +92,27 @@ code {
 	font-size: 0.75em;
 }
 
+q {
+	position: relative;
+	background-color: $gray-light;
+	padding: 0.3em 0.5em;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	border-left: 3px solid $green-light;
+
+	&::before {
+		content: '\201C';
+		position: absolute;
+		font-size: 2em;
+		top: 0;
+		left: -0.15em;
+		color: #8b9b31;
+	}
+}
+li:has(> q) {
+	padding: 0.25em 0;
+}
+
 blockquote,
 blockquote p {
 	color: $gray-darkest;
