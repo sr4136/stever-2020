@@ -3,7 +3,7 @@
 // Import required Gulp plugins
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var cssNano = require('gulp-cssnano');
+var cleanCSS = require('gulp-clean-css'); // Changed from gulp-cssnano to gulp-clean-css
 var rename = require('gulp-rename');
 
 // Initialize Sass with node-sass
@@ -15,7 +15,7 @@ function compileSass(src, dest) {
 		.src(src, { sourcemaps: true }) // Source files with sourcemaps
 		.pipe(sass().on('error', sass.logError)) // Compile Sass and log errors
 		.pipe(gulp.dest(dest, { sourcemaps: true })) // Output unminified CSS
-		.pipe(cssNano()) // Minify CSS
+		.pipe(cleanCSS()) // Minify CSS using cleanCSS
 		.pipe(rename({ extname: '.min.css' })) // Rename to .min.css
 		.pipe(gulp.dest(dest, { sourcemaps: true })); // Output minified CSS
 }
