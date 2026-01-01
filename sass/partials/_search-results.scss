@@ -1,13 +1,21 @@
 // Search Results Page
-.search-results article {
-	border-left: 3px solid $gray-med;
-	margin: 1.5em 0 1.5em -1em;
-	padding: 0 1em;
-}
-.search-results article h2 {
-	line-height: 1;
-}
-.search-results article .post-thumbnail,
-.search-results article img {
-	display: none;
+.search-results {
+	article {
+		margin: 2em 0 2em -1em;
+		padding: 1.5em 1em;
+		border-left: 3px solid $gray-med;
+
+		&:nth-child(2n + 1) {
+			background-color: $gray-light;
+		}
+
+		.entry-meta {
+			padding: 1em 0;
+		}
+
+		.post-thumbnail,
+		img {
+			display: none !important;
+		}
+	}
 }

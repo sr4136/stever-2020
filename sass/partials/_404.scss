@@ -12,13 +12,13 @@
 			width: 60%;
 			margin: 4em auto 2em auto;
 		}
-		
+
 		.search-form {
 			label {
 				padding-right: 2em;
 			}
 			.search-field {
-				padding-left: .75em;
+				padding-left: 0.75em;
 				margin: 0;
 			}
 			.search-field::placeholder {
@@ -33,18 +33,12 @@
 		}
 	}
 	aside {
-		padding: .5em 0 0 1em;
+		padding: 0.5em 0 0 1em;
 		border-left: 1px solid $gray-med;
 
-		.all-pages {
-			margin-top: 1em;
-		}
-		.all-pages ul{
-			list-style-type: none;
-			margin-left: 0;
-		}
-		.all-pages ul.children {
-			margin-left: 1em;
+		h3 {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
 		}
 	}
 }
