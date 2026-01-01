@@ -29,26 +29,87 @@
 }
 
 /* Posts w/ "Event Notes" category get larger heading spacing.*/
-.cat-event-notes {
+.single.cat-event-notes {
 	h2 {
-		margin: 0 0 1em 0;
-		padding: 1em 1em 0 0;
-		border-bottom: 2px solid transparent;
 		background: linear-gradient($white, $white) padding-box,
-			linear-gradient(to right, $green-bright, transparent 75%) border-box;
+			linear-gradient(to right, $green-bright, transparent) border-box;
+		margin: 0 0 0.75em calc(-1em - 2px);
+		padding: 0.2em 1em 0.25em 1em;
+		border-bottom: 2px solid transparent;
+
+		position: relative;
+
+		&:before {
+			content: '';
+			background: linear-gradient($white, $white) padding-box,
+				linear-gradient(0deg, $green-bright, transparent) border-box;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 99999;
+			border-left: 4px solid transparent;
+		}
+	}
+	@include breakpoint(s) {
+		h2 {
+			margin: 0px 0 0.75em calc(-0.5em - 2px);
+		}
 	}
 
-	.is-style-notes-sessions-list .wp-block-group {
-		border-left: 1px dashed $gray-med;
-		padding-left: 1em;
-		margin-bottom: 3em;
+	.wp-block-group:not(:first-of-type) {
+		margin-top: 2.5em;
+	}
+
+	.is-style-notes-sessions-list {
+		.wp-block-group {
+			border-left: 1px dashed $gray-med;
+			padding-left: 1em;
+			margin-bottom: 3em;
+		}
+
+		.wp-block-list {
+			margin-left: 0.4em;
+		}
 
 		h3 {
-			font-size: 1.25em;
-			margin: 0 0.5em 1em;
+			margin: 1.5em 0 1em 0;
+			border-bottom: 1px solid #ccc;
 		}
+
 		.wp-block-quote {
-			margin-left: calc(-1em - 1px);
+			&.is-style-graphic {
+				margin-left: calc(-1em - 1px);
+			}
+
+			h3 {
+				border: 0 none;
+				font-size: 1.25em;
+				margin: 0 0.5em 0.5em 0.4em;
+			}
 		}
+	}
+}
+
+/* Posts archive */
+.archive-listing.is-style-zebra-striped {
+	article {
+		padding: 1em;
+		margin: 0 -1em;
+
+		&:nth-child(even) {
+			background: #f1f1f1;
+			background: linear-gradient(
+				to right,
+				rgba(255, 255, 255, 0) 0%,
+				rgb(247, 247, 247) 30%,
+				rgb(241, 241, 241) 50%,
+				rgb(246, 246, 246) 70%,
+				rgba(255, 255, 255, 0) 100%
+			);
+		}
+	}
+	h2 {
+		padding: 0;
 	}
 }
