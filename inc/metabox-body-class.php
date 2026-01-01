@@ -85,7 +85,7 @@ function stever_admin_body_class($classes) {
 		if ('page' == $screen->id) {
 			$add_classes = stever_body_class_get_meta('stever_body_class_text');
 			if (!empty($add_classes)) {
-				$classes .= $add_classes;
+				$classes .= ' ' . $add_classes;
 			}
 			return $classes;
 		}
@@ -105,6 +105,7 @@ function site_editor_styles() {
 		$screen = get_current_screen();
 		$classes = null;
 
+		//if ('page' == $screen->id || 'post' == $screen->id) {
 		if ('page' == $screen->id) {
 			$add_classes = stever_body_class_get_meta('stever_body_class_text');
 			if (!empty($add_classes)) {
