@@ -3,7 +3,7 @@
  */
 (function ($) {
 	Tipped.delegate(
-		'.content-area table i, #sr-table-search--show-row-counter i',
+		'.wp-block-table i, .sr-bu-timeline .timeline i, #sr-table-search--show-row-counter i',
 		function (element) {
 			if ($(element).data('title')) {
 				return {
