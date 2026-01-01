@@ -15,7 +15,7 @@ function stever_scripts_styles() {
 	$stever_body_class_text = get_post_meta(get_the_id(), 'stever_body_class_text', true);
 
 	// Fonts.
-	wp_enqueue_style('bunnyFonts', '//fonts.bunny.net/css?family=b612-mono:400,400i,700,700i|lato:400,400i,700,700i|roboto:400,400i,700,700i');
+	wp_enqueue_style('bunnyFonts', '//fonts.bunny.net/css?family=red-hat-mono:500|lato:400,400i,700,700i|roboto:400,400i,700,700i');
 
 	// Icons.
 	wp_enqueue_style(
@@ -67,28 +67,24 @@ function stever_scripts_styles() {
 	);
 
 	// CSS & JS: Tipped.
-	if (
-		strpos($stever_body_class_text, 'sr-page-table-prodev') !== false ||
-		strpos($stever_body_class_text, 'sr-bu-timeline') !== false ||
-		strpos($stever_body_class_text, 'sr-page-table-books') !== false
-	) {
+	if (strpos($stever_body_class_text, 'sr-page-table') !== false || strpos($stever_body_class_text, 'sr-bu-timeline') !== false) {
 		wp_enqueue_style(
-			'stever-tipped',
+			'tipped-css',
 			get_stylesheet_directory_uri() . '/js/tipped/tipped.css',
 			array(),
 			filemtime(get_stylesheet_directory() . '/js/tipped/tipped.css')
 		);
 		wp_enqueue_script(
-			'stever-tipped',
+			'tipped-js',
 			get_template_directory_uri() . '/js/tipped/tipped.min.js',
-			array(),
+			array('jquery'),
 			filemtime(get_stylesheet_directory() . '/js/tipped/tipped.min.js'),
 			true
 		);
 		wp_enqueue_script(
 			'stever-tipped-kickoff',
 			get_template_directory_uri() . '/js/tipped/tipped-kickoff.js',
-			array(),
+			array('jquery', 'tipped-js'),
 			filemtime(get_stylesheet_directory() . '/js/tipped/tipped-kickoff.js'),
 			true
 		);
@@ -97,6 +93,24 @@ function stever_scripts_styles() {
 			get_template_directory_uri() . '/js/dragscroll/dragscroll.js',
 			array(),
 			filemtime(get_stylesheet_directory() . '/js/dragscroll/dragscroll.js'),
+			true
+		);
+	}
+
+	// JS: Table Search.
+	if (strpos($stever_body_class_text, 'sr-page-table') !== false) {
+		wp_enqueue_script(
+			'fluidscroll-js',
+			get_template_directory_uri() . '/js/fluidscroll/fluidscroll@2.0.0.min.js',
+			array(),
+			filemtime(get_stylesheet_directory() . '/js/fluidscroll/fluidscroll@2.0.0.min.js'),
+			true
+		);
+		wp_enqueue_script(
+			'stever-table-search-kickoff',
+			get_template_directory_uri() . '/js/table-search.js',
+			array('fluidscroll-js'),
+			filemtime(get_stylesheet_directory() . '/js/table-search.js'),
 			true
 		);
 	}
