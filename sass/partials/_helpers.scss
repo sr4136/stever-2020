@@ -9,7 +9,28 @@
 	visibility: hidden;
 }
 .visually-hidden {
+	transition: all 0.5s ease;
+	position: relative;
 	opacity: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.sr-outline {
+	outline: 1px solid $gray-med;
+}
+
+// Universal 'aligncenter' class
+.entry-content .aligncenter {
+	width: 80%;
 }
 
 // List: Indented;
@@ -124,4 +145,29 @@
 	display: block;
 	border: 1px solid $gray-med;
 	width: 100%;
+}
+
+/* Ripple transforms for tooltip indicators. */
+@keyframes ripple {
+	from {
+		transform: scale(0);
+		opacity: 1;
+	}
+	to {
+		transform: scale(3.5);
+		opacity: 0;
+	}
+}
+
+/* Spin transforms for table marker indicators (url?m=item) */
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
