@@ -1,17 +1,5 @@
 /* My Time at BU Page */
 
-// Ripple transform for tooltip indicators.
-@keyframes ripple {
-	from {
-		transform: scale(0);
-		opacity: 1;
-	}
-	to {
-		transform: scale(3.5);
-		opacity: 0;
-	}
-}
-
 // Tooltip.
 .sr-bu-timeline .tpd-tooltip {
 	margin-left: 0.25em;
@@ -191,7 +179,7 @@
 
 		i:before,
 		i:after {
-			content: '';
+			content: ' ';
 			position: absolute;
 			z-index: 2;
 			top: -5px;
