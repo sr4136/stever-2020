@@ -1,26 +1,26 @@
 {
-  "name": "stever-theme",
-  "version": "1.0.0",
-  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://sr4136@github.com/sr4136/zoid.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sr4136/zoid/issues"
-  },
-  "homepage": "https://github.com/sr4136/zoid#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-cssnano": "^2.1.3",
-    "gulp-sass": "^4.0.2"
-  },
-  "dependencies": {
-    "gulp-rename": "^2.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.54.3"
-  }
+	"name": "stever-theme",
+	"version": "1.0.0",
+	"description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://sr4136@github.com/sr4136/zoid.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/sr4136/zoid/issues"
+	},
+	"homepage": "https://github.com/sr4136/zoid#readme",
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-sass": "^4.0.2"
+	},
+	"dependencies": {
+		"gulp-rename": "^2.0.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"sass": "^1.54.3"
+	}
 }
