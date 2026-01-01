@@ -100,15 +100,10 @@ if (function_exists('register_block_style')) {
 		));
 
 
-		// Quote: Attention
-		register_block_style('core/quote', array(
-			'name'         => 'attention',
-			'label'        => 'Attention',
-		));
-		// Quote: Graphic
-		register_block_style('core/quote', array(
-			'name'         => 'graphic',
-			'label'        => 'Graphic',
+		// List-item: Quote
+		register_block_style('core/list-item', array(
+			'name'         => 'quote',
+			'label'        => 'Quote',
 		));
 	}
 	add_action('init', 'stever_register_block_styles');
