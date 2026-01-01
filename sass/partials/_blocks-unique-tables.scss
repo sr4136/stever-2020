@@ -1,7 +1,7 @@
 /* Blocks: Unique Classes - Tables */
 
 // Custom Body Class: .sr-page-table
-.sr-page-table {
+body.sr-page-table {
 	table {
 		margin-bottom: 0;
 	}
@@ -28,6 +28,11 @@
 		border: 1px solid $gray-med;
 	}
 }
+.wp-admin.sr-page-table {
+	thead {
+		line-height: 0.75em;
+	}
+}
 
 @include breakpoint(s) {
 	.sr-page-table {
@@ -52,7 +57,7 @@
 	margin-bottom: 0;
 }
 
-#sr-chart-container {
+#sr-chart-wrapper {
 	border: 2px solid #8b9b31;
 	margin: 2em -3em;
 	background: white;
@@ -62,9 +67,15 @@
 	h3 {
 		margin: 0.5em 0 1em 0;
 	}
+
+	#books-chart-container {
+		min-height: 300px;
+		max-height: 50vh;
+		height: 500px;
+	}
 }
 @include breakpoint(p) {
-	#sr-chart-container {
+	#sr-chart-wrapper {
 		margin: 2em -0.5em;
 		h3 {
 			margin: 0 0 0.5em 0;
@@ -72,17 +83,91 @@
 	}
 }
 @include breakpoint(m) {
-	#sr-chart-container {
+	#sr-chart-wrapper {
 		padding: 0.5em;
+	}
+}
+@include breakpoint(xs) {
+	#sr-chart-wrapper #books-chart-container {
+		min-height: 300px;
+		max-height: 50vh;
+		height: 300px;
 	}
 }
 
 // Page: Professional Development
 .sr-page-table-prodev {
-	// Copy/Header
-	.prodev-image {
-		margin-bottom: 4em;
-		border: 1px solid $gray-med;
+	// Intro Copy, Legend, Image
+	.sr-prodev-intro-copy {
+		margin-bottom: 2em;
+	}
+	.sr-prodev-intro-group {
+		gap: 2em 4em;
+		margin-bottom: 2em;
+
+		.prodev-image {
+			border: 1px solid $gray-med;
+			margin: 0;
+		}
+
+		.wp-block-group:first-of-type {
+			display: flex;
+
+			.wp-block-group__inner-container {
+				width: 100%;
+				align-content: end;
+			}
+		}
+	}
+
+	// Legend
+	#sr-legend--container {
+		border: 1px solid $green-light;
+
+		p {
+			margin: 0;
+			padding: 0.5em 1em;
+			font-weight: bold;
+			border-left: 5px solid $green-light;
+		}
+
+		#sr-legend {
+			list-style: none;
+			margin: 0;
+
+			li {
+				cursor: pointer;
+				padding: 0.25em 0.5em;
+				margin: 0;
+				border-left: 5px solid transparent;
+				border-top: 1px solid $green-light;
+
+				&:hover {
+					border-left: 5px solid $green-light;
+					margin-left: 0;
+					color: black;
+				}
+				&.active {
+					border-left: 5px solid $green-bright;
+					background: $green-lightest;
+					box-shadow: 2px 1px 2px $gray-med;
+					margin-left: 0;
+					font-weight: bold;
+				}
+			}
+
+			.show-all {
+				border-left: 5px solid $gray;
+				margin-left: 0;
+				background: $gray-light;
+			}
+
+			i {
+				width: 40px;
+				text-align: center;
+				padding-right: 1em;
+			}
+		}
 	}
 
 	// Upcoming Events Table
@@ -115,26 +200,47 @@
 		td:nth-child(4) {
 			width: 15%;
 			font-family: $fonts-mono;
-			font-size: 0.75em;
+			font-size: 0.725em;
 			line-height: 2.25em;
 			text-align: right;
 		}
+	}
+
+	#sr-legend--container.visually-hidden,
+	#sr-table-search--container #sr-table-search--wrapper.visually-hidden {
+		opacity: 1;
+		border: 0 none;
+		transition: all 0.5s ease;
+
+		&:before {
+			content: '(Legend is hidden while searching.)';
+			border: 1px dashed $gray-dark;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: $white;
+			color: $gray-dark;
+		}
+	}
+	#sr-table-search--container
+		#sr-table-search--wrapper.visually-hidden:before {
+		content: '(Seach is hidden while filtering with the legend.)';
 	}
 }
 
 // Table: Professional Development - Responsive
 @include breakpoint(m) {
-	.prodev-columns {
-		flex-direction: column-reverse;
-	}
-	.prodev-image {
-		margin: 0 2em;
+	.sr-page-table-prodev .sr-prodev-intro-group {
+		.wp-block-group:last-of-type {
+			grid-area: 1;
+		}
+		.prodev-image {
+			margin: 0 2em;
+		}
 	}
 }
+
 @include breakpoint(s) {
-	.sr-table-pro-dev .is-style-year-divider {
-		margin: 1em -0.25em 0 -0.25em;
-	}
 	.sr-page-table-prodev .is-style-stever-table-pro-dev {
 		display: block;
 		overflow: auto;
@@ -206,9 +312,9 @@
 	}
 	td:nth-child(3) {
 		font-family: $fonts-mono;
-		font-size: 0.75em;
-		line-height: 2.25em;
-		padding-right: 1.45em;
+		font-size: 0.9em;
+		line-height: 1.75em;
+		text-align: center;
 	}
 }
 
@@ -236,8 +342,11 @@
 		th:nth-child(1),
 		td:nth-child(1) {
 			width: 100% !important;
-			font-weight: bold;
 			padding-bottom: 0.25em;
+
+			a {
+				font-weight: bold;
+			}
 		}
 
 		// Author
@@ -252,6 +361,7 @@
 		td:nth-child(3) {
 			width: 25% !important;
 			padding-top: 0.25em;
+			text-align: right;
 		}
 	}
 }
@@ -313,5 +423,305 @@
 		td:first-child {
 			font-weight: bold;
 		}
+	}
+}
+
+/* Table Search */
+// 1. Search Box (input) | 2. Counter (showing) | 3. Button (toggle row counts)
+#sr-table-search--container {
+	display: grid;
+	grid-template-columns: 70fr 25fr 5fr;
+	grid-gap: 0 2em;
+	padding: 0;
+	transition: all 0.5s ease;
+
+	// 1. Search Box (input)
+	#sr-table-search--wrapper {
+		z-index: 5;
+		display: grid;
+		grid-template-columns: 90% 10%;
+		border: 1px solid #ccc;
+
+		&:focus-within {
+			border: 1px solid #8b9b31;
+			box-shadow: 0 0 5px #8b9b31;
+		}
+
+		input {
+			padding: 4px 12px;
+			border: 0 none;
+			margin-bottom: 0;
+			color: $black-copy;
+
+			&::placeholder {
+				color: $gray-darkest;
+			}
+		}
+
+		button {
+			text-align: center;
+			cursor: pointer;
+			background-color: #e1e2c7;
+
+			&:hover {
+				background-color: #8b9b31;
+				color: #fff;
+			}
+
+			span {
+				font-size: 2em;
+				display: flex;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				margin-top: -4px;
+			}
+		}
+	}
+
+	&.zero-results #sr-table-search--wrapper {
+		outline: 1px solid #ff0000;
+
+		&::after {
+			content: 'No results.';
+			outline: 1px dashed red;
+			padding: 0.5em;
+		}
+	}
+
+	// 2. Counter (showing)
+	#sr-table-search--count-wrapper {
+		align-self: center;
+		background: #e1e2c7;
+		padding: 0.55em 0;
+		text-align: center;
+
+		span {
+			font-weight: bold;
+		}
+	}
+
+	// 3. Button (toggle row counts)
+	#sr-table-search--show-row-counter {
+		background-color: #e1e2c7;
+		text-align: center;
+		align-content: center;
+
+		i {
+			width: 100%;
+			height: 100%;
+			align-content: center;
+		}
+
+		&:hover {
+			border: 3px solid #8b9b31;
+			cursor: pointer;
+		}
+
+		&.active {
+			background-color: #8b9b31;
+			i {
+				color: white;
+			}
+
+			&:hover {
+				border: 3px solid #e1e2c7;
+			}
+		}
+	}
+} // end #sr-table-search--container
+
+.sr-page-table-books {
+	#forever-ago::after {
+		content: '(Before I started tracking closely.)';
+		font-size: 0.75em;
+		display: block;
+		font-weight: normal;
+	}
+
+	#sr-table-search--container {
+		margin-top: 4em;
+	}
+}
+
+/* Table item counts. */
+body.sr-table-row-counter {
+	.wp-block-table tbody {
+		counter-reset: reversed(tableCounter);
+
+		tr {
+			counter-increment: tableCounter -1;
+			td {
+				position: relative;
+			}
+		}
+	}
+
+	/* Title is [1st box on Books] page & [2nd box on ProDev] page. */
+	&.sr-page-table-books tbody td:nth-child(1),
+	&.sr-page-table-prodev tbody td:nth-child(2) {
+		padding-right: 3em;
+
+		&:after {
+			content: counter(tableCounter, decimal-leading-zero);
+			position: absolute;
+			top: 0.75em;
+			right: 0.75em;
+			display: grid;
+			outline: 1px solid #d4d4d480;
+			border-radius: 4px;
+			font-family: B612 Mono, monospace;
+			font-size: 0.55em;
+			width: 22px;
+			height: 22px;
+			padding-left: 1px;
+			text-align: center;
+			align-content: center;
+			color: #aaa;
+			transition: outline 0.5s ease;
+			background-color: transparent;
+			opacity: 1;
+		}
+	}
+}
+
+.sr-page-table-books tbody td:nth-child(1):after,
+.sr-page-table-prodev tbody td:nth-child(2):after {
+	content: '';
+	outline: 5px solid #8b9b31;
+	opacity: 0;
+}
+
+/* Toolip */
+.tpd-tooltip {
+	.tdp-sr {
+		padding: 0;
+
+		#sr-send-to-search {
+			position: relative;
+			cursor: pointer;
+			font-weight: bold;
+
+			&:before {
+				content: '🔍';
+				background: #f1f1f1;
+
+				padding: 2px 3px 3px 2px;
+				width: 1.5em;
+				height: 1.5em;
+				border-radius: 50%;
+				margin-right: 0.5em;
+				line-height: 1em;
+				font-size: 0.9em;
+				box-sizing: content-box;
+				display: inline-grid;
+				align-content: center;
+				text-align: center;
+			}
+		}
+	}
+	.tpd-background-box {
+		margin-top: 0 !important;
+	}
+
+	&:hover {
+		.tpd-background {
+			background: #c2552e !important;
+		}
+		.tpd-frame-top .tpd-stem-triangle {
+			border-bottom-color: #c2552e !important;
+		}
+		.tpd-frame-bottom .tpd-stem-triangle {
+			border-top-color: #c2552e !important;
+		}
+		.tdp-sr #sr-send-to-search:before {
+			background: #e1aa97;
+		}
+	}
+}
+
+/* Marked table rows */
+:root {
+	--srTY: -50px;
+}
+
+body.sr-page-table {
+	.wp-block-table {
+		overflow: visible;
+
+		tr.marked {
+			border-left: 2px solid $yellow;
+
+			td:first-child {
+				position: relative;
+
+				&:before {
+					content: '\f005';
+					font-family: $fonts-icon;
+					position: absolute;
+					color: $yellow;
+					left: -1em;
+					font-weight: 900;
+					background: #fff;
+					border-radius: 50%;
+					outline: 2px solid $yellow;
+					width: 2em;
+					height: 2em;
+					font-size: 0.5em;
+					top: 1.65em;
+					animation: spin 1s linear infinite;
+				}
+			}
+		}
+	}
+}
+
+/* Media query: medium-lg, screens. */
+@media only screen and (max-width: 900px) {
+	#sr-table-search--container {
+		grid-template-columns: 60fr 30fr 10fr;
+	}
+}
+/* Media query: medium-sm, screens. */
+@media only screen and (max-width: 700px) {
+	#sr-table-search--container {
+		grid-gap: 0 1em;
+	}
+}
+/* Media query: small screens. */
+@media only screen and (max-width: 640px) {
+	#sr-table-search--container {
+		grid-template-columns: repeat(auto-fill, calc(10% - 0.25em));
+		grid-gap: 0.25em;
+
+		&.zero-results:after {
+			grid-column-start: 1;
+			grid-column-end: 11;
+		}
+
+		#sr-table-search--wrapper {
+			grid-template-columns: calc(80% + 0.25em) calc(20% - 0.25em);
+			grid-column-start: 1;
+			grid-column-end: 11;
+
+			button span {
+				margin-top: -8px;
+			}
+		}
+		#sr-table-search--count-wrapper {
+			grid-column-start: 1;
+			grid-column-end: 9;
+		}
+		#sr-table-search--show-row-counter {
+			grid-column-start: 9;
+			grid-column-end: 11;
+		}
+	}
+
+	body.sr-page-table .wp-block-table tr.marked td:first-child:before {
+		width: 1.5em;
+		height: 1.5em;
+		font-size: 0.5em;
+		top: -2.75em;
 	}
 }

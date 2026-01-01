@@ -59,8 +59,11 @@
 				'.wp-block-table tbody tr'
 			); // All rows in the tables.
 			const sr_tablesearch = document.getElementById(
-				'sr-table-search--container'
+				'sr-table-search--wrapper'
 			); // The search container.
+			const sr_ts_count_showing = document.getElementById(
+				'sr-table-search--count-showing'
+			); // The number of currently shown items
 			const sr_ts_button = document.getElementById(
 				'sr-table-search--button'
 			); // Button to trigger input clear.
@@ -70,7 +73,18 @@
 				li.addEventListener('click', sr_tl_process);
 			});
 
+			// Update the counts displayed for the search results
+			function updateCounts() {
+				const currentShowing = document.querySelectorAll(
+					'.wp-block-table tbody tr:not(.hidden)'
+				).length; // Count visible rows
+				sr_ts_count_showing.textContent = currentShowing; // Update the showing count
+			}
+
 			function sr_tl_process(event) {
+				if (tableSearchInstance) {
+					tableSearchInstance.unwrapSelection();
+				}
 				if (sr_ts_button) {
 					sr_ts_button.click();
 				}
@@ -144,6 +158,8 @@
 							sr_tablesearch.classList.add('visually-hidden');
 						}
 					}
+
+					updateCounts();
 				} // end if(the_li && the_i)
 			} // end sr_tl_process()
 		}); // end DOMContentLoaded

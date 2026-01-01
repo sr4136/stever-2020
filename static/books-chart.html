@@ -1,0 +1,127 @@
+<div id="sr-chart-wrapper">
+	<h3>📚 Total Books Per Year:</h3>
+	<div id="books-chart-container">
+		<canvas id="books-chart-canvas"></canvas>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			// Gather elements & data.
+			const chart_canvas = document.getElementById('books-chart-canvas');
+			const books_years = Array.from(
+				document.querySelectorAll('.is-style-year-divider'),
+				(heading) => heading.innerHTML
+			).reverse();
+			const books_counts = Array.from(
+				document.querySelectorAll('.wp-block-table tbody'),
+				(tbody) => tbody.children.length
+			).reverse();
+
+			// Set some vars.
+			const chart_yAxis_max = Math.max(...books_counts) + 10;
+			const green = '#8B9B31';
+			const green_light = '#E1E2C7';
+
+			const chart_config = {
+				plugins: [ChartDataLabels], // Register the plugin
+				type: 'bar',
+				data: {
+					labels: books_years,
+					datasets: [
+						{
+							data: books_counts,
+							backgroundColor: green_light,
+							hoverBackgroundColor: green,
+						},
+					],
+				},
+				options: {
+					responsive: true,
+					maintainAspectRatio: false, // let css do it.
+					scales: {
+						y: {
+							beginAtZero: true,
+							max: chart_yAxis_max,
+							ticks: {
+								stepSize: 10,
+							},
+						},
+						x: {
+							ticks: {
+								autoSkip: false, // never hide 'em.
+							},
+						},
+					},
+					plugins: {
+						// Disable the chart legend (title & dataset labels) & tooltip.
+						legend: {
+							display: false,
+						},
+						tooltip: {
+							enabled: false,
+						},
+						// DataLabels config.
+						datalabels: {
+							anchor: 'end',
+							align: 'end',
+							backgroundColor: '#FFF',
+							color: '#000',
+							borderWidth: '1',
+							borderColor: green_light,
+							borderRadius: '2',
+							padding: {
+								top: '2',
+								right: '3',
+								bottom: '0',
+								left: '3',
+							},
+							font: {
+								weight: 'normal',
+							},
+							formatter: (value) => {
+								return value;
+							},
+						},
+					},
+					onHover: function (event, chart_element) {
+						// Reset all data labels
+						this.options.plugins.datalabels.font.weight = 'normal';
+						this.options.plugins.datalabels.borderColor =
+							green_light;
+
+						// Make sure we're on a bar
+						if (chart_element.length) {
+							// Set: currently hovered index.
+							const hovered_index = chart_element[0].index;
+
+							// Change the `font.weight` of the hovered data label at the hovered index
+							this.options.plugins.datalabels.font = (
+								context
+							) => {
+								return context.dataIndex === hovered_index
+									? { weight: 'bold' }
+									: { weight: 'normal' };
+							};
+							// Change the `borderColor` of the hovered data label at the hovered index
+							this.options.plugins.datalabels.borderColor = (
+								context
+							) => {
+								return context.dataIndex === hovered_index
+									? green
+									: green_light;
+							};
+						}
+
+						// Update the chart to reflect the changes
+						this.update();
+					},
+				},
+			};
+
+			sr_books_chart = new Chart(chart_canvas, chart_config);
+		};
+	</script>
+</div>
