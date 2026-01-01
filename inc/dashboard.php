@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Custom Dashboard Widgets
  * @package stever
@@ -8,14 +9,14 @@
 /**
  * Admin Columns: Remove Unnecessary Columns
  */
- function stever_remove_admin_columns( $defaults ) {
-	unset( $defaults[ 'comments' ] );
-	unset( $defaults[ 'author' ] );
-	unset( $defaults[ 'tags' ] );
+function stever_remove_admin_columns($defaults) {
+	unset($defaults['comments']);
+	unset($defaults['author']);
+	unset($defaults['tags']);
 	return $defaults;
 }
-add_filter( 'manage_pages_columns', 'stever_remove_admin_columns' );
-add_filter( 'manage_posts_columns', 'stever_remove_admin_columns' );
+add_filter('manage_pages_columns', 'stever_remove_admin_columns');
+add_filter('manage_posts_columns', 'stever_remove_admin_columns');
 
 
 /**
@@ -24,13 +25,13 @@ add_filter( 'manage_posts_columns', 'stever_remove_admin_columns' );
 function stever_reusable_blocks_admin_menu() {
 	add_menu_page('Reusable Blocks', 'Reusable Blocks', 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22);
 }
-add_action( 'admin_menu', 'stever_reusable_blocks_admin_menu' );
+add_action('admin_menu', 'stever_reusable_blocks_admin_menu');
 
 /**
  * Admin Menu: Custom Order
  */
- function stever_custom_menu_order( $menu_order ) {
-	if ( !$menu_order ) return true;
+function stever_custom_menu_order($menu_order) {
+	if (!$menu_order) return true;
 
 	return array(
 		'index.php', // Dashboard
@@ -55,8 +56,8 @@ add_action( 'admin_menu', 'stever_reusable_blocks_admin_menu' );
 		'separator-last', // Last separator
 	);
 }
-add_filter( 'custom_menu_order', 'stever_custom_menu_order' );
-add_filter( 'menu_order', 'stever_custom_menu_order' );
+add_filter('custom_menu_order', 'stever_custom_menu_order');
+add_filter('menu_order', 'stever_custom_menu_order');
 
 
 /**
@@ -65,41 +66,41 @@ add_filter( 'menu_order', 'stever_custom_menu_order' );
 function stever_dashboard_widget_unpublished() {
 	$args = array(
 		'post_type'			=> 'post',
-		'post_status'		=> array( 'pending', 'draft', 'future', 'private' ), /* all statuses, except 'published' and 'auto-draft' */
+		'post_status'		=> array('pending', 'draft', 'future', 'private'), /* all statuses, except 'published' and 'auto-draft' */
 		'posts_per_page'	=> -1,
 		'orderby'			=> 'date',
 		'order'				=> 'ASC'
 	);
 
-	$the_query = new WP_Query( $args );
-	if ( $the_query->have_posts() ) :
-		echo( '<ul class="stever-dashboard-widget">' );
-		while ( $the_query->have_posts() ) : $the_query->the_post();
-		?>
+	$the_query = new WP_Query($args);
+	if ($the_query->have_posts()) :
+		echo ('<ul class="stever-dashboard-widget">');
+		while ($the_query->have_posts()) : $the_query->the_post();
+?>
 			<li>
 				<div class="post-info-wrap">
-					<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
-					<small class="status"><?php echo( get_post_status() ); ?></small>
-					<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
+					<a href="<?php echo (get_edit_post_link()); ?>"><?php echo (get_the_title()); ?></a>
+					<small class="status"><?php echo (get_post_status()); ?></small>
+					<a class="linkview" href="<?php echo (get_permalink()); ?>">view</a>
 				</div>
 			</li>
 		<?php
 		endwhile;
-		echo( '</ul>' );
+		echo ('</ul>');
 		wp_reset_postdata();
 	else :
-		echo( '<p>No unfinished posts.</p>' );
+		echo ('<p>No unfinished posts.</p>');
 	endif;
 }
 
 /**
  * Dashboard Widget: All Pages (Hierarchical)
  */
-function stever_check_for_children( $post_id=null ) {
+function stever_check_for_children($post_id = null) {
 	$retStr = '';
 	$ulClass = '';
 
-	if( $post_id == 0 ){
+	if ($post_id == 0) {
 		$ulClass = ' class="stever-dashboard-widget"';
 	}
 
@@ -111,30 +112,30 @@ function stever_check_for_children( $post_id=null ) {
 		'post_parent'		=> $post_id
 	);
 
-	$the_query = new WP_Query( $args );
-	if ( $the_query->have_posts() ) :
+	$the_query = new WP_Query($args);
+	if ($the_query->have_posts()) :
 		$retStr .= '<ul' . $ulClass . '>';
-			while ( $the_query->have_posts() ) : $the_query->the_post();
-				$retStr .= '<li>';
-					$retStr .= '<div class="post-info-wrap">';
-						$retStr .= '<a href="' . get_edit_post_link() . '">' . get_the_title() . '</a>';
-						$retStr .= '<a class="linkview" href="' . get_permalink() . '">view</a>';
-					$retStr .= '</div>';
-					$retStr .= stever_check_for_children( get_the_id() );
-				$retStr .= '</li>';
-			endwhile;
+		while ($the_query->have_posts()) : $the_query->the_post();
+			$retStr .= '<li>';
+			$retStr .= '<div class="post-info-wrap">';
+			$retStr .= '<a href="' . get_edit_post_link() . '">' . get_the_title() . '</a>';
+			$retStr .= '<a class="linkview" href="' . get_permalink() . '">view</a>';
+			$retStr .= '</div>';
+			$retStr .= stever_check_for_children(get_the_id());
+			$retStr .= '</li>';
+		endwhile;
 
-			/* Add the Quotes page (archive) */
-			if( $post_id == 0 ){
-				$retStr .= '<li><div class="post-info-wrap"><a href="https://steverudolfi.com/wp-admin/edit.php?post_type=stever_quotes">Quotes</a><a class="linkview" href="https://steverudolfi.com/quotes/">view</a></div></li>';
-			}
+		/* Add the Quotes page (archive) */
+		if ($post_id == 0) {
+			$retStr .= '<li><div class="post-info-wrap"><a href="https://steverudolfi.com/wp-admin/edit.php?post_type=stever_quotes">Quotes</a><a class="linkview" href="https://steverudolfi.com/quotes/">view</a></div></li>';
+		}
 		$retStr .= '</ul>';
 		wp_reset_postdata();
 	endif;
 	return $retStr;
 }
-function stever_dashboard_widget_all_pages( $post, $callback_args ) {
-	echo( stever_check_for_children( 0 ) );
+function stever_dashboard_widget_all_pages($post, $callback_args) {
+	echo (stever_check_for_children(0));
 }
 
 /**
@@ -142,29 +143,29 @@ function stever_dashboard_widget_all_pages( $post, $callback_args ) {
  */
 function stever_dashboard_widget_recently_updated() {
 	$args = array(
-		'post_type'			=> array( 'post', 'page' ),
+		'post_type'			=> array('post', 'page'),
 		'posts_per_page'		=> 10,
 		'orderby'			=> 'modified',
 		'order'				=> 'DESC'
 	);
 
-	$the_query = new WP_Query( $args );
-	if ( $the_query->have_posts() ) :
-		echo( '<ul class="stever-dashboard-widget">' );
-		while ( $the_query->have_posts() ) : $the_query->the_post();
+	$the_query = new WP_Query($args);
+	if ($the_query->have_posts()) :
+		echo ('<ul class="stever-dashboard-widget">');
+		while ($the_query->have_posts()) : $the_query->the_post();
 		?>
 			<li>
 				<div class="post-info-wrap">
-					<a href="<?php echo( get_edit_post_link() ); ?>"><?php echo( get_the_title() ); ?></a>
-					<a class="linkview" href="<?php echo( get_permalink() ); ?>">view</a>
+					<a href="<?php echo (get_edit_post_link()); ?>"><?php echo (get_the_title()); ?></a>
+					<a class="linkview" href="<?php echo (get_permalink()); ?>">view</a>
 				</div>
 			</li>
-		<?php
+	<?php
 		endwhile;
-		echo( '</ul>' );
+		echo ('</ul>');
 		wp_reset_postdata();
 	else :
-		echo( '<p>No unfinished posts.</p>' );
+		echo ('<p>No unfinished posts.</p>');
 	endif;
 }
 
@@ -172,7 +173,7 @@ function stever_dashboard_widget_recently_updated() {
  * Dashboard Widget: Maps (Manual)
  */
 function stever_dashboard_widget_maps() {
-?>
+	?>
 	<ul class="stever-dashboard-widget">
 		<li>
 			<div class="post-info-wrap">
@@ -194,9 +195,9 @@ function stever_dashboard_widget_maps() {
  * Dashboard Widgets: Add Them!
  */
 function stever_add_dashboard_widgets() {
-	wp_add_dashboard_widget( 'dashboard_widget_unfinished_posts', 'Unfinished Posts', 'stever_dashboard_widget_unpublished' );
-	wp_add_dashboard_widget( 'dashboard_widget_all_pages', 'All Pages', 'stever_dashboard_widget_all_pages' );
-	wp_add_dashboard_widget( 'dashboard_widget_recently_updated', 'Recently Updated', 'stever_dashboard_widget_recently_updated' );
-	wp_add_dashboard_widget( 'dashboard_widget_maps', 'Maps', 'stever_dashboard_widget_maps' );
+	wp_add_dashboard_widget('dashboard_widget_unfinished_posts', 'Unfinished Posts', 'stever_dashboard_widget_unpublished');
+	wp_add_dashboard_widget('dashboard_widget_all_pages', 'All Pages', 'stever_dashboard_widget_all_pages');
+	wp_add_dashboard_widget('dashboard_widget_recently_updated', 'Recently Updated', 'stever_dashboard_widget_recently_updated');
+	wp_add_dashboard_widget('dashboard_widget_maps', 'Maps', 'stever_dashboard_widget_maps');
 }
-add_action( 'wp_dashboard_setup', 'stever_add_dashboard_widgets' );
+add_action('wp_dashboard_setup', 'stever_add_dashboard_widgets');
