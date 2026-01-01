@@ -37,6 +37,15 @@
 			padding-right: 0.5em;
 		}
 	}
+
+	// Remove the space between the year-divider & table.
+	.is-style-year-divider,
+	.is-style-year-divider-upcoming {
+		margin-bottom: 0;
+	}
+	.is-style-stever-table-pro-dev {
+		margin-top: 0;
+	}
 }
 
 code {
@@ -64,10 +73,13 @@ code {
 }
 
 // Group, Columns -- Outline
+.wp-block-group {
+	margin-bottom: 0.25em;
+}
 .wp-block-group,
 .wp-block-columns,
 .wp-block-column {
-	border: 1px dotted $gray-dark;
+	outline: 1px dotted $gray-dark;
 	background-image: repeating-linear-gradient(
 		45deg,
 		transparent,
@@ -78,6 +90,7 @@ code {
 	background-size: 3px 100%;
 	background-repeat: no-repeat;
 	padding-left: 1rem;
+	padding-bottom: 0.25em;
 }
 
 .wp-block-group::before,
@@ -90,10 +103,10 @@ code {
 	transform: rotate(-90deg) translateX(-100%);
 	transform-origin: top left;
 	background: $gray-med;
-	padding: 0 2px 4px 2px;
+	padding: 0 2px 2px 2px;
 	color: $white;
 	font-size: 8px;
-
+	font-family: $fonts-mono;
 	line-height: 8px;
 }
 .wp-block-columns::before {

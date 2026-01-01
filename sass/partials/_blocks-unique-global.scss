@@ -1,9 +1,14 @@
 /* Blocks: Unique Classes - Global */
 
+// Why is the default 2?
+.wp-block-separator {
+	border-top: 1px solid;
+}
+
 // Gallery: Fancybox Outline
 .is-style-fancybox {
 	a {
-		border: 1px solid $gray-dark;
+		outline: 1px solid $gray-dark;
 	}
 	img {
 		transition: all 0.5s;
@@ -16,8 +21,16 @@
 
 // Columns: Event Notes Header.
 .is-style-stever-columns-event-notes {
+	.wp-block-column:first-of-type {
+		flex-grow: 3;
+	}
+	.wp-block-column:last-of-type {
+		flex-grow: 2;
+	}
+
 	figure {
-		outline: 1px solid $gray-med;
+		outline: 1px solid $gray-dark;
+		box-shadow: 3px 3px 3px $gray-dark;
 	}
 }
 
@@ -27,12 +40,21 @@
 	background: $gray-light;
 	padding: 1em;
 
+	img.emoji {
+		margin-right: 5px !important;
+	}
+
 	p {
 		margin: 0.25em;
 	}
 
 	ul {
-		margin-bottom: 0;
+		margin: 0 0 0 0.5em;
+		position: relative;
+
+		li {
+			padding-left: 0.25em;
+		}
 	}
 }
 // Quote - Graphic (with a big ")
@@ -91,6 +113,25 @@
 	}
 }
 
+li.is-style-quote {
+	position: relative;
+	background-color: $gray-light;
+	padding: 0.3em 0.5em;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
+	border-left: 3px solid $green-light;
+	margin-left: 0.15em;
+
+	&::before {
+		content: '\201C';
+		position: absolute;
+		font-size: 2em;
+		top: 0;
+		left: -0.15em;
+		color: $green-bright;
+	}
+}
+
 // Group - Extra Spacing Above
 .is-style-extra-spacing-above {
 	margin-top: 8em;
@@ -101,7 +142,40 @@
 	margin-top: 0 !important;
 }
 
+// Event Notes - In Progress
+.sr-event-notes-in-progress {
+	background: $red;
+	color: $white;
+	border: 2px solid $black !important;
+	margin: 2.5em -2em 0 -2em !important;
+	padding: 0.5em 0 !important;
+	text-align: center;
+	font-size: 1.25em;
+}
+.block-editor-iframe__body .sr-event-notes-in-progress {
+	margin: 0 !important;
+	padding: 0 !important;
+
+	p {
+		margin: 0;
+	}
+}
+
+@include breakpoint(p) {
+	.sr-event-notes-in-progress {
+		margin: 2.5em 0 0 0 !important;
+		text-wrap: balance;
+	}
+}
+
 // Query Block - Zebra Striped.
+.wp-block-query {
+	.wp-block-columns.are-vertically-aligned-center,
+	.wp-block-column.is-vertically-aligned-center {
+		align-self: start;
+		align-items: start;
+	}
+
 	li {
 		padding: 1em;
 		margin: 0 -1em;
@@ -120,11 +194,46 @@
 	}
 
 	h2 {
-		margin-top: 0;
+		margin: 0 0 0.5em 0;
 	}
 
 	.wp-block-post-featured-image {
-		outline: 1px solid #ccc;
+		text-align: right;
+		img {
+			outline: 1px solid $gray-dark;
+			width: auto !important;
+			height: auto !important;
+			max-width: 100%;
+			max-height: 300px;
+			box-shadow: 3px 3px 3px $gray-dark;
+		}
+	}
+	.wp-block-categories.wp-block-categories-list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			background: unset;
+
+			&:not(:last-of-type)::after {
+				content: '|';
+
+				padding: 0 0.5em;
+			}
+		}
+	}
+}
+@include breakpoint(m) {
+	.wp-block-query {
+		li:not(:first-child) {
+			border-top: 1px solid #ccc;
+		}
+		.wp-block-post-featured-image {
+			text-align: center;
 		}
 	}
 }

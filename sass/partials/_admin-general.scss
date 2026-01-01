@@ -22,6 +22,11 @@
 	}
 }
 
+// Headings
+.editor-styles-wrapper :where(h1, h2, h3, h4, h5, h6) {
+	margin-bottom: 28px;
+}
+
 // Edit Post Header: Extra Attention (light blue)
 .edit-post-header {
 	background-color: #defafa;
