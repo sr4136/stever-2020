@@ -20,8 +20,10 @@
 				(tbody) => tbody.children.length
 			).reverse();
 
-			// Set some vars.
-			const chart_yAxis_max = Math.max(...books_counts) + 10;
+			/* Set some vars. */
+			// Set y-axis to max +10 rounded to nearest 10.
+			const chart_yAxis_max =
+				Math.ceil(Math.max(...books_counts) / 10) * 10 + 10;
 			const green = '#8B9B31';
 			const green_light = '#E1E2C7';
 
