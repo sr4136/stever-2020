@@ -725,3 +725,20 @@ body.sr-page-table {
 		top: -2.75em;
 	}
 }
+
+@include breakpoint(s) {
+	.entry-content .is-style-year-divider {
+		margin-left: -0.5em;
+		margin-right: -0.5em;
+	}
+
+	body.sr-page-table-prodev tbody tr,
+	body.sr-page-table-books tbody tr {
+		padding: 0.75em 0;
+
+		td {
+			border: 0 none;
+			padding: 0.25em 0 !important;
+		}
+	}
+}
