@@ -113,3 +113,65 @@
 		padding: 0;
 	}
 }
+
+.sr-resume-container {
+	border: 1px solid $gray-med;
+	box-shadow: 5px 5px 5px $gray-med;
+	margin-top: 2em;
+	padding-bottom: 1em;
+
+	.wp-block-group {
+		padding: 1em 1em 0 1em;
+	}
+
+	h2 {
+		margin: 0;
+		padding: 0 0 0.5em 0;
+	}
+
+	h3 {
+		margin: 0;
+		padding: 0 0 0.5em 0;
+	}
+
+	.sr-resume-header {
+		background: $gray-light;
+	}
+
+	.sr-resume-content {
+		h2 {
+			border-bottom: 4px solid $green-bright;
+			padding-bottom: 0;
+			margin-bottom: 1em;
+		}
+
+		table td {
+			border-color: $gray-light;
+		}
+	}
+	.sr-resume-content:last-child h2 {
+		margin-bottom: 0;
+	}
+}
+@include breakpoint(m) {
+	.sr-resume-container {
+		margin-bottom: 1em;
+
+		h3 {
+			padding: 1em 0;
+		}
+		table,
+		.wp-block-table {
+			margin-bottom: 0;
+		}
+		.sr-resume-header .wp-block-group.is-layout-grid {
+			grid-template-columns: calc(40% - 1em) calc(60% - 1em);
+		}
+		.sr-resume-asa {
+			padding: 0;
+		}
+		.sr-resume-asa:last-child {
+			margin-bottom: 1em;
+		}
+	}
+}
