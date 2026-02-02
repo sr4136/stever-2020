@@ -126,26 +126,31 @@ code {
 	}
 }
 
-/* Admin Editing the ProDev Table */
-.sr-page-table {
-	.wp-block-table td {
-		border: 1px solid $gray-light;
-		padding: 2px 5px !important;
-		line-height: 1.5em;
-	}
-	.is-style-stever-table-pro-dev tr {
-		/* Cell: Type */
-		td:nth-child(1) {
-			width: 25%;
+/* Admin Mobile - Editing the ProDev Table */
+@include breakpoint(s) {
+	.sr-page-table {
+		.wp-block-table tr {
+			border: 1px solid $gray-light;
 		}
-		/* Cell: Affiliation */
-		tr td:nth-child(3) {
-			width: calc(75% - 40px);
+		.wp-block-table td {
+			border: 1px solid $gray-light;
+			padding: 2px 5px !important;
+			line-height: 1.5em;
 		}
-		/* Cell: Date */
-		td:nth-child(4) {
-			width: 100%;
-			text-align: left;
+		.is-style-stever-table-pro-dev tr {
+			/* Cell: Type */
+			td:nth-child(1) {
+				width: 25%;
+			}
+			/* Cell: Affiliation */
+			tr td:nth-child(3) {
+				width: calc(75% - 40px);
+			}
+			/* Cell: Date */
+			td:nth-child(4) {
+				width: 100%;
+				text-align: left;
+			}
 		}
 	}
 }
