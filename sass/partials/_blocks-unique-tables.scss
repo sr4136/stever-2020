@@ -13,10 +13,6 @@ body.sr-page-table {
 		border-bottom: 2px solid $gray;
 	}
 
-	tbody tr:nth-child(even of :not(.hidden)) {
-		background-color: $gray-light;
-	}
-
 	th {
 		padding: 0.5em 1em;
 		border: 1px solid $gray-med;
@@ -28,6 +24,11 @@ body.sr-page-table {
 		border: 1px solid $gray-med;
 	}
 }
+/* Zebra Striping */
+body.sr-page-table tbody tr:not(.hidden):nth-of-type(2n) {
+	background: $gray-light;
+}
+
 .wp-admin.sr-page-table {
 	thead {
 		line-height: 0.75em;
@@ -570,7 +571,9 @@ body.sr-table-row-counter {
 			display: grid;
 			outline: 1px solid #d4d4d480;
 			border-radius: 4px;
-			font-family: B612 Mono, monospace;
+			font-family:
+				B612 Mono,
+				monospace;
 			font-size: 0.55em;
 			width: 22px;
 			height: 22px;
