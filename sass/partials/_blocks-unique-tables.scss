@@ -13,6 +13,11 @@ body.sr-page-table {
 		border-bottom: 2px solid $gray;
 	}
 
+	/* Zebra Striping */
+	tbody tr:not(.hidden):nth-of-type(2n) {
+		background: $gray-light;
+	}
+
 	th {
 		padding: 0.5em 1em;
 		border: 1px solid $gray-med;
@@ -24,14 +29,16 @@ body.sr-page-table {
 		border: 1px solid $gray-med;
 	}
 }
-/* Zebra Striping */
-body.sr-page-table tbody tr:not(.hidden):nth-of-type(2n) {
-	background: $gray-light;
-}
 
-.wp-admin.sr-page-table {
+.block-editor-iframe__body.sr-page-table {
 	thead {
 		line-height: 0.75em;
+	}
+
+	/* Give the textareas some indication vs the parent padding. */
+	.wp-block-table__cell-content .rich-text {
+		background: #ccc2;
+		padding: 0.25em 0.5em;
 	}
 }
 
