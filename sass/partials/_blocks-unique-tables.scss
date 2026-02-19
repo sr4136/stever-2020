@@ -114,8 +114,16 @@ body.sr-page-table {
 		margin-bottom: 2em;
 
 		.prodev-image {
-			border: 1px solid $gray-med;
-			margin: 0;
+			img {
+				border: 1px solid $gray-med;
+				margin: 0;
+			}
+			figcaption {
+				border: 1px solid $gray-med;
+				margin-top: 0;
+				padding: 0.25em 0.5em;
+				font-style: italic;
+			}
 		}
 
 		.wp-block-group:first-of-type {
