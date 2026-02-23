@@ -251,7 +251,7 @@ body.sr-page-table {
 			grid-area: 1;
 		}
 		.prodev-image {
-			margin: 0 2em;
+			margin: 0 1em;
 		}
 	}
 }
@@ -260,7 +260,6 @@ body.sr-page-table {
 	.sr-page-table-prodev .is-style-stever-table-pro-dev {
 		display: block;
 		overflow: auto;
-		margin: 0 -0.25em;
 
 		thead {
 			display: none;
@@ -710,7 +709,7 @@ body.sr-page-table {
 @media only screen and (max-width: 640px) {
 	#sr-table-search--container {
 		grid-template-columns: repeat(auto-fill, calc(10% - 0.25em));
-		grid-gap: 0.25em;
+		grid-gap: 0.5em;
 
 		&.zero-results:after {
 			grid-column-start: 1;
@@ -718,7 +717,7 @@ body.sr-page-table {
 		}
 
 		#sr-table-search--wrapper {
-			grid-template-columns: calc(80% + 0.25em) calc(20% - 0.25em);
+			grid-template-columns: calc(80% + 0.25em) calc(20% - 0.24em);
 			grid-column-start: 1;
 			grid-column-end: 11;
 
@@ -745,11 +744,6 @@ body.sr-page-table {
 }
 
 @include breakpoint(s) {
-	.entry-content .is-style-year-divider {
-		margin-left: -0.5em;
-		margin-right: -0.5em;
-	}
-
 	body.sr-page-table-prodev tbody tr,
 	body.sr-page-table-books tbody tr {
 		padding: 0.75em 0;
