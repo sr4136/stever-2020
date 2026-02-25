@@ -749,7 +749,7 @@ body.sr-page-table {
 @include breakpoint(s) {
 	body.sr-page-table-prodev tbody tr,
 	body.sr-page-table-books tbody tr {
-		padding: 0.75em 0;
+		padding: 0.75em 1em;
 
 		td {
 			border: 0 none;
