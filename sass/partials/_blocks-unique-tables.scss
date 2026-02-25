@@ -17,6 +17,9 @@ body.sr-page-table {
 	tbody tr:not(.hidden):nth-of-type(2n) {
 		background: $gray-light;
 	}
+	tbody tr:not(.hidden):nth-of-type(2n + 1) {
+		background: none;
+	}
 
 	th {
 		padding: 0.5em 1em;
