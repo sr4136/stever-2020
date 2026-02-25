@@ -5,39 +5,39 @@ document.addEventListener('DOMContentLoaded', () => {
 		constructor() {
 			// Initialize DOM elements related to the search functionality
 			this.sr_ts_container = document.getElementById(
-				'sr-table-search--container'
+				'sr-table-search--container',
 			);
 			this.sr_ts_wrapper = document.getElementById(
-				'sr-table-search--wrapper'
+				'sr-table-search--wrapper',
 			);
 			this.sr_ts_input = document.getElementById(
-				'sr-table-search--input'
+				'sr-table-search--input',
 			);
 			this.sr_ts_button = document.getElementById(
-				'sr-table-search--button'
+				'sr-table-search--button',
 			);
 			this.sr_ts_count_total = document.getElementById(
-				'sr-table-search--count-total'
+				'sr-table-search--count-total',
 			);
 			this.sr_ts_count_showing = document.getElementById(
-				'sr-table-search--count-showing'
+				'sr-table-search--count-showing',
 			);
 			this.sr_ts_row_counter = document.getElementById(
-				'sr-table-search--show-row-counter'
+				'sr-table-search--show-row-counter',
 			);
 			this.sr_ts_tablesets = document.querySelectorAll(
-				'.sr-table-sets tbody'
+				'.sr-table-sets tbody',
 			);
 			this.sr_ts_headings =
 				document.querySelectorAll('.wp-block-heading');
 			this.sr_ts_tables = document.querySelectorAll('.wp-block-table');
 			this.sr_ts_rows = document.querySelectorAll(
-				'.wp-block-table tbody tr'
+				'.wp-block-table tbody tr',
 			);
 			this.sr_ts_chart_optional =
 				document.getElementById('sr-chart-wrapper');
 			this.sr_tl_legend_optional = document.getElementById(
-				'sr-legend--container'
+				'sr-legend--container',
 			);
 
 			// Initialize the search functionality
@@ -64,42 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
 			// Listen for input in the search box and debounce the search function
 			this.sr_ts_input.addEventListener(
 				'input',
-				this.debounce(this.handleSearchInput.bind(this), 300)
+				this.debounce(this.handleSearchInput.bind(this), 300),
 			);
 			// Listen for click on the clear search button
 			this.sr_ts_button.addEventListener(
 				'click',
-				this.clearSearch.bind(this)
+				this.clearSearch.bind(this),
 			);
 			// Listen for click on the row counter toggle
 			this.sr_ts_row_counter.addEventListener(
 				'click',
-				this.toggleRowCounter.bind(this)
+				this.toggleRowCounter.bind(this),
 			);
 			// Listen for focus on the search input to scroll to it
 			this.sr_ts_input.addEventListener(
 				'focus',
-				this.scrollToSearchBar.bind(this)
+				this.scrollToSearchBar.bind(this),
 			);
 			this.sr_ts_tablesets.forEach((tableSet) => {
 				// Listen for mouseup and touchend events to wrap selected text
 				tableSet.addEventListener(
 					'mouseup',
-					this.wrapSelection.bind(this)
+					this.wrapSelection.bind(this),
 				);
 				tableSet.addEventListener(
 					'touchend',
-					this.wrapSelection.bind(this)
+					this.wrapSelection.bind(this),
 				);
 
 				// Listen for mousedown and touchstart events to unwrap selected text
 				tableSet.addEventListener(
 					'mousedown',
-					this.unwrapSelection.bind(this)
+					this.unwrapSelection.bind(this),
 				);
 				tableSet.addEventListener(
 					'touchstart',
-					this.unwrapSelection.bind(this)
+					this.unwrapSelection.bind(this),
 				);
 			});
 		}
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				clearTimeout(timeout); // Clear the previous timeout
 				timeout = setTimeout(
 					() => func.apply(this, args), // Execute the function after the delay
-					delay
+					delay,
 				);
 			};
 		}
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			if (searchValue) {
 				const searchInput = document.getElementById(
-					'sr-table-search--input'
+					'sr-table-search--input',
 				); // Get the search input element
 				searchInput.value = searchValue;
 				const tempEvent = new Event('input', {
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (this.sr_tl_legend_optional) {
 				this.sr_tl_legend_optional.classList.toggle(
 					'visually-hidden',
-					query
+					query,
 				); // Hide legend if there is a query
 			}
 			// Process the search if there is a query, otherwise clear the search
@@ -249,12 +249,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Update the counts displayed for the search results
 		updateCounts() {
 			const currentShowing = document.querySelectorAll(
-				'.wp-block-table tbody tr:not(.hidden)'
+				'.wp-block-table tbody tr:not(.hidden)',
 			).length; // Count visible rows
 			this.sr_ts_count_showing.textContent = currentShowing; // Update the showing count
 			this.sr_ts_container.classList.toggle(
 				'zero-results',
-				currentShowing === 0
+				currentShowing === 0,
 			); // Add class if no results
 		}
 
@@ -270,10 +270,10 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 			// Remove hidden class from headings, tables, and rows
 			this.sr_ts_headings.forEach((heading) =>
-				heading.classList.remove('hidden')
+				heading.classList.remove('hidden'),
 			);
 			this.sr_ts_tables.forEach((table) =>
-				table.classList.remove('hidden')
+				table.classList.remove('hidden'),
 			);
 			this.sr_ts_rows.forEach((row) => row.classList.remove('hidden'));
 			this.updateCounts(); // Update counts after clearing the search
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleRowCounter() {
 			document.body.classList.toggle('sr-table-row-counter'); // Toggle class on body
 			const isActive = document.body.classList.contains(
-				'sr-table-row-counter'
+				'sr-table-row-counter',
 			); // Check if active
 			this.sr_ts_row_counter.classList.toggle('active', isActive); // Update button state
 			localStorage.setItem('sr-table-row-counter', isActive ? 1 : 0); // Save state to local storage
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
 					position: 'bottom', // Position the tooltip below the selected text
 					hideOn: false, // Do not hide on mouse out
 					onShow: (content) => content.classList.add('tdp-sr'), // Add class when shown
-				}
+				},
 			);
 			Tipped.show(span); // Show the tooltip
 			Tipped.refresh(span); // Refresh the tooltip to ensure it displays correctly
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		unwrapSelection() {
 			Tipped.remove('#sr-active-selection'); // Remove the tooltip for the active selection
 			const activeSelections = document.querySelectorAll(
-				'#sr-active-selection'
+				'#sr-active-selection',
 			); // Get all active selections
 
 			// Replace each active selection span with its text content
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				const parent = span.parentNode; // Get the parent node of the span
 				parent.replaceChild(
 					document.createTextNode(textContent), // Replace span with a text node
-					span // Remove the span
+					span, // Remove the span
 				);
 			});
 		}
@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		tableSearchInstance.sr_ts_wrapper.classList.remove('visually-hidden'); // Make sure the search input is visible
 		if (event.target.dataset.string) {
 			const searchInput = document.getElementById(
-				'sr-table-search--input'
+				'sr-table-search--input',
 			); // Get the search input element
 			searchInput.value = event.target.dataset.string; // Set the input value to the selected text
 			const tempEvent = new Event('input', {
