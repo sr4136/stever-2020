@@ -83,6 +83,14 @@
 		.wp-block-quote {
 			&.is-style-graphic {
 				margin-left: calc(-1em - 1px);
+				padding: 1.25em 1em 0 1em;
+
+				// clearfix
+				&:after {
+					content: '';
+					display: table;
+					clear: both;
+				}
 			}
 
 			h3 {
@@ -91,16 +99,25 @@
 				margin: 0 0.5em 0.5em 0.4em;
 			}
 		}
-	}
 
-	@include breakpoint(s) {
-		.wp-block-image:has(.alignright) {
-			justify-content: center;
-			display: flex;
-
+		.wp-block-image {
+			img {
+				outline: 1px solid $gray-med;
+			}
 			.alignright {
-				float: none;
-				margin: 1em 0;
+				margin: 0 0 1em 1em;
+			}
+		}
+
+		@include breakpoint(s) {
+			.wp-block-image:has(.alignright) {
+				justify-content: center;
+				display: flex;
+
+				.alignright {
+					float: none;
+					margin: 1em 0;
+				}
 			}
 		}
 	}

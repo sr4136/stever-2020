@@ -7,10 +7,8 @@
 
 // Gallery: Fancybox Outline
 .is-style-fancybox {
-	a {
-		outline: 1px solid $gray-dark;
-	}
 	img {
+		outline: 1px solid $gray-dark;
 		transition: all 0.5s;
 		opacity: 0.7;
 		&:hover {
