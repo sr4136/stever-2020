@@ -31,7 +31,8 @@
 /* Posts w/ "Event Notes" category get larger heading spacing.*/
 .single.cat-event-notes {
 	h2 {
-		background: linear-gradient($white, $white) padding-box,
+		background:
+			linear-gradient($white, $white) padding-box,
 			linear-gradient(to right, $green-bright, transparent) border-box;
 		margin: 0 0 0.75em calc(-1em - 2px);
 		padding: 0.2em 1em 0.25em 1em;
@@ -41,7 +42,8 @@
 
 		&:before {
 			content: '';
-			background: linear-gradient($white, $white) padding-box,
+			background:
+				linear-gradient($white, $white) padding-box,
 				linear-gradient(0deg, $green-bright, transparent) border-box;
 			height: 100%;
 			position: absolute;
@@ -51,6 +53,7 @@
 			border-left: 4px solid transparent;
 		}
 	}
+
 	@include breakpoint(s) {
 		h2 {
 			margin: 0px 0 0.75em calc(-0.5em - 2px);
@@ -86,6 +89,18 @@
 				border: 0 none;
 				font-size: 1.25em;
 				margin: 0 0.5em 0.5em 0.4em;
+			}
+		}
+	}
+
+	@include breakpoint(s) {
+		.wp-block-image:has(.alignright) {
+			justify-content: center;
+			display: flex;
+
+			.alignright {
+				float: none;
+				margin: 1em 0;
 			}
 		}
 	}
