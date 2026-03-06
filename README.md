@@ -1,8 +1,9 @@
 **Installation**: 
 
 1. Install [Node](https://nodejs.org/en/)
-2. Install dependencies: `npm install`
-3. Run `gulp watch`
+2. Install gulp cli `npm install --global gulp-cli`
+3. Install dependencies: `npm install`
+4. Run `gulp watch`
 
 **Usage**:
 
