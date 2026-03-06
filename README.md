@@ -1,10 +1,8 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur  mollis velit quis convallis tempor. Sed pulvinar massa nec odio  elementum, sed mollis ipsum tincidunt.
-
 **Installation**: 
 
 1. Install [Node](https://nodejs.org/en/)
-2. Install Gulp: `npm install -g gulp`
-3. Install dependencies: `npm install`
+2. Install dependencies: `npm install`
+3. Run `gulp watch`
 
 **Usage**:
 
