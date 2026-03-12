@@ -198,3 +198,18 @@ function stever_admin_favicon() {
 }
 add_action('login_head', 'stever_admin_favicon');
 add_action('admin_head', 'stever_admin_favicon');
+
+
+
+/**
+ * Gutenberg: Register JS to allow Gallery block within LI block.
+ */
+function stever_block_filter() {
+    wp_enqueue_script(
+        'sr-block-filters',
+        get_template_directory_uri() . '/js/sr-block-filters.js',
+        array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+        true
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'stever_block_filter' );
