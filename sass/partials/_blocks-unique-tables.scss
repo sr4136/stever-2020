@@ -232,7 +232,7 @@ body.sr-page-table {
 		transition: all 0.5s ease;
 
 		&:before {
-			content: '(Legend is hidden while searching.)';
+			content: '(Legend hidden while searching.)';
 			border: 1px dashed $gray-dark;
 			display: flex;
 			justify-content: center;
@@ -243,9 +243,11 @@ body.sr-page-table {
 	}
 	#sr-table-search--container
 		#sr-table-search--wrapper.visually-hidden:before {
-		content: '(Seach is hidden while filtering with the legend.)';
-	}
+			content: '(Seach hidden while filtering with the legend.)';
+			font-size: .9em;
+		}
 }
+
 
 // Table: Professional Development - Responsive
 @include breakpoint(m) {
