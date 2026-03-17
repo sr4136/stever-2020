@@ -99,6 +99,16 @@
 				margin: 0 0.5em 0.5em 0.4em;
 			}
 		}
+		
+		/* Galleries with 1 image should be smaller for large screens. */
+		.wp-block-gallery:has(> .wp-block-image:only-child) .wp-block-image {
+			max-width: 50%;
+		}
+		@include breakpoint(m) {
+			.wp-block-gallery:has(> .wp-block-image:only-child) .wp-block-image {
+				max-width: unset;
+			}
+		}
 
 		.wp-block-image {
 			img {
