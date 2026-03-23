@@ -173,11 +173,15 @@
 
 	h3 {
 		margin: 0;
-		padding: 0 0 0.5em 0;
+		padding: 0 0 1em 0;
 	}
 
 	.sr-resume-header {
 		background: $gray-light;
+
+		h3 {
+			padding-top: 1em
+		}
 	}
 
 	.sr-resume-content {
@@ -188,23 +192,50 @@
 		}
 
 		table td {
-			border-color: $gray-light;
+			border: 0 none;
 		}
 	}
 	.sr-resume-content:last-child h2 {
 		margin-bottom: 0;
 	}
+	.sr-resume-history {
+		td {
+			vertical-align: top;
+		}
+		td:nth-child(2n) {
+			font-family: $fonts-mono;
+			font-size: 0.9em;
+		}
+	}
 }
 @include breakpoint(m) {
+	.sr-resume-container .sr-resume-header {
+			
+		.wp-block-group {
+			grid-template-columns: 100% !important;
+		}
+		h2{
+			text-align: center;
+			font-size: 2.5em;
+			padding-bottom: 0;
+		}
+		p {
+			text-align: center;
+			font-size: 1.25em;
+		}
+		
+	}
+}
+@include breakpoint(l) {
 	.sr-resume-container {
 		margin-bottom: 1em;
 
-		h3 {
-			padding: 1em 0;
-		}
 		table,
 		.wp-block-table {
 			margin-bottom: 0;
+		}
+		.sr-resume-content {
+			grid-template-columns: 100%;
 		}
 		.sr-resume-header .wp-block-group.is-layout-grid {
 			grid-template-columns: calc(40% - 1em) calc(60% - 1em);
