@@ -689,7 +689,7 @@ body.sr-page-table {
 					width: 2em;
 					height: 2em;
 					font-size: 0.5em;
-					top: 1.65em;
+					top: calc( 1em + 4px ); /* half height + outline */
 					animation: spin 1s linear infinite;
 				}
 			}
@@ -743,7 +743,8 @@ body.sr-page-table {
 		width: 1.5em;
 		height: 1.5em;
 		font-size: 0.5em;
-		top: -2.75em;
+		top: 1.3em;
+    	left: -2.75em;
 	}
 }
 
