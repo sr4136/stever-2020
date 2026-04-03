@@ -64,6 +64,10 @@ a:not(:is(:hover, :focus, .button)) {
 #main {
 	padding: $frem $frem $dfrem $frem;
 }
+.single-post #main {
+  padding-bottom: 8em;
+}
+
 @include breakpoint(s) {
 	#main {
 		padding: 1em 0.25em;
@@ -176,7 +180,7 @@ kbd {
 .entry-content h4,
 .entry-content h5,
 .entry-content h6 {
-	margin: 1.5em 0;
+	margin: 1.5em 0 0.75em 0;
 	line-height: 1.35em;
 }
 
