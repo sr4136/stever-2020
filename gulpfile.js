@@ -1,52 +1,71 @@
 'use strict';
 
 // Import required Gulp plugins
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var cleanCSS = require('gulp-clean-css'); // Changed from gulp-cssnano to gulp-clean-css
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const cssnano = require('gulp-cssnano');
+const rename = require('gulp-rename');
 
-// Initialize Sass with node-sass
-sass.compiler = require('node-sass');
+// Paths configuration
+const paths = {
+	sass: './sass/**/*.scss',
+	mainSass: './sass/style.scss',
+	blocksSass: './sass/blocks.scss',
+	adminSass: './sass/admin.scss',
+	adminBlocksSass: './sass/admin-blocks.scss',
+	cssDest: './',
+	cssBlocksDest: './css/',
+};
 
-// Function to compile Sass files, minify CSS, and rename output
+/**
+ * Compile Sass files to CSS with minified versions
+ * @param {string} src - Source Sass file path
+ * @param {string} dest - Destination directory for compiled CSS
+ * @returns {stream} Gulp stream
+ */
 function compileSass(src, dest) {
 	return gulp
-		.src(src, { sourcemaps: true }) // Source files with sourcemaps
-		.pipe(sass().on('error', sass.logError)) // Compile Sass and log errors
-		.pipe(gulp.dest(dest, { sourcemaps: true })) // Output unminified CSS
-		.pipe(cleanCSS()) // Minify CSS using cleanCSS
-		.pipe(rename({ extname: '.min.css' })) // Rename to .min.css
-		.pipe(gulp.dest(dest, { sourcemaps: true })); // Output minified CSS
+		.src(src, { allowEmpty: true })
+		.pipe(sass({
+			outputStyle: 'expanded'
+		}).on('error', sass.logError))
+		.pipe(gulp.dest(dest))
+		.pipe(cssnano({
+			preset: ['default', {
+				normalizeSelectors: false,
+				discardEmpty: false
+			}]
+		}))
+		.pipe(rename({ extname: '.min.css' }))
+		.pipe(gulp.dest(dest));
 }
 
-// Task to compile main Sass file
-gulp.task('sass:main', function () {
-	return compileSass('./sass/style.scss', './'); // Compile main Sass
-});
+// Compile main stylesheet
+function sassMain() {
+	return compileSass(paths.mainSass, paths.cssDest);
+}
 
-// Task to compile blocks Sass file
-gulp.task('sass:blocks', function () {
-	return compileSass('./sass/blocks.scss', './css/'); // Compile blocks Sass
-});
+// Compile blocks styles
+function sassBlocks() {
+	return compileSass(paths.blocksSass, paths.cssBlocksDest);
+}
 
-// Task to compile admin Sass file
-gulp.task('sass:admin', function () {
-	return compileSass('./sass/admin.scss', './css/'); // Compile admin Sass
-});
+// Compile admin styles
+function sassAdmin() {
+	return compileSass(paths.adminSass, paths.cssBlocksDest);
+}
 
-// Task to compile admin-blocks Sass file
-gulp.task('sass:admin-blocks', function () {
-	return compileSass('./sass/admin-blocks.scss', './css/'); // Compile admin-blocks Sass
-});
+// Compile admin blocks styles
+function sassAdminBlocks() {
+	return compileSass(paths.adminBlocksSass, paths.cssBlocksDest);
+}
 
-// Watch task to monitor changes in Sass files
-gulp.task('watch', function () {
-	gulp.watch('./sass/**/*.scss', gulp.series('default')); // Watch all .scss files
-});
+// Watch for Sass file changes
+function watch() {
+	gulp.watch(paths.sass, gulp.series(sassMain, sassBlocks, sassAdmin, sassAdminBlocks));
+}
 
-// Default task to run all Sass compilation tasks
-gulp.task(
-	'default',
-	gulp.series('sass:main', 'sass:blocks', 'sass:admin', 'sass:admin-blocks')
-);
+// Export tasks
+exports.sass = gulp.series(sassMain, sassBlocks, sassAdmin, sassAdminBlocks);
+exports.watch = watch;
+exports.default = exports.sass;
