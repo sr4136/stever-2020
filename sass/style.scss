@@ -11,19 +11,19 @@ stever is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
-@import 'partials/_variables';
-@import 'partials/helpers';
-@import 'partials/elements';
-@import 'partials/header';
-@import 'partials/footer';
-@import 'partials/404';
-@import 'partials/search-results';
+@use 'partials/_variables';
+@use 'partials/helpers';
+@use 'partials/elements';
+@use 'partials/header';
+@use 'partials/footer';
+@use 'partials/error-404';
+@use 'partials/search-results';
 
-@import 'partials/wpadminbar';
-@import 'partials/maps';
-@import 'partials/quotes';
-@import 'partials/timeline-at-bu';
+@use 'partials/wpadminbar';
+@use 'partials/maps';
+@use 'partials/quotes';
+@use 'partials/timeline-at-bu';
 
-@import 'partials/post-specifics';
+@use 'partials/post-specifics';
 
-@import 'partials/_breakpoints-debugging';
+@use 'partials/_breakpoints-debugging';

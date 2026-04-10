@@ -1,6 +1,8 @@
+@use "_variables";
+
 // Footer
 .site-info {
     text-align: center;
-    background: $white;
+    background: variables.$white;
     padding: 1em 0;
 }

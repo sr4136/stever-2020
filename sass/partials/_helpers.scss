@@ -1,3 +1,5 @@
+@use "_variables";
+
 // Tell browswers to use view transitions.
 @view-transition {
 	navigation: auto;
@@ -25,7 +27,7 @@
 }
 
 .sr-outline {
-	outline: 1px solid $gray-med;
+	outline: 1px solid variables.$gray-med;
 }
 
 // Universal 'aligncenter' class
@@ -37,7 +39,7 @@
 .entry-content .is-style-stever-list-indented {
 	margin-left: 1em;
 }
-@include breakpoint(xs) {
+@include variables.breakpoint(xs) {
 	.entry-content .is-style-stever-list-indented {
 		margin-left: 0;
 	}
@@ -48,8 +50,8 @@
 
 // Quote - Attention.
 .is-style-attention {
-	border-left: 3px solid $yellow;
-	background: $gray-light;
+	border-left: 3px solid variables.$yellow;
+	background: variables.$gray-light;
 	padding: 1em;
 
 	p {
@@ -93,9 +95,9 @@
 .button-ghost:active,
 .button-ghost[type='submit'] {
 	font-size: 0.85em;
-	border: 2px solid $black;
+	border: 2px solid variables.$black;
 	background: #fff5;
-	color: $black;
+	color: variables.$black;
 	cursor: pointer;
 	text-decoration: none;
 	border-radius: 3px;
@@ -104,16 +106,16 @@
 .button-ghost:visited:hover,
 .button-ghost:active:hover,
 .button-ghost[type='submit']:hover {
-	border-color: $black;
+	border-color: variables.$black;
 	background: #0005;
-	color: $white;
+	color: variables.$white;
 }
 
 // Island Class
 .island {
 	margin: 0em -2em 2em -2em;
-	border-left: 1px solid $gray-med;
-	border-right: 1px solid $gray-med;
+	border-left: 1px solid variables.$gray-med;
+	border-right: 1px solid variables.$gray-med;
 	padding: 3em;
 	background: url('img/bg_gray.png');
 	position: relative;
@@ -146,7 +148,7 @@
 }
 .island iframe {
 	display: block;
-	border: 1px solid $gray-med;
+	border: 1px solid variables.$gray-med;
 	width: 100%;
 }
 

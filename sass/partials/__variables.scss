@@ -1,8 +1,10 @@
+@use 'sass:color';
+
 // Custom Colors
 $green: #6b7d05;
 $green-dark: #5b573d;
 $green-light: #e1e2c7;
-$green-lightest: lighten($green-light, 10%);
+$green-lightest: color.adjust($green-light, $lightness: 10%);
 $green-bright: #8b9b31; // AA w/Large Text: https://bit.ly/2EnXiPj
 $brown: #332012;
 $brown-light: #96bcc5;
@@ -29,13 +31,13 @@ $accent-green: #516322;
 $accent-teal: #416e82;
 $accent-red: #814519;
 $accent-blue: #3f506c;
-$accent-teal-light: lighten($accent-teal, 10%);
-$accent-red-light: lighten($accent-red, 10%);
-$accent-blue-light: lighten($accent-blue, 10%);
-$accent-teal-dark: darken($accent-teal, 10%);
-$accent-red-dark: darken($accent-red, 10%);
-$accent-blue-dark: darken($accent-blue, 10%);
-$accent-teal-lightest: lighten($accent-teal, 30%);
+$accent-teal-light: color.adjust($accent-teal, $lightness: 10%);
+$accent-red-light: color.adjust($accent-red, $lightness: 10%);
+$accent-blue-light: color.adjust($accent-blue, $lightness: 10%);
+$accent-teal-dark: color.adjust($accent-teal, $lightness: -10%);
+$accent-red-dark: color.adjust($accent-red, $lightness: -10%);
+$accent-blue-dark: color.adjust($accent-blue, $lightness: -10%);
+$accent-teal-lightest: color.adjust($accent-teal, $lightness: 30%);
 $red-error: #ff0000;
 
 // "Standard" Colors

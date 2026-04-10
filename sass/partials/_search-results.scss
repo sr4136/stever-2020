@@ -1,12 +1,14 @@
+@use "_variables";
+
 // Search Results Page
 .search-results {
 	article {
 		margin: 2em 0 2em -1em;
 		padding: 1.5em 1em;
-		border-left: 3px solid $gray-med;
+		border-left: 3px solid variables.$gray-med;
 
 		&:nth-child(2n + 1) {
-			background-color: $gray-light;
+			background-color: variables.$gray-light;
 		}
 
 		.entry-meta {

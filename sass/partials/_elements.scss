@@ -1,3 +1,5 @@
+@use "_variables";
+
 html {
 	min-width: 320px;
 }
@@ -11,7 +13,7 @@ body {
 		rgba(255, 255, 255, 1) 70%,
 		rgba(247, 247, 247, 1) 80%
 	);
-	font-family: $fonts-copy;
+	font-family: variables.$fonts-copy;
 	font-display: fallback;
 	font-size: 16px;
 }
@@ -22,9 +24,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: $fonts-headings;
+	font-family: variables.$fonts-headings;
 	font-display: fallback;
-	color: $gray-darkest;
+	color: variables.$gray-darkest;
 	line-height: 1em;
 	margin: 0;
 	padding: 0;
@@ -54,26 +56,26 @@ p {
 a {
 	text-decoration: underline;
 	text-underline-offset: 2px;
-	color: $blue;
+	color: variables.$blue;
 }
 a:not(:is(:hover, :focus, .button)) {
-	color: $red;
+	color: variables.$red;
 	text-decoration-color: color-mix(in srgb, currentColor, transparent 75%);
 }
 
 #main {
-	padding: $frem $frem $dfrem $frem;
+	padding: variables.$frem variables.$frem variables.$dfrem variables.$frem;
 }
 .single-post #main {
   padding-bottom: 8em;
 }
 
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	#main {
 		padding: 1em 0.25em;
 	}
 }
-@include breakpoint(xs) {
+@include variables.breakpoint(xs) {
 	#main::before {
 		content: '';
 		width: 50%;
@@ -89,23 +91,23 @@ a:not(:is(:hover, :focus, .button)) {
 }
 
 code {
-	border: 1px solid $gray-med;
-	background-color: $gray-light;
-	font-family: $fonts-mono;
+	border: 1px solid variables.$gray-med;
+	background-color: variables.$gray-light;
+	font-family: variables.$fonts-mono;
 	font-display: fallback;
 	font-size: 0.75em;
-	box-shadow: 0 2px 0 $gray-med;
+	box-shadow: 0 2px 0 variables.$gray-med;
 	border-radius: 3px 3px 3px 3px;
 	padding: 1px 1px 2px 4px;
 }
 
 q {
 	position: relative;
-	background-color: $gray-light;
+	background-color: variables.$gray-light;
 	padding: 0.3em 0.5em;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
-	border-left: 3px solid $green-light;
+	border-left: 3px solid variables.$green-light;
 	margin-left: 0.15em;
 
 	&::before {
@@ -114,7 +116,7 @@ q {
 		font-size: 2em;
 		top: 0;
 		left: -0.15em;
-		color: $green-bright;
+		color: variables.$green-bright;
 	}
 }
 li:has(> q) {
@@ -122,8 +124,8 @@ li:has(> q) {
 }
 
 mark {
-	background-color: $yellow-light !important;
-	background: linear-gradient(180deg, $yellow-light 65%, $yellow-neon 100%);
+	background-color: variables.$yellow-light !important;
+	background: linear-gradient(180deg, variables.$yellow-light 65%, variables.$yellow-neon 100%);
 	border-radius: 2px;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
@@ -131,13 +133,13 @@ mark {
 
 blockquote,
 blockquote p {
-	color: $gray-darkest;
+	color: variables.$gray-darkest;
 }
 
 blockquote {
 	margin: 0 0 1rem;
 	padding: 0.25em 0 0.25em 0.5em;
-	border-left: 3px solid $green-bright;
+	border-left: 3px solid variables.$green-bright;
 }
 
 mark {
@@ -149,15 +151,15 @@ table {
 	border-spacing: 0;
 }
 
-/* HT: https://dylanatsmith.com/wrote/styling-the-kbd-element */
+// HT: https://dylanatsmith.com/wrote/styling-the-kbd-element
 kbd {
-	background-color: $gray-light;
-	color: $black;
+	background-color: variables.$gray-light;
+	color: variables.$black;
 	border-radius: 0.25rem;
-	border: 1px solid $gray-dark;
-	box-shadow: 0 2px 0 1px $gray-dark;
+	border: 1px solid variables.$gray-dark;
+	box-shadow: 0 2px 0 1px variables.$gray-dark;
 	cursor: default;
-	font-family: $fonts-mono;
+	font-family: variables.$fonts-mono;
 	font-size: 0.75em;
 	line-height: 1;
 	min-width: 0.75rem;
@@ -168,8 +170,8 @@ kbd {
 	top: -2px;
 	margin: 0 1px 0 0.5em;
 	&:hover {
-		box-shadow: 0 1px 0 0.5px $black;
-		border-color: $black;
+		box-shadow: 0 1px 0 0.5px variables.$black;
+		border-color: variables.$black;
 		top: 0;
 	}
 }
@@ -231,7 +233,7 @@ kbd {
 .entry-summary {
 	margin-top: 1.5em;
 }
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	.entry-content {
 		margin-top: 0;
 	}
@@ -242,9 +244,9 @@ p:last-child {
 }
 
 #content {
-	background-color: $white;
+	background-color: variables.$white;
 	border-radius: 3px;
-	border: 1px solid $gray-med;
+	border: 1px solid variables.$gray-med;
 	margin-bottom: 4em;
 }
 

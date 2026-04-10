@@ -1,3 +1,5 @@
+@use "_variables";
+
 /* Header */
 #masthead {
 	padding: 0;
@@ -24,7 +26,7 @@
 }
 
 #social-navigation {
-	background-color: $white;
+	background-color: variables.$white;
 
 	#social-icons {
 		display: grid;
@@ -32,7 +34,7 @@
 		grid-gap: 0.5em;
 		margin: 0;
 		justify-content: right;
-		padding: $frem $dfrem;
+		padding: variables.$frem variables.$dfrem;
 
 		li {
 			list-style: none;
@@ -63,7 +65,7 @@
 		line-height: 100%;
 	}
 	li + li {
-		border-left: 2px solid $gray-med;
+		border-left: 2px solid variables.$gray-med;
 		padding-left: 1.25em;
 	}
 	a {
@@ -75,9 +77,9 @@
 		a:not(:is(:hover, :focus, .button)) {
 			color: #412613;
 		}
-		@include breakpoint(xs) {
+		@include variables.breakpoint(xs) {
 			a:not(:is(:hover, :focus, .button)) {
-				color: $red;
+				color: variables.$red;
 			}
 		}
 	}
@@ -87,13 +89,13 @@
 .page-header,
 .entry-header {
 	position: relative;
-	border-left: 10px solid $green-bright;
+	border-left: 10px solid variables.$green-bright;
 	padding: 1.5em 1em 1.5em 1.25em;
-	margin: $nfrem $ndfrem 1rem $ndfrem;
-	background: $green;
+	margin: variables.$nfrem variables.$ndfrem 1rem variables.$ndfrem;
+	background: variables.$green;
 
 	h1 {
-		color: $white;
+		color: variables.$white;
 		line-height: 1.25em;
 		text-wrap: balance;
 	}
@@ -112,7 +114,7 @@
 }
 
 // Breakpoint: small
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	#site-branding .custom-logo-link {
 		position: relative;
 		max-width: 100%;
@@ -148,7 +150,7 @@
 }
 
 // Breakpoint: x-small
-@include breakpoint(xs) {
+@include variables.breakpoint(xs) {
 	#social-navigation {
 		#social-icons {
 			li {
@@ -159,23 +161,23 @@
 
 	.menu-primary-container {
 		position: relative;
-		border: 1px solid $gray-med;
+		border: 1px solid variables.$gray-med;
 	}
 	#primary-menu {
 		display: block;
 		font-size: 1.5em;
 		padding: 0;
-		border-left: 1.5em solid $gray-light;
+		border-left: 1.5em solid variables.$gray-light;
 
 		li {
 			padding: 0.75em;
-			border-top: 1px solid $gray-med;
-			border-left: 1px solid $gray-med;
+			border-top: 1px solid variables.$gray-med;
+			border-left: 1px solid variables.$gray-med;
 		}
 		li + li {
 			padding: 0.75em;
-			border-top: 1px solid $gray-med;
-			border-left: 1px solid $gray-med;
+			border-top: 1px solid variables.$gray-med;
+			border-left: 1px solid variables.$gray-med;
 
 			a {
 				padding: 0;
@@ -194,9 +196,9 @@
 		top: 50%;
 		left: 1em;
 		transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-		font-family: $fonts-icon;
+		font-family: variables.$fonts-icon;
 		font-weight: 900;
-		color: $gray-darkest;
+		color: variables.$gray-darkest;
 	}
 	#content {
 		border: 0 none;

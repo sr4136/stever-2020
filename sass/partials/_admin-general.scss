@@ -1,3 +1,5 @@
+@use "_variables";
+
 // Metabox: Body Class
 #stever_body_class-stever-body-class textarea {
 	width: 100%;
@@ -37,7 +39,7 @@
 	margin: 0;
 
 	p {
-		color: $black;
+		color: variables.$black;
 		font-size: 1.2em;
 	}
 }
@@ -71,7 +73,7 @@
 			border: 1px dashed transparent;
 			border-left: 0;
 			padding: 1px 6px 3px 8px;
-			background-color: $gray-light;
+			background-color: variables.$gray-light;
 			border-radius: 3px;
 
 			&:before {
@@ -85,32 +87,32 @@
 			}
 		}
 		a[href='edit.php?category_name=uncategorized'] {
-			border-color: $red-error;
+			border-color: variables.$red-error;
 			&:before {
-				background-color: $red-error;
+				background-color: variables.$red-error;
 			}
 		}
 		a[href='edit.php?category_name=management'] {
-			border-color: $green;
+			border-color: variables.$green;
 			&:before {
-				background-color: $green;
+				background-color: variables.$green;
 			}
 		}
 		a[href='edit.php?category_name=development'] {
-			border-color: $accent-teal;
+			border-color: variables.$accent-teal;
 			&:before {
-				background-color: $accent-teal;
+				background-color: variables.$accent-teal;
 			}
 		}
 		a[href='edit.php?category_name=event-notes'] {
-			border-color: $yellow;
+			border-color: variables.$yellow;
 			&:before {
-				background-color: $yellow;
+				background-color: variables.$yellow;
 			}
 		}
 	}
 	tr:nth-child(odd) .column-categories a {
-		background-color: $white;
+		background-color: variables.$white;
 	}
 
 	// Workflow Column
@@ -141,7 +143,7 @@
 	tr {
 		cursor: unset;
 	}
-	/* Indent nested posts. */
+	// Indent nested posts.
 	tr.level-1 {
 		.check-column {
 			padding-left: 2em;
@@ -161,7 +163,7 @@
 		opacity: 0.5;
 		transition: all 0.5s;
 
-		/* Duplicate Post plugin: hide the "number of duplicates" input. */
+		// Duplicate Post plugin: hide the "number of duplicates" input.
 		.dppmc_btn_count {
 			a {
 				cursor: pointer;
@@ -171,7 +173,7 @@
 			}
 		}
 
-		/* Simple Page Ordering plugin. */
+		// Simple Page Ordering plugin.
 		[class^='spo-move'] {
 			display: none !important;
 		}
@@ -213,9 +215,8 @@
 	}
 }
 
-/* Dashboard Widgets.
- * Very opinionated to my setup.
- */
+// Dashboard Widgets.
+// Very opinionated to my setup.
 #dashboard-widgets {
 	#dashboard_widget_maps h2,
 	#dashboard_widget_unfinished_posts h2,
@@ -230,7 +231,7 @@
 		font-family: 'Dashicons';
 		padding-right: 0.5em;
 		vertical-align: middle;
-		color: $red;
+		color: variables.$red;
 		font-weight: normal;
 		font-size: 1.5em;
 	}

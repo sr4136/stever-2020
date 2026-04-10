@@ -1,3 +1,5 @@
+@use "_variables";
+
 // Page Title: Extra Attention
 .editor-post-title {
 	border-bottom: 4px double black;
@@ -49,8 +51,8 @@
 }
 
 code {
-	border: 1px solid $gray-med;
-	background-color: $gray-light;
+	border: 1px solid variables.$gray-med;
+	background-color: variables.$gray-light;
 	padding: 1px 3px;
 }
 
@@ -64,7 +66,7 @@ code {
 
 // Spacer - Outline
 .wp-block-spacer {
-	border: 1px dotted $gray-dark;
+	border: 1px dotted variables.$gray-dark;
 	&::before {
 		content: '(spacer)';
 		text-align: center;
@@ -79,13 +81,13 @@ code {
 .wp-block-group,
 .wp-block-columns,
 .wp-block-column {
-	outline: 1px dotted $gray-dark;
+	outline: 1px dotted variables.$gray-dark;
 	background-image: repeating-linear-gradient(
 		45deg,
 		transparent,
 		transparent 5px,
-		$gray-med 0,
-		$gray-med 10px
+		variables.$gray-med 0,
+		variables.$gray-med 10px
 	);
 	background-size: 3px 100%;
 	background-repeat: no-repeat;
@@ -102,11 +104,11 @@ code {
 	left: 0;
 	transform: rotate(-90deg) translateX(-100%);
 	transform-origin: top left;
-	background: $gray-med;
+	background: variables.$gray-med;
 	padding: 0 2px 2px 2px;
-	color: $white;
+	color: variables.$white;
 	font-size: 8px;
-	font-family: $fonts-mono;
+	font-family: variables.$fonts-mono;
 	line-height: 8px;
 }
 .wp-block-columns::before {
@@ -116,7 +118,7 @@ code {
 	content: 'column';
 }
 
-/* Home - Half Rounded: Account for buttons. */
+// Home - Half Rounded: Account for buttons.
 .home .is-style-stever-attention-half-rounded {
 	padding-bottom: 1em;
 
@@ -126,27 +128,27 @@ code {
 	}
 }
 
-/* Admin Mobile - Editing the ProDev Table */
-@include breakpoint(s) {
+// Admin Mobile - Editing the ProDev Table
+@include variables.breakpoint(s) {
 	.sr-page-table {
 		.wp-block-table tr {
-			border: 1px solid $gray-light;
+			border: 1px solid variables.$gray-light;
 		}
 		.wp-block-table td {
-			border: 1px solid $gray-light;
+			border: 1px solid variables.$gray-light;
 			padding: 2px 5px !important;
 			line-height: 1.5em;
 		}
 		.is-style-stever-table-pro-dev tr {
-			/* Cell: Type */
+			// Cell: Type
 			td:nth-child(1) {
 				width: 25%;
 			}
-			/* Cell: Affiliation */
+			// Cell: Affiliation
 			tr td:nth-child(3) {
 				width: calc(75% - 40px);
 			}
-			/* Cell: Date */
+			// Cell: Date
 			td:nth-child(4) {
 				width: 100%;
 				text-align: left;

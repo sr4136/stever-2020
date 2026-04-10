@@ -1,3 +1,5 @@
+@use "_variables";
+
 // Quotes Archive
 .post-type-archive-stever_quotes {
 	.entry-header {
@@ -58,7 +60,7 @@
 	
 	.quotes-progress-indicator {
 		height: 5px;
-		background: $gray-med;
+		background: variables.$gray-med;
 		position: absolute;
 		bottom: 0;
 		width: 100%;

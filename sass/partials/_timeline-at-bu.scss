@@ -1,3 +1,5 @@
+@use "_variables";
+
 /* My Time at BU Page */
 
 // Tooltip.
@@ -16,7 +18,7 @@
 		h4 {
 			margin: 0;
 			padding: 0.4em 0;
-			border: 1px solid $gray-med;
+			border: 1px solid variables.$gray-med;
 			text-align: center;
 		}
 		p {
@@ -25,7 +27,7 @@
 		}
 	}
 }
-@include breakpoint(m) {
+@include variables.breakpoint(m) {
 	.is-style-stever-timeline-heading {
 		.wp-block-column:first-child {
 			flex-basis: 65% !important;
@@ -37,7 +39,7 @@
 		}
 	}
 }
-@include breakpoint(xs) {
+@include variables.breakpoint(xs) {
 	.is-style-stever-timeline-heading {
 		.wp-block-column:first-child,
 		.wp-block-column:last-child {
@@ -52,31 +54,31 @@
 
 // People: Legend and Table.
 .dev-me {
-	background: $timeline-me;
-	border: 2px solid $green-dark;
-	color: $white;
+	background: variables.$timeline-me;
+	border: 2px solid variables.$green-dark;
+	color: variables.$white;
 	font-weight: bold;
 }
 .dev-direct {
-	background: $timeline-dev;
-	color: $white;
+	background: variables.$timeline-dev;
+	color: variables.$white;
 	font-weight: bold;
 }
 .manager-direct {
-	background: $timeline-manager;
-	color: $white;
+	background: variables.$timeline-manager;
+	color: variables.$white;
 	font-weight: bold;
 }
 .dev-other,
 .manager-other {
 	font-weight: bold;
-	background: $gray-light;
+	background: variables.$gray-light;
 }
 .dev-other {
-	border: 2px dotted $timeline-dev;
+	border: 2px dotted variables.$timeline-dev;
 }
 .manager-other {
-	border: 2px dotted $timeline-manager;
+	border: 2px dotted variables.$timeline-manager;
 }
 .dev-other span,
 .manager-other span {
@@ -86,7 +88,7 @@
 // Table
 .timeline {
 	overflow-x: scroll;
-	border: 1px solid $gray-med;
+	border: 1px solid variables.$gray-med;
 	cursor: grab;
 
 	table {
@@ -111,8 +113,8 @@
 	thead {
 		.months {
 			font-size: 0.75em;
-			background-color: $teal;
-			color: $white;
+			background-color: variables.$teal;
+			color: variables.$white;
 			text-align: center;
 
 			td {
@@ -120,22 +122,22 @@
 
 				// And the next td.
 				& + td {
-					border-left: 1px solid $teal-light;
+					border-left: 1px solid variables.$teal-light;
 				}
 			}
 		}
 
 		.years {
 			font-size: 0.75em;
-			background: $teal-light;
-			color: $black;
+			background: variables.$teal-light;
+			color: variables.$black;
 
 			td {
 				padding-left: 1.5em;
 
 				// And the next td.
 				& + td {
-					border-left: 1px solid $teal;
+					border-left: 1px solid variables.$teal;
 				}
 				span {
 					font-weight: bold;
@@ -165,8 +167,8 @@
 			margin: 4.5px 0 0 0.25em;
 			width: 15px;
 			height: 15px;
-			background: $white;
-			border: 5px solid $black;
+			background: variables.$white;
+			border: 5px solid variables.$black;
 			border-radius: 50%;
 			cursor: pointer;
 		}
@@ -184,7 +186,7 @@
 			z-index: 2;
 			top: -5px;
 			left: -5px;
-			border: 1px solid $black;
+			border: 1px solid variables.$black;
 			width: 15px;
 			height: 15px;
 			border-radius: 50%;

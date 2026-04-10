@@ -1,4 +1,6 @@
-/* Blocks: Unique Classes - Home */
+@use "_variables";
+
+// Blocks: Unique Classes - Home
 
 #hi {
 	margin-top: 0;
@@ -19,7 +21,7 @@
 		flex-direction: column;
 	}
 }
-@include breakpoint(l) {
+@include variables.breakpoint(l) {
 	.stever-home-section-intro {
 		.wp-block-column:first-child {
 			flex-basis: calc(70% - 1em) !important;
@@ -29,7 +31,7 @@
 		}
 	}
 }
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	.stever-home-section-intro {
 		.wp-block-column:first-child,
 		.wp-block-column:last-child {

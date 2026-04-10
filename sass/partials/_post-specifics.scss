@@ -1,11 +1,13 @@
+@use "_variables";
+
 /* Post-specific: The Power of Keeping Lists */
 .post--keeping-lists {
 	table {
-		border: 1px solid $gray-med;
+		border: 1px solid variables.$gray-med;
 		margin-bottom: 0;
 	}
 	thead {
-		border-bottom: 1px solid $gray-med;
+		border-bottom: 1px solid variables.$gray-med;
 	}
 	td {
 		padding: 6px;
@@ -14,13 +16,13 @@
 	table td + td,
 	.wp-block-table.is-style-stripes th + th,
 	.wp-block-table.is-style-stripes td + td {
-		border-left: 1px solid $gray-med;
+		border-left: 1px solid variables.$gray-med;
 	}
 	.wp-block-pb-accordion-item {
 		margin-bottom: 2.5em;
 	}
 
-	@include breakpoint(l) {
+	@include variables.breakpoint(l) {
 		figure.alignright {
 			float: none;
 			margin: 0 auto;
@@ -32,8 +34,8 @@
 .single.cat-event-notes {
 	h2 {
 		background:
-			linear-gradient($white, $white) padding-box,
-			linear-gradient(to right, $green-bright, transparent) border-box;
+			linear-gradient(variables.$white, variables.$white) padding-box,
+			linear-gradient(to right, variables.$green-bright, transparent) border-box;
 		margin: 0 0 0.75em calc(-1em - 2px);
 		padding: 0.2em 1em 0.25em 1em;
 		border-bottom: 2px solid transparent;
@@ -43,8 +45,8 @@
 		&:before {
 			content: '';
 			background:
-				linear-gradient($white, $white) padding-box,
-				linear-gradient(0deg, $green-bright, transparent) border-box;
+				linear-gradient(variables.$white, variables.$white) padding-box,
+				linear-gradient(0deg, variables.$green-bright, transparent) border-box;
 			height: 100%;
 			position: absolute;
 			top: 0;
@@ -54,7 +56,7 @@
 		}
 	}
 
-	@include breakpoint(s) {
+	@include variables.breakpoint(s) {
 		h2 {
 			margin: 0px 0 0.75em calc(-0.5em - 2px);
 		}
@@ -66,7 +68,7 @@
 
 	.is-style-notes-sessions-list {
 		.wp-block-group {
-			border-left: 1px dashed $gray-med;
+			border-left: 1px dashed variables.$gray-med;
 			padding-left: 1em;
 			margin-bottom: 3em;
 		}
@@ -108,7 +110,7 @@
 		.wp-block-quote .wp-block-gallery:has(> .wp-block-image:only-child) .wp-block-image {
 			max-width: unset;
 		}
-		@include breakpoint(m) {
+		@include variables.breakpoint(m) {
 			.wp-block-gallery:has(> .wp-block-image:only-child) .wp-block-image {
 				max-width: unset;
 			}
@@ -116,14 +118,14 @@
 
 		.wp-block-image {
 			img {
-				outline: 1px solid $gray-med;
+				outline: 1px solid variables.$gray-med;
 			}
 			.alignright {
 				margin: 0 0 1em 1em;
 			}
 		}
 
-		@include breakpoint(s) {
+		@include variables.breakpoint(s) {
 			.wp-block-image:has(.alignright) {
 				justify-content: center;
 				display: flex;
@@ -161,8 +163,8 @@
 }
 
 .sr-resume-container {
-	border: 1px solid $gray-med;
-	box-shadow: 5px 5px 5px $gray-med;
+	border: 1px solid variables.$gray-med;
+	box-shadow: 5px 5px 5px variables.$gray-med;
 	margin-top: 2em;
 	padding-bottom: 1em;
 
@@ -181,7 +183,7 @@
 	}
 
 	.sr-resume-header {
-		background: $gray-light;
+		background: variables.$gray-light;
 
 		h3 {
 			padding-top: 1em
@@ -190,7 +192,7 @@
 
 	.sr-resume-content {
 		h2 {
-			border-bottom: 4px solid $green-bright;
+			border-bottom: 4px solid variables.$green-bright;
 			padding-bottom: 0;
 			margin-bottom: 1em;
 		}
@@ -207,12 +209,12 @@
 			vertical-align: top;
 		}
 		td:nth-child(2n) {
-			font-family: $fonts-mono;
+			font-family: variables.$fonts-mono;
 			font-size: 0.9em;
 		}
 	}
 }
-@include breakpoint(m) {
+@include variables.breakpoint(m) {
 	.sr-resume-container .sr-resume-header {
 			
 		.wp-block-group {
@@ -230,7 +232,7 @@
 		
 	}
 }
-@include breakpoint(l) {
+@include variables.breakpoint(l) {
 	.sr-resume-container {
 		margin-bottom: 1em;
 

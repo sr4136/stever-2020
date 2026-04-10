@@ -1,4 +1,6 @@
-/* Blocks: Unique Classes - Tables */
+@use "_variables";
+
+// Blocks: Unique Classes - Tables
 
 // Custom Body Class: .sr-page-table
 body.sr-page-table {
@@ -7,29 +9,26 @@ body.sr-page-table {
 	}
 
 	thead {
-		background-color: $green-light;
+		background-color: variables.$green-light;
 		font-weight: bold;
 		text-align: left;
-		border-bottom: 2px solid $gray;
+		border-bottom: 2px solid variables.$gray;
 	}
 
-	/* Zebra Striping */
-	tbody tr:not(.hidden):nth-of-type(2n) {
-		background: $gray-light;
-	}
-	tbody tr:not(.hidden):nth-of-type(2n + 1) {
-		background: none;
+	// Zebra Striping
+	tbody tr:nth-child( 2n of :not(.hidden) ) {
+		background: variables.$gray-light;
 	}
 
 	th {
 		padding: 0.5em 1em;
-		border: 1px solid $gray-med;
+		border: 1px solid variables.$gray-med;
 	}
 
 	td {
 		padding: 0.5em 1em;
 		vertical-align: top;
-		border: 1px solid $gray-med;
+		border: 1px solid variables.$gray-med;
 	}
 }
 
@@ -38,17 +37,17 @@ body.sr-page-table {
 		line-height: 0.75em;
 	}
 
-	/* Give the textareas some indication vs the parent padding. */
+	// Give the textareas some indication vs the parent padding.
 	.wp-block-table__cell-content .rich-text {
 		background: #ccc2;
 		padding: 0.25em 0.5em;
 	}
 }
 
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	.sr-page-table {
 		tr:not(:last-child) {
-			border-bottom: 1px solid $gray-med;
+			border-bottom: 1px solid variables.$gray-med;
 		}
 		td {
 			border: 0 none;
@@ -59,8 +58,8 @@ body.sr-page-table {
 // Heading: Year Divider
 .is-style-year-divider,
 .entry-content .is-style-year-divider {
-	background-color: $green-bright;
-	color: $white;
+	background-color: variables.$green-bright;
+	color: variables.$white;
 	text-align: center;
 	padding: 0.5em 0;
 	font-weight: bold;
@@ -85,7 +84,7 @@ body.sr-page-table {
 		height: 500px;
 	}
 }
-@include breakpoint(p) {
+@include variables.breakpoint(p) {
 	#sr-chart-wrapper {
 		margin: 2em -0.5em;
 		h3 {
@@ -93,12 +92,12 @@ body.sr-page-table {
 		}
 	}
 }
-@include breakpoint(m) {
+@include variables.breakpoint(m) {
 	#sr-chart-wrapper {
 		padding: 0.5em;
 	}
 }
-@include breakpoint(xs) {
+@include variables.breakpoint(xs) {
 	#sr-chart-wrapper #books-chart-container {
 		min-height: 300px;
 		max-height: 50vh;
@@ -118,11 +117,11 @@ body.sr-page-table {
 
 		.prodev-image {
 			img {
-				border: 1px solid $gray-med;
+				border: 1px solid variables.$gray-med;
 				margin: 0;
 			}
 			figcaption {
-				border: 1px solid $gray-med;
+				border: 1px solid variables.$gray-med;
 				margin-top: 0;
 				padding: 0.25em 0.5em;
 				font-style: italic;
@@ -141,13 +140,13 @@ body.sr-page-table {
 
 	// Legend
 	#sr-legend--container {
-		border: 1px solid $green-light;
+		border: 1px solid variables.$green-light;
 
 		p {
 			margin: 0;
 			padding: 0.5em 1em;
 			font-weight: bold;
-			border-left: 5px solid $green-light;
+			border-left: 5px solid variables.$green-light;
 		}
 
 		#sr-legend {
@@ -159,26 +158,26 @@ body.sr-page-table {
 				padding: 0.25em 0.5em;
 				margin: 0;
 				border-left: 5px solid transparent;
-				border-top: 1px solid $green-light;
+				border-top: 1px solid variables.$green-light;
 
 				&:hover {
-					border-left: 5px solid $green-light;
+					border-left: 5px solid variables.$green-light;
 					margin-left: 0;
 					color: black;
 				}
 				&.active {
-					border-left: 5px solid $green-bright;
-					background: $green-lightest;
-					box-shadow: 2px 1px 2px $gray-med;
+					border-left: 5px solid variables.$green-bright;
+					background: variables.$green-lightest;
+					box-shadow: 2px 1px 2px variables.$gray-med;
 					margin-left: 0;
 					font-weight: bold;
 				}
 			}
 
 			.show-all {
-				border-left: 5px solid $gray;
+				border-left: 5px solid variables.$gray;
 				margin-left: 0;
-				background: $gray-light;
+				background: variables.$gray-light;
 			}
 
 			i {
@@ -191,10 +190,10 @@ body.sr-page-table {
 
 	// Upcoming Events Table
 	.is-style-year-divider-upcoming {
-		background-color: $accent-teal;
+		background-color: variables.$accent-teal;
 	}
 	.is-style-stever-table-pro-dev-upcoming thead {
-		background-color: $accent-teal-lightest;
+		background-color: variables.$accent-teal-lightest;
 	}
 
 	.is-style-stever-table-pro-dev {
@@ -218,7 +217,7 @@ body.sr-page-table {
 		}
 		td:nth-child(4) {
 			width: 15%;
-			font-family: $fonts-mono;
+			font-family: variables.$fonts-mono;
 			font-size: 0.725em;
 			line-height: 2.25em;
 			text-align: right;
@@ -233,12 +232,12 @@ body.sr-page-table {
 
 		&:before {
 			content: '(Legend hidden while searching.)';
-			border: 1px dashed $gray-dark;
+			border: 1px dashed variables.$gray-dark;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			background: $white;
-			color: $gray-dark;
+			background: variables.$white;
+			color: variables.$gray-dark;
 		}
 	}
 	#sr-table-search--container
@@ -250,7 +249,7 @@ body.sr-page-table {
 
 
 // Table: Professional Development - Responsive
-@include breakpoint(m) {
+@include variables.breakpoint(m) {
 	.sr-page-table-prodev .sr-prodev-intro-group {
 		.wp-block-group:last-of-type {
 			grid-area: 1;
@@ -261,7 +260,7 @@ body.sr-page-table {
 	}
 }
 
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	.sr-page-table-prodev .is-style-stever-table-pro-dev {
 		display: block;
 		overflow: auto;
@@ -330,7 +329,7 @@ body.sr-page-table {
 		text-align: right;
 	}
 	td:nth-child(3) {
-		font-family: $fonts-mono;
+		font-family: variables.$fonts-mono;
 		font-size: 0.9em;
 		line-height: 1.75em;
 		text-align: center;
@@ -338,7 +337,7 @@ body.sr-page-table {
 }
 
 // Table: Books I've Read (Responsive)
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	.is-style-stever-table-books {
 		display: block;
 		width: 100%;
@@ -412,14 +411,14 @@ body.sr-page-table {
 		text-align: right;
 	}
 	td:nth-child(3) {
-		font-family: $fonts-mono;
+		font-family: variables.$fonts-mono;
 		font-size: 0.85em;
 		line-height: 2em;
 	}
 }
 
 // Table: Speaking/Teaching (Responsive)
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	.is-style-stever-table-speaking {
 		display: block;
 		width: 100%;
@@ -445,7 +444,7 @@ body.sr-page-table {
 	}
 }
 
-/* Table Search */
+// Table Search
 // 1. Search Box (input) | 2. Counter (showing) | 3. Button (toggle row counts)
 #sr-table-search--container {
 	display: grid;
@@ -470,10 +469,10 @@ body.sr-page-table {
 			padding: 4px 12px;
 			border: 0 none;
 			margin-bottom: 0;
-			color: $black-copy;
+			color: variables.$black-copy;
 
 			&::placeholder {
-				color: $gray-darkest;
+				color: variables.$gray-darkest;
 			}
 		}
 
@@ -563,7 +562,7 @@ body.sr-page-table {
 	}
 }
 
-/* Table item counts. */
+// Table item counts.
 body.sr-table-row-counter {
 	.wp-block-table tbody {
 		counter-reset: reversed(tableCounter);
@@ -576,7 +575,7 @@ body.sr-table-row-counter {
 		}
 	}
 
-	/* Title is [1st box on Books] page & [2nd box on ProDev] page. */
+	// Title is [1st box on Books] page & [2nd box on ProDev] page.
 	&.sr-page-table-books tbody td:nth-child(1),
 	&.sr-page-table-prodev tbody td:nth-child(2) {
 		padding-right: 3em;
@@ -613,7 +612,7 @@ body.sr-table-row-counter {
 	opacity: 0;
 }
 
-/* Toolip */
+// Toolip
 .tpd-tooltip {
 	.tdp-sr {
 		padding: 0;
@@ -661,7 +660,7 @@ body.sr-table-row-counter {
 	}
 }
 
-/* Marked table rows */
+// Marked table rows
 :root {
 	--srTY: -50px;
 }
@@ -671,25 +670,25 @@ body.sr-page-table {
 		overflow: visible;
 
 		tr.marked {
-			border-left: 2px solid $yellow;
+			border-left: 2px solid variables.$yellow;
 
 			td:first-child {
 				position: relative;
 
 				&:before {
 					content: '\f005';
-					font-family: $fonts-icon;
+					font-family: variables.$fonts-icon;
 					position: absolute;
-					color: $yellow;
+					color: variables.$yellow;
 					left: -1em;
 					font-weight: 900;
 					background: #fff;
 					border-radius: 50%;
-					outline: 2px solid $yellow;
+					outline: 2px solid variables.$yellow;
 					width: 2em;
 					height: 2em;
 					font-size: 0.5em;
-					top: calc( 1em + 4px ); /* half height + outline */
+					top: calc( 1em + 4px ); // half height + outline
 					animation: spin 1s linear infinite;
 				}
 			}
@@ -697,19 +696,19 @@ body.sr-page-table {
 	}
 }
 
-/* Media query: medium-lg, screens. */
+// Media query: medium-lg, screens.
 @media only screen and (max-width: 900px) {
 	#sr-table-search--container {
 		grid-template-columns: 60fr 30fr 10fr;
 	}
 }
-/* Media query: medium-sm, screens. */
+// Media query: medium-sm, screens.
 @media only screen and (max-width: 700px) {
 	#sr-table-search--container {
 		grid-gap: 0 1em;
 	}
 }
-/* Media query: small screens. */
+// Media query: small screens.
 @media only screen and (max-width: 640px) {
 	#sr-table-search--container {
 		grid-template-columns: repeat(auto-fill, calc(10% - 0.25em));
@@ -748,7 +747,7 @@ body.sr-page-table {
 	}
 }
 
-@include breakpoint(s) {
+@include variables.breakpoint(s) {
 	body.sr-page-table-prodev tbody tr,
 	body.sr-page-table-books tbody tr {
 		padding: 0.75em 1em;

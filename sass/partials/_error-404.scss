@@ -1,4 +1,6 @@
-/* 404 Page */
+@use "_variables";
+
+// 404 Page
 .error404 {
 	.page-content {
 		padding-right: 1em;
@@ -22,7 +24,7 @@
 				margin: 0;
 			}
 			.search-field::placeholder {
-				color: $black;
+				color: variables.$black;
 			}
 			.search-field:focus::placeholder {
 				opacity: 0;
@@ -34,7 +36,7 @@
 	}
 	aside {
 		padding: 0.5em 0 0 1em;
-		border-left: 1px solid $gray-med;
+		border-left: 1px solid variables.$gray-med;
 
 		h3 {
 			margin-top: 0.5em;

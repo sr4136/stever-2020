@@ -1,7 +1,7 @@
-/* Blocks - Frontend and Backend */
-@import 'partials/_variables';
+// Blocks - Frontend and Backend
+@use 'partials/_variables';
 
-@import 'partials/blocks-general';
-@import 'partials/blocks-unique-global';
-@import 'partials/blocks-unique-tables';
-@import 'partials/blocks-unique-home';
+@use 'partials/blocks-general';
+@use 'partials/blocks-unique-global';
+@use 'partials/blocks-unique-tables';
+@use 'partials/blocks-unique-home';
