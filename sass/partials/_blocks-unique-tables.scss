@@ -1,4 +1,5 @@
 @use "_variables";
+@use "_helpers";
 
 // Blocks: Unique Classes - Tables
 
@@ -10,7 +11,7 @@ body.sr-page-table {
 
 	thead {
 		background-color: variables.$green-light;
-		font-weight: bold;
+		font-weight: bold; 
 		text-align: left;
 		border-bottom: 2px solid variables.$gray;
 	}
@@ -679,6 +680,7 @@ body.sr-page-table {
 					content: '\f005';
 					font-family: variables.$fonts-icon;
 					position: absolute;
+					display: inline-block;
 					color: variables.$yellow;
 					left: -1em;
 					font-weight: 900;
@@ -689,6 +691,7 @@ body.sr-page-table {
 					height: 2em;
 					font-size: 0.5em;
 					top: calc( 1em + 4px ); // half height + outline
+					transform-origin: center center;
 					animation: spin 1s linear infinite;
 				}
 			}

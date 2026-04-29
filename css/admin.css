@@ -512,3 +512,39 @@ figcaption {
 #dashboard-widgets #dashboard_widget_all_pages h2::before {
   content: "\f163";
 }
+
+.sr-page-table .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty {
+  position: relative;
+}
+.sr-page-table .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  color: #666;
+  font-size: 1em;
+}
+
+.sr-page-table-prodev .wp-block-table td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Type";
+}
+.sr-page-table-prodev .wp-block-table td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Event Name";
+}
+.sr-page-table-prodev .wp-block-table td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Affiliation";
+}
+.sr-page-table-prodev .wp-block-table td:nth-child(4) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Date";
+}
+
+.sr-page-table-books .wp-block-table td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Title";
+}
+.sr-page-table-books .wp-block-table td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Author";
+}
+.sr-page-table-books .wp-block-table td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Date";
+}

@@ -213,3 +213,17 @@ function stever_block_filter() {
     );
 }
 add_action( 'enqueue_block_editor_assets', 'stever_block_filter' );
+
+/**
+ * Admin: table placeholders
+ */
+function sr_enqueue_table_placeholder_script() {
+    wp_enqueue_script(
+        'sr-table-placeholder',
+        get_stylesheet_directory_uri() . '/js/table-placeholders.js',
+        array( 'wp-blocks', 'wp-dom-ready' ),
+        filemtime( get_stylesheet_directory() . '/js/table-placeholders.js' ),
+        true
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'sr_enqueue_table_placeholder_script' );
