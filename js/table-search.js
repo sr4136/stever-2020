@@ -82,25 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				this.scrollToSearchBar.bind(this),
 			);
 			this.sr_ts_tablesets.forEach((tableSet) => {
-				// Listen for mouseup and touchend events to wrap selected text
-				tableSet.addEventListener(
-					'mouseup',
-					this.wrapSelection.bind(this),
-				);
-				tableSet.addEventListener(
-					'touchend',
-					this.wrapSelection.bind(this),
-				);
-
-				// Listen for mousedown and touchstart events to unwrap selected text
-				tableSet.addEventListener(
-					'mousedown',
-					this.unwrapSelection.bind(this),
-				);
-				tableSet.addEventListener(
-					'touchstart',
-					this.unwrapSelection.bind(this),
-				);
+				// Wrap selection on pointer/touch up; unwrap on pointer/touch down
+				['mouseup', 'touchend'].forEach((e) => tableSet.addEventListener(e, this.wrapSelection.bind(this)));
+				['mousedown', 'touchstart'].forEach((e) => tableSet.addEventListener(e, this.unwrapSelection.bind(this)));
 			});
 		}
 
@@ -388,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Create a tooltip for the selected text
 		createTooltip(span, selectedText) {
-			const tooltip = Tipped.create(
+			Tipped.create(
 				span,
 				() => ({
 					content: `<div id="sr-send-to-search" onClick="sendToSearch(event)" data-string="${selectedText.trim()}">Search "${selectedText.trim()}"</div>`, // Tooltip content with search action
@@ -431,24 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.sendToSearch = function (event) {
 		tableSearchInstance.sr_ts_wrapper.classList.remove('visually-hidden'); // Make sure the search input is visible
 		if (event.target.dataset.string) {
-			const searchInput = document.getElementById(
-				'sr-table-search--input',
-			); // Get the search input element
-			searchInput.value = event.target.dataset.string; // Set the input value to the selected text
-			const tempEvent = new Event('input', {
-				bubbles: true,
-				cancelable: true,
-			});
-			searchInput.dispatchEvent(tempEvent); // Dispatch an input event to trigger search
-			searchInput.focus(); // Focus on the search input
-			searchInput.blur(); // Remove focus from the search input
+			const input = tableSearchInstance.sr_ts_input; // Use the already-cached input element
+			input.value = event.target.dataset.string; // Set the input value to the selected text
+			const tempEvent = new Event('input', { bubbles: true, cancelable: true });
+			input.dispatchEvent(tempEvent); // Dispatch an input event to trigger search
+			input.focus(); // Focus on the search input
+			input.blur(); // Remove focus from the search input
 			tableSearchInstance.unwrapSelection(); // Unwrap any active selections
 		}
 	};
 
-	// A check for if a string contains markup
-	function containsMarkup(str) {
-		const markupPattern = /<\/?[\w\s="/.':;#-\/\?]+>/; // Regex pattern to detect HTML tags
-		return markupPattern.test(str); // Return true if the string contains markup
-	}
 });
