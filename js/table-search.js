@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Check query params
 		checkQueryParams() {
 			const urlParams = new URLSearchParams(window.location.search);
-			const markValue = urlParams.get('m');
-			const searchValue = urlParams.get('q');
+			const markValue = urlParams.get('h');
+			const searchValue = urlParams.getAll('q').join('|');
 			const legendValue = urlParams.get('l');
 
 			// console.log(
@@ -187,27 +187,90 @@ document.addEventListener('DOMContentLoaded', () => {
 				); // Hide legend if there is a query
 			}
 			// Process the search if there is a query, otherwise clear the search
-			query ? this.processSearch(query) : this.clearSearch();
+			if (query) {
+				this.updateSearchQueryParam(query);
+				this.processSearch(query);
+			} else {
+				this.clearSearch();
+			}
+		}
+
+		updateSearchQueryParam(query) {
+			const currentUrl = new URL(window.location.href);
+
+			if (query) {
+				currentUrl.searchParams.set('q', query);
+			} else {
+				currentUrl.searchParams.delete('q');
+			}
+
+			const updatedUrl =
+				currentUrl.pathname +
+				currentUrl.search +
+				currentUrl.hash;
+			window.history.replaceState({}, '', updatedUrl);
 		}
 
 		handleMarking(markValue) {
 			//console.log(markValue);
+			const normalizedMarkValue = this.normalizeSearchText(markValue);
 
 			this.sr_ts_tables.forEach((table) => {
 				const rows = table.querySelectorAll('tbody tr');
 				rows.forEach((row) => {
 					//console.log(rows);
 					const searchStr = this.getSearchString(row); // Get the search string for the row
-					const isMarked = searchStr
-						.toLowerCase()
-						.includes(markValue.toLowerCase()); // Check if the row matches the query
+					const rowSearchStr = this.normalizeSearchText(searchStr);
+					const isMarked = rowSearchStr.includes(
+						normalizedMarkValue,
+					); // Check if the row matches the query
 					row.classList.toggle('marked', isMarked); // Toggle visibility of the row
 				});
 			});
 		}
 
+		/*
+		 * Normalize search text for reliable matching:
+		 * 1) normalize('NFKC'): convert compatibility Unicode forms into a standard composed form.
+		 * 2) toLowerCase(): make comparisons case-insensitive.
+		 * 3) replace(/[...]/g, ''): remove apostrophe-like characters (straight, curly, grave, acute, okina, etc.).
+		 * 4) replace(/[...]/g, ''): remove zero-width/invisible characters from copied text.
+		 * 5) replace(/\s+/g, ' '): collapse repeated whitespace to a single space.
+		 * 6) trim(): remove leading and trailing whitespace.
+		 */
+		normalizeSearchText(text) {
+			return (text || '')
+				.normalize('NFKC')
+				.toLowerCase()
+				.replace(/[\u0027\u0060\u00B4\u02BB\u2018\u2019\u201A\u201B\u2032\uFF07]/g, '')
+				.replace(/[\u200B\u200C\u200D\uFEFF]/g, '')
+				.replace(/\s+/g, ' ')
+				.trim();
+		}
+
+		parseQueryParts(query) {
+			let normalizedQuery = query || '';
+
+			try {
+				normalizedQuery = decodeURIComponent(normalizedQuery);
+			} catch (error) {
+				// Keep the original value if it is not valid URI encoding.
+			}
+
+			normalizedQuery = normalizedQuery
+				.replace(/%2C/gi, '|')
+				.replace(/%7C/gi, '|');
+
+			return this.normalizeSearchText(normalizedQuery)
+				.split('|')
+				.map((part) => part.trim())
+				.filter(Boolean);
+		}
+
 		// Process the search based on the input query
 		processSearch(query) {
+			const queryParts = this.parseQueryParts(query);
+
 			this.sr_ts_tables.forEach((table) => {
 				const tableHeading = table.previousElementSibling; // Get the heading of the current table
 				const rows = table.querySelectorAll('tbody tr'); // Get all rows in the table
@@ -219,9 +282,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				// Iterate through each row to determine visibility based on the search query
 				rows.forEach((row) => {
 					const searchStr = this.getSearchString(row); // Get the search string for the row
-					const isVisible = searchStr
-						.toLowerCase()
-						.includes(query.toLowerCase()); // Check if the row matches the query
+					const rowSearchStr = this.normalizeSearchText(searchStr);
+					const isVisible = queryParts.some((part) =>
+						rowSearchStr.includes(part),
+					); // Check if the row matches any query part
 					row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row
 					if (isVisible) visibleCount++; // Increment visible count if the row is visible
 				});
@@ -262,6 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		clearSearch() {
 			this.sr_ts_button.classList.replace('fa-times', 'fa-search'); // Change button icon to search
 			this.sr_ts_input.value = ''; // Clear the input value
+			this.updateSearchQueryParam(''); // Remove q from URL when search is cleared
 			if (this.sr_ts_chart_optional) {
 				this.sr_ts_chart_optional.classList.remove('hidden'); // Show chart again
 			}
