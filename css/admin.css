@@ -520,7 +520,8 @@ figcaption {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - 1em);
+  padding: 0.25em 0.5em;
   display: block;
   color: #666;
   font-size: 1em;
