@@ -33,10 +33,19 @@ function stever_shortcode_icons( $atts ) {
 				'label' => 'Remote Webinar/Meetup/Podcast',
 				'class' => 'keyboard',
 			),
+			'ip' => array(
+				'label' => 'In Progress',
+				'class' => 'spinner',
+				'text'  => 'IP',
+			),
 		);
 
 		if( $labels[ $type ] ){
-			return ( "<i data-title='{$labels[ $type ]['label']}' class='fas fa-{$labels[ $type ]['class']}'></i>" );
+			$output = "<i data-title='{$labels[ $type ]['label']}' class='fas fa-{$labels[ $type ]['class']}'></i>";
+			if( $labels[ $type ]['text'] ){
+				$output .= " " . $labels[ $type ]['text'];
+			}
+			return ( $output );
 		}
 
 	}

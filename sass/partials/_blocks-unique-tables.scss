@@ -699,6 +699,11 @@ body.sr-page-table {
 	}
 }
 
+// Icon: "In Progress" (spinner)
+.fas.fa-spinner {
+	animation: spin 2s linear infinite;
+}
+
 // Media query: medium-lg, screens.
 @media only screen and (max-width: 900px) {
 	#sr-table-search--container {

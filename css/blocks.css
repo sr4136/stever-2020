@@ -1145,6 +1145,10 @@ body.sr-page-table .wp-block-table tr.marked td:first-child:before {
   animation: spin 1s linear infinite;
 }
 
+.fas.fa-spinner {
+  animation: spin 2s linear infinite;
+}
+
 @media only screen and (max-width: 900px) {
   #sr-table-search--container {
     grid-template-columns: 60fr 30fr 10fr;
