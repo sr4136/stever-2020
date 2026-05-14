@@ -171,3 +171,15 @@ function stever_oembed_ajax() {
 }
 add_action('wp_ajax_steveroembed', 'stever_oembed_ajax'); // executed when logged in
 add_action('wp_ajax_nopriv_steveroembed', 'stever_oembed_ajax'); // executed when logged out
+
+
+/**
+ * Append body class `sr-breakpoints` when the URL contains `?sr-breakpoints`.
+ */
+function stever_breakpoints_body_class( $classes ) {
+	if ( isset( $_GET['sr-breakpoints'] ) ) {
+		$classes[] = 'sr-breakpoints';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'stever_breakpoints_body_class' );

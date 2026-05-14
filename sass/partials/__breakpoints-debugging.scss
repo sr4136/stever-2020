@@ -15,21 +15,21 @@
   padding: 0.5em 0;
 
   @include variables.breakpoint(xl) {
-    content: "X-Large & up. min-width: 64em (~1024px)";
+    content: "X-Large & up. min-width: 64em ('xl' ~1024px)";
   }
   @include variables.breakpoint(p) {
-    content: "Page-width & down. max-width: 87em (~1392px)";
+    content: "Page-width & down. max-width: 87em ('p' ~1392px)";
   }
   @include variables.breakpoint(l) {
-    content: "Large & down. max-width: 63.9375em (~1023px)";
+    content: "Large & down. max-width: 63.9375em ('l' ~1023px)";
   }
   @include variables.breakpoint(m) {
-    content: "Medium & down. max-width: 48.75em (~780px)";
+    content: "Medium & down. max-width: 48.75em ('m' ~780px)";
   }
   @include variables.breakpoint(s) {
-    content: "Small & down. max-width: 40em (~640px)";
+    content: "Small & down. max-width: 40em ('s' ~640px)";
   }
   @include variables.breakpoint(xs) {
-    content: "X-Small only. max-width: 27.5em (~440px)";
+    content: "X-Small only. max-width: 27.5em ('xs' ~440px)";
   }
 }
