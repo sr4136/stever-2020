@@ -155,15 +155,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     opacity: 0;
   }
 }
-/* Spin transforms for table marker indicators (url?m=item) */
+/* Spin transforms */
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
