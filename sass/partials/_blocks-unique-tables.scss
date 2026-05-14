@@ -120,13 +120,13 @@ body.sr-page-table {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 0.5em;
+		gap: .75em .5em;
 		padding: calc( 1em - 2px );
 
 		button {
 			margin: 0;
 			padding: .5em .75em;
-			border-radius: 0.25em;
+			border-radius: 2em;
 			background-color: variables.$green-light;
 			color: variables.$black-copy;
 
@@ -159,15 +159,18 @@ body.sr-page-table {
 			figcaption {
 				border: 1px solid variables.$gray-med;
 				margin: 0;
-				padding: 0.25em 0.5em;
+				padding: .75em 2em;
 				font-style: italic;
 				text-align: center;;
 			}
 		}
 
 		.wp-block-group:first-of-type {
+			height: 100%;
+
 			.wp-block-group__inner-container {
 				width: 100%;
+				height: 100%;
 			}
 		}
 	}
@@ -175,6 +178,9 @@ body.sr-page-table {
 	// Legend
 	#sr-legend--container {
 		border: 1px solid variables.$green-light;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 
 		p {
 			margin: 0;
@@ -186,11 +192,17 @@ body.sr-page-table {
 		#sr-legend {
 			list-style: none;
 			margin: 0;
+			display: flex;
+			flex: 1 1 auto;
+			flex-direction: column;
 
 			li {
 				cursor: pointer;
 				padding: 0.25em 0.5em;
 				margin: 0;
+				display: flex;
+				align-items: center;
+				flex: 1 1 0;
 				border-left: 5px solid transparent;
 				border-top: 1px solid variables.$green-light;
 
