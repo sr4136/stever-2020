@@ -1206,31 +1206,31 @@ figcaption {
 }
 @media (min-width: 64em) {
   .sr-breakpoints.logged-in #page::before {
-    content: "X-Large & up. min-width: 64em (~1024px)";
+    content: "X-Large & up. min-width: 64em ('xl' ~1024px)";
   }
 }
 @media (max-width: 87em) {
   .sr-breakpoints.logged-in #page::before {
-    content: "Page-width & down. max-width: 87em (~1392px)";
+    content: "Page-width & down. max-width: 87em ('p' ~1392px)";
   }
 }
 @media (max-width: 63.9375em) {
   .sr-breakpoints.logged-in #page::before {
-    content: "Large & down. max-width: 63.9375em (~1023px)";
+    content: "Large & down. max-width: 63.9375em ('l' ~1023px)";
   }
 }
 @media (max-width: 48.75em) {
   .sr-breakpoints.logged-in #page::before {
-    content: "Medium & down. max-width: 48.75em (~780px)";
+    content: "Medium & down. max-width: 48.75em ('m' ~780px)";
   }
 }
 @media (max-width: 40em) {
   .sr-breakpoints.logged-in #page::before {
-    content: "Small & down. max-width: 40em (~640px)";
+    content: "Small & down. max-width: 40em ('s' ~640px)";
   }
 }
 @media (max-width: 27.5em) {
   .sr-breakpoints.logged-in #page::before {
-    content: "X-Small only. max-width: 27.5em (~440px)";
+    content: "X-Small only. max-width: 27.5em ('xs' ~440px)";
   }
 }

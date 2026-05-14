@@ -106,6 +106,38 @@ body.sr-page-table {
 	}
 }
 
+// Frequent Topics
+.frequent-topics-container {
+	border: 1px solid variables.$green-light;
+
+	.frequent-topics__header {
+		border-bottom: 1px solid variables.$green-light;
+		padding: 0.5em 1em;
+		font-weight: bold;
+	}
+
+	.frequent-topics__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5em;
+		padding: calc( 1em - 2px );
+
+		button {
+			margin: 0;
+			padding: .5em .75em;
+			border-radius: 0.25em;
+			background-color: variables.$green-light;
+			color: variables.$black-copy;
+
+			&:hover, &.active {
+				background-color: variables.$green;
+				color: variables.$white;
+			}
+		}
+	}
+}
+
 // Page: Professional Development
 .sr-page-table-prodev {
 	// Intro Copy, Legend, Image
@@ -115,7 +147,7 @@ body.sr-page-table {
 	.sr-prodev-intro-group {
 		gap: 2em 4em; 
 		margin-bottom: 2em;
-		align-items: end;
+		align-items: strech;
 
 		.prodev-image {
 			margin-bottom: 0; 
@@ -129,6 +161,7 @@ body.sr-page-table {
 				margin: 0;
 				padding: 0.25em 0.5em;
 				font-style: italic;
+				text-align: center;;
 			}
 		}
 
@@ -250,6 +283,17 @@ body.sr-page-table {
 
 
 // Table: Professional Development - Responsive
+@include variables.breakpoint(l) {
+	.sr-page-table-prodev {
+		.sr-prodev-intro-group {
+			gap: 2em 1.5em;
+		}
+		#sr-legend--container #sr-legend li{
+			font-size: 0.75em;
+		}
+	}
+}
+
 @include variables.breakpoint(m) {
 	.sr-page-table-prodev .sr-prodev-intro-group {
 		.wp-block-group:last-of-type {

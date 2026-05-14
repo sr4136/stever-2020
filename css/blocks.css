@@ -670,13 +670,40 @@ body.sr-page-table td {
     height: 300px;
   }
 }
+.frequent-topics-container {
+  border: 1px solid #e1e2c7;
+}
+.frequent-topics-container .frequent-topics__header {
+  border-bottom: 1px solid #e1e2c7;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+.frequent-topics-container .frequent-topics__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+  padding: calc(1em - 2px);
+}
+.frequent-topics-container .frequent-topics__buttons button {
+  margin: 0;
+  padding: 0.5em 0.75em;
+  border-radius: 0.25em;
+  background-color: #e1e2c7;
+  color: #0a0a0a;
+}
+.frequent-topics-container .frequent-topics__buttons button:hover, .frequent-topics-container .frequent-topics__buttons button.active {
+  background-color: #6b7d05;
+  color: #ffffff;
+}
+
 .sr-page-table-prodev .sr-prodev-intro-copy {
   margin-bottom: 2em;
 }
 .sr-page-table-prodev .sr-prodev-intro-group {
   gap: 2em 4em;
   margin-bottom: 2em;
-  align-items: end;
+  align-items: strech;
 }
 .sr-page-table-prodev .sr-prodev-intro-group .prodev-image {
   margin-bottom: 0;
@@ -690,6 +717,7 @@ body.sr-page-table td {
   margin: 0;
   padding: 0.25em 0.5em;
   font-style: italic;
+  text-align: center;
 }
 .sr-page-table-prodev .sr-prodev-intro-group .wp-block-group:first-of-type .wp-block-group__inner-container {
   width: 100%;
@@ -784,6 +812,14 @@ body.sr-page-table td {
   font-size: 0.9em;
 }
 
+@media (max-width: 63.9375em) {
+  .sr-page-table-prodev .sr-prodev-intro-group {
+    gap: 2em 1.5em;
+  }
+  .sr-page-table-prodev #sr-legend--container #sr-legend li {
+    font-size: 0.75em;
+  }
+}
 @media (max-width: 48.75em) {
   .sr-page-table-prodev .sr-prodev-intro-group .wp-block-group:last-of-type {
     grid-area: 1;

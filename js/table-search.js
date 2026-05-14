@@ -66,6 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				'input',
 				this.debounce(this.handleSearchInput.bind(this), 300),
 			);
+			// Listen for clicks on query buttons and run search from their q value
+			document.addEventListener(
+				'click',
+				this.handleQueryButtonClick.bind(this),
+			);
 			// Listen for click on the clear search button
 			this.sr_ts_button.addEventListener(
 				'click',
@@ -177,6 +182,26 @@ document.addEventListener('DOMContentLoaded', () => {
 			} else {
 				this.clearSearch();
 			}
+		}
+
+		handleQueryButtonClick(event) {
+			console.log("CLICKED");
+			const button = event.target.closest('button[q]');
+			if (!button) return;
+
+			const queryValue = (button.getAttribute('q') || '').trim();
+			console.log(queryValue);
+			if (!queryValue) return;
+
+			event.preventDefault();
+			this.sr_ts_wrapper.classList.remove('visually-hidden');
+			this.sr_ts_input.value = queryValue;
+			this.sr_ts_input.dispatchEvent(
+				new Event('input', { bubbles: true, cancelable: true }),
+			);
+			this.sr_ts_input.focus();
+			this.sr_ts_input.blur();
+			this.unwrapSelection();
 		}
 
 		updateSearchQueryParam(query) {
