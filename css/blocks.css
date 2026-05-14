@@ -824,13 +824,15 @@ body.sr-page-table td {
   text-align: right;
 }
 .sr-page-table-prodev #sr-legend--container.visually-hidden,
-.sr-page-table-prodev #sr-table-search--container #sr-table-search--wrapper.visually-hidden {
+.sr-page-table-prodev #sr-table-search--container #sr-table-search--wrapper.visually-hidden,
+.sr-page-table-prodev .frequent-topics-container.visually-hidden {
   opacity: 1;
   border: 0 none;
   transition: all 0.5s ease;
 }
 .sr-page-table-prodev #sr-legend--container.visually-hidden:before,
-.sr-page-table-prodev #sr-table-search--container #sr-table-search--wrapper.visually-hidden:before {
+.sr-page-table-prodev #sr-table-search--container #sr-table-search--wrapper.visually-hidden:before,
+.sr-page-table-prodev .frequent-topics-container.visually-hidden:before {
   content: "(Legend hidden while searching.)";
   border: 1px dashed #666666;
   display: flex;
@@ -842,6 +844,12 @@ body.sr-page-table td {
 .sr-page-table-prodev #sr-table-search--container #sr-table-search--wrapper.visually-hidden:before {
   content: "(Seach hidden while filtering with the legend.)";
   font-size: 0.9em;
+}
+.sr-page-table-prodev .frequent-topics-container.visually-hidden:before {
+  content: "(Frequent topics hidden while filtering with the legend.)";
+  font-size: 0.9em;
+  text-align: center;
+  text-wrap: balance;
 }
 
 @media (max-width: 63.9375em) {

@@ -61,6 +61,9 @@
 			const sr_tablesearch = document.getElementById(
 				'sr-table-search--wrapper'
 			); // The search container.
+			const sr_topics_optional = document.querySelector(
+				'.frequent-topics-container'
+			); // Frequent topics container.
 			const sr_ts_count_showing = document.getElementById(
 				'sr-table-search--count-showing'
 			); // The number of currently shown items
@@ -79,6 +82,21 @@
 					'.wp-block-table tbody tr:not(.hidden)'
 				).length; // Count visible rows
 				sr_ts_count_showing.textContent = currentShowing; // Update the showing count
+			}
+
+			function setTopicsDisabled(disabled) {
+				if (!sr_topics_optional) return;
+
+				sr_topics_optional.classList.toggle('visually-hidden', disabled);
+				sr_topics_optional
+					.querySelectorAll('button')
+					.forEach((button) => {
+						button.disabled = disabled;
+						button.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+						if (disabled) {
+							button.classList.remove('active');
+						}
+					});
 			}
 
 			function sr_tl_process(event) {
@@ -152,11 +170,13 @@
 						if (sr_tablesearch) {
 							sr_tablesearch.classList.remove('visually-hidden');
 						}
+						setTopicsDisabled(false);
 					} else {
 						sr_tl_legend_reset.classList.remove('hidden');
 						if (sr_tablesearch) {
 							sr_tablesearch.classList.add('visually-hidden');
 						}
+						setTopicsDisabled(true);
 					}
 
 					updateCounts();
