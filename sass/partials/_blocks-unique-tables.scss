@@ -113,28 +113,28 @@ body.sr-page-table {
 		margin-bottom: 2em;
 	}
 	.sr-prodev-intro-group {
-		gap: 2em 4em;
+		gap: 2em 4em; 
 		margin-bottom: 2em;
+		align-items: end;
 
 		.prodev-image {
+			margin-bottom: 0; 
+
 			img {
 				border: 1px solid variables.$gray-med;
 				margin: 0;
 			}
 			figcaption {
 				border: 1px solid variables.$gray-med;
-				margin-top: 0;
+				margin: 0;
 				padding: 0.25em 0.5em;
 				font-style: italic;
 			}
 		}
 
 		.wp-block-group:first-of-type {
-			display: flex;
-
 			.wp-block-group__inner-container {
 				width: 100%;
-				align-content: end;
 			}
 		}
 	}
