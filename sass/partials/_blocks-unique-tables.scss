@@ -142,35 +142,53 @@ body.sr-page-table {
 .sr-page-table-prodev {
 	// Intro Copy, Legend, Image
 	.sr-prodev-intro-copy {
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 2em;
 	}
 	.sr-prodev-intro-group {
 		gap: 2em 4em; 
 		margin-bottom: 2em;
-		align-items: strech;
+		align-items: stretch;
+		
+		> .wp-block-group {
+			display: flex;
+			align-self: stretch;
+			box-shadow: 5px 5px 5px variables.$gray-med;
+		}
 
 		.prodev-image {
-			margin-bottom: 0; 
+			margin-bottom: 0;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			border: 1px solid variables.$gray-med;
 
 			img {
-				border: 1px solid variables.$gray-med;
 				margin: 0;
 			}
 			figcaption {
-				border: 1px solid variables.$gray-med;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex: 1 1 auto;
+				border-top: 1px solid variables.$gray-med;
 				margin: 0;
 				padding: .75em 2em;
 				font-style: italic;
-				text-align: center;;
+				text-align: center;
 			}
 		}
 
 		.wp-block-group:first-of-type {
-			height: 100%;
+			flex: 1 1 auto;
 
 			.wp-block-group__inner-container {
 				width: 100%;
-				height: 100%;
+				display: flex;
+				flex-direction: column;
+				flex: 1 1 auto;
+				min-height: 0;
 			}
 		}
 	}
@@ -179,6 +197,7 @@ body.sr-page-table {
 	#sr-legend--container {
 		border: 1px solid variables.$green-light;
 		height: 100%;
+		flex: 1 1 auto;
 		display: flex;
 		flex-direction: column;
 
@@ -194,6 +213,7 @@ body.sr-page-table {
 			margin: 0;
 			display: flex;
 			flex: 1 1 auto;
+			min-height: 0;
 			flex-direction: column;
 
 			li {
