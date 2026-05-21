@@ -672,6 +672,15 @@ body.sr-page-table td {
 }
 .frequent-topics-container {
   border: 1px solid #e1e2c7;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.frequent-topics-container > .wp-block-group__inner-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 .frequent-topics-container .frequent-topics__header {
   border-bottom: 1px solid #e1e2c7;
@@ -680,8 +689,11 @@ body.sr-page-table td {
 }
 .frequent-topics-container .frequent-topics__buttons {
   display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
   flex-wrap: wrap;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
   gap: 0.75em 0.5em;
   padding: calc(1em - 2px);
 }
