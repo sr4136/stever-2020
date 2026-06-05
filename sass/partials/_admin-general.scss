@@ -1,10 +1,12 @@
 @use "_variables";
 
+// Section: Body Class Metabox
 // Metabox: Body Class
 #stever_body_class-stever-body-class textarea {
 	width: 100%;
 }
 
+// Section: Editor UI Cues
 // Post Status: Add Attention
 .editor-post-status {
 	.components-button {
@@ -24,16 +26,19 @@
 	}
 }
 
+// Section: Content Editor Spacing
 // Headings
 .editor-styles-wrapper :where(h1, h2, h3, h4, h5, h6) {
 	margin-bottom: 28px;
 }
 
+// Section: Header Accent
 // Edit Post Header: Extra Attention (light blue)
 .edit-post-header {
 	background-color: #defafa;
 }
 
+// Section: Admin List Views
 // Quotes Listings Columns
 .wp-admin.post-type-stever_quotes #the-list blockquote {
 	margin: 0;
@@ -184,6 +189,7 @@
 	}
 }
 
+// Section: Dashboard Widgets
 // Dashboard Widgets
 .stever-dashboard-widget {
 	ul {

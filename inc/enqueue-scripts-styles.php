@@ -169,24 +169,25 @@ add_action('admin_enqueue_scripts', 'stever_admin_scripts_styles');
  * Block admin
  */
 function stever_block_styles() {
-	if (is_admin()) {
-		wp_enqueue_style(
-			'stever-blocks',
-			get_stylesheet_directory_uri() . '/css/blocks.min.css',
-			array(),
-			filemtime(get_stylesheet_directory() . '/css/blocks.min.css')
-		);
-	}
-	if (is_admin()) {
-		wp_enqueue_style(
-			'stever-admin-blocks',
-			get_stylesheet_directory_uri() . '/css/admin-blocks.min.css',
-			array(),
-			filemtime(get_stylesheet_directory() . '/css/admin-blocks.min.css')
-		);
-	}
+	// Block content styles should load in frontend and in the editor canvas.
+	wp_enqueue_style(
+		'stever-blocks',
+		get_stylesheet_directory_uri() . '/css/blocks.css',
+		array(),
+		filemtime(get_stylesheet_directory() . '/css/blocks.css')
+	);
 }
 add_action('enqueue_block_assets', 'stever_block_styles');
+
+function stever_block_editor_styles() {
+	wp_enqueue_style(
+		'stever-admin-blocks',
+		get_stylesheet_directory_uri() . '/css/admin-blocks.css',
+		array('stever-blocks'),
+		filemtime(get_stylesheet_directory() . '/css/admin-blocks.css')
+	);
+}
+add_action('enqueue_block_editor_assets', 'stever_block_editor_styles');
 
 
 /**

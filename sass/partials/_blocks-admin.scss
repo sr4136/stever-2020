@@ -7,7 +7,35 @@
 }
 
 // Table: Professional Development (Admin)
-.sr-page-table-prodev {
+.is-style-stever-table-pro-dev {
+	// Hide placeholder text.
+	thead th:first-child {
+		opacity: 0;
+	}
+	// Icon
+	td:nth-child(1) {
+		width: 10%;
+		font-size: 0.75em;
+		padding: 0.75em 0;
+	}
+	// Title
+	td:nth-child(2) {
+		width: 45%;
+	}
+	// Affiliation
+	td:nth-child(3) {
+		width: 30%;
+	}
+	// Date
+	td:nth-child(4) {
+		width: 15%;
+		padding-right: 0.5em;
+	}
+	margin-top: 0;
+}
+
+.sr-page-table-prodev,
+.sr-page-table {
 	// Legend Textarea size & spacing.
 	.wp-block-html textarea {
 		min-height: 500px;
@@ -48,6 +76,145 @@
 	.is-style-stever-table-pro-dev {
 		margin-top: 0;
 	}
+}
+
+// Editor Canvas Overrides
+// Keep all iframe/wrapper-specific rules together at the end of this partial.
+.block-editor-iframe__body .is-style-stever-table-pro-dev {
+	display: table !important;
+	overflow: visible !important;
+	table-layout: fixed !important;
+
+	thead {
+		display: table-header-group !important;
+		background-color: #e1e2c7 !important;
+		font-weight: 700 !important;
+		text-align: left !important;
+		border-bottom: 2px solid #5f6b7e !important;
+	}
+
+	tbody {
+		display: table-row-group !important;
+	}
+
+	tr {
+		display: table-row !important;
+		flex-direction: initial !important;
+		flex-wrap: initial !important;
+	}
+
+	td,
+	th {
+		display: table-cell !important;
+		align-content: initial !important;
+		padding: 0.5em 1em !important;
+		border: 1px solid #cccccc !important;
+	}
+
+	th:nth-child(1) {
+		width: 5% !important;
+		text-align: center !important;
+	}
+	th:nth-child(2) {
+		width: 50% !important;
+	}
+	th:nth-child(3) {
+		width: 30% !important;
+	}
+	th:nth-child(4) {
+		width: 15% !important;
+		text-align: right !important;
+		padding-right: 1.25em !important;
+	}
+
+	thead th:first-child {
+		opacity: 0 !important;
+	}
+	td:nth-child(1) {
+		width: 5% !important;
+		font-size: 0.75em !important;
+		padding: 0.75em 0 !important;
+		text-align: center !important;
+	}
+	td:nth-child(2) {
+		width: 50% !important;
+	}
+	td:nth-child(3) {
+		width: 30% !important;
+	}
+	td:nth-child(4) {
+		width: 15% !important;
+		padding-right: 0.5em !important;
+		text-align: right !important;
+		line-height: 2.25em !important;
+		font-family: variables.$fonts-mono !important;
+		font-size: 0.725em !important;
+	}
+
+	margin-top: 0 !important;
+}
+
+.block-editor-iframe__body .is-style-year-divider-upcoming {
+	background-color: variables.$accent-teal !important;
+}
+
+.block-editor-iframe__body .is-style-stever-table-pro-dev-upcoming thead {
+	background-color: rgb(147, 184.3846153846, 201) !important;
+}
+
+.block-editor-iframe__body .is-style-stever-table-pro-dev,
+.block-editor-iframe__body .is-style-stever-table-books,
+.editor-styles-wrapper .is-style-stever-table-pro-dev,
+.editor-styles-wrapper .is-style-stever-table-books {
+	.wp-block-table__cell-content .rich-text,
+	.wp-block-table td .block-editor-rich-text__editable,
+	.wp-block-table td [contenteditable='true'] {
+		background: rgba(204, 204, 204, 0.2);
+		padding: 0.25em 0.5em;
+	}
+
+	.wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty {
+		position: relative;
+	}
+
+	.wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100% - 1em);
+		padding: 0.25em 0.5em;
+		display: block;
+		color: variables.$gray-dark;
+		font-size: 1em;
+	}
+}
+
+.is-style-stever-table-pro-dev td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Type';
+}
+
+.is-style-stever-table-pro-dev td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Event Name';
+}
+
+.is-style-stever-table-pro-dev td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Affiliation';
+}
+
+.is-style-stever-table-pro-dev td:nth-child(4) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Date';
+}
+
+.is-style-stever-table-books td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Title';
+}
+
+.is-style-stever-table-books td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Author';
+}
+
+.is-style-stever-table-books td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	content: 'Date';
 }
 
 code {

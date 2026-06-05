@@ -30,6 +30,15 @@ function stever_setup(){
 	add_theme_support('responsive-embeds');
 
 	/*
+	 * Load theme styles into the block editor iframe.
+	 */
+	add_theme_support('editor-styles');
+	add_editor_style(array(
+		'css/blocks.css',
+		'css/admin-blocks.css',
+	));
+
+	/*
 	 * Menus.
 	 */
 	register_nav_menus( array(

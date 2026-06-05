@@ -1,8 +1,9 @@
 @use "_variables";
 @use "_helpers";
 
-// Blocks: Unique Classes - Tables
+// Blocks Unique Tables
 
+// Section: Base Table Surface
 // Custom Body Class: .sr-page-table
 body.sr-page-table {
 	table {
@@ -17,7 +18,7 @@ body.sr-page-table {
 	}
 
 	// Zebra Striping
-	tbody tr:nth-child( 2n of :not(.hidden) ) {
+	tbody tr:nth-child(2n of :not(.hidden)) {
 		background: variables.$gray-light;
 	}
 
@@ -33,6 +34,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Editor Canvas Table Surface
 .block-editor-iframe__body.sr-page-table {
 	thead {
 		line-height: 0.75em;
@@ -45,6 +47,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Base Table Responsive
 @include variables.breakpoint(s) {
 	.sr-page-table {
 		tr:not(:last-child) {
@@ -56,6 +59,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Year Divider / Chart
 // Heading: Year Divider
 .is-style-year-divider,
 .entry-content .is-style-year-divider {
@@ -106,6 +110,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Frequent Topics
 // Frequent Topics
 .frequent-topics-container {
 	border: 1px solid variables.$green-light;
@@ -151,6 +156,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Professional Development Table
 // Page: Professional Development
 .sr-page-table-prodev {
 	// Intro Copy, Legend, Image
@@ -334,7 +340,7 @@ body.sr-page-table {
 	}
 }
 
-
+// Section: Professional Development Responsive
 // Table: Professional Development - Responsive
 @include variables.breakpoint(l) {
 	.sr-page-table-prodev {
@@ -405,6 +411,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Books Table
 // Table: Books I've Read
 .is-style-stever-table-books {
 	// Title
@@ -434,6 +441,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Books Table Responsive
 // Table: Books I've Read (Responsive)
 @include variables.breakpoint(s) {
 	.is-style-stever-table-books {
@@ -482,6 +490,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Speaking Table
 // Table: Speaking/Teaching
 .is-style-stever-table-speaking {
 	margin-top: 2em;
@@ -515,6 +524,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Speaking Table Responsive
 // Table: Speaking/Teaching (Responsive)
 @include variables.breakpoint(s) {
 	.is-style-stever-table-speaking {
@@ -542,6 +552,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Table Search UI
 // Table Search
 // 1. Search Box (input) | 2. Counter (showing) | 3. Button (toggle row counts)
 #sr-table-search--container {
@@ -552,6 +563,7 @@ body.sr-page-table {
 	transition: all 0.5s ease;
 
 	// 1. Search Box (input)
+// Section: Table Search Variants
 	#sr-table-search--wrapper {
 		z-index: 5;
 		display: grid;
@@ -660,6 +672,7 @@ body.sr-page-table {
 	}
 }
 
+// Section: Table Row Counter
 // Table item counts.
 body.sr-table-row-counter {
 	.wp-block-table tbody {

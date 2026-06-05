@@ -1,12 +1,14 @@
 @use "_variables";
 
-// Blocks: Unique Classes - Global
+// Blocks Unique Global
 
+// Section: Structural Defaults
 // Why is the default 2?
 .wp-block-separator {
 	border-top: 1px solid;
 }
 
+// Section: Media Treatments
 // Gallery: Fancybox Outline
 .is-style-fancybox {
 	img {
@@ -142,6 +144,7 @@ li.is-style-quote {
 	margin-top: 0 !important;
 }
 
+// Section: Event Notes / Query Patterns
 // Event Notes - In Progress
 .sr-event-notes-in-progress {
 	background: variables.$red;
@@ -377,6 +380,7 @@ li.is-style-quote {
 	}
 }
 
+// Section: Theme Palette Utilities
 /* Color Palette Classes. */
 .has-green-background-color {
 	background-color: variables.$green;

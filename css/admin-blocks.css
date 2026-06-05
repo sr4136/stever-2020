@@ -3,34 +3,205 @@
   margin-bottom: 2em;
 }
 
-.sr-page-table-prodev .wp-block-html textarea {
-  min-height: 500px;
-  line-height: 1.5em;
-}
-.sr-page-table-prodev .is-style-stever-table-pro-dev thead th:first-child {
+.is-style-stever-table-pro-dev thead th:first-child {
   opacity: 0;
 }
-.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(1) {
+.is-style-stever-table-pro-dev td:nth-child(1) {
   width: 10%;
   font-size: 0.75em;
   padding: 0.75em 0;
 }
-.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(2) {
+.is-style-stever-table-pro-dev td:nth-child(2) {
   width: 45%;
 }
-.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(3) {
+.is-style-stever-table-pro-dev td:nth-child(3) {
   width: 30%;
 }
-.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(4) {
+.is-style-stever-table-pro-dev td:nth-child(4) {
+  width: 15%;
+  padding-right: 0.5em;
+}
+.is-style-stever-table-pro-dev {
+  margin-top: 0;
+}
+
+.sr-page-table-prodev .wp-block-html textarea,
+.sr-page-table .wp-block-html textarea {
+  min-height: 500px;
+  line-height: 1.5em;
+}
+.sr-page-table-prodev .is-style-stever-table-pro-dev thead th:first-child,
+.sr-page-table .is-style-stever-table-pro-dev thead th:first-child {
+  opacity: 0;
+}
+.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(1),
+.sr-page-table .is-style-stever-table-pro-dev td:nth-child(1) {
+  width: 10%;
+  font-size: 0.75em;
+  padding: 0.75em 0;
+}
+.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(2),
+.sr-page-table .is-style-stever-table-pro-dev td:nth-child(2) {
+  width: 45%;
+}
+.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(3),
+.sr-page-table .is-style-stever-table-pro-dev td:nth-child(3) {
+  width: 30%;
+}
+.sr-page-table-prodev .is-style-stever-table-pro-dev td:nth-child(4),
+.sr-page-table .is-style-stever-table-pro-dev td:nth-child(4) {
   width: 15%;
   padding-right: 0.5em;
 }
 .sr-page-table-prodev .is-style-year-divider,
-.sr-page-table-prodev .is-style-year-divider-upcoming {
+.sr-page-table-prodev .is-style-year-divider-upcoming,
+.sr-page-table .is-style-year-divider,
+.sr-page-table .is-style-year-divider-upcoming {
   margin-bottom: 0;
 }
-.sr-page-table-prodev .is-style-stever-table-pro-dev {
+.sr-page-table-prodev .is-style-stever-table-pro-dev,
+.sr-page-table .is-style-stever-table-pro-dev {
   margin-top: 0;
+}
+
+.block-editor-iframe__body .is-style-stever-table-pro-dev {
+  display: table !important;
+  overflow: visible !important;
+  table-layout: fixed !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev thead {
+  display: table-header-group !important;
+  background-color: #e1e2c7 !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+  border-bottom: 2px solid #5f6b7e !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev tbody {
+  display: table-row-group !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev tr {
+  display: table-row !important;
+  flex-direction: initial !important;
+  flex-wrap: initial !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev td,
+.block-editor-iframe__body .is-style-stever-table-pro-dev th {
+  display: table-cell !important;
+  align-content: initial !important;
+  padding: 0.5em 1em !important;
+  border: 1px solid #cccccc !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev th:nth-child(1) {
+  width: 5% !important;
+  text-align: center !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev th:nth-child(2) {
+  width: 50% !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev th:nth-child(3) {
+  width: 30% !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev th:nth-child(4) {
+  width: 15% !important;
+  text-align: right !important;
+  padding-right: 1.25em !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev thead th:first-child {
+  opacity: 0 !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev td:nth-child(1) {
+  width: 5% !important;
+  font-size: 0.75em !important;
+  padding: 0.75em 0 !important;
+  text-align: center !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev td:nth-child(2) {
+  width: 50% !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev td:nth-child(3) {
+  width: 30% !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev td:nth-child(4) {
+  width: 15% !important;
+  padding-right: 0.5em !important;
+  text-align: right !important;
+  line-height: 2.25em !important;
+  font-family: "Red Hat Mono", monospace !important;
+  font-size: 0.725em !important;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev {
+  margin-top: 0 !important;
+}
+
+.block-editor-iframe__body .is-style-year-divider-upcoming {
+  background-color: #416e82 !important;
+}
+
+.block-editor-iframe__body .is-style-stever-table-pro-dev-upcoming thead {
+  background-color: rgb(147, 184.3846153846, 201) !important;
+}
+
+.block-editor-iframe__body .is-style-stever-table-pro-dev .wp-block-table__cell-content .rich-text,
+.block-editor-iframe__body .is-style-stever-table-pro-dev .wp-block-table td .block-editor-rich-text__editable,
+.block-editor-iframe__body .is-style-stever-table-pro-dev .wp-block-table td [contenteditable=true],
+.block-editor-iframe__body .is-style-stever-table-books .wp-block-table__cell-content .rich-text,
+.block-editor-iframe__body .is-style-stever-table-books .wp-block-table td .block-editor-rich-text__editable,
+.block-editor-iframe__body .is-style-stever-table-books .wp-block-table td [contenteditable=true],
+.editor-styles-wrapper .is-style-stever-table-pro-dev .wp-block-table__cell-content .rich-text,
+.editor-styles-wrapper .is-style-stever-table-pro-dev .wp-block-table td .block-editor-rich-text__editable,
+.editor-styles-wrapper .is-style-stever-table-pro-dev .wp-block-table td [contenteditable=true],
+.editor-styles-wrapper .is-style-stever-table-books .wp-block-table__cell-content .rich-text,
+.editor-styles-wrapper .is-style-stever-table-books .wp-block-table td .block-editor-rich-text__editable,
+.editor-styles-wrapper .is-style-stever-table-books .wp-block-table td [contenteditable=true] {
+  background: rgba(204, 204, 204, 0.2);
+  padding: 0.25em 0.5em;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty,
+.block-editor-iframe__body .is-style-stever-table-books .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty,
+.editor-styles-wrapper .is-style-stever-table-pro-dev .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty,
+.editor-styles-wrapper .is-style-stever-table-books .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty {
+  position: relative;
+}
+.block-editor-iframe__body .is-style-stever-table-pro-dev .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before,
+.block-editor-iframe__body .is-style-stever-table-books .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before,
+.editor-styles-wrapper .is-style-stever-table-pro-dev .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before,
+.editor-styles-wrapper .is-style-stever-table-books .wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 1em);
+  padding: 0.25em 0.5em;
+  display: block;
+  color: #666666;
+  font-size: 1em;
+}
+
+.is-style-stever-table-pro-dev td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Type";
+}
+
+.is-style-stever-table-pro-dev td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Event Name";
+}
+
+.is-style-stever-table-pro-dev td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Affiliation";
+}
+
+.is-style-stever-table-pro-dev td:nth-child(4) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Date";
+}
+
+.is-style-stever-table-books td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Title";
+}
+
+.is-style-stever-table-books td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Author";
+}
+
+.is-style-stever-table-books td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
+  content: "Date";
 }
 
 code {

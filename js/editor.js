@@ -14,11 +14,24 @@
  * @via https://wordpress.stackexchange.com/a/427560
  */
 
-wp.domReady( () => {
-	// Matches both the legacy `name` attribute and the newer `title` attribute
-	// used by Gutenberg across different WordPress versions.
-	const IFRAME_SEL = 'iframe[name="editor-canvas"], iframe[title="Editor canvas"]';
-	const classes = iframeBodyData.classes.split( ' ' );
+(() => {
+	const onReady = ( callback ) => {
+		if ( window.wp && typeof window.wp.domReady === 'function' ) {
+			window.wp.domReady( callback );
+			return;
+		}
+
+		if ( document.readyState === 'loading' ) {
+			document.addEventListener( 'DOMContentLoaded', callback, { once: true } );
+			return;
+		}
+
+		callback();
+	};
+
+	onReady( () => {
+	const data = window.iframeBodyData || {};
+	const classes = ( data.classes || '' ).split( ' ' ).filter( Boolean );
 
 	// Guard against applying classes more than once (e.g. if the observer fires multiple times).
 	let applied = false;
@@ -29,9 +42,15 @@ wp.domReady( () => {
 	 */
 	function applyClasses( doc ) {
 		if ( applied || ! doc || ! doc.body ) return false;
-		doc.body.classList.add( ...classes );
+		const wrapper = doc.querySelector( '.editor-styles-wrapper' );
+		if ( ! wrapper ) return false;
+		if ( classes.length > 0 ) {
+			doc.body.classList.add( ...classes );
+		}
 		// Also target .editor-styles-wrapper so CSS selectors scoped to it work too.
-		doc.querySelector( '.editor-styles-wrapper' )?.classList.add( ...classes );
+		if ( classes.length > 0 ) {
+			wrapper.classList.add( ...classes );
+		}
 		applied = true;
 		return true;
 	}
@@ -42,8 +61,7 @@ wp.domReady( () => {
 	 */
 	function tryIframe( iframe ) {
 		const doc = iframe?.contentDocument;
-		// Skip if the document isn't ready or is still the initial blank page.
-		if ( ! doc || doc.URL === 'about:blank' || ! doc.body ) return false;
+		if ( ! doc || ! doc.body ) return false;
 		if ( applyClasses( doc ) ) return true;
 		// Body exists but .editor-styles-wrapper not yet in the DOM — wait for it.
 		const obs = new MutationObserver( ( m, o ) => { if ( applyClasses( doc ) ) o.disconnect(); } );
@@ -80,23 +98,28 @@ wp.domReady( () => {
 		}
 	}
 
-	// If the editor iframe is already in the DOM when the script runs, use it directly.
-	const existing = document.querySelector( IFRAME_SEL );
-	if ( existing ) {
-		attachToIframe( existing );
-	} else {
-		// Otherwise, watch the parent document for the iframe to be inserted.
-		const root = document.body || document.documentElement;
-		if ( ! root ) return;
-		const obs = new MutationObserver( ( m, o ) => {
-			const iframe = document.querySelector( IFRAME_SEL );
-			if ( ! iframe ) return;
-			o.disconnect();
-			attachToIframe( iframe );
+	// Attach to any iframe already present; the correct editor iframe is identified by its content.
+	document.querySelectorAll( 'iframe' ).forEach( attachToIframe );
+
+	// Watch for newly inserted iframes (WP updates editor iframe markup between versions).
+	const root = document.body || document.documentElement;
+	if ( ! root ) return;
+
+	const obs = new MutationObserver( ( mutations ) => {
+		mutations.forEach( ( mutation ) => {
+			mutation.addedNodes.forEach( ( node ) => {
+				if ( node?.nodeType !== 1 ) return;
+				if ( node.matches?.( 'iframe' ) ) {
+					attachToIframe( node );
+					return;
+				}
+				node.querySelectorAll?.( 'iframe' ).forEach( attachToIframe );
+			} );
 		} );
-		obs.observe( root, { childList: true, subtree: true } );
-	}
+	} );
+	obs.observe( root, { childList: true, subtree: true } );
 } );
+})();
 
 
 

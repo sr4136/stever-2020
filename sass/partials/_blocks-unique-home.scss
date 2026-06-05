@@ -1,11 +1,13 @@
 @use "_variables";
 
-// Blocks: Unique Classes - Home
+// Blocks Unique Home
 
+// Section: Intro Anchor
 #hi {
 	margin-top: 0;
 }
 
+// Section: Home Sections
 // Home: Section Blocks
 .stever-home-section {
 	margin-bottom: 4em;
@@ -15,6 +17,7 @@
 	}
 }
 
+// Section: Intro/Bio Layout
 // Bio
 .stever-home-section-intro {
 	figure {

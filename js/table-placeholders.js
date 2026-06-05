@@ -1,24 +1,24 @@
 /**
  * Block Editor: Add placeholder text to empty table block cells.
  *
- * When editing a page with the `sr-page-table` body class, empty cells in
- * a table block show a CSS placeholder via the `sr-table-cell-empty` class.
+ * Empty cells in supported table block styles are marked with
+ * `sr-table-cell-empty` so CSS can render pseudo-placeholder labels.
  *
  * Modern Gutenberg renders the editor inside a sandboxed iframe, so this
  * script must locate the iframe, wait for its document and body to be
  * available, then observe mutations to keep placeholders in sync as the
  * user types.
  *
- * The companion CSS lives in `css/table-placeholder-editor.css`, loaded
- * into the editor iframe canvas via `add_editor_style()` in PHP.
+ * Placeholder/background companion CSS lives in `css/admin-blocks.css`.
  *
  * @see /inc/enqueue-scripts-styles.php
  */
 
 wp.domReady( () => {
-    // Matches both the legacy `name` attribute and the newer `title` attribute
-    // used by Gutenberg across different WordPress versions.
-    const IFRAME_SELECTOR = 'iframe[name="editor-canvas"], iframe[title="Editor canvas"]';
+    const CELL_SELECTOR =
+        '.is-style-stever-table-pro-dev td .block-editor-rich-text__editable, .is-style-stever-table-books td .block-editor-rich-text__editable';
+    const BOUND_FLAG = '__srPlaceholdersBound';
+    const processedDocs = new WeakSet();
 
     /**
      * Attach to a fully-loaded iframe document.
@@ -26,15 +26,21 @@ wp.domReady( () => {
      * whenever the user types or the block tree changes.
      */
     const attachToDocument = ( doc ) => {
+        if ( ! doc || ! doc.body || processedDocs.has( doc ) ) {
+            return;
+        }
+
+        processedDocs.add( doc );
+
         const update = () => {
-            doc.querySelectorAll(
-                'body.sr-page-table .wp-block-table td .block-editor-rich-text__editable'
-            ).forEach( ( cell ) => {
+            doc.querySelectorAll( CELL_SELECTOR ).forEach( ( cell ) => {
                 // Toggle the placeholder class based on whether the cell has visible text.
                 cell.classList.toggle( 'sr-table-cell-empty', ! cell.textContent.trim() );
             } );
         };
+
         update();
+
         // Watch for any content changes inside the editor canvas.
         new MutationObserver( update ).observe( doc.body, {
             childList: true,
@@ -43,45 +49,67 @@ wp.domReady( () => {
         } );
     };
 
-    /**
-     * Called once the iframe document URL is a real blob (not `about:blank`).
-     * The blob URL document can fire `load` before `<body>` is parsed,
-     * so we observe `documentElement` as a fallback until the body exists.
-     */
-    const onIframeReady = ( doc ) => {
-        if ( doc.body ) {
-            attachToDocument( doc );
-        } else {
-            // `<body>` not yet available — wait for it to be inserted.
-            const obs = new MutationObserver( ( m, o ) => {
-                if ( doc.body ) { o.disconnect(); attachToDocument( doc ); }
-            } );
-            obs.observe( doc.documentElement, { childList: true } );
-        }
-    };
-
-    /**
-     * Attach a `load` listener to the editor iframe.
-     * The iframe initially loads `about:blank` before the real blob URL,
-     * so we skip that first load and only act on the real document.
-     */
     const attachToIframe = ( iframe ) => {
-        iframe.addEventListener( 'load', () => {
+        if ( ! iframe || iframe[ BOUND_FLAG ] ) {
+            return;
+        }
+        iframe[ BOUND_FLAG ] = true;
+
+        const tryAttach = () => {
             const doc = iframe.contentDocument;
-            if ( doc && doc.URL !== 'about:blank' ) onIframeReady( doc );
-        }, { once: true } );
+            if ( ! doc ) {
+                return;
+            }
+
+            // Ignore transitional about:blank docs and wait for real editor content.
+            if ( doc.URL === 'about:blank' ) {
+                return;
+            }
+
+            if ( doc.body ) {
+                attachToDocument( doc );
+            } else if ( doc.documentElement ) {
+                const obs = new MutationObserver( ( m, o ) => {
+                    if ( doc.body ) {
+                        o.disconnect();
+                        attachToDocument( doc );
+                    }
+                } );
+                obs.observe( doc.documentElement, { childList: true } );
+            }
+        };
+
+        // Run immediately in case iframe is already ready.
+        tryAttach();
+        // Keep listening because Gutenberg can reload the iframe document.
+        iframe.addEventListener( 'load', tryAttach );
     };
 
-    // If the editor iframe is already in the DOM when the script runs, use it directly.
-    const iframe = document.querySelector( IFRAME_SELECTOR );
-    if ( iframe ) {
-        attachToIframe( iframe );
-    } else {
-        // Otherwise, watch the parent document for the iframe to be inserted.
-        const obs = new MutationObserver( ( m, o ) => {
-            const found = document.querySelector( IFRAME_SELECTOR );
-            if ( found ) { o.disconnect(); attachToIframe( found ); }
-        } );
-        obs.observe( document.body || document.documentElement, { childList: true, subtree: true } );
+    // Attach to any iframe present now.
+    document.querySelectorAll( 'iframe' ).forEach( attachToIframe );
+
+    // Observe for iframe insertions across Gutenberg updates.
+    const root = document.body || document.documentElement;
+    if ( ! root ) {
+        return;
     }
+
+    const obs = new MutationObserver( ( mutations ) => {
+        mutations.forEach( ( mutation ) => {
+            mutation.addedNodes.forEach( ( node ) => {
+                if ( node?.nodeType !== 1 ) {
+                    return;
+                }
+
+                if ( node.matches?.( 'iframe' ) ) {
+                    attachToIframe( node );
+                    return;
+                }
+
+                node.querySelectorAll?.( 'iframe' ).forEach( attachToIframe );
+            } );
+        } );
+    } );
+
+    obs.observe( root, { childList: true, subtree: true } );
 } );

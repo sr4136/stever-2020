@@ -7,10 +7,21 @@
  */
 
 /* Metabox Easy Retrieval */
-function stever_body_class_get_meta($value) {
-	global $post;
+function stever_body_class_get_meta($value, $post_id = 0) {
+	if (!$post_id) {
+		global $post;
+		if (isset($post->ID)) {
+			$post_id = (int) $post->ID;
+		} else {
+			$post_id = (int) get_the_ID();
+		}
+	}
 
-	$field = get_post_meta($post->ID, $value, true);
+	if (!$post_id) {
+		return false;
+	}
+
+	$field = get_post_meta($post_id, $value, true);
 	if ($field && ! empty($field)) {
 		return is_array($field) ? stripslashes_deep($field) : stripslashes(wp_kses_decode_entities($field));
 	} else {
@@ -103,29 +114,89 @@ add_filter('admin_body_class', 'stever_admin_body_class');
 function site_editor_styles() {
 	if (is_admin()) {
 		$screen = get_current_screen();
-		$classes = null;
+		$classes = '';
+		$post_id = 0;
 
-		//if ('page' == $screen->id || 'post' == $screen->id) {
-		if ('page' == $screen->id) {
-			$add_classes = stever_body_class_get_meta('stever_body_class_text');
+		if (isset($_GET['post'])) {
+			$post_id = (int) $_GET['post'];
+		} elseif (isset($_POST['post_ID'])) {
+			$post_id = (int) $_POST['post_ID'];
+		}
+
+		if ($screen && in_array($screen->id, array('page', 'post'), true)) {
+			$add_classes = stever_body_class_get_meta('stever_body_class_text', $post_id);
 			if (!empty($add_classes)) {
-				$classes .= $add_classes;
-
-				// Enqueue or Javascript
-				wp_enqueue_script(
-					'sr-block-iframe-classes',
-					get_template_directory_uri() . '/js/editor.js',
-					array('wp-blocks', 'wp-dom'),
-					filemtime(get_stylesheet_directory() . '/js/editor.js'),
-					true
-				);
-
-				// Pass the class names to the script
-				wp_localize_script('sr-block-iframe-classes', 'iframeBodyData', [
-					'classes' => $classes,
-				]);
+				$classes = trim((string) $add_classes);
 			}
+
+			// Enqueue script to apply custom body classes to the editor iframe.
+			wp_enqueue_script(
+				'sr-block-iframe-classes',
+				get_template_directory_uri() . '/js/editor.js',
+				array('wp-dom-ready'),
+				filemtime(get_stylesheet_directory() . '/js/editor.js'),
+				false
+			);
+
+			// Pass class names to the script.
+			wp_localize_script('sr-block-iframe-classes', 'iframeBodyData', [
+				'classes' => $classes,
+			]);
 		}
 	}
 }
-add_action('enqueue_block_assets', 'site_editor_styles');
+add_action('enqueue_block_editor_assets', 'site_editor_styles');
+
+function stever_editor_post_id_from_context($editor_context) {
+	if (is_object($editor_context) && isset($editor_context->post) && is_object($editor_context->post) && isset($editor_context->post->ID)) {
+		return (int) $editor_context->post->ID;
+	}
+
+	if (isset($_GET['post'])) {
+		return (int) $_GET['post'];
+	}
+
+	if (isset($_POST['post_ID'])) {
+		return (int) $_POST['post_ID'];
+	}
+
+	return 0;
+}
+
+function stever_sanitize_class_list($class_string) {
+	$classes = preg_split('/\s+/', strtolower((string) $class_string));
+	$classes = array_filter($classes);
+	$classes = array_map('sanitize_html_class', $classes);
+	$classes = array_filter($classes);
+
+	return array_values(array_unique($classes));
+}
+
+function stever_editor_force_body_classes($settings, $editor_context) {
+	if (!is_admin()) {
+		return $settings;
+	}
+
+	$post_id = stever_editor_post_id_from_context($editor_context);
+	if (!$post_id) {
+		return $settings;
+	}
+
+	$raw_classes = stever_body_class_get_meta('stever_body_class_text', $post_id);
+	if (empty($raw_classes)) {
+		return $settings;
+	}
+
+	$meta_classes = stever_sanitize_class_list($raw_classes);
+	if (empty($meta_classes)) {
+		return $settings;
+	}
+
+	$existing = isset($settings['bodyClassName']) ? (string) $settings['bodyClassName'] : '';
+	$existing_classes = stever_sanitize_class_list($existing);
+	$merged_classes = array_values(array_unique(array_merge($existing_classes, $meta_classes)));
+	$settings['bodyClassName'] = implode(' ', $merged_classes);
+
+	return $settings;
+}
+add_filter('block_editor_settings_all', 'stever_editor_force_body_classes', 100, 2);
