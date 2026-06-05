@@ -3,143 +3,250 @@
  */
 
 /**
- * HSL Color Calculations `calcColor`
+ * HSL Color Calculations
  * JSFiddle: https://jsfiddle.net/sr4136/9k7dmhLe/
  * Based on: https://stackoverflow.com/a/36688245/2203220
  */
-function calcColor( min, max, val ){
-    var minHue = 300, maxHue=0;
-    var curPercent = (val - min) / (max-min);
-    var colString = "hsl(" + ((curPercent * (maxHue-minHue) ) + minHue) + ",100%,50%)";
-    return colString;
+function calcColor(min, max, val) {
+	var minHue = 300;
+	var maxHue = 0;
+	var denominator = max - min;
+	var curPercent = denominator === 0 ? 0 : (val - min) / denominator;
+	return 'hsl(' + ((curPercent * (maxHue - minHue)) + minHue) + ',100%,50%)';
 }
-
-
-/**
- * Shuffle DOM elements
- * From: https://css-tricks.com/snippets/jquery/shuffle-dom-elements/
- */
-(function($){
-    $.fn.shuffle = function() {
-        var allElems = this.get(),
-            getRandom = function(max) {
-                return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function(){
-                var random = getRandom(allElems.length),
-                    randEl = $(allElems[random]).clone(true)[0];
-                allElems.splice(random, 1);
-                return randEl;
-           });
-        this.each(function(i){
-            $(this).replaceWith($(shuffled[i]));
-        });
-        return $(shuffled);
-    };
-})(jQuery);
 
 /**
  * Shuffles array in place.
  * From: https://stackoverflow.com/a/6274381
  */
-function shuffle(a) {
-    var j, x, i;
-    for (i = a.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = a[i];
-        a[i] = a[j];
-        a[j] = x;
-    }
-    return a;
+function shuffle(items) {
+	var j;
+	var x;
+	var i;
+
+	for (i = items.length - 1; i > 0; i--) {
+		j = Math.floor(Math.random() * (i + 1));
+		x = items[i];
+		items[i] = items[j];
+		items[j] = x;
+	}
+
+	return items;
 }
 
-/**
- * Get URL Parameters
- * From: https://stackoverflow.com/a/21903119
- */
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
+function shouldIgnoreKeydownTarget(target) {
+	if (!target || !target.tagName) {
+		return false;
+	}
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
+	var tagName = target.tagName.toLowerCase();
+	if (tagName === 'input' || tagName === 'textarea' || tagName === 'select' || tagName === 'button') {
+		return true;
+	}
 
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-        }
-    }
-};
+	return target.closest('[contenteditable="true"]') !== null;
+}
 
+(function () {
+	var params = new URLSearchParams(window.location.search);
+	var orderby = params.get('orderby');
+	var layout = params.get('layout');
+	var isSlideshowLayout = layout === 'slideshow';
 
-/* Execution */
-( function( $ ) {
+	if (isSlideshowLayout) {
+		document.documentElement.classList.add('quotes-slideshow');
+	}
 
-	var orderby = getUrlParameter( 'orderby' );
-	var layout = getUrlParameter( 'layout' );
+	window.addEventListener('load', function () {
+		var quotes = Array.prototype.slice.call(document.querySelectorAll('article'));
+		var quotesContainer;
+		var quoteCount;
+		var colorsArray = [];
+		var main;
+		var progressWrap;
+		var progress;
+		var slideTimeout = null;
+		var isPaused = false;
+		var currentSlideDuration = 0;
+		var remainingSlideTime = 0;
+		var slideStartTime = 0;
 
-	$( window ).load( function () {
-		if( 'random' == orderby || 'slideshow' == layout ){
-			$( 'article' ).shuffle();
+		if ((orderby === 'random' || isSlideshowLayout) && quotes.length) {
+			quotesContainer = quotes[0].parentNode;
+			shuffle(quotes);
+			quotes.forEach(function (quote) {
+				quotesContainer.appendChild(quote);
+			});
 		}
-		var quotes_count = $( 'article' ).length;
-		var colors_array = [];
-		for ( i = 0; i <= quotes_count; i++) {
-			colors_array.push( calcColor( 0, quotes_count, i ) );
+
+		quotes = Array.prototype.slice.call(document.querySelectorAll('article'));
+		quoteCount = quotes.length;
+		if (!quoteCount) {
+			return;
 		}
-		shuffle( colors_array );
 
-		$( 'article' ).each( function(){
-			var article_index = $( this ).index();
-			var this_color = colors_array[ article_index-1 ];
-			$( this ).find( 'blockquote' ).css( 'border-color', this_color );
-		} ) ;
+		for (var i = 0; i <= quoteCount; i++) {
+			colorsArray.push(calcColor(0, quoteCount, i));
+		}
+		shuffle(colorsArray);
 
-		if( 'slideshow' == layout ){
-			$( 'html' ).addClass( 'quotes-slideshow' );
+		quotes.forEach(function (quote, quoteIndex) {
+			var quoteColor = colorsArray[quoteIndex];
+			var blockquote = quote.querySelector('blockquote');
 
-			$( '#main' ).append( '<div class="quotes-progress-indicator"><span></span></div>' );
-
-			initial_color = colors_array[ 0 ];
-			$( '.quotes-progress-indicator span' ).css( 'background', initial_color );
-
-			$( 'article' ).first().addClass( 'active' );
-			
-			var first_run = true;
-			
-			function slide(){
-			
-				$( '.quotes-progress-indicator span' ).css( 'width', '0%' );
-
-				var current_quote = $( 'article.active' );
-				var current_index = $( current_quote ).index();
-				var slide_time = Math.round( $( current_quote ).data( 'slidetime' ) );
-				console.log( slide_time );
-
-				if( !first_run ){
-					$( current_quote ).removeClass( 'active' );
-
-					if( current_index !== quotes_count ){
-						$( current_quote ).next( 'article' ).addClass( 'active' );
-					}else {
-						$( 'article' ).first().addClass( 'active' );
-					}
-				}
-
-				$( '.quotes-progress-indicator span' ).stop().animate( {
-					width: '100%'
-				}, slide_time );
-
-				var new_color = colors_array[ current_index ];
-				$( '.quotes-progress-indicator span' ).css( 'background', new_color );
-				
-				setTimeout( slide, slide_time );
-				
-				first_run = false;
+			quote.dataset.slideColor = quoteColor;
+			if (blockquote) {
+				blockquote.style.borderLeftColor = quoteColor;
 			}
-			slide();
+		});
 
+		if (!isSlideshowLayout) {
+			return;
 		}
-	} ); // window.load
-} )( jQuery );
+
+		main = document.getElementById('main') || document.body;
+		progressWrap = document.createElement('div');
+		progressWrap.className = 'quotes-progress-indicator';
+		progress = document.createElement('span');
+		progressWrap.appendChild(progress);
+		main.appendChild(progressWrap);
+
+		function wrapIndex(index) {
+			if (index < 0) {
+				return quoteCount - 1;
+			}
+			if (index >= quoteCount) {
+				return 0;
+			}
+			return index;
+		}
+
+		function getActiveIndex() {
+			for (var idx = 0; idx < quoteCount; idx++) {
+				if (quotes[idx].classList.contains('active')) {
+					return idx;
+				}
+			}
+			return 0;
+		}
+
+		function getSlideTime(index) {
+			var slideTime = parseInt(quotes[index].dataset.slidetime, 10);
+			if (!slideTime || slideTime < 1) {
+				slideTime = 7000;
+			}
+			return slideTime;
+		}
+
+		function clearSlideTimer() {
+			if (slideTimeout) {
+				window.clearTimeout(slideTimeout);
+				slideTimeout = null;
+			}
+		}
+
+		function setProgress(color, widthPercent, withTransition, duration) {
+			progress.style.background = color;
+			progress.style.transition = withTransition ? 'width ' + duration + 'ms linear' : 'none';
+			progress.style.width = widthPercent;
+		}
+
+		function scheduleSlideAdvance() {
+			var timerDuration = Math.max(0, remainingSlideTime || currentSlideDuration);
+			clearSlideTimer();
+			if (isPaused) {
+				return;
+			}
+
+			slideStartTime = Date.now();
+			setProgress(progress.style.background, progress.style.width || '0%', false, 0);
+			window.requestAnimationFrame(function () {
+				setProgress(progress.style.background, '100%', true, timerDuration);
+			});
+
+			slideTimeout = window.setTimeout(function () {
+				goToSlide(getActiveIndex() + 1);
+			}, timerDuration);
+		}
+
+		function goToSlide(index) {
+			var nextIndex = wrapIndex(index);
+			var nextQuote = quotes[nextIndex];
+			var progressColor = nextQuote.dataset.slideColor || colorsArray[nextIndex] || colorsArray[0];
+
+			quotes.forEach(function (quote) {
+				quote.classList.remove('active');
+			});
+			nextQuote.classList.add('active');
+
+			currentSlideDuration = getSlideTime(nextIndex);
+			remainingSlideTime = currentSlideDuration;
+
+			setProgress(progressColor, '0%', false, 0);
+
+			if (!isPaused) {
+				scheduleSlideAdvance();
+			}
+		}
+
+		function pauseSlideshow() {
+			var elapsed;
+			var progressPct;
+
+			if (isPaused) {
+				return;
+			}
+
+			isPaused = true;
+			clearSlideTimer();
+
+			elapsed = Date.now() - slideStartTime;
+			remainingSlideTime = Math.max(0, remainingSlideTime - elapsed);
+			progressPct = currentSlideDuration > 0 ? ((currentSlideDuration - remainingSlideTime) / currentSlideDuration) * 100 : 0;
+			setProgress(progress.style.background, progressPct + '%', false, 0);
+		}
+
+		function resumeSlideshow() {
+			if (!isPaused) {
+				return;
+			}
+
+			isPaused = false;
+			if (remainingSlideTime <= 0) {
+				goToSlide(getActiveIndex() + 1);
+				return;
+			}
+
+			scheduleSlideAdvance();
+		}
+
+		document.addEventListener('keydown', function (event) {
+			if (shouldIgnoreKeydownTarget(event.target)) {
+				return;
+			}
+
+			if (event.key === 'ArrowRight') {
+				event.preventDefault();
+				goToSlide(getActiveIndex() + 1);
+				return;
+			}
+
+			if (event.key === 'ArrowLeft') {
+				event.preventDefault();
+				goToSlide(getActiveIndex() - 1);
+				return;
+			}
+
+			if (event.key === ' ' || event.key === 'Spacebar' || event.key === 'Space') {
+				event.preventDefault();
+				if (isPaused) {
+					resumeSlideshow();
+				} else {
+					pauseSlideshow();
+				}
+			}
+		});
+
+		goToSlide(0);
+	});
+})();
