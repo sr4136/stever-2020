@@ -188,11 +188,13 @@ li.is-style-quote::before {
   font-size: 1.25em;
 }
 
-.block-editor-iframe__body .sr-event-notes-in-progress {
+.block-editor-iframe__body .sr-event-notes-in-progress,
+.editor-styles-wrapper .sr-event-notes-in-progress {
   margin: 0 !important;
   padding: 0 !important;
 }
-.block-editor-iframe__body .sr-event-notes-in-progress p {
+.block-editor-iframe__body .sr-event-notes-in-progress p,
+.editor-styles-wrapper .sr-event-notes-in-progress p {
   margin: 0;
 }
 
@@ -607,10 +609,14 @@ body.sr-page-table td {
   border: 1px solid #cccccc;
 }
 
-.block-editor-iframe__body.sr-page-table thead {
+.block-editor-iframe__body.sr-page-table thead,
+.editor-styles-wrapper.sr-page-table thead,
+.editor-styles-wrapper .sr-page-table thead {
   line-height: 0.75em;
 }
-.block-editor-iframe__body.sr-page-table .wp-block-table__cell-content .rich-text {
+.block-editor-iframe__body.sr-page-table .wp-block-table__cell-content .rich-text,
+.editor-styles-wrapper.sr-page-table .wp-block-table__cell-content .rich-text,
+.editor-styles-wrapper .sr-page-table .wp-block-table__cell-content .rich-text {
   background: rgba(204, 204, 204, 0.1333333333);
   padding: 0.25em 0.5em;
 }

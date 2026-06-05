@@ -35,7 +35,9 @@ body.sr-page-table {
 }
 
 // Section: Editor Canvas Table Surface
-.block-editor-iframe__body.sr-page-table {
+.block-editor-iframe__body.sr-page-table,
+.editor-styles-wrapper.sr-page-table,
+.editor-styles-wrapper .sr-page-table {
 	thead {
 		line-height: 0.75em;
 	}
