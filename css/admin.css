@@ -312,6 +312,32 @@ figcaption {
   display: none !important;
 }
 
+@media (max-width: 40em) {
+  #wpadminbar {
+    position: fixed !important;
+    top: 0 !important;
+    min-height: 92px;
+  }
+  #wpbody {
+    padding-top: 92px;
+  }
+  .auto-fold #adminmenu {
+    top: 92px;
+  }
+  .interface-interface-skeleton {
+    top: 92px;
+  }
+  #wp-admin-bar-query-monitor {
+    width: 55px;
+    overflow: hidden;
+  }
+  #wp-admin-bar-query-monitor > .ab-item::before {
+    padding-top: 100% !important;
+  }
+  .qm-show {
+    height: 85%;
+  }
+}
 #stever_body_class-stever-body-class textarea {
   width: 100%;
 }
