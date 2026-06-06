@@ -16,7 +16,6 @@
 	td:nth-child(1) {
 		width: 10%;
 		font-size: 0.75em;
-		padding: 0.75em 0;
 	}
 	// Title
 	td:nth-child(2) {
@@ -29,7 +28,6 @@
 	// Date
 	td:nth-child(4) {
 		width: 15%;
-		padding-right: 0.5em;
 	}
 	margin-top: 0;
 }
@@ -51,7 +49,6 @@
 		td:nth-child(1) {
 			width: 10%;
 			font-size: 0.75em;
-			padding: 0.75em 0;
 		}
 		// Title
 		td:nth-child(2) {
@@ -64,7 +61,6 @@
 		// Date
 		td:nth-child(4) {
 			width: 15%;
-			padding-right: 0.5em;
 		}
 	}
 
@@ -78,251 +74,165 @@
 	}
 }
 
-// Editor Canvas Overrides
-// Keep all iframe/wrapper-specific rules together at the end of this partial.
-.block-editor-iframe__body .is-style-stever-table-pro-dev,
-.editor-styles-wrapper .is-style-stever-table-pro-dev {
-	display: table !important;
-	overflow: visible !important;
-	table-layout: fixed !important;
+.is-style-stever-table-pro-dev {
+	display: table;
+	overflow: visible;
+	table-layout: fixed;
 
 	thead {
-		display: table-header-group !important;
-		background-color: #e1e2c7 !important;
-		font-weight: 700 !important;
-		text-align: left !important;
-		border-bottom: 2px solid #5f6b7e !important;
+		display: table-header-group;
+		background-color: #e1e2c7;
+		font-weight: 700;
+		text-align: left;
+		border-bottom: 2px solid #5f6b7e;
 	}
 
 	tbody {
-		display: table-row-group !important;
+		display: table-row-group;
 	}
 
 	tr {
-		display: table-row !important;
-		flex-direction: initial !important;
-		flex-wrap: initial !important;
+		display: table-row;
+		flex-direction: initial;
+		flex-wrap: initial;
 	}
 
 	td,
 	th {
-		display: table-cell !important;
-		align-content: initial !important;
-		padding: 0.5em 1em !important;
-		border: 1px solid #cccccc !important;
+		display: table-cell;
+		align-content: initial;
+		border: 1px solid #cccccc;
 	}
 
 	th {
-		padding: 0.22em 0.8em !important;
-		line-height: 1.05 !important;
+		line-height: 1.05;
 	}
 
 	th .block-editor-rich-text__editable,
 	th .rich-text,
 	th [contenteditable='true'] {
-		line-height: 1.05 !important;
-		margin: 0 !important;
+		line-height: 1.05;
+		margin: 0;
 	}
 
 	th:nth-child(1) {
-		width: 12% !important;
-		text-align: center !important;
+		width: 12%;
+		text-align: center;
 	}
 	th:nth-child(2) {
-		width: 43% !important;
+		width: 43%;
 	}
 	th:nth-child(3) {
-		width: 30% !important;
+		width: 30%;
 	}
 	th:nth-child(4) {
-		width: 15% !important;
-		text-align: right !important;
-		padding-right: 1.25em !important;
+		width: 15%;
+		text-align: right;
 	}
 
 	thead th:first-child {
-		opacity: 0 !important;
+		opacity: 0;
 	}
 	td:nth-child(1) {
-		width: 12% !important;
-		font-size: 0.75em !important;
-		padding: 0.75em 0 !important;
-		text-align: center !important;
+		width: 12%;
+		font-size: 0.75em;
+		text-align: center;
 	}
 	td:nth-child(2) {
-		width: 43% !important;
+		width: 43%;
 	}
 	td:nth-child(3) {
-		width: 30% !important;
+		width: 30%;
 	}
 	td:nth-child(4) {
-		width: 15% !important;
-		padding-right: 0.5em !important;
-		text-align: right !important;
-		line-height: 2.25em !important;
-		font-family: variables.$fonts-mono !important;
-		font-size: 0.82em !important;
+		width: 15%;
+		text-align: right;
+		line-height: 2.25em;
+		font-family: variables.$fonts-mono;
+		font-size: 0.9em;
 	}
 
-	margin-top: 0 !important;
+	margin-top: 0;
 }
 
-// Fallback: target Gutenberg's table block wrapper directly.
-// This follows the same selector shape as the working contenteditable background rules.
-.block-editor-iframe__body .wp-block-table.is-style-stever-table-pro-dev:not(.is-style-stever-table-pro-dev-upcoming),
-.editor-styles-wrapper .wp-block-table.is-style-stever-table-pro-dev:not(.is-style-stever-table-pro-dev-upcoming) {
+.wp-block-table.is-style-stever-table-pro-dev:not(.is-style-stever-table-pro-dev-upcoming) {
 	table {
-		display: table !important;
-		table-layout: fixed !important;
-		width: 100% !important;
-		border-collapse: collapse !important;
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+		border-collapse: collapse;
 	}
 
 	thead {
-		background-color: #e1e2c7 !important;
-		font-weight: 700 !important;
-		text-align: left !important;
-		border-bottom: 2px solid #5f6b7e !important;
+		background-color: #e1e2c7;
+		font-weight: 700;
+		text-align: left;
+		border-bottom: 2px solid #5f6b7e;
 	}
 
 	th,
 	td {
-		padding: 0.5em 1em !important;
-		border: 1px solid #cccccc !important;
+		border: 1px solid #cccccc;
 	}
 
 	th {
-		padding: 0.22em 0.8em !important;
-		line-height: 1.05 !important;
+		line-height: 1.05;
 	}
 
 	th .block-editor-rich-text__editable,
 	th .rich-text,
 	th [contenteditable='true'] {
-		line-height: 1.05 !important;
-		margin: 0 !important;
+		line-height: 1.05;
+		margin: 0;
 	}
 
 	th:nth-child(1),
 	td:nth-child(1) {
-		width: 12% !important;
-		text-align: center !important;
+		width: 12%;
+		text-align: center;
 	}
 
 	th:nth-child(2),
 	td:nth-child(2) {
-		width: 43% !important;
+		width: 43%;
 	}
 
 	th:nth-child(3),
 	td:nth-child(3) {
-		width: 30% !important;
+		width: 30%;
 	}
 
 	th:nth-child(4),
 	td:nth-child(4) {
-		width: 15% !important;
-		text-align: right !important;
+		width: 15%;
+		text-align: right;
 	}
 
 	td:nth-child(4) .block-editor-rich-text__editable,
 	td:nth-child(4) .rich-text,
 	td:nth-child(4) [contenteditable='true'] {
-		text-align: right !important;
-		line-height: 2.25em !important;
-		font-family: variables.$fonts-mono !important;
-		font-size: 0.82em !important;
+		text-align: right;
+		line-height: 2.25em;
+		font-family: variables.$fonts-mono;
+		font-size: 0.9em;
 	}
 }
 
-// Alternate fallback when style class is on an ancestor wrapper, not on .wp-block-table itself.
-.block-editor-iframe__body .is-style-stever-table-pro-dev .wp-block-table:not(.is-style-stever-table-pro-dev-upcoming),
-.editor-styles-wrapper .is-style-stever-table-pro-dev .wp-block-table:not(.is-style-stever-table-pro-dev-upcoming) {
-	table {
-		display: table !important;
-		table-layout: fixed !important;
-		width: 100% !important;
-		border-collapse: collapse !important;
-	}
-
-	thead {
-		background-color: #e1e2c7 !important;
-		font-weight: 700 !important;
-		text-align: left !important;
-		border-bottom: 2px solid #5f6b7e !important;
-	}
-
-	th,
-	td {
-		padding: 0.5em 1em !important;
-		border: 1px solid #cccccc !important;
-	}
-
-	th {
-		padding: 0.22em 0.8em !important;
-		line-height: 1.05 !important;
-	}
-
-	th .block-editor-rich-text__editable,
-	th .rich-text,
-	th [contenteditable='true'] {
-		line-height: 1.05 !important;
-		margin: 0 !important;
-	}
-
-	th:nth-child(1),
-	td:nth-child(1) {
-		width: 12% !important;
-		text-align: center !important;
-	}
-
-	th:nth-child(2),
-	td:nth-child(2) {
-		width: 43% !important;
-	}
-
-	th:nth-child(3),
-	td:nth-child(3) {
-		width: 30% !important;
-	}
-
-	th:nth-child(4),
-	td:nth-child(4) {
-		width: 15% !important;
-		text-align: right !important;
-	}
-
-	td:nth-child(4) .block-editor-rich-text__editable,
-	td:nth-child(4) .rich-text,
-	td:nth-child(4) [contenteditable='true'] {
-		text-align: right !important;
-		line-height: 2.25em !important;
-		font-family: variables.$fonts-mono !important;
-		font-size: 0.82em !important;
-	}
+.is-style-year-divider-upcoming {
+	background-color: variables.$accent-teal;
 }
 
-.block-editor-iframe__body .is-style-year-divider-upcoming,
-.editor-styles-wrapper .is-style-year-divider-upcoming {
-	background-color: variables.$accent-teal !important;
+.is-style-stever-table-pro-dev-upcoming thead {
+	background-color: variables.$accent-teal-lightest;
 }
 
-.block-editor-iframe__body .is-style-stever-table-pro-dev-upcoming thead,
-.editor-styles-wrapper .is-style-stever-table-pro-dev-upcoming thead {
-	background-color: variables.$accent-teal-lightest !important;
-}
+.is-style-stever-table-pro-dev,
+.is-style-stever-table-books {
 
-.block-editor-iframe__body .wp-block-table.is-style-stever-table-pro-dev-upcoming thead,
-.editor-styles-wrapper .wp-block-table.is-style-stever-table-pro-dev-upcoming thead,
-.block-editor-iframe__body .is-style-stever-table-pro-dev-upcoming .wp-block-table thead,
-.editor-styles-wrapper .is-style-stever-table-pro-dev-upcoming .wp-block-table thead {
-	background-color: variables.$accent-teal-lightest !important;
-}
+	td, th {
+		padding: 0;
+	}
 
-.block-editor-iframe__body .is-style-stever-table-pro-dev,
-.block-editor-iframe__body .is-style-stever-table-books,
-.editor-styles-wrapper .is-style-stever-table-pro-dev,
-.editor-styles-wrapper .is-style-stever-table-books {
 	.wp-block-table__cell-content .rich-text,
 	.wp-block-table td .block-editor-rich-text__editable,
 	.wp-block-table td [contenteditable='true'] {
@@ -330,65 +240,54 @@
 		padding: 0.25em 0.5em;
 	}
 
-	.wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty {
+	td .block-editor-rich-text__editable.sr-table-cell-empty {
 		position: relative;
 	}
 
-	.wp-block-table td .block-editor-rich-text__editable.sr-table-cell-empty::before {
+	td .block-editor-rich-text__editable.sr-table-cell-empty::before {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: calc(100% - 1em);
 		padding: 0.25em 0.5em;
 		display: block;
-		color: variables.$gray-dark;
+		color: variables.$gray;
 		font-size: 1em;
 	}
 }
-
+// Placeholder Text: ProDev
 .is-style-stever-table-pro-dev td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Type';
 }
-
 .is-style-stever-table-pro-dev td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Event Name';
 }
-
 .is-style-stever-table-pro-dev td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Affiliation';
 }
-
 .is-style-stever-table-pro-dev td:nth-child(4) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Date';
 }
 
+// Placeholder Text: Books
 .is-style-stever-table-books td:nth-child(1) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Title';
 }
-
 .is-style-stever-table-books td:nth-child(2) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Author';
 }
-
 .is-style-stever-table-books td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
 	content: 'Date';
 }
 
+// Code Block Style
 code {
 	border: 1px solid variables.$gray-med;
 	background-color: variables.$gray-light;
 	padding: 1px 3px;
 }
 
-// Table: Books I've Read
-.is-style-stever-table-books {
-	th,
-	td {
-		padding: 0.5em;
-	}
-}
-
-// Spacer - Outline
+// Outline/Visual Indicator: Spacer Block
 .wp-block-spacer {
 	border: 1px dotted variables.$gray-dark;
 	&::before {
@@ -398,7 +297,7 @@ code {
 	}
 }
 
-// Group, Columns -- Outline
+// Outline/Visual Indicator: Group, Columns, Column Blocks
 .wp-block-group {
 	margin-bottom: 0.25em;
 }
@@ -460,7 +359,6 @@ code {
 		}
 		.wp-block-table td {
 			border: 1px solid variables.$gray-light;
-			padding: 2px 5px !important;
 			line-height: 1.5em;
 		}
 		.is-style-stever-table-pro-dev tr {
