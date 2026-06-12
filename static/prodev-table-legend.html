@@ -141,9 +141,8 @@
 
 						// Check each row.
 						rows.forEach((row) => {
-							const theType = row
-								.querySelector('i')
-								.getAttribute('data-title');
+							const iconEl = row.querySelector('i');
+							const theType = iconEl ? iconEl.getAttribute('data-title') : null;
 							const isVisible = theType === legend_chosen;
 							row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row.
 							if (isVisible) count_results++; // Increment the count of visible results.
