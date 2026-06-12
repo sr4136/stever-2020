@@ -168,7 +168,7 @@ body.sr-page-table {
 		margin-bottom: 2em;
 	}
 	.sr-prodev-intro-group {
-		gap: 2em 4em; 
+		gap: 2em; 
 		margin-bottom: 2em;
 		align-items: stretch;
 		
@@ -176,6 +176,7 @@ body.sr-page-table {
 			display: flex;
 			align-self: stretch;
 			box-shadow: 5px 5px 5px variables.$gray-med;
+			border: 1px solid variables.$gray-med;
 		}
 
 		.prodev-image {
@@ -361,13 +362,13 @@ body.sr-page-table {
 			grid-area: 1;
 		}
 		.prodev-image {
-			margin: 0 1em;
+			margin: 0; 
 		}
 	}
 }
 
 @include variables.breakpoint(s) {
-	.sr-page-table-prodev .is-style-stever-table-pro-dev {
+	.sr-page-table-prodev:not(.block-editor-iframe__body) .is-style-stever-table-pro-dev {
 		display: block;
 		overflow: auto;
 
@@ -415,7 +416,7 @@ body.sr-page-table {
 
 // Section: Books Table
 // Table: Books I've Read
-.is-style-stever-table-books {
+.sr-page-table-books .is-style-stever-table-books {
 	// Title
 	th:nth-child(1),
 	td:nth-child(1) {
@@ -446,7 +447,7 @@ body.sr-page-table {
 // Section: Books Table Responsive
 // Table: Books I've Read (Responsive)
 @include variables.breakpoint(s) {
-	.is-style-stever-table-books {
+.sr-page-table-books:not(.block-editor-iframe__body) .is-style-stever-table-books {
 		display: block;
 		width: 100%;
 

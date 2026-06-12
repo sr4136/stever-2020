@@ -127,6 +127,7 @@
 
 .is-style-stever-table-books tr td:first-child {
   text-align: left;
+  font-size: 1em;
 }
 
 .wp-block-table.is-style-stever-table-pro-dev:not(.is-style-stever-table-pro-dev-upcoming) table {

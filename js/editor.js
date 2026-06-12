@@ -1,124 +1,61 @@
 /**
  * Block Editor: Apply custom body classes to the editor canvas iframe.
  *
- * Modern Gutenberg renders the editor inside a sandboxed iframe. Classes
- * set via the "Body Class" metabox (see `/inc/metabox-body-class.php`) are
- * available via the `iframeBodyData` global localised by PHP, but they must
- * be manually applied to the iframe document after it mounts.
+ * Classes from the "Body Class" metabox are passed from PHP via
+ * `iframeBodyData` and applied from inside the `editor-canvas` iframe.
  *
- * The iframe starts as `about:blank`, then loads a blob URL. Its `<body>`
- * may not exist immediately after the `load` event, so we observe
- * `documentElement` as a fallback until the body is available.
+ * The `.editor-styles-wrapper` element may not exist on the first frame, so
+ * this script retries for a short, bounded period and then stops.
  *
  * @see /inc/metabox-body-class.php
- * @via https://wordpress.stackexchange.com/a/427560
  */
 
 (() => {
-	const onReady = ( callback ) => {
-		if ( window.wp && typeof window.wp.domReady === 'function' ) {
-			window.wp.domReady( callback );
-			return;
+	const data = window.iframeBodyData || {};
+	const classes = ( data.classes || '' ).split( /\s+/ ).filter( Boolean );
+	const isEditorCanvas = window.frameElement?.getAttribute( 'name' ) === 'editor-canvas';
+
+	if ( ! isEditorCanvas || classes.length === 0 ) {
+		return;
+	}
+
+	const apply = () => {
+		if ( document.body ) {
+			document.body.classList.add( ...classes );
 		}
 
-		if ( document.readyState === 'loading' ) {
-			document.addEventListener( 'DOMContentLoaded', callback, { once: true } );
-			return;
+		const wrapper = document.querySelector( '.editor-styles-wrapper' );
+		if ( wrapper ) {
+			wrapper.classList.add( ...classes );
+			return true;
 		}
 
-		callback();
+		return false;
 	};
 
-	onReady( () => {
-	const data = window.iframeBodyData || {};
-	const classes = ( data.classes || '' ).split( ' ' ).filter( Boolean );
+	const run = () => {
+		let attempts = 0;
+		const maxAttempts = 120;
 
-	// Guard against applying classes more than once (e.g. if the observer fires multiple times).
-	let applied = false;
+		const tick = () => {
+			if ( apply() ) {
+				return;
+			}
 
-	/**
-	 * Add the custom classes to the iframe body and .editor-styles-wrapper.
-	 * Returns true if classes were applied, false if conditions weren't met.
-	 */
-	function applyClasses( doc ) {
-		if ( applied || ! doc || ! doc.body ) return false;
-		const wrapper = doc.querySelector( '.editor-styles-wrapper' );
-		if ( ! wrapper ) return false;
-		if ( classes.length > 0 ) {
-			doc.body.classList.add( ...classes );
-		}
-		// Also target .editor-styles-wrapper so CSS selectors scoped to it work too.
-		if ( classes.length > 0 ) {
-			wrapper.classList.add( ...classes );
-		}
-		applied = true;
-		return true;
+			attempts += 1;
+			if ( attempts < maxAttempts ) {
+				window.requestAnimationFrame( tick );
+			}
+		};
+
+		tick();
+	};
+
+	if ( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', run, { once: true } );
+	} else {
+		run();
 	}
-
-	/**
-	 * Attempt to apply classes to a ready iframe document.
-	 * If .editor-styles-wrapper hasn't rendered yet, observe the body until it does.
-	 */
-	function tryIframe( iframe ) {
-		const doc = iframe?.contentDocument;
-		if ( ! doc || ! doc.body ) return false;
-		if ( applyClasses( doc ) ) return true;
-		// Body exists but .editor-styles-wrapper not yet in the DOM — wait for it.
-		const obs = new MutationObserver( ( m, o ) => { if ( applyClasses( doc ) ) o.disconnect(); } );
-		obs.observe( doc.body, { childList: true, subtree: true } );
-		return true;
-	}
-
-	/**
-	 * Called after the iframe `load` event fires.
-	 * The blob URL document may fire `load` before `<body>` is parsed,
-	 * so we observe `documentElement` as a fallback.
-	 */
-	function onIframeLoad( iframe ) {
-		const doc = iframe.contentDocument;
-		if ( ! doc ) return;
-		if ( doc.body ) {
-			tryIframe( iframe );
-		} else {
-			// `<body>` not yet available — watch for it to be inserted.
-			const obs = new MutationObserver( ( m, o ) => {
-				if ( doc.body ) { o.disconnect(); tryIframe( iframe ); }
-			} );
-			obs.observe( doc.documentElement, { childList: true } );
-		}
-	}
-
-	/**
-	 * Attach to a known iframe element.
-	 * Try immediately; fall back to waiting for the `load` event.
-	 */
-	function attachToIframe( iframe ) {
-		if ( ! tryIframe( iframe ) ) {
-			iframe.addEventListener( 'load', () => onIframeLoad( iframe ), { once: true } );
-		}
-	}
-
-	// Attach to any iframe already present; the correct editor iframe is identified by its content.
-	document.querySelectorAll( 'iframe' ).forEach( attachToIframe );
-
-	// Watch for newly inserted iframes (WP updates editor iframe markup between versions).
-	const root = document.body || document.documentElement;
-	if ( ! root ) return;
-
-	const obs = new MutationObserver( ( mutations ) => {
-		mutations.forEach( ( mutation ) => {
-			mutation.addedNodes.forEach( ( node ) => {
-				if ( node?.nodeType !== 1 ) return;
-				if ( node.matches?.( 'iframe' ) ) {
-					attachToIframe( node );
-					return;
-				}
-				node.querySelectorAll?.( 'iframe' ).forEach( attachToIframe );
-			} );
-		} );
-	} );
-	obs.observe( root, { childList: true, subtree: true } );
-} );
 })();
 
 
