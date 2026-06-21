@@ -60,12 +60,14 @@ function sassAdminBlocks() {
 	return compileSass(paths.adminBlocksSass, paths.cssBlocksDest);
 }
 
+const sassBuild = gulp.series(sassMain, sassBlocks, sassAdmin, sassAdminBlocks);
+
 // Watch for Sass file changes
 function watch() {
-	gulp.watch(paths.sass, gulp.series(sassMain, sassBlocks, sassAdmin, sassAdminBlocks));
+	return gulp.watch(paths.sass, sassBuild);
 }
 
 // Export tasks
-exports.sass = gulp.series(sassMain, sassBlocks, sassAdmin, sassAdminBlocks);
+exports.sass = sassBuild;
 exports.watch = watch;
 exports.default = exports.sass;
