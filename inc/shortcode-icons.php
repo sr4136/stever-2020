@@ -40,9 +40,9 @@ function stever_shortcode_icons( $atts ) {
 			),
 		);
 
-		if( $labels[ $type ] ){
+		if( isset( $labels[ $type ] ) ){
 			$output = "<i data-title='{$labels[ $type ]['label']}' class='fas fa-{$labels[ $type ]['class']}'></i>";
-			if( $labels[ $type ]['text'] ){
+			if( ! empty( $labels[ $type ]['text'] ) ){
 				$output .= " " . $labels[ $type ]['text'];
 			}
 			return ( $output );
