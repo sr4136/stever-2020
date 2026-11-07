@@ -241,22 +241,25 @@ document.addEventListener('DOMContentLoaded', () => {
 		/*
 		 * Normalize search text for reliable matching:
 		 * 1) normalize('NFKC'): convert compatibility Unicode forms into a standard composed form.
-		 * 2) toLowerCase(): make comparisons case-insensitive.
-		 * 3) replace(/[...]/g, ''): remove apostrophe-like characters (straight, curly, grave, acute, okina, etc.).
-		 * 4) replace(/[...]/g, ''): remove zero-width/invisible characters from copied text.
-		 * 5) replace(/\s+/g, ' '): collapse repeated whitespace to a single space.
-		 * 6) trim(): remove leading and trailing whitespace.
+		 * 2) replace(/[...]/g, ''): remove apostrophe-like characters (straight, curly, grave, acute, okina, etc.).
+		 * 3) replace(/[...]/g, ''): remove zero-width/invisible characters from copied text.
+		 * 4) replace(/\s+/g, ' '): collapse repeated whitespace to a single space.
+		 * 5) trim(): remove leading and trailing whitespace.
+		 * 6) toLowerCase(): make comparisons case-insensitive unless caseSensitive is true.
 		 */
-		normalizeSearchText(text) {
-			return (text || '')
+		normalizeSearchText(text, caseSensitive = false) {
+			const normalizedText = (text || '')
 				.normalize('NFKC')
-				.toLowerCase()
 				.replace(/[\u0027\u0060\u00B4\u02BB\u2018\u2019\u201A\u201B\u2032\uFF07]/g, '')
 				.replace(/[\u200B\u200C\u200D\uFEFF]/g, '')
 				.replace(/\s+/g, ' ')
 				.trim();
+
+			return caseSensitive ? normalizedText : normalizedText.toLowerCase();
 		}
 
+		// Split OR terms on pipes. Straight or curly single quotes preserve case and
+		// require non-alphanumeric boundaries; unquoted terms match substrings ignoring case.
 		parseQueryParts(query) {
 			let normalizedQuery = query || '';
 
@@ -270,10 +273,22 @@ document.addEventListener('DOMContentLoaded', () => {
 				.replace(/%2C/gi, '|')
 				.replace(/%7C/gi, '|');
 
-			return this.normalizeSearchText(normalizedQuery)
+			return normalizedQuery
 				.split('|')
-				.map((part) => part.trim())
-				.filter(Boolean);
+				.map((part) => {
+					const trimmedPart = part.trim();
+					const caseSensitive = trimmedPart.length >= 2 &&
+						/^['\u2018\u2019]/.test(trimmedPart) && /['\u2018\u2019]$/.test(trimmedPart);
+					const text = caseSensitive ? trimmedPart.slice(1, -1) : trimmedPart;
+					const normalizedText = this.normalizeSearchText(text, caseSensitive);
+					// Escape literal terms; Unicode letters and numbers cannot border a quoted match.
+					const pattern = caseSensitive ? new RegExp(
+						`(^|[^\\p{L}\\p{N}])${normalizedText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\p{L}\\p{N}])`,
+						'u',
+					) : null;
+					return { text: normalizedText, caseSensitive, pattern };
+				})
+				.filter((part) => part.text);
 		}
 
 		// Process the search based on the input query
@@ -292,8 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
 				rows.forEach((row) => {
 					const searchStr = this.getSearchString(row); // Get the search string for the row
 					const rowSearchStr = this.normalizeSearchText(searchStr);
+					const rowCaseSensitiveStr = this.normalizeSearchText(searchStr, true);
 					const isVisible = queryParts.some((part) =>
-						rowSearchStr.includes(part),
+						part.caseSensitive ? part.pattern.test(rowCaseSensitiveStr) : rowSearchStr.includes(part.text),
 					); // Check if the row matches any query part
 					row.classList.toggle('hidden', !isVisible); // Toggle visibility of the row
 					if (isVisible) visibleCount++; // Increment visible count if the row is visible

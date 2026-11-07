@@ -138,14 +138,13 @@ body.sr-page-table {
 		flex: 1 1 auto;
 		min-height: 0;
 		flex-wrap: wrap;
-		align-content: center;
 		justify-content: center;
 		gap: .75em .5em;
-		padding: calc( 1em - 2px );
+		padding: 1.25em 1em;
 
 		button {
-			margin: 0;
-			padding: .5em .75em;
+			margin: 0.125em;
+			padding: .5em .85em;
 			border-radius: 2em;
 			background-color: variables.$green-light;
 			color: variables.$black-copy;
