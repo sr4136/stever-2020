@@ -326,5 +326,115 @@
 		content: "Date";
 	}
 }
+
+// Section: Places Admin Metabox
+body.post-type-stever_place {
+	#stever_place_location_box .inside {
+		padding-top: 14px;
+	}
+	
+	.stever-place-admin-section:not(:last-of-type) {
+		margin-bottom: 2em;
+	}
+
+	.stever-place-admin-search-wrapper {
+		label {
+			padding-bottom: 1em;
+		}
+
+		.stever-place-admin-search {
+			position: relative;
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
+			align-items: flex-end;
+
+			label {
+				width: 100%;
+				margin-bottom: 0;
+			}
+
+			#stever_place_geocode_query {
+				flex: 1 1 380px;
+			}
+		}
+	}
+
+	.stever-place-admin-map {
+		height: 360px;
+		border: 1px solid #d9d9d9;
+		border-radius: 4px;
+		margin: 12px 0 14px;
+		background: #f7f7f7;
+	}
+
+	.stever-place-admin-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 10px 16px;
+
+		p {
+			margin: 0;
+		}
+
+		.regular-text,
+		select {
+			width: 100%;
+		}
+	}
+
+	.stever-place-admin-polyline {
+		margin-top: 12px;
+
+		.stever-place-gpx-import{
+			float: right;
+		}
+	}
+
+	.stever-place-admin-status {
+		display: inline-block;
+		font-weight: 600;
+		line-height: 1.4;
+		background: variables.$white;
+		padding: 0.5em 0;
+		text-align: center;
+		border: 1px solid variables.$gray-dark;
+		border-radius: 3px;
+		position: absolute;
+		width: 100%;
+		top: 110%;
+		z-index: 9999;
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	textarea {
+		font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+		min-height: 150px;
+		width: 100%;
+	}
+}
+
+@include variables.breakpoint(xs) {
+	body.post-type-stever_place {
+		.stever-place-admin-search {
+			.stever-place-admin-button {
+				margin-right: 0;
+			}
+
+			#stever_place_geocode_query,
+			.stever-place-admin-button,
+			.stever-place-admin-status {
+				flex: 1 1 100%;
+			}
+		}
+
+		.stever-place-admin-map {
+			height: 300px;
+		}
+	}
+}
  
  

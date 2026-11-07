@@ -31,9 +31,13 @@ function compileSass(src, dest) {
 		}).on('error', sass.logError))
 		.pipe(gulp.dest(dest))
 		.pipe(cssnano({
+			safe: true,
+			zindex: false,
+			reduceIdents: false,
 			preset: ['default', {
 				normalizeSelectors: false,
-				discardEmpty: false
+				discardEmpty: false,
+				zindex: false
 			}]
 		}))
 		.pipe(rename({ extname: '.min.css' }))
