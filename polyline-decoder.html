@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Polyline Decoder</title>
+	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			background: #f5f5f5;
+		}
+		.container {
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		h1 {
+			color: #333;
+			margin-top: 0;
+		}
+		textarea {
+			width: 100%;
+			height: 100px;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			font-family: monospace;
+			font-size: 13px;
+			resize: vertical;
+		}
+		.button-group {
+			margin: 15px 0;
+		}
+		button {
+			background: #0066cc;
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 14px;
+			margin-right: 10px;
+		}
+		button:hover {
+			background: #0052a3;
+		}
+		#output {
+			margin-top: 20px;
+			padding: 15px;
+			background: #f9f9f9;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			max-height: 400px;
+			overflow: auto;
+			font-family: monospace;
+			font-size: 12px;
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+		.empty {
+			color: #999;
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Polyline Decoder</h1>
+		<p>Paste an encoded polyline string to decode it into lat/lng pairs:</p>
+		<textarea id="polylineInput" placeholder="Paste encoded polyline here..."></textarea>
+		<div class="button-group">
+			<button onclick="decode()">Decode</button>
+			<button onclick="copyOutput()">Copy Output</button>
+			<button onclick="clear()">Clear</button>
+		</div>
+		<div id="output" class="empty">Output will appear here...</div>
+	</div>
+
+	<script>
+		function decodePolyline(encoded) {
+			var points = [];
+			var index = 0;
+			var lat = 0;
+			var lng = 0;
+			var len = encoded.length;
+
+			while (index < len) {
+				var result = 0;
+				var shift = 0;
+				var byte;
+
+				do {
+					byte = encoded.charCodeAt(index++) - 63;
+					result |= (byte & 0x1f) << shift;
+					shift += 5;
+				} while (byte >= 0x20);
+
+				var dlat = result & 1 ? ~(result >> 1) : result >> 1;
+				lat += dlat;
+
+				result = 0;
+				shift = 0;
+				do {
+					byte = encoded.charCodeAt(index++) - 63;
+					result |= (byte & 0x1f) << shift;
+					shift += 5;
+				} while (byte >= 0x20);
+
+				var dlng = result & 1 ? ~(result >> 1) : result >> 1;
+				lng += dlng;
+
+				points.push({
+					lat: (lat / 1e5).toFixed(8),
+					lng: (lng / 1e5).toFixed(8),
+				});
+			}
+
+			return points;
+		}
+
+		function decode() {
+			var input = document.getElementById('polylineInput').value.trim();
+			var output = document.getElementById('output');
+
+			if (!input) {
+				output.textContent = 'Please enter a polyline string';
+				output.className = 'empty';
+				return;
+			}
+
+			try {
+				var points = decodePolyline(input);
+				var json = JSON.stringify(points, null, 2);
+				output.textContent = json;
+				output.className = '';
+			} catch (e) {
+				output.textContent = 'Error decoding: ' + e.message;
+				output.className = 'empty';
+			}
+		}
+
+		function copyOutput() {
+			var output = document.getElementById('output');
+			if (output.textContent && output.textContent !== 'Output will appear here...') {
+				navigator.clipboard.writeText(output.textContent).then(function() {
+					alert('Copied to clipboard!');
+				});
+			}
+		}
+
+		function clear() {
+			document.getElementById('polylineInput').value = '';
+			document.getElementById('output').textContent = 'Output will appear here...';
+			document.getElementById('output').className = 'empty';
+		}
+
+		// Allow decoding with Enter key
+		document.getElementById('polylineInput').addEventListener('keydown', function(e) {
+			if (e.key === 'Enter' && e.ctrlKey) {
+				decode();
+			}
+		});
+	</script>
+</body>
+</html>

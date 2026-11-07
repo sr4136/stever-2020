@@ -575,3 +575,88 @@ figcaption {
 .sr-page-table-books .wp-block-table td:nth-child(3) .block-editor-rich-text__editable.sr-table-cell-empty::before {
   content: "Date";
 }
+
+body.post-type-stever_place #stever_place_location_box .inside {
+  padding-top: 14px;
+}
+body.post-type-stever_place .stever-place-admin-section:not(:last-of-type) {
+  margin-bottom: 2em;
+}
+body.post-type-stever_place .stever-place-admin-search-wrapper label {
+  padding-bottom: 1em;
+}
+body.post-type-stever_place .stever-place-admin-search-wrapper .stever-place-admin-search {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+body.post-type-stever_place .stever-place-admin-search-wrapper .stever-place-admin-search label {
+  width: 100%;
+  margin-bottom: 0;
+}
+body.post-type-stever_place .stever-place-admin-search-wrapper .stever-place-admin-search #stever_place_geocode_query {
+  flex: 1 1 380px;
+}
+body.post-type-stever_place .stever-place-admin-map {
+  height: 360px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  margin: 12px 0 14px;
+  background: #f7f7f7;
+}
+body.post-type-stever_place .stever-place-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 16px;
+}
+body.post-type-stever_place .stever-place-admin-grid p {
+  margin: 0;
+}
+body.post-type-stever_place .stever-place-admin-grid .regular-text,
+body.post-type-stever_place .stever-place-admin-grid select {
+  width: 100%;
+}
+body.post-type-stever_place .stever-place-admin-polyline {
+  margin-top: 12px;
+}
+body.post-type-stever_place .stever-place-admin-polyline .stever-place-gpx-import {
+  float: right;
+}
+body.post-type-stever_place .stever-place-admin-status {
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1.4;
+  background: #ffffff;
+  padding: 0.5em 0;
+  text-align: center;
+  border: 1px solid #666666;
+  border-radius: 3px;
+  position: absolute;
+  width: 100%;
+  top: 110%;
+  z-index: 9999;
+}
+body.post-type-stever_place .stever-place-admin-status:empty {
+  display: none;
+}
+body.post-type-stever_place textarea {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  min-height: 150px;
+  width: 100%;
+}
+
+@media (max-width: 27.5em) {
+  body.post-type-stever_place .stever-place-admin-search .stever-place-admin-button {
+    margin-right: 0;
+  }
+  body.post-type-stever_place .stever-place-admin-search #stever_place_geocode_query,
+  body.post-type-stever_place .stever-place-admin-search .stever-place-admin-button,
+  body.post-type-stever_place .stever-place-admin-search .stever-place-admin-status {
+    flex: 1 1 100%;
+  }
+  body.post-type-stever_place .stever-place-admin-map {
+    height: 300px;
+  }
+}

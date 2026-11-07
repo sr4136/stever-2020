@@ -140,3 +140,6 @@ require get_template_directory() .'/inc/block-styles.php';
 
 // Siteground: Clear Cache on Theme File Change
 require get_template_directory() . '/inc/siteground-clear-cache.php';
+
+// Places: CPT + map UI + shortcode map
+require get_template_directory() . '/inc/places-maps/places-maps.php';

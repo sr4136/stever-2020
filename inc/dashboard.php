@@ -39,8 +39,10 @@ function stever_custom_menu_order($menu_order) {
 
 		'edit.php?post_type=page', // Pages
 		'edit.php', // Posts
+		'edit.php?post_type=stever_place', // Places
 		'edit.php?post_type=stever_quotes', // Quotes
-		'wp-google-maps-menu', // WP Google Maps (Plugin)
+		'separator2', // Second separator
+
 		'upload.php', // Media
 		'edit.php?post_type=wp_block', // Reusable Blocks
 		'separator2', // Second separator
@@ -49,10 +51,6 @@ function stever_custom_menu_order($menu_order) {
 		'themes.php', // Appearance
 		'plugins.php', // Plugins
 		'options-general.php', // Settings
-
-		'users.php', // Users
-		'link-manager.php', // Links
-		'edit-comments.php', // Comments
 		'separator-last', // Last separator
 	);
 }
@@ -177,13 +175,13 @@ function stever_dashboard_widget_maps() {
 	<ul class="stever-dashboard-widget">
 		<li>
 			<div class="post-info-wrap">
-				<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=1">Places I've Been</a>
+				<a href="/wp-admin/edit.php?post_type=stever_place&stever_place_map=been">Places I've Been</a>
 				<a class="linkview" href="/about/places-ive-been/">view</a>
 			</div>
 		</li>
 		<li>
 			<div class="post-info-wrap">
-				<a href="/wp-admin/admin.php?page=wp-google-maps-menu&action=edit&map_id=2">Places I'd Like to Go</a>
+				<a href="/wp-admin/edit.php?post_type=stever_place&stever_place_map=want-to-go">Places I'd Like to Go</a>
 				<a class="linkview" href="/about/places-ive-been/places-id-like-to-go/">view</a>
 			</div>
 		</li>

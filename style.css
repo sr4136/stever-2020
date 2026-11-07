@@ -723,20 +723,250 @@ figcaption {
   display: none !important;
 }
 
-.stever-map-page article {
+/* ===== Map Container & Styles ===== */
+.stever-places-map-wrap {
+  margin: 1rem 0;
+  --stever-place-type-general: #3498db;
+  --stever-place-type-lived: #e74c3c;
+  --stever-place-type-layover: #f39c12;
+  --stever-place-type-outdoors: #27ae60;
+  --stever-place-type-indoors: #9b59b6;
+  --stever-place-type-path: #c2552e;
+  --stever-place-type-default: #0066cc;
+}
+
+/* ===== Map "admin" bar buttons ===== */
+.maps-secondary-admin {
+  text-align: right;
+}
+.maps-secondary-admin .button {
+  margin-left: 1em;
+}
+
+/* ===== Toolbar: Search & Filters ===== */
+.stever-places-map-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5rem;
+  background: rgb(243, 243.4, 232.6);
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+@media (max-width: 40em) {
+  .stever-places-map-toolbar {
+    align-items: stretch;
+  }
+}
+
+.stever-places-map-toolbar-search {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem;
+  align-items: center;
+  flex: 1 1 20rem;
 }
-
-#stever-editmap {
-  position: absolute;
-  top: 0.5em;
-  right: 0;
+.stever-places-map-toolbar-search .stever-places-map-toolbar-input {
+  min-width: 0;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background: #ffffff;
   margin: 0;
-  background-color: #f7f7f7;
+  font: inherit;
+  color: #484848;
+}
+.stever-places-map-toolbar-search .stever-places-map-toolbar-status {
+  grid-column: 1/-1;
 }
 
-#stever-mapfilter {
+.stever-places-map-toolbar-button {
+  padding: 0.5em 0.75em;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #484848;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.stever-places-map-toolbar-button:hover, .stever-places-map-toolbar-button:focus {
+  border-color: #c2552e;
+  color: #c2552e;
+}
+
+.stever-places-map-toolbar-button-search {
+  border-color: #c2552e;
+  background: #c2552e;
+  color: #ffffff;
+  line-height: 1.75em;
+  padding: 0.5em 1.25em;
+}
+.stever-places-map-toolbar-button-search:hover, .stever-places-map-toolbar-button-search:focus {
+  background: #814519;
+  border-color: #814519;
+  color: #ffffff;
+}
+
+.stever-places-map-toolbar-status {
+  font-size: 0.75rem;
+  color: #666666;
+  background: #ffffff;
+  padding: 0.5em 0;
+  text-align: center;
+  border: 1px solid #666666;
+  border-radius: 3px;
+  position: absolute;
+  width: 100%;
+  top: 110%;
+  z-index: 9999;
+}
+.stever-places-map-toolbar-status.is-error {
+  color: #814519;
+  border: 1px solid #814519;
+}
+.stever-places-map-toolbar-status:empty {
+  display: none;
+}
+
+.stever-places-map-toolbar-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  flex: 1 1 16em;
+  justify-content: flex-end;
+  border-radius: 6px;
+}
+@media (max-width: 810px) {
+  .stever-places-map-toolbar-filters {
+    flex: 0 0 100%;
+    justify-content: center;
+    background: #ffffff;
+    padding: 0.5em 0;
+    border: 1px solid #cccccc;
+  }
+}
+
+.stever-places-map-toolbar-filter {
+  border-radius: 999px;
+}
+.stever-places-map-toolbar-filter:before {
+  font-family: "Font Awesome 5 Free", "Lato", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* FontAwesome: circle with x. */
+  content: "\f057";
+  margin-right: 0.5em;
+}
+.stever-places-map-toolbar-filter.is-active {
+  background: #3f506c;
+  border-color: #3f506c;
+  color: #ffffff;
+}
+.stever-places-map-toolbar-filter.is-active:before {
+  /* FontAwesome: circle with check. */
+  content: "\f058";
+}
+.stever-places-map-toolbar-filter.is-active:hover, .stever-places-map-toolbar-filter.is-active:focus {
+  background: rgb(44.2105263158, 56.1403508772, 75.7894736842);
+  border-color: rgb(44.2105263158, 56.1403508772, 75.7894736842);
+  color: #ffffff;
+}
+
+/* ===== Map Display ===== */
+.stever-places-map {
+  width: 100%;
+  height: 600px;
+  min-height: 240px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+@media (max-width: 40em) {
+  .stever-places-map {
+    height: 480px;
+  }
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper {
+  position: relative;
+  min-width: 140px;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-edit-link {
+  position: absolute;
+  font-size: 0.75em;
+  top: 12px;
+  right: -18px;
+  color: #666666;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-title {
+  margin-bottom: 0.25em;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges {
+  margin: 0.5em 0 0.25em 0;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-type-badge,
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-type-label {
+  display: inline-block;
+  line-height: 1.5;
+  margin-right: 1em;
   padding: 0.25em 0.5em;
+  border-left: 2px solid transparent;
+  background: #f7f7f7;
+  border-radius: 0 3px 3px 0;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-badge--general {
+  border-left-color: #3498db;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-badge--lived {
+  border-left-color: #e74c3c;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-badge--layover-pass-through {
+  border-left-color: #f39c12;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-badge--outdoors {
+  border-left-color: #27ae60;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-badge--indoors {
+  border-left-color: #9b59b6;
+}
+.stever-places-map .leaflet-popup .leafleat-popup-content-wrapper .stever-place-popup-badges .stever-place-popup-badge--path {
+  border-left-color: #c2552e;
+}
+.stever-places-map .leaflet-popup .leaflet-popup-close-button:hover,
+.stever-places-map .leaflet-popup .stever-place-popup-edit-link:hover {
+  color: #c2552e;
+}
+.stever-places-map .leaflet-polyline {
+  pointer-events: visibleStroke;
+}
+
+/* ===== Popup & Content Styling ===== */
+.stever-place-popup-note {
+  margin-top: 8px;
+}
+
+.stever-places-map-info {
+  padding: 8px 0;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ===== Marker Icons ===== */
+.stever-place-marker div {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stever-place-marker-polyline-anchor div {
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .post-type-archive-stever_quotes .entry-header {
